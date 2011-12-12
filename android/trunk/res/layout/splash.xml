@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" android:background="@drawable/swr1">
+
+    <TextView
+        android:id="@+id/textoVersion"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="25dp"
+        android:background="@color/splash_version_bkgrd"
+        android:lineSpacingExtra="@dimen/splash_version_spacing"
+        android:text="@string/splash_version"
+        android:textColor="@color/splash_version_color"
+        android:textSize="@dimen/splash_version_size" android:padding="6dp"/>
+
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/comtrend5365" />
+
+    <TextView
+        android:id="@+id/textoTitulo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:gravity="center"
+        android:text="@string/splash_bottom"
+        android:textColor="@color/splash_titulo"
+        android:textSize="@dimen/splash_titulo"
+        android:layout_marginLeft="4dp" android:layout_marginRight="4dp" android:shadowColor="@android:color/black" android:shadowDx="0" android:shadowDy="0" android:shadowRadius="3"/>
+
+</RelativeLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/swr2"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/splash_version_bkgrd"
+        android:padding="3dp" >
+
+        <TextView
+            android:id="@+id/TextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="6"
+            android:text="@string/menu"
+            android:textColor="@color/splash_version_color"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/home" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" android:paddingBottom="62dp" android:paddingLeft="32dp" android:paddingRight="32dp" android:paddingTop="62dp">
+
+        <ImageButton
+            android:id="@+id/btnInstalar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/wlan_setting" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/btnInstalar"
+            android:text="@string/menu_instalar"
+            android:textAppearance="?android:attr/textAppearanceLarge" android:shadowColor="@android:color/black" android:shadowDx="0" android:shadowDy="0" android:shadowRadius="2"/>
+
+        <ImageButton
+            android:id="@+id/btnBusqueda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/question" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/btnBusqueda"
+            android:text="@string/menu_busqueda"
+            android:textAppearance="?android:attr/textAppearanceLarge" android:shadowColor="@android:color/black" android:shadowDx="0" android:shadowDy="0" android:shadowRadius="2"/>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:text="@string/menu_herramientas"
+            android:textAppearance="?android:attr/textAppearanceLarge" android:shadowColor="@android:color/black" android:shadowDx="0" android:shadowDy="0" android:shadowRadius="2"/>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/menu_ayuda"
+            android:textAppearance="?android:attr/textAppearanceLarge" android:shadowColor="@android:color/black" android:shadowDx="0" android:shadowDy="0" android:shadowRadius="2"/>
+
+        <ImageButton
+            android:id="@+id/btnHerramientas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView4"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/addressbook" />
+
+        <ImageButton
+            android:id="@+id/btnAyuda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView5"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/help" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="swr_name">Instalar Router</string>
+    <string name="ayuda">Pantalla de ayuda</string>
+    <string name="menu">Menú principal</string>
+    <string name="splash">Pantalla de bienvenida</string>
+    <string name="instalar">Pantalla de instalación</string>
+    <string name="herramientas">Pantalla de herramientas</string>
+    <string name="busqueda">Pantalla de búsqueda</string>
+
+	<string name="splash_top">Máster Universitario en Tecnologías Informáticas</string>
+	<string name="splash_bottom">Semantic Wizard Router</string>
+	<string name="splash_version">UPNA - MUTI - IWS\nVersión 1.0.0</string>
+
+    <string name="menu_instalar">Instalar</string>
+    <string name="menu_busqueda">Búsqueda</string>
+    <string name="menu_herramientas">Herramientas</string>
+    <string name="menu_ayuda">Ayuda</string>
+    <string name="instalar_01">Conecte el cable de línea telefónica (gris) a la salida libre de la clavija extensora, si hay terminal telefónico, colocada en la roseta seleccionada y al conector ADSL del router.</string>
+	
+     <string name="conceptos">Conceptos</string>
+     <string name="configuracion">Configuración</string>
+     <string name="faq">F.A.Q.</string>
+     <string name="ayuda2">Ayuda</string>
+</resources>

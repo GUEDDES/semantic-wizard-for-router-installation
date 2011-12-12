@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<dimen name="splash_titulo">38dp</dimen>    
+	<dimen name="splash_version_size">11dp</dimen>
+	<dimen name="splash_version_spacing">3dp</dimen>
+	<dimen name="menu_item_size">32dp</dimen>	
+</resources>

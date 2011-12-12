@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" android:background="@drawable/swr2">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/splash_version_bkgrd"
+        android:padding="3dp" >
+
+        <TextView
+            android:id="@+id/TextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="6"
+            android:text="@string/ayuda"
+            android:textColor="@color/splash_version_color"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/help32" />
+    </RelativeLayout>
+
+    <TabHost
+        android:id="@+id/TabHostAyuda"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <LinearLayout
+                    android:id="@+id/tabFAQ"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tabAyuda"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" >
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pregunta 01"
+        android:textAppearance="?android:attr/textAppearanceMedium" android:background="@color/splash_version_bkgrd" android:textColor="@color/splash_titulo" android:layout_marginLeft="20dp" android:layout_marginTop="20dp"/>
+<TextView
+        android:id="@+id/textView22"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:text="Respuesta 01"
+        android:textAppearance="?android:attr/textAppearanceMedium" android:background="@color/splash_version_bkgrd" android:textColor="@color/splash_version_color" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"/>
+    <TextView
+        android:id="@+id/textView222"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pregunta 02"
+        android:textAppearance="?android:attr/textAppearanceMedium" android:background="@color/splash_version_bkgrd" android:textColor="@color/splash_titulo" android:layout_marginLeft="20dp" android:layout_marginTop="20dp"/>
+<TextView
+        android:id="@+id/textView2222"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:text="Respuesta 02"
+        android:textAppearance="?android:attr/textAppearanceMedium" android:background="@color/splash_version_bkgrd" android:textColor="@color/splash_version_color" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"/>    
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="splash_titulo">#FFFF00</color>
+	<color name="splash_version_color">#f0f0f0</color>
+	<color name="splash_version_bkgrd">#351a1a48</color>
+	<color name="menu_bkgrd">#20FFFFFF</color>
+    <color name="menu_color">#FFFF0F</color>
+    <color name="menu_glow">#F00</color>		
+</resources>

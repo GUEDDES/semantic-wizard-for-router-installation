@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="es.unavarra.muti.iws"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="7" />
+
+    <application
+        android:icon="@drawable/swr_icon"
+        android:label="@string/swr_name" android:debuggable="true">
+        <activity
+            android:label="@string/swr_name"
+            android:name=".SplashActivity" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="MenuActivity"></activity>
+        <activity android:name="InstalarActivity"></activity>
+        <activity android:name="BusquedaActivity"></activity>
+        <activity android:name="HerramientasActivity"></activity>
+        <activity android:name="AyudaActivity"></activity>
+    </application>
+
+</manifest>
