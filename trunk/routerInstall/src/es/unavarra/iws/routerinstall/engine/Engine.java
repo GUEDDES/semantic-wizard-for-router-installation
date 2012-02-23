@@ -66,7 +66,7 @@ public class Engine {
         r.addProperty(vocabulary.hasComponent, vocabulary.antena);
         r.addProperty(vocabulary.isOfModel, vocabulary.TG585v7);
         checkTipo(r);
-        this.executeQueryBasicConcepts();
+        this.executeQueryBasicConcepts("wifi");
 
 
         if (r.hasProperty(vocabulary.isOfTipo)) {
@@ -212,7 +212,7 @@ public class Engine {
         return !list.isEmpty();
     }*/
 
-    public String executeQueryBasicConcepts() {
+    public String executeQueryBasicConcepts(String searchString) {
         
          String queryString = "PREFIX foaf:<" + defaultNameSpace + ">" +
                  "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"+
@@ -222,7 +222,7 @@ public class Engine {
             + " SELECT ?resource ?label"
              + " WHERE {"
            + "   ?resource rdfs:label ?label "
-           + "FILTER (regex(fn:lower-case(?label), \"wifi\"))"
+           + "FILTER (regex(fn:lower-case(?label), \""+searchString+"\"))"
             + "}";
 
         List<String> list = querySPARQL(queryString, "?resource");
