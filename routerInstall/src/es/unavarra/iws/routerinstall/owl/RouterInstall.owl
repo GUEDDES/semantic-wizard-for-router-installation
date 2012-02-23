@@ -1,0 +1,2512 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:RouterInstall="http://www.owl-ontologies.com/Ontology1325175471.owl#"
+    xmlns:sqwrl="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+  xml:base="http://www.owl-ontologies.com/Ontology1325175471.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/3.3/swrla.owl"/>
+    <owl:imports rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="PuertoCorriente">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="PuertoUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="TarjetaDeRed"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="CableCorriente"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="PuertoWLAN"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="BotonReset"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="LedEncendido"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Modelo"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Boton"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="CableRJ45"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Cable"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Led"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="PuertoADSL"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Ordenador"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Componente"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Microfiltro"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="PuertoEthernet"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Antena"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="LedEstadoSistema"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="LedWifi"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Router"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="LedEstadoLAN"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="BotonEncendido"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Puerto"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="LedEstadoConexion"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#PuertoADSL">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Modelo"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoLAN"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Puerto ADSL</rdfs:label>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Boton"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Antena"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonEncendido"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoSistema"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Microfiltro"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Router"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoConexion"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoWLAN"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Cable"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Puerto"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableCorriente"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEncendido"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Componente"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Led"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Puerto DSL</rdfs:label>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedWifi"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonReset"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ45"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoEthernet"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#PuertoUSB">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedWifi"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Router"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Microfiltro"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Led"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoLAN"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >El Puerto Universal Serial Bus (bus universal en serie), abreviado comúnmente USB, es un puerto que sirve para conectar periféricos a un ordenador</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoSistema"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Puerto"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Antena"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Boton"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEncendido"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoWLAN"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoConexion"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Componente"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonEncendido"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Modelo"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableCorriente"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoEthernet"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Cable"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonReset"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ45"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Router">
+    <rdfs:subClassOf>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Router"/>
+          <owl:Restriction>
+            <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >1</owl:cardinality>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="isOfTipo"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Antena"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableCorriente"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Boton"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoConexion"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonEncendido"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >direccionador</rdfs:label>
+    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://es.wikipedia.org/wiki/Router</rdfs:seeAlso>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoWLAN"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Encaminador</rdfs:label>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedWifi"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Modelo"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Puerto"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEncendido"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Cable"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Microfiltro"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ45"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Enrutador</rdfs:label>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonReset"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoLAN"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoEthernet"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoSistema"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Led"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#LedEncendido"/>
+              <owl:Class rdf:about="#BotonEncendido"/>
+              <owl:Class rdf:about="#LedEstadoConexion"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasComponent"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Componente"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Es un dispositivo de hardware usado para la interconexión de redes informáticas que permite asegurar el direccionamiento de paquetes de datos entre ellas o determinar la mejor ruta que deben tomar</rdfs:comment>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasPort"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="#PuertoCorriente"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Microfiltro">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Puerto"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonReset"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Es un dispositivo que evita el ruido o estática durante la conversación del teléfono
+optimizando el desempeño de la conexión a Internet.</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ45"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#CableRJ11"/>
+              <owl:Class rdf:about="#CableRJ45"/>
+            </owl:intersectionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="isOfCable"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedWifi"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEncendido"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoConexion"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Antena"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Boton"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Modelo"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableCorriente"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoLAN"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Cable"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoWLAN"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Led"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonEncendido"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoEthernet"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Componente"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Led">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Boton"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Componente"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonEncendido"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableCorriente"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Modelo"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Antena"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoWLAN"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonReset"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Cable"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ45"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoEthernet"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >indicador</rdfs:label>
+    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://es.wikipedia.org/wiki/Led</rdfs:seeAlso>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Puerto"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#BotonEncendido">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoLAN"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ45"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Boton"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoSistema"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoEthernet"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonReset"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Permite encender o apagar el Router</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Puerto"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Antena"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >POWER</rdfs:label>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEncendido"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ON/OFF</rdfs:label>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Modelo"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Led"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoWLAN"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Cable"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedWifi"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableCorriente"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoConexion"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#PuertoWLAN">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Antena"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonReset"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoConexion"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Boton"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#BotonEncendido"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoEthernet"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Puerto"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Componente"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Cable"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Modelo"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoLAN"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Led"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ45"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEncendido"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableCorriente"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedWifi"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoSistema"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#LedEstadoConexion">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoEthernet"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ADSL</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Led"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Internet</rdfs:label>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Cable"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedWifi"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableCorriente"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#BotonEncendido"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Antena"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEncendido"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoLAN"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Boton"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoSistema"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Puerto"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Modelo"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ45"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Indica el estado de conexión con la red externa, si está apagado, no hay conexión, si se encuentra encendido es que el dispositivo está correctamente conectado, y si parpadea, es señal de que se está produciendo una transmisión de datos</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonReset"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+  </owl:Class>
+  <owl:Class rdf:about="#LedEstadoLAN">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#LedEstadoConexion"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Modelo"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Boton"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Antena"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonReset"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#Led"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Cable"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoSistema"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Puerto"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >LAN</rdfs:label>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoEthernet"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedWifi"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Indica si está encendido, que la conexión de red está activa cuando está apagado es señal de que no hay la conexión y si parpadea es que existe tráfico de datos por la red</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableCorriente"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ45"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEncendido"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#BotonEncendido"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Antena">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Componente"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableCorriente"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith rdf:resource="#LedEstadoConexion"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#BotonEncendido"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ45"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://es.wikipedia.org/wiki/Antena</rdfs:seeAlso>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEncendido"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedWifi"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonReset"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Cable"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoSistema"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Modelo"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Boton"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Es un dispositivo (conductor metálico) diseñado con el objetivo de emitir o recibir ondas electromagnéticas hacia el espacio libre, permite la comunicación inalámbrica</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoEthernet"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Puerto"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#LedEstadoLAN"/>
+    <owl:disjointWith rdf:resource="#Led"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Puerto">
+    <owl:disjointWith rdf:resource="#Antena"/>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >El puerto es el lugar donde se intercambian datos con otro dispositivo. Esto se realiza por medio de conectores unidos por cables</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEncendido"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableCorriente"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonReset"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Modelo"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedWifi"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#LedEstadoLAN"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Componente"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Cable"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Conector</rdfs:label>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Led"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEstadoSistema"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ45"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Entrada</rdfs:label>
+    <owl:disjointWith rdf:resource="#LedEstadoConexion"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#BotonEncendido"/>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Boton"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#LedEstadoSistema">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Indica el estado general del router y si funciona con normalidad</rdfs:comment>
+    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SYS</rdfs:label>
+    <owl:disjointWith rdf:resource="#Antena"/>
+    <owl:disjointWith rdf:resource="#LedEstadoConexion"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Cable"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#BotonEncendido"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >STATUS</rdfs:label>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedWifi"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableCorriente"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Boton"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ45"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Modelo"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Puerto"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonReset"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#LedEstadoLAN"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoEthernet"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="#Led"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEncendido"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Boton">
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#LedEstadoConexion"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Modelo"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedWifi"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Antena"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableCorriente"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoEthernet"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ45"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#LedEstadoLAN"/>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEncendido"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Puerto"/>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith rdf:resource="#LedEstadoSistema"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Es un dispositivo utilizado para activar alguna función.</rdfs:comment>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Cable"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pulsador</rdfs:label>
+    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Componente"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Led"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#CableRJ45">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedWifi"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableCorriente"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonReset"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Antena"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Modelo"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#BotonEncendido"/>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Componente"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#LedEstadoSistema"/>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <owl:disjointWith rdf:resource="#LedEstadoConexion"/>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEncendido"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cable Ethernet</rdfs:label>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#LedEstadoLAN"/>
+    <owl:disjointWith rdf:resource="#Led"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Puerto"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Cable"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith rdf:resource="#Boton"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoEthernet"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#CableCorriente">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Cable"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PWD</rdfs:label>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonReset"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <owl:disjointWith rdf:resource="#Puerto"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Componente"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >POWER</rdfs:label>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedEncendido"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#LedEstadoSistema"/>
+    <owl:disjointWith rdf:resource="#Led"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Modelo"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
+    <owl:disjointWith rdf:resource="#CableRJ45"/>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedWifi"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#LedEstadoConexion"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#LedEstadoLAN"/>
+    <owl:disjointWith rdf:resource="#BotonEncendido"/>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoEthernet"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith rdf:resource="#Boton"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Antena"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+  </owl:Class>
+  <owl:Class rdf:about="#LedEncendido">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Boton"/>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Modelo"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Nos indica el estado del dispositivo, si está apagado, el router está apagado, y si está encendido de forma permanente, indicará que está en funcionamiento.</rdfs:comment>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#BotonEncendido"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonReset"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoEthernet"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedWifi"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#CableRJ45"/>
+    <owl:disjointWith rdf:resource="#Antena"/>
+    <owl:disjointWith rdf:resource="#LedEstadoConexion"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >POWER</rdfs:label>
+    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
+    <rdfs:subClassOf rdf:resource="#Led"/>
+    <owl:disjointWith rdf:resource="#CableCorriente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Cable"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#LedEstadoLAN"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#LedEstadoSistema"/>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <owl:disjointWith rdf:resource="#Puerto"/>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PWR</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Cable">
+    <owl:disjointWith rdf:resource="#LedEstadoSistema"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith rdf:resource="#LedEstadoConexion"/>
+    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Modelo"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#BotonEncendido"/>
+    <owl:disjointWith rdf:resource="#LedEstadoLAN"/>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonReset"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#LedEncendido"/>
+    <owl:disjointWith rdf:resource="#Boton"/>
+    <owl:disjointWith rdf:resource="#Puerto"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedWifi"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoEthernet"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Antena"/>
+    <owl:disjointWith rdf:resource="#Led"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cordon</rdfs:label>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Componente"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Componente">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoEthernet"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#CableRJ45"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith rdf:resource="#CableCorriente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Modelo"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith rdf:resource="#Cable"/>
+    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Puerto"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Modelo">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#LedEstadoConexion"/>
+    <owl:disjointWith rdf:resource="#LedEstadoSistema"/>
+    <owl:disjointWith rdf:resource="#Puerto"/>
+    <owl:disjointWith rdf:resource="#CableCorriente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Cable"/>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonReset"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#LedEncendido"/>
+    <owl:disjointWith rdf:resource="#Antena"/>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith rdf:resource="#Boton"/>
+    <owl:disjointWith rdf:resource="#CableRJ45"/>
+    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
+    <owl:disjointWith rdf:resource="#LedEstadoLAN"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="isOfProveedor"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Proveedor"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="#BotonEncendido"/>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <owl:disjointWith rdf:resource="#Led"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedWifi"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoEthernet"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Componente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#PuertoEthernet">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonReset"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Componente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#LedEstadoLAN"/>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <owl:disjointWith rdf:resource="#BotonEncendido"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#CableCorriente"/>
+    <owl:disjointWith rdf:resource="#Boton"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#LedWifi"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Modelo"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith rdf:resource="#Led"/>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
+    <rdfs:subClassOf rdf:resource="#Puerto"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Antena"/>
+    <owl:disjointWith rdf:resource="#LedEncendido"/>
+    <owl:disjointWith rdf:resource="#LedEstadoSistema"/>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <owl:disjointWith rdf:resource="#Cable"/>
+    <owl:disjointWith rdf:resource="#LedEstadoConexion"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#CableRJ45"/>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+  </owl:Class>
+  <owl:Class rdf:about="#LedWifi">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >WLAN</rdfs:label>
+    <owl:disjointWith rdf:resource="#Cable"/>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith rdf:resource="#Boton"/>
+    <owl:disjointWith rdf:resource="#LedEstadoSistema"/>
+    <owl:disjointWith rdf:resource="#Antena"/>
+    <owl:disjointWith rdf:resource="#LedEncendido"/>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Puerto"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonReset"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoEthernet"/>
+    <owl:disjointWith rdf:resource="#LedEstadoConexion"/>
+    <rdfs:subClassOf rdf:resource="#Led"/>
+    <owl:disjointWith rdf:resource="#Modelo"/>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <owl:disjointWith rdf:resource="#CableRJ45"/>
+    <owl:disjointWith rdf:resource="#LedEstadoLAN"/>
+    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#BotonEncendido"/>
+    <owl:disjointWith rdf:resource="#CableCorriente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >WIFI</rdfs:label>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Indica el estado de la red inalámbrica, si está apagado, no hay conexión, la red inalámbrica está desactivada, si se encuentra encendido, es que la red inalámbrica está funcionando correctamente, y si parpadea, es señal de que se está produciendo una transmisión de datos a través de la red</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Ordenador">
+    <owl:disjointWith rdf:resource="#Puerto"/>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <owl:disjointWith rdf:resource="#Boton"/>
+    <owl:disjointWith rdf:resource="#Antena"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <owl:disjointWith rdf:resource="#CableRJ45"/>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith rdf:resource="#CableCorriente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#BotonReset"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:InverseFunctionalProperty rdf:ID="isTarjetaDeRedOf"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#TarjetaDeRed"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >laptop</rdfs:label>
+    <owl:disjointWith rdf:resource="#LedEstadoConexion"/>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://es.wikipedia.org/wiki/Ordenador#Otros_conceptos_y_curiosidades</rdfs:seeAlso>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Modelo"/>
+    <owl:disjointWith rdf:resource="#Cable"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#PuertoUSB"/>
+              <owl:Class rdf:about="#PuertoEthernet"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasPort"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PC</rdfs:label>
+    <owl:disjointWith rdf:resource="#LedEstadoLAN"/>
+    <owl:disjointWith rdf:resource="#BotonEncendido"/>
+    <owl:disjointWith rdf:resource="#Led"/>
+    <owl:disjointWith rdf:resource="#Componente"/>
+    <owl:disjointWith rdf:resource="#LedEstadoSistema"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Computadora</rdfs:label>
+    <owl:disjointWith rdf:resource="#LedWifi"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Computador</rdfs:label>
+    <owl:disjointWith rdf:resource="#PuertoEthernet"/>
+    <owl:disjointWith rdf:resource="#LedEncendido"/>
+    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#BotonReset">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <rdfs:subClassOf rdf:resource="#Boton"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Reset</rdfs:label>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <owl:disjointWith rdf:resource="#LedEncendido"/>
+    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Cable"/>
+    <owl:disjointWith rdf:resource="#Puerto"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TarjetaDeRed"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith rdf:resource="#LedEstadoLAN"/>
+    <owl:disjointWith rdf:resource="#CableRJ45"/>
+    <owl:disjointWith rdf:resource="#LedEstadoSistema"/>
+    <owl:disjointWith rdf:resource="#Antena"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Permite restaurar la configuración de fábrica del router</rdfs:comment>
+    <owl:disjointWith rdf:resource="#Led"/>
+    <owl:disjointWith rdf:resource="#BotonEncendido"/>
+    <owl:disjointWith rdf:resource="#CableCorriente"/>
+    <owl:disjointWith rdf:resource="#PuertoEthernet"/>
+    <owl:disjointWith rdf:resource="#LedEstadoConexion"/>
+    <owl:disjointWith rdf:resource="#Ordenador"/>
+    <owl:disjointWith rdf:resource="#Modelo"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#LedWifi"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Rst</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#TarjetaDeRed">
+    <owl:disjointWith rdf:resource="#LedWifi"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Una tarjeta de red o adaptador de red permite la comunicación con aparatos conectados entre sí y también permite compartir recursos entre dos o más computadoras</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tarjeta de interfaz de red</rdfs:label>
+    <owl:disjointWith rdf:resource="#BotonEncendido"/>
+    <owl:disjointWith rdf:resource="#LedEncendido"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tarjeta de red</rdfs:label>
+    <owl:disjointWith rdf:resource="#CableCorriente"/>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith rdf:resource="#LedEstadoSistema"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <owl:disjointWith rdf:resource="#CableRJ45"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#TipoRouter"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Componente"/>
+    <owl:disjointWith rdf:resource="#PuertoEthernet"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Modelo"/>
+    <owl:disjointWith rdf:resource="#Antena"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Adaptador de red</rdfs:label>
+    <owl:disjointWith rdf:resource="#Boton"/>
+    <owl:disjointWith rdf:resource="#Ordenador"/>
+    <owl:disjointWith rdf:resource="#LedEstadoLAN"/>
+    <owl:disjointWith rdf:resource="#LedEstadoConexion"/>
+    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith rdf:resource="#Led"/>
+    <owl:disjointWith rdf:resource="#Cable"/>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <owl:disjointWith rdf:resource="#BotonReset"/>
+    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://es.wikipedia.org/wiki/Tarjeta_de_red</rdfs:seeAlso>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith rdf:resource="#Puerto"/>
+  </owl:Class>
+  <owl:Class rdf:about="#TipoRouter">
+    <owl:disjointWith rdf:resource="#LedWifi"/>
+    <owl:disjointWith rdf:resource="#LedEncendido"/>
+    <owl:disjointWith rdf:resource="#TarjetaDeRed"/>
+    <owl:disjointWith rdf:resource="#CableCorriente"/>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith rdf:resource="#LedEstadoSistema"/>
+    <owl:disjointWith rdf:resource="#LedEstadoConexion"/>
+    <owl:disjointWith rdf:resource="#BotonEncendido"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Modelo o clase que reúne las características más representativas que distinguen a un grupo o conjunto de router</rdfs:comment>
+    <owl:disjointWith rdf:resource="#Antena"/>
+    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
+    <owl:disjointWith rdf:resource="#Puerto"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#CableRJ45"/>
+    <owl:disjointWith rdf:resource="#Modelo"/>
+    <owl:disjointWith rdf:resource="#Ordenador"/>
+    <owl:disjointWith rdf:resource="#PuertoEthernet"/>
+    <owl:disjointWith rdf:resource="#BotonReset"/>
+    <owl:disjointWith rdf:resource="#LedEstadoLAN"/>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith rdf:resource="#Componente"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Led"/>
+    <owl:disjointWith rdf:resource="#Boton"/>
+    <owl:disjointWith rdf:resource="#Cable"/>
+  </owl:Class>
+  <owl:Class rdf:about="#CableRJ11">
+    <owl:disjointWith rdf:resource="#Boton"/>
+    <owl:disjointWith rdf:resource="#BotonEncendido"/>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith rdf:resource="#Puerto"/>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Linea Telefonica</rdfs:label>
+    <owl:disjointWith rdf:resource="#PuertoEthernet"/>
+    <owl:disjointWith rdf:resource="#LedEstadoConexion"/>
+    <owl:disjointWith rdf:resource="#LedEncendido"/>
+    <owl:disjointWith rdf:resource="#TarjetaDeRed"/>
+    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Proveedor"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#BotonReset"/>
+    <owl:disjointWith rdf:resource="#Antena"/>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <owl:disjointWith rdf:resource="#Ordenador"/>
+    <owl:disjointWith rdf:resource="#Led"/>
+    <owl:disjointWith rdf:resource="#Componente"/>
+    <rdfs:subClassOf rdf:resource="#Cable"/>
+    <owl:disjointWith rdf:resource="#CableRJ45"/>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith rdf:resource="#LedWifi"/>
+    <owl:disjointWith rdf:resource="#CableCorriente"/>
+    <owl:disjointWith rdf:resource="#LedEstadoLAN"/>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <owl:disjointWith rdf:resource="#LedEstadoSistema"/>
+    <owl:disjointWith rdf:resource="#TipoRouter"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cable ADSL</rdfs:label>
+    <owl:disjointWith rdf:resource="#Modelo"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#Proveedor">
+    <owl:disjointWith rdf:resource="#TipoRouter"/>
+    <owl:disjointWith rdf:resource="#CableCorriente"/>
+    <owl:disjointWith rdf:resource="#TarjetaDeRed"/>
+    <owl:disjointWith rdf:resource="#CableRJ45"/>
+    <owl:disjointWith rdf:resource="#Cable"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ISP</rdfs:label>
+    <owl:disjointWith rdf:resource="#Puerto"/>
+    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith rdf:resource="#LedEstadoConexion"/>
+    <owl:disjointWith rdf:resource="#Componente"/>
+    <owl:disjointWith rdf:resource="#LedEncendido"/>
+    <owl:disjointWith rdf:resource="#PuertoEthernet"/>
+    <owl:disjointWith rdf:resource="#LedWifi"/>
+    <owl:disjointWith rdf:resource="#BotonReset"/>
+    <owl:disjointWith rdf:resource="#Led"/>
+    <owl:disjointWith rdf:resource="#Ordenador"/>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith rdf:resource="#CableRJ11"/>
+    <owl:disjointWith rdf:resource="#Modelo"/>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <owl:disjointWith rdf:resource="#LedEstadoLAN"/>
+    <owl:disjointWith rdf:resource="#Antena"/>
+    <owl:disjointWith rdf:resource="#LedEstadoSistema"/>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Empresa que se encarga de brindar conexión a Internet a sus clientes.</rdfs:comment>
+    <owl:disjointWith rdf:resource="#Boton"/>
+    <owl:disjointWith rdf:resource="#BotonEncendido"/>
+  </owl:Class>
+  <owl:Class rdf:about="#CableUSB">
+    <owl:disjointWith rdf:resource="#CableCorriente"/>
+    <owl:disjointWith rdf:resource="#PuertoEthernet"/>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith rdf:resource="#CableRJ45"/>
+    <owl:disjointWith rdf:resource="#LedEncendido"/>
+    <owl:disjointWith rdf:resource="#Antena"/>
+    <owl:disjointWith rdf:resource="#Componente"/>
+    <owl:disjointWith rdf:resource="#Proveedor"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cable USB</rdfs:label>
+    <owl:disjointWith rdf:resource="#Modelo"/>
+    <owl:disjointWith rdf:resource="#BotonReset"/>
+    <owl:disjointWith rdf:resource="#Boton"/>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith rdf:resource="#LedEstadoConexion"/>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith rdf:resource="#LedEstadoSistema"/>
+    <owl:disjointWith rdf:resource="#BotonEncendido"/>
+    <owl:disjointWith rdf:resource="#Ordenador"/>
+    <owl:disjointWith rdf:resource="#Led"/>
+    <owl:disjointWith rdf:resource="#TarjetaDeRed"/>
+    <owl:disjointWith rdf:resource="#TipoRouter"/>
+    <owl:disjointWith rdf:resource="#CableRJ11"/>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <rdfs:subClassOf rdf:resource="#Cable"/>
+    <owl:disjointWith rdf:resource="#LedEstadoLAN"/>
+    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
+    <owl:disjointWith rdf:resource="#Puerto"/>
+    <owl:disjointWith rdf:resource="#LedWifi"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="isOfModel">
+    <rdfs:domain rdf:resource="#Router"/>
+    <rdfs:range rdf:resource="#Modelo"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="modeloOfRouter"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isPortOf">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Router"/>
+          <owl:Class rdf:about="#Ordenador"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#hasPort"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#Puerto"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="proveedorOfModelo">
+    <rdfs:domain rdf:resource="#Proveedor"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#isOfProveedor"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#Modelo"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasPort">
+    <rdfs:range rdf:resource="#Puerto"/>
+    <owl:inverseOf rdf:resource="#isPortOf"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Router"/>
+          <owl:Class rdf:about="#Ordenador"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasComponent">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="isComponentOf"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#Componente"/>
+    <rdfs:domain rdf:resource="#Router"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasMicrofiltro">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#isOfCable"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#Microfiltro"/>
+    <rdfs:domain rdf:resource="#Cable"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isOfProveedor">
+    <rdfs:range rdf:resource="#Proveedor"/>
+    <owl:inverseOf rdf:resource="#proveedorOfModelo"/>
+    <rdfs:domain rdf:resource="#Modelo"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isOfCable">
+    <owl:inverseOf rdf:resource="#hasMicrofiltro"/>
+    <rdfs:domain rdf:resource="#Microfiltro"/>
+    <rdfs:range rdf:resource="#Cable"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#modeloOfRouter">
+    <rdfs:range rdf:resource="#Router"/>
+    <owl:inverseOf rdf:resource="#isOfModel"/>
+    <rdfs:domain rdf:resource="#Modelo"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="tipoOfRouter">
+    <rdfs:range rdf:resource="#Router"/>
+    <rdfs:domain rdf:resource="#TipoRouter"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#isOfTipo"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isOfTipo">
+    <rdfs:domain rdf:resource="#Router"/>
+    <owl:inverseOf rdf:resource="#tipoOfRouter"/>
+    <rdfs:range rdf:resource="#TipoRouter"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isComponentOf">
+    <rdfs:range rdf:resource="#Router"/>
+    <rdfs:domain rdf:resource="#Componente"/>
+    <owl:inverseOf rdf:resource="#hasComponent"/>
+  </owl:ObjectProperty>
+  <owl:FunctionalProperty rdf:ID="hasTarjetaDeRed">
+    <rdfs:domain rdf:resource="#Ordenador"/>
+    <rdfs:range rdf:resource="#TarjetaDeRed"/>
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:about="#isTarjetaDeRedOf"/>
+    </owl:inverseOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleGroupEnabled"/>
+  <owl:InverseFunctionalProperty rdf:about="#isTarjetaDeRedOf">
+    <owl:inverseOf rdf:resource="#hasTarjetaDeRed"/>
+    <rdfs:domain rdf:resource="#TarjetaDeRed"/>
+    <rdfs:range rdf:resource="#Ordenador"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:InverseFunctionalProperty>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/Rule-Orange1">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument1>
+              <swrl:Variable rdf:ID="x"/>
+            </swrl:argument1>
+            <swrl:argument2>
+              <RouterInstall:Proveedor rdf:ID="Orange">
+                <RouterInstall:proveedorOfModelo>
+                  <RouterInstall:Modelo rdf:ID="SagemFast2604">
+                    <RouterInstall:isOfProveedor rdf:resource="#Orange"/>
+                  </RouterInstall:Modelo>
+                </RouterInstall:proveedorOfModelo>
+                <RouterInstall:proveedorOfModelo>
+                  <RouterInstall:Modelo rdf:ID="ThompsonTG585v7">
+                    <RouterInstall:isOfProveedor rdf:resource="#Orange"/>
+                  </RouterInstall:Modelo>
+                </RouterInstall:proveedorOfModelo>
+              </RouterInstall:Proveedor>
+            </swrl:argument2>
+            <swrl:propertyPredicate rdf:resource="#isOfProveedor"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="#isOfTipo"/>
+                <swrl:argument1 rdf:resource="#x"/>
+                <swrl:argument2>
+                  <RouterInstall:TipoRouter rdf:ID="Inalámbrico">
+                    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >sin cables</rdfs:label>
+                    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >wireless</rdfs:label>
+                    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >wifi</rdfs:label>
+                  </RouterInstall:TipoRouter>
+                </swrl:argument2>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#x"/>
+            <swrl:classPredicate rdf:resource="#Router"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:argument2 rdf:resource="#ThompsonTG585v7"/>
+                <swrl:argument1 rdf:resource="#x"/>
+                <swrl:propertyPredicate rdf:resource="#isOfModel"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/Rule-Movistar2">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument2>
+              <RouterInstall:Proveedor rdf:ID="Movistar">
+                <RouterInstall:proveedorOfModelo>
+                  <RouterInstall:Modelo rdf:ID="CT-5071">
+                    <RouterInstall:isOfProveedor rdf:resource="#Movistar"/>
+                  </RouterInstall:Modelo>
+                </RouterInstall:proveedorOfModelo>
+                <RouterInstall:proveedorOfModelo>
+                  <RouterInstall:Modelo rdf:ID="CT-351">
+                    <RouterInstall:isOfProveedor rdf:resource="#Movistar"/>
+                  </RouterInstall:Modelo>
+                </RouterInstall:proveedorOfModelo>
+                <RouterInstall:proveedorOfModelo>
+                  <RouterInstall:Modelo rdf:ID="x7028r">
+                    <RouterInstall:isOfProveedor rdf:resource="#Movistar"/>
+                  </RouterInstall:Modelo>
+                </RouterInstall:proveedorOfModelo>
+                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Telefónica</rdfs:label>
+              </RouterInstall:Proveedor>
+            </swrl:argument2>
+            <swrl:argument1 rdf:resource="#x"/>
+            <swrl:propertyPredicate rdf:resource="#isOfProveedor"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:argument2>
+                  <RouterInstall:TipoRouter rdf:ID="USB"/>
+                </swrl:argument2>
+                <swrl:propertyPredicate rdf:resource="#isOfTipo"/>
+                <swrl:argument1 rdf:resource="#x"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#x"/>
+            <swrl:classPredicate rdf:resource="#Router"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="#isOfModel"/>
+                <swrl:argument1 rdf:resource="#x"/>
+                <swrl:argument2 rdf:resource="#CT-351"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/Rule-Movistar3">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:argument2 rdf:resource="#Inalámbrico"/>
+                <swrl:argument1 rdf:resource="#x"/>
+                <swrl:propertyPredicate rdf:resource="#isOfTipo"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument2 rdf:resource="#Movistar"/>
+            <swrl:propertyPredicate rdf:resource="#isOfProveedor"/>
+            <swrl:argument1 rdf:resource="#x"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="#isOfModel"/>
+                <swrl:argument1 rdf:resource="#x"/>
+                <swrl:argument2 rdf:resource="#x7028r"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="#Router"/>
+            <swrl:argument1 rdf:resource="#x"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <RouterInstall:Modelo rdf:about="#ThompsonTG585v7"/>
+      <RouterInstall:Modelo rdf:about="#SagemFast2604"/>
+      <RouterInstall:Modelo rdf:about="#x7028r"/>
+      <RouterInstall:Modelo rdf:about="#CT-351"/>
+      <RouterInstall:Modelo rdf:about="#CT-5071"/>
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+  <swrl:AtomList>
+    <rdf:first>
+      <swrl:IndividualPropertyAtom>
+        <swrl:propertyPredicate rdf:resource="#isOfProveedor"/>
+        <swrl:argument1 rdf:resource="#x"/>
+        <swrl:argument2 rdf:resource="#Movistar"/>
+      </swrl:IndividualPropertyAtom>
+    </rdf:first>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </swrl:AtomList>
+  <swrl:AtomList>
+    <rdf:rest>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument2 rdf:resource="#CT-351"/>
+            <swrl:propertyPredicate rdf:resource="#isOfModel"/>
+            <swrl:argument1 rdf:resource="#x"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </swrl:AtomList>
+    </rdf:rest>
+    <rdf:first>
+      <swrl:ClassAtom>
+        <swrl:argument1 rdf:resource="#x"/>
+        <swrl:classPredicate rdf:resource="#Router"/>
+      </swrl:ClassAtom>
+    </rdf:first>
+  </swrl:AtomList>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/Rule_RouterInalambrico">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument2 rdf:resource="#USB"/>
+            <swrl:propertyPredicate rdf:resource="#isOfTipo"/>
+            <swrl:argument1 rdf:resource="#x"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:IndividualPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="#hasComponent"/>
+                    <swrl:argument2>
+                      <swrl:Variable rdf:ID="y"/>
+                    </swrl:argument2>
+                    <swrl:argument1 rdf:resource="#x"/>
+                  </swrl:IndividualPropertyAtom>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:classPredicate rdf:resource="#Antena"/>
+                <swrl:argument1 rdf:resource="#y"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#x"/>
+            <swrl:classPredicate rdf:resource="#Router"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <swrl:Imp rdf:ID="Rule-7">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument1 rdf:resource="#x"/>
+            <swrl:argument2 rdf:resource="#Movistar"/>
+            <swrl:propertyPredicate rdf:resource="#isOfProveedor"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="#isOfTipo"/>
+                <swrl:argument1 rdf:resource="#x"/>
+                <swrl:argument2>
+                  <RouterInstall:TipoRouter rdf:ID="Monopuerto">
+                    <RouterInstall:tipoOfRouter>
+                      <RouterInstall:Router rdf:ID="Router_2">
+                        <RouterInstall:isOfTipo rdf:resource="#Monopuerto"/>
+                      </RouterInstall:Router>
+                    </RouterInstall:tipoOfRouter>
+                    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >&lt;p style="margin-top: 0"&gt;
+      Posee un solo puerto Ethernet
+    &lt;/p&gt;</rdfs:comment>
+                  </RouterInstall:TipoRouter>
+                </swrl:argument2>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="#Router"/>
+            <swrl:argument1 rdf:resource="#x"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="#isOfModel"/>
+                <swrl:argument2 rdf:resource="#CT-5071"/>
+                <swrl:argument1 rdf:resource="#x"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <swrl:IndividualPropertyAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:argument2 rdf:resource="#ThompsonTG585v7"/>
+    <swrl:propertyPredicate rdf:resource="#isOfModel"/>
+  </swrl:IndividualPropertyAtom>
+  <swrl:Imp rdf:ID="Rule-4">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="#Router"/>
+            <swrl:argument1>
+              <swrl:Variable rdf:about="http://www.owl-ontologies.com/Ontology1325175471.owll#x"/>
+            </swrl:argument1>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="#isOfModel"/>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/Ontology1325175471.owll#x"/>
+                <swrl:argument2 rdf:resource="#SagemFast2604"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/Ontology1325175471.owll#x"/>
+            <swrl:propertyPredicate rdf:resource="#isOfProveedor"/>
+            <swrl:argument2 rdf:resource="#Orange"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="#isOfTipo"/>
+                <swrl:argument2 rdf:resource="#Inalámbrico"/>
+                <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/Ontology1325175471.owll#x"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <RouterInstall:TipoRouter rdf:about="#Inalámbrico"/>
+      <RouterInstall:TipoRouter rdf:about="#USB"/>
+      <RouterInstall:TipoRouter rdf:about="#Monopuerto"/>
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/Rule-RouterMonopuerto">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#x"/>
+            <swrl:classPredicate rdf:resource="#Router"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:argument1 rdf:resource="#y"/>
+                <swrl:classPredicate rdf:resource="#PuertoUSB"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:IndividualPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="#hasComponent"/>
+                    <swrl:argument2 rdf:resource="#y"/>
+                    <swrl:argument1 rdf:resource="#x"/>
+                  </swrl:IndividualPropertyAtom>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument2 rdf:resource="#USB"/>
+            <swrl:argument1 rdf:resource="#x"/>
+            <swrl:propertyPredicate rdf:resource="#isOfTipo"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/nullRule-8">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument2 rdf:resource="#SagemFast2604"/>
+            <swrl:argument1>
+              <swrl:Variable rdf:about="http://www.owl-ontologies.com/x"/>
+            </swrl:argument1>
+            <swrl:propertyPredicate rdf:resource="#isOfModel"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument1 rdf:resource="http://www.owl-ontologies.com/x"/>
+            <swrl:propertyPredicate rdf:resource="#isOfProveedor"/>
+            <swrl:argument2 rdf:resource="#Orange"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:AtomList>
+    <rdf:rest>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#y"/>
+            <swrl:classPredicate rdf:resource="#Antena"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:IndividualPropertyAtom>
+                <swrl:argument2 rdf:resource="#y"/>
+                <swrl:argument1 rdf:resource="#x"/>
+                <swrl:propertyPredicate rdf:resource="#hasComponent"/>
+              </swrl:IndividualPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </rdf:rest>
+    <rdf:first>
+      <swrl:ClassAtom>
+        <swrl:argument1 rdf:resource="#x"/>
+        <swrl:classPredicate rdf:resource="#Router"/>
+      </swrl:ClassAtom>
+    </rdf:first>
+  </swrl:AtomList>
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <RouterInstall:Proveedor rdf:about="#Movistar"/>
+      <RouterInstall:Proveedor rdf:about="#Orange"/>
+      <RouterInstall:Proveedor rdf:ID="Vodafone">
+        <RouterInstall:proveedorOfModelo>
+          <RouterInstall:Modelo rdf:ID="HG556">
+            <RouterInstall:isOfProveedor rdf:resource="#Vodafone"/>
+          </RouterInstall:Modelo>
+        </RouterInstall:proveedorOfModelo>
+      </RouterInstall:Proveedor>
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+  <swrl:Imp rdf:about="http://www.owl-ontologies.com/Rule_RouterUSB">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument2 rdf:resource="#USB"/>
+            <swrl:argument1 rdf:resource="#x"/>
+            <swrl:propertyPredicate rdf:resource="#isOfTipo"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:classPredicate rdf:resource="#PuertoUSB"/>
+                <swrl:argument1 rdf:resource="#y"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:first>
+                  <swrl:IndividualPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="#hasComponent"/>
+                    <swrl:argument2 rdf:resource="#y"/>
+                    <swrl:argument1 rdf:resource="#x"/>
+                  </swrl:IndividualPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#x"/>
+            <swrl:classPredicate rdf:resource="#Router"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <swrl:AtomList>
+    <rdf:first>
+      <swrl:IndividualPropertyAtom>
+        <swrl:propertyPredicate rdf:resource="#isOfTipo"/>
+        <swrl:argument2 rdf:resource="#Inalámbrico"/>
+        <swrl:argument1 rdf:resource="#x"/>
+      </swrl:IndividualPropertyAtom>
+    </rdf:first>
+  </swrl:AtomList>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.7, Build 620)  http://protege.stanford.edu -->
