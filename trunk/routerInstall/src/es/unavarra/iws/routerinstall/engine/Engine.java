@@ -2,10 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package es.unavarra.iws.routerinstall.engine;
 
+import es.unavarra.iws.routerinstall.engine.utils.StringUtils;
+
 import com.hp.hpl.jena.ontology.Individual;
+import com.hp.hpl.jena.ontology.OntClass;
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
@@ -16,13 +18,19 @@ import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.ontology.OntModelSpec;
+import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.Statement;
+
 
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.FileWriter;
+import java.io.InputStreamReader;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.logging.Level;
 import org.apache.log4j.Logger;
 
 /**
@@ -30,17 +38,17 @@ import org.apache.log4j.Logger;
  * @author Itziar
  */
 public class Engine {
+
     private static final Logger logger = Logger.getLogger(Engine.class);
-
-    private static final String owlFilePath = "/es/unavarra/iws/routerinstall/owl/RouterInstall.owl";
+    private static final String owlFilePath = "/es/unavarra/iws/routerinstall/resources/owl/RouterInstall.owl";
     private static final String defaultNameSpace = "http://www.owl-ontologies.com/Ontology1325175471.owl#";
-
-
     private OntModel model;
     private Vocabulary vocabulary;
 
-     
-    public Engine() {}
+    private Individual myRouter;
+
+    public Engine() {
+    }
 
     public void init() {
         InputStream in = Engine.class.getResourceAsStream(owlFilePath);
@@ -51,32 +59,30 @@ public class Engine {
         model.read(in, "");
         vocabulary = new Vocabulary(model);
 
+        myRouter = createRouter("routerA");
+
         logger.info("Engine init");
 
     }
-    
+
     public Individual createRouter(String id) {
-         return model.createIndividual(Vocabulary.getURI() + id, vocabulary.router);
+        return model.createIndividual(Vocabulary.getURI() + id, vocabulary.router);
 
-        
+
     }
 
-   public void test() {
-        Individual r = createRouter("prueba");
-        r.addProperty(vocabulary.hasComponent, vocabulary.antena);
-        r.addProperty(vocabulary.isOfModel, vocabulary.TG585v7);
-        checkTipo(r);
-        this.executeQueryBasicConcepts("wifi");
-
-
-        if (r.hasProperty(vocabulary.isOfTipo)) {
-            logger.info("Tiene propiedad: "+r.getProperty(vocabulary.isOfTipo));
-        } else {
-            logger.info("NO tiene propiedad");
-        } 
+    public void test() {
+        //  Individual r = createRouter("prueba");
+        //  r.addProperty(vocabulary.hasComponent, vocabulary.antena);
+        //  r.addProperty(vocabulary.isOfModel, vocabulary.TG585v7);
+        //  checkTipo(r);
+      //  String result = executeQueryBasicConcepts("enrutador wifi");
+      //  System.out.println(result);
+          searchCharacteristics("wifi");
+         
     }
 
-    public synchronized  List<String> querySPARQL(String queryString, String param) {
+    public synchronized List<String> querySPARQL(String queryString, String param) {
         ArrayList<String> list = new ArrayList<String>();
         Query query = QueryFactory.create(queryString);
         QueryExecution qe = QueryExecutionFactory.create(query, model);
@@ -116,46 +122,31 @@ public class Engine {
         return list;
     }
 
-    public String prepareQuery(boolean subjectCheck, boolean objectCheck, String subject, String predicate, String object, String filter, String condition, String value) {
-        String p = new String();
-        if (predicate.equals("Vecino")) {
-            p = "foaf:isVecinoOf";
-        } else if (predicate.equals("Temperatura")) {
-            p = "foaf:hasTemperatura";
-        } else if (predicate.equals("Humedad")) {
-            p = "foaf:hasHumedad";
-        } else if (predicate.equals("Inclinacion")) {
-            p = "foaf:hasInclinacion";
-        } else if (predicate.equals("Tipo")) {
-            p = "foaf:isOfTipo";
-        }
+    public synchronized List<List<String>> querySPARQL(String queryString, List<String> params) {
+        List<List<String>> list = new ArrayList<List<String>>();
 
-        String f = new String();
-        if (!filter.isEmpty() && !value.isEmpty()) {
-            f = " FILTER (" + filter + " " + condition + " " + value + ") ";
-        } else {
-            f = "";
-        }
+        Query query = QueryFactory.create(queryString);
+        QueryExecution qe = QueryExecutionFactory.create(query, model);
+        ResultSet rs = qe.execSelect();
+        while (rs.hasNext()) {
+            QuerySolution binding = rs.nextSolution();
+            List<String> inside = new ArrayList<String>();
 
-        String subjectSelect = subject;
-        String objectSelect = object;
-        if (!subjectCheck) {
-            subjectSelect = "";
+            Iterator<String> it = params.iterator();
+            while (it.hasNext()) {
+                String param = it.next();
+                if (param.isEmpty()) {
+                    inside.add("");
+                } else {
+                    inside.add(binding.get(param).toString());
+                }
+            }
+            list.add(inside);
         }
-        if (!objectCheck) {
-            objectSelect = "";
-        }
+        qe.close();
 
-        String queryString = "PREFIX foaf: <" + defaultNameSpace + ">"
-            + " \nSELECT " + subjectSelect + " " + objectSelect
-            + " \nWHERE { "
-            + " \n\t " + subject + " " + p + " " + object
-            + f
-            + " \n}";
-
-        return queryString;
+        return list;
     }
-
 
     public Resource getTipo(Individual router) {
         Resource tipo = null;
@@ -164,72 +155,145 @@ public class Engine {
         } else if (router.hasProperty(vocabulary.hasComponent, vocabulary.puertoUSB)) {
             tipo = vocabulary.USB;
         } else {
-            tipo = vocabulary.MONOPUERTO;  router.addProperty(vocabulary.isOfTipo, vocabulary.MONOPUERTO);
+            tipo = vocabulary.MONOPUERTO;
+            router.addProperty(vocabulary.isOfTipo, vocabulary.MONOPUERTO);
         }
-         router.addProperty(vocabulary.isOfTipo, tipo);
-         return tipo;
+        router.addProperty(vocabulary.isOfTipo, tipo);
+        return tipo;
     }
 
-      public Resource getProveedor(Individual router) {
-           Resource proveedor = null;
-           Statement modelo = router.getProperty(vocabulary.isOfModel);
-           if (modelo != null) {
-                proveedor = modelo.getProperty(vocabulary.isOfProveedor).getObject().asResource();
-            }
-            return proveedor;
+    public Resource getProveedor(Individual router) {
+        Resource proveedor = null;
+        Statement modelo = router.getProperty(vocabulary.isOfModel);
+        if (modelo != null) {
+            proveedor = modelo.getProperty(vocabulary.isOfProveedor).getObject().asResource();
         }
+        return proveedor;
+    }
 
-      public Resource getModelo(Individual router) {
-          return router.getProperty(vocabulary.isOfModel).getObject().asResource();
-      }
+    public Resource getModelo(Individual router) {
+        return router.getProperty(vocabulary.isOfModel).getObject().asResource();
+    }
 
-      public void setModelo(Individual router, Individual model) {
-          router.addProperty(vocabulary.isOfModel, model);
-          checkTipo(router);
-      }
+    public void setModelo(Individual router, Individual model) {
+        router.addProperty(vocabulary.isOfModel, model);
+        checkTipo(router);
+    }
 
-      private void checkTipo(Individual router) {
-          Resource modelo = router.getPropertyResourceValue(vocabulary.isOfModel);
-          
-          if (modelo.equals(vocabulary.TG585v7) || modelo.equals(vocabulary.fast2604) || modelo.equals(vocabulary.x7028r)) {
-              router.addProperty(vocabulary.isOfTipo, vocabulary.INALAMBRICO);
-          } else if (modelo.equals(vocabulary.CT_5071)) {
-              router.addProperty(vocabulary.isOfTipo, vocabulary.MONOPUERTO);
-          } else if (modelo.equals(vocabulary.CT_351)) {
-              router.addProperty(vocabulary.isOfTipo, vocabulary.USB);
-          }
-      }
+    private void checkTipo(Individual router) {
+        Resource modeloRouter = router.getPropertyResourceValue(vocabulary.isOfModel);
 
-
- /*   public boolean isOfTipo() {
-        String queryString = "PREFIX foaf:<" + defaultNameSpace + ">"
-            + " SELECT ?r1 ?c1"
-            + " WHERE {"
-            + "     ?r1 foaf:isComponentOf ?c1 ."
-            + "}";
-
-        List<String> list = querySPARQL(queryString, "r1");
-        return !list.isEmpty();
-    }*/
+        if (modeloRouter.equals(vocabulary.TG585v7) || modeloRouter.equals(vocabulary.fast2604) || modeloRouter.equals(vocabulary.x7028r) || modeloRouter.equals(vocabulary.HG556)) {
+            router.addProperty(vocabulary.isOfTipo, vocabulary.INALAMBRICO);
+        } else if (modeloRouter.equals(vocabulary.CT_5071)) {
+            router.addProperty(vocabulary.isOfTipo, vocabulary.MONOPUERTO);
+        } else if (modeloRouter.equals(vocabulary.CT_351)) {
+            router.addProperty(vocabulary.isOfTipo, vocabulary.USB);
+        }
+    }
 
     public String executeQueryBasicConcepts(String searchString) {
-        
-         String queryString = "PREFIX foaf:<" + defaultNameSpace + ">" +
-                 "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"+
-                 "PREFIX owl:    <http://www.w3.org/2002/07/owl#>" +
-                 "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"+
-                 "PREFIX fn: <http://www.w3.org/2005/xpath-functions#>"
-            + " SELECT ?resource ?label"
-             + " WHERE {"
-           + "   ?resource rdfs:label ?label "
-           + "FILTER (regex(fn:lower-case(?label), \""+searchString+"\"))"
-            + "}";
+        List<List<String>> queryResults = fullSearchByLabel(searchString);
+        String basePage = null;
 
-        List<String> list = querySPARQL(queryString, "?resource");
-        logger.info(list);
-        logger.info(list.size());
-        return list.get(0);
+        if (!queryResults.isEmpty()) {
+            //Buscar la página asociada con el recurso encontrado de mayor prioridad
+            basePage = getBasePageWithMaxPriority(queryResults);
+        }
+        return basePage;
+    }
 
+    public void searchCharacteristics(String searchString) {
+        List<List<String>> queryResults = fullSearchByLabel(searchString);
+
+        if (!queryResults.isEmpty()) {
+            //Buscar que los recursos sean características
+            Iterator<List<String>> it = queryResults.iterator();
+            while (it.hasNext()) {
+                List<String> list1 = it.next();
+                String resourceName = list1.get(0);
+                System.out.println("resource: "+resourceName);
+                OntClass ontClass = getClass(resourceName);
+
+                if (ontClass != null) {
+                    if (ontClass.equals(vocabulary.tipoRouter)) {
+                    myRouter.addProperty(vocabulary.isOfTipo, model.getIndividual(resourceName));
+                    checkTipo(myRouter);
+                    } else if (ontClass.equals(vocabulary.modeloRouter)) {
+                    myRouter.addProperty(vocabulary.isOfModel, model.getIndividual(resourceName));
+                     } else if (ontClass.equals(vocabulary.proveedor)) {
+                    myRouter.addProperty(vocabulary.isOfProveedor, model.getIndividual(resourceName));
+                    }
+                }
+            }
+        }
+    }
+
+    private OntClass getClass(String individualName) {
+        OntClass ontClass = null;
+        try {
+        Individual individual = model.getIndividual(individualName);
+        ontClass = individual.getOntClass();
+        } catch(Exception ex) {
+            logger.info("Not an individual");
+        }
+        return ontClass;
+
+    }
+
+    private List<List<String>> fullSearchByLabel(String searchString) {
+        //Buscar por label en toda la cadena de entrada
+        List<List<String>> queryResults = searchByLabel(searchString);
+
+        searchString = StringUtils.prepareSearchString(searchString);
+        if (queryResults.isEmpty()) {
+            //Repetir la búsqueda haciendo un split de la cadena de entrada
+            String[] splittedString = searchString.split(" ");
+            for (int i = 0; i < splittedString.length; i++) {
+                String s = splittedString[i];
+                queryResults.addAll(searchByLabel(s));
+            }
+        }
+        return queryResults;
+    }
+
+    private static String getBasePageWithMaxPriority(List<List<String>> queryResults) {
+        double maxP = 0;
+        String chosenBasePage = null;
+        Iterator<List<String>> it = queryResults.iterator();
+        while (it.hasNext()) {
+            List<String> list1 = it.next();
+            int priority = Integer.parseInt(list1.get(1));
+            if (priority > maxP) {
+                maxP = priority;
+                chosenBasePage = list1.get(2);
+            }
+        }
+
+        return chosenBasePage;
+    }
+
+    private List<List<String>> searchByLabel(String searchString) {
+        String queryString = "PREFIX foaf:<" + defaultNameSpace + ">"
+                + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
+                + "PREFIX owl:    <http://www.w3.org/2002/07/owl#>"
+                + "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"
+                + "PREFIX fn: <http://www.w3.org/2005/xpath-functions#>"
+                + " SELECT ?resource ?priority ?basePage"
+                + " WHERE {"
+                + "   ?resource rdfs:label ?label ."
+                + "   ?resource foaf:hasPriority ?priority ."
+                + "   ?resource foaf:hasBasePage ?basePage ."
+                + "FILTER (regex(fn:lower-case(?label), \"" + searchString + "\")) "
+                + "}";
+
+        List<String> params = new ArrayList<String>();
+        params.add("?resource");
+        params.add("?priority");
+        params.add("?basePage");
+
+        List<List<String>> list = querySPARQL(queryString, params);
+        return list;
     }
 
     
@@ -242,7 +306,7 @@ public class Engine {
         }
     }
 
-    public synchronized OntModel getModel(){
+    public synchronized OntModel getModel() {
         return model;
     }
 
@@ -252,6 +316,4 @@ public class Engine {
         e.test();
 
     }
-   
-
 }
