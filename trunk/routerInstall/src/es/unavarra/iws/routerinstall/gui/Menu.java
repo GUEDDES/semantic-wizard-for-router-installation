@@ -4,6 +4,7 @@
  */
 package es.unavarra.iws.routerinstall.gui;
 
+import es.unavarra.iws.routerinstall.engine.QueryManager;
 import java.awt.Container;
 
 /**
@@ -12,10 +13,13 @@ import java.awt.Container;
  */
 public class Menu extends javax.swing.JPanel {
 
+    QueryManager qm = null;
+    
     /**
      * Creates new form Menu
      */
-    public Menu() {
+    public Menu(QueryManager qm) {
+        this.qm = qm;
         initComponents();
     }
 
@@ -144,7 +148,7 @@ public class Menu extends javax.swing.JPanel {
         this.setVisible(false);
         Container menu = this.getFocusCycleRootAncestor();
         menu.remove(this);
-        Instalar instala = new Instalar();
+        Instalar instala = new Instalar(qm);
         instala.setSize(menu.getSize());
         menu.add(instala, 0);
     }//GEN-LAST:event_jButton1MouseClicked
@@ -154,7 +158,7 @@ public class Menu extends javax.swing.JPanel {
         this.setVisible(false);
         Container menu = this.getFocusCycleRootAncestor();
         menu.remove(this);
-        Busqueda busqueda = new Busqueda();
+        Busqueda busqueda = new Busqueda(qm);
         busqueda.setSize(menu.getSize());
         menu.add(busqueda, 0);
     }//GEN-LAST:event_jButton2MouseClicked
@@ -164,7 +168,7 @@ public class Menu extends javax.swing.JPanel {
         this.setVisible(false);
         Container menu = this.getFocusCycleRootAncestor();
         menu.remove(this);
-        Herramientas herramientas = new Herramientas();
+        Herramientas herramientas = new Herramientas(qm);
         herramientas.setSize(menu.getSize());
         menu.add(herramientas, 0);
     }//GEN-LAST:event_jButton3MouseClicked
@@ -174,7 +178,7 @@ public class Menu extends javax.swing.JPanel {
         this.setVisible(false);
         Container menu = this.getFocusCycleRootAncestor();
         menu.remove(this);
-        Ayuda ayuda = new Ayuda();
+        Ayuda ayuda = new Ayuda(qm);
         ayuda.setSize(menu.getSize());
         menu.add(ayuda, 0);        
     }//GEN-LAST:event_jButton4MouseClicked
