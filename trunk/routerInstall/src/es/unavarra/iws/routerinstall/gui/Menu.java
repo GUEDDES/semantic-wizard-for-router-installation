@@ -37,8 +37,8 @@ public class Menu extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jlIcono = new javax.swing.JLabel();
+        jlTItulo = new javax.swing.JLabel();
         jlBackground = new javax.swing.JLabel();
 
         setLayout(null);
@@ -47,7 +47,7 @@ public class Menu extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(254, 254, 254));
         jLabel4.setText("Búsqueda");
         add(jLabel4);
-        jLabel4.setBounds(290, 290, 130, 30);
+        jLabel4.setBounds(290, 270, 130, 30);
 
         jLabel7.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(254, 254, 254));
@@ -65,7 +65,7 @@ public class Menu extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(254, 254, 254));
         jLabel5.setText("Instalación");
         add(jLabel5);
-        jLabel5.setBounds(70, 290, 140, 30);
+        jLabel5.setBounds(70, 270, 140, 30);
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/exit32.png"))); // NOI18N
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -92,7 +92,7 @@ public class Menu extends javax.swing.JPanel {
             }
         });
         add(jButton2);
-        jButton2.setBounds(290, 200, 110, 80);
+        jButton2.setBounds(290, 180, 110, 80);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr.png"))); // NOI18N
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -106,7 +106,7 @@ public class Menu extends javax.swing.JPanel {
             }
         });
         add(jButton1);
-        jButton1.setBounds(70, 200, 110, 80);
+        jButton1.setBounds(70, 180, 110, 80);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/addressbook.png"))); // NOI18N
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -117,17 +117,19 @@ public class Menu extends javax.swing.JPanel {
         add(jButton3);
         jButton3.setBounds(300, 430, 110, 80);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/home32.png"))); // NOI18N
-        add(jLabel3);
-        jLabel3.setBounds(10, 30, 30, 30);
+        jlIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/home32.png"))); // NOI18N
+        add(jlIcono);
+        jlIcono.setBounds(10, 30, 30, 30);
 
-        jLabel2.setBackground(new java.awt.Color(215, 227, 246));
-        jLabel2.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel2.setText("       Semantic Router");
-        jLabel2.setOpaque(true);
-        add(jLabel2);
-        jLabel2.setBounds(0, 20, 480, 50);
+        jlTItulo.setBackground(new java.awt.Color(0, 102, 153));
+        jlTItulo.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jlTItulo.setForeground(new java.awt.Color(255, 255, 255));
+        jlTItulo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jlTItulo.setText("       Semantic Router");
+        jlTItulo.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(51, 51, 51)));
+        jlTItulo.setOpaque(true);
+        add(jlTItulo);
+        jlTItulo.setBounds(0, 20, 480, 50);
 
         jlBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr2.png"))); // NOI18N
         add(jlBackground);
@@ -188,12 +190,12 @@ public class Menu extends javax.swing.JPanel {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jlBackground;
+    private javax.swing.JLabel jlIcono;
+    private javax.swing.JLabel jlTItulo;
     // End of variables declaration//GEN-END:variables
 }
