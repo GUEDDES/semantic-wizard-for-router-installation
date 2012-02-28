@@ -84,10 +84,12 @@ public class Instalar extends javax.swing.JPanel {
         add(jLabel3);
         jLabel3.setBounds(10, 30, 30, 30);
 
-        jLabel2.setBackground(new java.awt.Color(215, 227, 246));
+        jLabel2.setBackground(new java.awt.Color(0, 102, 153));
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("       Instalación");
+        jLabel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.white, java.awt.Color.black));
         jLabel2.setOpaque(true);
         add(jLabel2);
         jLabel2.setBounds(0, 20, 480, 50);
