@@ -26,17 +26,46 @@ public class Router1Panel33 extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        jpTitulo = new javax.swing.JPanel();
+        jlTexto = new javax.swing.JLabel();
+        jlIcono = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jpContenido = new javax.swing.JPanel();
+
+        setLayout(new java.awt.BorderLayout());
+
+        jpTitulo.setBackground(java.awt.Color.lightGray);
+        jpTitulo.setLayout(new java.awt.BorderLayout());
+
+        jlTexto.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jlTexto.setText("Conectar con el Router");
+        jlTexto.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        jpTitulo.add(jlTexto, java.awt.BorderLayout.CENTER);
+
+        jlIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/key_orange32.png"))); // NOI18N
+        jpTitulo.add(jlIcono, java.awt.BorderLayout.EAST);
+        jpTitulo.add(jSeparator1, java.awt.BorderLayout.SOUTH);
+
+        add(jpTitulo, java.awt.BorderLayout.NORTH);
+
+        javax.swing.GroupLayout jpContenidoLayout = new javax.swing.GroupLayout(jpContenido);
+        jpContenido.setLayout(jpContenidoLayout);
+        jpContenidoLayout.setHorizontalGroup(
+            jpContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 501, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        jpContenidoLayout.setVerticalGroup(
+            jpContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 288, Short.MAX_VALUE)
         );
+
+        add(jpContenido, java.awt.BorderLayout.WEST);
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel jlIcono;
+    private javax.swing.JLabel jlTexto;
+    private javax.swing.JPanel jpContenido;
+    private javax.swing.JPanel jpTitulo;
     // End of variables declaration//GEN-END:variables
 }
