@@ -16,6 +16,8 @@ public interface IQueryManager {
 
     String getComment(String id);
     String getSeeAlso(String id);
+    String getManualURL(String id);
+    String getVideoURL(String id);
 
     String initInstallationByModelName(String routerModel);
     String initInstallationByCharacteristics(String searchString);

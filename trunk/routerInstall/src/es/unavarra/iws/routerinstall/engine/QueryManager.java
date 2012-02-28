@@ -105,4 +105,12 @@ public class QueryManager implements IQueryManager {
         logger.info(qm.getAvailableRouters());
     }
 
+    public String getManualURL(String id) {
+        return "URLMANUAL";
+    }
+
+    public String getVideoURL(String id) {
+        return "URLVIDEO";
+    }
+
 }
