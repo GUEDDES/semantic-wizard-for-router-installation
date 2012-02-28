@@ -4,12 +4,14 @@
  */
 package es.unavarra.iws.routerinstall.gui;
 
+import es.unavarra.iws.routerinstall.engine.QueryManager;
+
 /**
  *
  * @author aqm
  */
 public class Principal extends javax.swing.JDialog {
-
+    QueryManager qm = null;
 
     /**
      * Creates new form Principal
@@ -17,6 +19,8 @@ public class Principal extends javax.swing.JDialog {
     public Principal(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        qm = new QueryManager();
+        
         //this.setVisible(true);
         /*try {
             Thread.sleep(500);
@@ -25,13 +29,16 @@ public class Principal extends javax.swing.JDialog {
         }*/
         //this.setVisible(false);
         this.remove(this.jlBackground);
-        Menu menu = new Menu();
+        Menu menu = new Menu(qm);
         menu.setSize(this.getSize());
         this.add(menu);
         //this.setVisible(true);
 
     }
     
+    public QueryManager getQM(){
+        return this.qm;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -114,8 +121,14 @@ public class Principal extends javax.swing.JDialog {
                         System.exit(0);
                     }
                 });
-                dialog.setLocationRelativeTo(null);
-                dialog.setVisible(true);
+                
+                if(dialog.getQM()!=null){
+                    dialog.setLocationRelativeTo(null);
+                    dialog.setVisible(true);
+                }else{
+                    System.err.println("Sin acceso a OWL");
+                    System.exit(0);
+                }
                 
             }
         });

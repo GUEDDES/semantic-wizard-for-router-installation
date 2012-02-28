@@ -16,11 +16,12 @@ import javax.swing.JOptionPane;
  * @author aqm
  */
 public class Instalar extends javax.swing.JPanel {
-
+    QueryManager qm = null;
     /**
      * Creates new form Menu
      */
-    public Instalar() {
+    public Instalar(QueryManager qm) {
+        this.qm = qm;
         initComponents();
         jlError.setVisible(false);
     }
@@ -68,12 +69,12 @@ public class Instalar extends javax.swing.JPanel {
             }
         });
         add(jtBusqueda);
-        jtBusqueda.setBounds(110, 100, 200, 40);
+        jtBusqueda.setBounds(30, 100, 290, 40);
 
         jlError.setForeground(new java.awt.Color(255, 0, 51));
         jlError.setText("No se encuentran resultados...");
         add(jlError);
-        jlError.setBounds(110, 150, 200, 14);
+        jlError.setBounds(30, 150, 200, 14);
         add(jSeparator1);
         jSeparator1.setBounds(30, 190, 430, 10);
 
@@ -140,7 +141,7 @@ public class Instalar extends javax.swing.JPanel {
         // TODO add your handling code here:
         this.setVisible(false);
         Container menu = this.getFocusCycleRootAncestor();
-        Menu principal = new Menu();
+        Menu principal = new Menu(qm);
         menu.remove(this);
         principal.setSize(menu.getSize());
         menu.add(principal, 0);        
@@ -176,34 +177,20 @@ public class Instalar extends javax.swing.JPanel {
     }//GEN-LAST:event_jbRouter1MouseClicked
 
     private void jbBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbBuscarMouseClicked
-        // TODO add your handling code here:
         busquedaRouter(this.jtBusqueda.getText());
-
     }//GEN-LAST:event_jbBuscarMouseClicked
 
     private void jtBusquedaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtBusquedaKeyTyped
-        // TODO add your handling code here:
         if(jlError.isVisible())
             jlError.setVisible(false);
 
     }//GEN-LAST:event_jtBusquedaKeyTyped
 
     private void jtBusquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtBusquedaKeyReleased
-        // TODO add your handling code here:
         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
             busquedaRouter(this.jtBusqueda.getText());
         }
     }//GEN-LAST:event_jtBusquedaKeyReleased
-
-    /*    */
-    
-    public String convertStreamToString(java.io.InputStream is) {
-    try {
-        return new java.util.Scanner(is).useDelimiter("\\A").next();
-    } catch (java.util.NoSuchElementException e) {
-        return "";
-    }
-}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;
@@ -224,7 +211,6 @@ public class Instalar extends javax.swing.JPanel {
         String txtResultado;
         jlError.setVisible(false);
         if(!txtBusqueda.isEmpty()){
-            QueryManager qm = new QueryManager();
             txtResultado = qm.initInstallationByCharacteristics(txtBusqueda);
             if(txtResultado!=null && txtResultado.length()>0)
                 JOptionPane.showMessageDialog(this, txtResultado,"Resultados",JOptionPane.INFORMATION_MESSAGE);

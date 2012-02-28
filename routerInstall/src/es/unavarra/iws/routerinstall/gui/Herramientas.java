@@ -4,6 +4,7 @@
  */
 package es.unavarra.iws.routerinstall.gui;
 
+import es.unavarra.iws.routerinstall.engine.QueryManager;
 import java.awt.Container;
 
 /**
@@ -11,11 +12,12 @@ import java.awt.Container;
  * @author aqm
  */
 public class Herramientas extends javax.swing.JPanel {
-
+    QueryManager qm = null;
     /**
      * Creates new form Menu
      */
-    public Herramientas() {
+    public Herramientas(QueryManager qm) {
+        this.qm = qm;
         initComponents();
     }
 
@@ -116,7 +118,7 @@ public class Herramientas extends javax.swing.JPanel {
         // TODO add your handling code here:
         this.setVisible(false);
         Container menu = this.getFocusCycleRootAncestor();
-        Menu principal = new Menu();
+        Menu principal = new Menu(qm);
         menu.remove(this);
         principal.setSize(menu.getSize());
         menu.add(principal, 0);        
