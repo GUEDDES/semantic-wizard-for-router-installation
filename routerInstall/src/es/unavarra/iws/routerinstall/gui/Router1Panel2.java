@@ -78,29 +78,39 @@ public class Router1Panel2 extends javax.swing.JPanel {
         jpContenido.setLayout(new java.awt.BorderLayout());
 
         jLabel1.setText("Por favor ingrese el tipo de conector");
+        jLabel1.setMaximumSize(new java.awt.Dimension(252, 20));
+        jLabel1.setMinimumSize(new java.awt.Dimension(252, 20));
+        jLabel1.setPreferredSize(new java.awt.Dimension(252, 40));
         jpContenido.add(jLabel1, java.awt.BorderLayout.NORTH);
 
+        jPanel1.setPreferredSize(new java.awt.Dimension(490, 192));
         jPanel1.setLayout(new java.awt.GridLayout(0, 1));
         jPanel1.add(jLabel3);
 
         buttonGroup2.add(jRadioButton3);
-        jRadioButton3.setText("jRadioButton3");
+        jRadioButton3.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jRadioButton3.setText("802.11 b/g");
         jPanel1.add(jRadioButton3);
 
         buttonGroup2.add(jRadioButton4);
-        jRadioButton4.setText("jRadioButton4");
+        jRadioButton4.setText("Ethernet RJ-45");
         jPanel1.add(jRadioButton4);
 
         buttonGroup2.add(jRadioButton2);
-        jRadioButton2.setText("jRadioButton2");
+        jRadioButton2.setText("Ethernet 10 base T");
         jPanel1.add(jRadioButton2);
 
         buttonGroup2.add(jRadioButton1);
-        jRadioButton1.setText("jRadioButton1");
+        jRadioButton1.setText("Serial/Paralelo");
         jPanel1.add(jRadioButton1);
         jPanel1.add(jLabel2);
 
+        jCheckBox1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jCheckBox1.setText("Paso completado con exito");
+        jCheckBox1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jCheckBox1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jCheckBox1.setMaximumSize(new java.awt.Dimension(315, 24));
+        jCheckBox1.setMinimumSize(new java.awt.Dimension(315, 24));
         jPanel1.add(jCheckBox1);
         jPanel1.add(jLabel4);
 
