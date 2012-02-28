@@ -31,6 +31,7 @@ public class Router1Panel33 extends javax.swing.JPanel {
         jlIcono = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jpContenido = new javax.swing.JPanel();
+        jlTituloC = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -48,16 +49,10 @@ public class Router1Panel33 extends javax.swing.JPanel {
 
         add(jpTitulo, java.awt.BorderLayout.NORTH);
 
-        javax.swing.GroupLayout jpContenidoLayout = new javax.swing.GroupLayout(jpContenido);
-        jpContenido.setLayout(jpContenidoLayout);
-        jpContenidoLayout.setHorizontalGroup(
-            jpContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 501, Short.MAX_VALUE)
-        );
-        jpContenidoLayout.setVerticalGroup(
-            jpContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 288, Short.MAX_VALUE)
-        );
+        jpContenido.setLayout(new java.awt.BorderLayout());
+
+        jlTituloC.setText("jLabel1");
+        jpContenido.add(jlTituloC, java.awt.BorderLayout.NORTH);
 
         add(jpContenido, java.awt.BorderLayout.WEST);
     }// </editor-fold>//GEN-END:initComponents
@@ -65,6 +60,7 @@ public class Router1Panel33 extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel jlIcono;
     private javax.swing.JLabel jlTexto;
+    private javax.swing.JLabel jlTituloC;
     private javax.swing.JPanel jpContenido;
     private javax.swing.JPanel jpTitulo;
     // End of variables declaration//GEN-END:variables
