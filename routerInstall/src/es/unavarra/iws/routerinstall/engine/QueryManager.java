@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.apache.log4j.Logger;
 
+
 /**
  *
  * @author Itziar
@@ -93,6 +94,15 @@ public class QueryManager implements IQueryManager {
         currentStep = engine.getFirstStep(router);
         prevSteps = new ArrayList<Individual>();
         return currentStep.getLocalName();
+    }
+
+    public List<String> getAvailableRouters() {
+        return engine.searchAvailableRouters();
+    }
+
+    public static void main(String[] args) {
+        QueryManager qm = new QueryManager();
+        logger.info(qm.getAvailableRouters());
     }
 
 }

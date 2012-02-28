@@ -1,5 +1,7 @@
 package es.unavarra.iws.routerinstall.engine;
 
+import java.util.List;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -21,6 +23,8 @@ public interface IQueryManager {
     String getNextStepOK();
     String getNextStepError();
     String getPrevStep();
+
+    List<String> getAvailableRouters();
 
 
 }

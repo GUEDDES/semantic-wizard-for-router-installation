@@ -238,6 +238,29 @@ public class Engine {
         return new QueryResult(list, searchString.length());
     }
 
+
+     public List<String> searchAvailableRouters() {
+         String queryString = "PREFIX foaf:<" + defaultNameSpace + ">"
+                + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
+                + "PREFIX  afn:<http://jena.hpl.hp.com/ARQ/function#>"
+                + " SELECT ?routerName "
+                + " WHERE {"
+                + "   ?routerName rdf:instanceOf <" +vocabulary.router.getURI() + ">  "
+                + "}";
+
+                logger.info(vocabulary.router.getURI());
+
+                List<String> resources = querySPARQL(queryString, "?routerName");
+                List<String> routerNames = new ArrayList<String>();
+                Iterator<String> it = resources.iterator();
+                while (it.hasNext()) {
+                    String rURI = it.next();
+                    routerNames.add(model.getResource(rURI).getLocalName());
+
+                }
+                return routerNames;
+     }
+     
     public String getResourceWithMaxPriority(List<QueryResult> queryResults) {
         double maxP = 0;
         int maxLength = 0;
