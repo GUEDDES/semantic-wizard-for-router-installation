@@ -4,9 +4,12 @@
  */
 package es.unavarra.iws.routerinstall.gui;
 
+import es.unavarra.iws.routerinstall.engine.QueryManager;
 import es.unavarra.iws.routerinstall.gui.wiz.Wizard;
 import es.unavarra.iws.routerinstall.gui.wiz.WizardPanelDescriptor;
 import java.awt.Container;
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,6 +22,7 @@ public class Instalar extends javax.swing.JPanel {
      */
     public Instalar() {
         initComponents();
+        jlError.setVisible(false);
     }
 
     /**
@@ -31,13 +35,17 @@ public class Instalar extends javax.swing.JPanel {
     private void initComponents() {
 
         jbInicio = new javax.swing.JButton();
+        jtBusqueda = new javax.swing.JTextField();
+        jlError = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jbBuscar = new javax.swing.JButton();
         jbRouter4 = new javax.swing.JButton();
         jbRouter3 = new javax.swing.JButton();
         jbRouter2 = new javax.swing.JButton();
         jbRouter1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jlBacground = new javax.swing.JLabel();
 
         setLayout(null);
 
@@ -50,10 +58,39 @@ public class Instalar extends javax.swing.JPanel {
         add(jbInicio);
         jbInicio.setBounds(420, 20, 50, 50);
 
+        jtBusqueda.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jtBusqueda.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jtBusquedaKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtBusquedaKeyTyped(evt);
+            }
+        });
+        add(jtBusqueda);
+        jtBusqueda.setBounds(110, 100, 200, 40);
+
+        jlError.setForeground(new java.awt.Color(255, 0, 51));
+        jlError.setText("No se encuentran resultados...");
+        add(jlError);
+        jlError.setBounds(110, 150, 200, 14);
+        add(jSeparator1);
+        jSeparator1.setBounds(30, 190, 430, 10);
+
+        jbBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/search32.png"))); // NOI18N
+        jbBuscar.setText("Buscar");
+        jbBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbBuscarMouseClicked(evt);
+            }
+        });
+        add(jbBuscar);
+        jbBuscar.setBounds(350, 100, 110, 40);
+
         jbRouter4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/comtrend5365_60.png"))); // NOI18N
         jbRouter4.setText("      Router 4");
         add(jbRouter4);
-        jbRouter4.setBounds(140, 470, 200, 80);
+        jbRouter4.setBounds(120, 530, 200, 80);
 
         jbRouter3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/comtrend5365_60.png"))); // NOI18N
         jbRouter3.setText("      Router 3");
@@ -63,12 +100,12 @@ public class Instalar extends javax.swing.JPanel {
             }
         });
         add(jbRouter3);
-        jbRouter3.setBounds(140, 360, 200, 80);
+        jbRouter3.setBounds(120, 430, 200, 80);
 
         jbRouter2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/comtrend5365_60.png"))); // NOI18N
         jbRouter2.setText("      Router 2");
         add(jbRouter2);
-        jbRouter2.setBounds(140, 240, 200, 80);
+        jbRouter2.setBounds(120, 330, 200, 80);
 
         jbRouter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/comtrend5365_60.png"))); // NOI18N
         jbRouter1.setText("      Router 1");
@@ -78,7 +115,7 @@ public class Instalar extends javax.swing.JPanel {
             }
         });
         add(jbRouter1);
-        jbRouter1.setBounds(140, 130, 200, 80);
+        jbRouter1.setBounds(120, 230, 200, 80);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr32.png"))); // NOI18N
         add(jLabel3);
@@ -94,9 +131,9 @@ public class Instalar extends javax.swing.JPanel {
         add(jLabel2);
         jLabel2.setBounds(0, 20, 480, 50);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr2.png"))); // NOI18N
-        add(jLabel1);
-        jLabel1.setBounds(0, 0, 480, 660);
+        jlBacground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr2.png"))); // NOI18N
+        add(jlBacground);
+        jlBacground.setBounds(0, 0, 480, 660);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbInicioMouseClicked
@@ -110,12 +147,12 @@ public class Instalar extends javax.swing.JPanel {
     }//GEN-LAST:event_jbInicioMouseClicked
 
     private void jbRouter3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRouter3ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jbRouter3ActionPerformed
 
     private void jbRouter1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbRouter1MouseClicked
-        // TODO add your handling code here:
-        
+        QueryManager busquedas = new QueryManager();
+
         Wizard wizard = new Wizard();
         wizard.getDialog().setTitle("Instalación router 1");
         
@@ -138,6 +175,26 @@ public class Instalar extends javax.swing.JPanel {
         
     }//GEN-LAST:event_jbRouter1MouseClicked
 
+    private void jbBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbBuscarMouseClicked
+        // TODO add your handling code here:
+        busquedaRouter(this.jtBusqueda.getText());
+
+    }//GEN-LAST:event_jbBuscarMouseClicked
+
+    private void jtBusquedaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtBusquedaKeyTyped
+        // TODO add your handling code here:
+        if(jlError.isVisible())
+            jlError.setVisible(false);
+
+    }//GEN-LAST:event_jtBusquedaKeyTyped
+
+    private void jtBusquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtBusquedaKeyReleased
+        // TODO add your handling code here:
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+            busquedaRouter(this.jtBusqueda.getText());
+        }
+    }//GEN-LAST:event_jtBusquedaKeyReleased
+
     /*    */
     
     public String convertStreamToString(java.io.InputStream is) {
@@ -149,15 +206,33 @@ public class Instalar extends javax.swing.JPanel {
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JButton jbBuscar;
     private javax.swing.JButton jbInicio;
     private javax.swing.JButton jbRouter1;
     private javax.swing.JButton jbRouter2;
     private javax.swing.JButton jbRouter3;
     private javax.swing.JButton jbRouter4;
+    private javax.swing.JLabel jlBacground;
+    private javax.swing.JLabel jlError;
+    private javax.swing.JTextField jtBusqueda;
     // End of variables declaration//GEN-END:variables
+
+    private void busquedaRouter(String txtBusqueda) {
+        String txtResultado;
+        jlError.setVisible(false);
+        if(!txtBusqueda.isEmpty()){
+            QueryManager qm = new QueryManager();
+            txtResultado = qm.initInstallationByCharacteristics(txtBusqueda);
+            if(txtResultado!=null && txtResultado.length()>0)
+                JOptionPane.showMessageDialog(this, txtResultado,"Resultados",JOptionPane.INFORMATION_MESSAGE);
+            else
+                jlError.setVisible(true);
+                
+        }
+    }
 }
 
 
