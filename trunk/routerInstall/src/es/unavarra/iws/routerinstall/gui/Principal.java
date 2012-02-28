@@ -4,8 +4,7 @@
  */
 package es.unavarra.iws.routerinstall.gui;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import es.unavarra.iws.routerinstall.engine.Engine;
 
 /**
  *
@@ -13,6 +12,7 @@ import java.util.logging.Logger;
  */
 public class Principal extends javax.swing.JDialog {
 
+    private static Engine engine = null;
     /**
      * Creates new form Principal
      */
@@ -31,6 +31,12 @@ public class Principal extends javax.swing.JDialog {
         menu.setSize(this.getSize());
         this.add(menu);
         //this.setVisible(true);
+        engine = new Engine();
+        engine.init();
+    }
+    
+    public static Engine getEngine(){
+        return Principal.engine;
     }
 
     /**
@@ -45,6 +51,8 @@ public class Principal extends javax.swing.JDialog {
         jlBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("");
+        setModalityType(java.awt.Dialog.ModalityType.DOCUMENT_MODAL);
         setResizable(false);
 
         jlBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr1.png"))); // NOI18N
@@ -114,6 +122,7 @@ public class Principal extends javax.swing.JDialog {
                 });
                 dialog.setLocationRelativeTo(null);
                 dialog.setVisible(true);
+                
             }
         });
     }
