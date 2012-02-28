@@ -205,12 +205,15 @@ public class Engine {
             queryResults.add(res);
         }else {
             //Repetir la búsqueda haciendo un split de la cadena de entrada
+            //<aqm des="solo si la cadena tiene " ", sino se repetira la busqueda"/>
             String[] splittedString = searchString.split(" ");
-            for (int i = 0; i < splittedString.length; i++) {
-                String s = splittedString[i];
-                res = searchByLabel(s);
-                 if (!res.getResults().isEmpty()) {
-                    queryResults.add(res);
+            if(splittedString.length>1){
+                for (int i = 0; i < splittedString.length; i++) {
+                    String s = splittedString[i];
+                    res = searchByLabel(s);
+                    if (!res.getResults().isEmpty()) {
+                        queryResults.add(res);
+                    }
                 }
             }
         }
@@ -305,7 +308,9 @@ public class Engine {
     }
 
     Individual getFirstStep(Individual router) {
-        throw new UnsupportedOperationException("Not yet implemented");
+        //throw new UnsupportedOperationException("Not yet implemented");
+        //<aqm des="solo para pruebas"/>
+        return router;
     }
 
     Vocabulary getVocabulary() {

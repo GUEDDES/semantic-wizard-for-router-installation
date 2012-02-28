@@ -4,15 +4,13 @@
  */
 package es.unavarra.iws.routerinstall.gui;
 
-import es.unavarra.iws.routerinstall.engine.Engine;
-
 /**
  *
  * @author aqm
  */
 public class Principal extends javax.swing.JDialog {
 
-    private static Engine engine = null;
+
     /**
      * Creates new form Principal
      */
@@ -31,13 +29,9 @@ public class Principal extends javax.swing.JDialog {
         menu.setSize(this.getSize());
         this.add(menu);
         //this.setVisible(true);
-        engine = new Engine();
-        engine.init();
+
     }
     
-    public static Engine getEngine(){
-        return Principal.engine;
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.

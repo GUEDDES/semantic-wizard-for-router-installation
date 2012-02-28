@@ -91,9 +91,15 @@ public class QueryManager implements IQueryManager {
 
     public String initInstallationByCharacteristics(String searchString) {
         router = engine.searchCharacteristics(searchString);
-        currentStep = engine.getFirstStep(router);
-        prevSteps = new ArrayList<Individual>();
-        return currentStep.getLocalName();
+        //
+        //<aqm des="si falla?, por el momento que retorne null"/>
+        if(router!=null){
+            currentStep = engine.getFirstStep(router);
+            prevSteps = new ArrayList<Individual>();
+            return currentStep.getLocalName();
+        }
+        else
+            return null;
     }
 
     public List<String> getAvailableRouters() {
