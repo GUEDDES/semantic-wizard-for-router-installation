@@ -42,7 +42,7 @@ public class Busqueda extends javax.swing.JPanel {
             }
         });
         add(jButton1);
-        jButton1.setBounds(20, 580, 50, 50);
+        jButton1.setBounds(10, 40, 50, 50);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/question32.png"))); // NOI18N
         add(jLabel3);
