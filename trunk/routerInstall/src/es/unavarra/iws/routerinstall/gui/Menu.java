@@ -32,13 +32,14 @@ public class Menu extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jlBackground = new javax.swing.JLabel();
 
         setLayout(null);
 
@@ -52,19 +53,28 @@ public class Menu extends javax.swing.JPanel {
         jLabel7.setForeground(new java.awt.Color(254, 254, 254));
         jLabel7.setText("Ayuda");
         add(jLabel7);
-        jLabel7.setBounds(70, 500, 110, 30);
+        jLabel7.setBounds(80, 520, 110, 30);
 
         jLabel6.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(254, 254, 254));
         jLabel6.setText("Acerca de");
         add(jLabel6);
-        jLabel6.setBounds(293, 500, 117, 30);
+        jLabel6.setBounds(300, 520, 117, 30);
 
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(254, 254, 254));
         jLabel5.setText("Instalación");
         add(jLabel5);
         jLabel5.setBounds(70, 290, 140, 30);
+
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/exit32.png"))); // NOI18N
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+        add(jButton5);
+        jButton5.setBounds(420, 20, 50, 50);
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/help.png"))); // NOI18N
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -73,7 +83,7 @@ public class Menu extends javax.swing.JPanel {
             }
         });
         add(jButton4);
-        jButton4.setBounds(70, 410, 110, 80);
+        jButton4.setBounds(70, 430, 110, 80);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/question.png"))); // NOI18N
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -105,23 +115,23 @@ public class Menu extends javax.swing.JPanel {
             }
         });
         add(jButton3);
-        jButton3.setBounds(290, 410, 110, 80);
+        jButton3.setBounds(300, 430, 110, 80);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/home32.png"))); // NOI18N
         add(jLabel3);
-        jLabel3.setBounds(420, 50, 30, 30);
+        jLabel3.setBounds(10, 30, 30, 30);
 
         jLabel2.setBackground(new java.awt.Color(215, 227, 246));
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Menú principal");
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel2.setText("       Semantic Router");
         jLabel2.setOpaque(true);
         add(jLabel2);
-        jLabel2.setBounds(0, 40, 480, 50);
+        jLabel2.setBounds(0, 20, 480, 50);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr2.png"))); // NOI18N
-        add(jLabel1);
-        jLabel1.setBounds(0, 0, 480, 640);
+        jlBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr2.png"))); // NOI18N
+        add(jlBackground);
+        jlBackground.setBounds(0, 0, 480, 640);
     }// </editor-fold>//GEN-END:initComponents
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -167,17 +177,23 @@ public class Menu extends javax.swing.JPanel {
         menu.add(ayuda, 0);        
     }//GEN-LAST:event_jButton4MouseClicked
 
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jButton5MouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jlBackground;
     // End of variables declaration//GEN-END:variables
 }

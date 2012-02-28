@@ -48,7 +48,7 @@ public class Instalar extends javax.swing.JPanel {
             }
         });
         add(jbInicio);
-        jbInicio.setBounds(10, 40, 50, 50);
+        jbInicio.setBounds(420, 20, 50, 50);
 
         jbRouter4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/comtrend5365_60.png"))); // NOI18N
         jbRouter4.setText("      Router 4");
@@ -82,15 +82,15 @@ public class Instalar extends javax.swing.JPanel {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr32.png"))); // NOI18N
         add(jLabel3);
-        jLabel3.setBounds(420, 50, 30, 30);
+        jLabel3.setBounds(10, 30, 30, 30);
 
         jLabel2.setBackground(new java.awt.Color(215, 227, 246));
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Instalación");
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel2.setText("       Instalación");
         jLabel2.setOpaque(true);
         add(jLabel2);
-        jLabel2.setBounds(0, 40, 480, 50);
+        jLabel2.setBounds(0, 20, 480, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr2.png"))); // NOI18N
         add(jLabel1);
