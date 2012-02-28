@@ -55,6 +55,7 @@ public class StringUtils {
     public static String prepareSearchString(String searchString) {
         searchString = searchString.trim();
         searchString = searchString.toLowerCase();
+        searchString = searchString.replace("-","").replace("_", "").replace("/", "");
         searchString = searchString.replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("ú", "u");
         searchString = searchString.replaceAll("( )+", " ");
 

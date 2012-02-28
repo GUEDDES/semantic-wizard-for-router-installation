@@ -18,8 +18,7 @@ import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.ontology.OntModelSpec;
-import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.rdf.model.StmtIterator;
+import es.unavarra.iws.routerinstall.engine.utils.QueryResult;
 
 
 import java.io.InputStream;
@@ -40,7 +39,6 @@ public class Engine {
     private static final String defaultNameSpace = "http://www.owl-ontologies.com/Ontology1325175471.owl#";
     private OntModel model;
     private Vocabulary vocabulary;
-    private Individual myRouter;
 
     public Engine() {
     }
@@ -54,36 +52,30 @@ public class Engine {
         model.read(in, "");
         vocabulary = new Vocabulary(model);
 
-        myRouter = createRouter("routerA");
-
         logger.info("Engine init");
-
     }
 
-    public Individual createRouter(String id) {
+    public Individual getNextStep(Individual router, Individual currentStep, boolean prevStepOK) {
+        if (prevStepOK) {
+            if (currentStep.hasProperty(vocabulary.siguientePasoOK)) {
+                return (Individual) currentStep.getPropertyResourceValue(vocabulary.siguientePasoOK);
+            } else {
+                return null;
+            }
+        } else {
+                return (Individual)currentStep.getPropertyResourceValue(vocabulary.siguientePasoError);
+            }
+    }
+
+    private Individual createRouter(String id) {
         Individual router = model.createIndividual(Vocabulary.getURI() + id, vocabulary.router);
         router.addProperty(vocabulary.instanceOf, vocabulary.router);
         router.addProperty(vocabulary.hasPort, vocabulary.puertoCorriente);
         router.addProperty(vocabulary.hasComponent, vocabulary.botonEncendido);
         router.addProperty(vocabulary.hasComponent, vocabulary.botonReset);
         router.addProperty(vocabulary.hasComponent, vocabulary.ledEncendido);
-        router.addProperty(vocabulary.pasoActual, vocabulary.PASO_ENCENDIDO);
-
         return router;
 
-    }
-
-    public void test() {
-        //  Individual r = createRouter("prueba");
-        //  r.addProperty(vocabulary.hasComponent, vocabulary.antena);
-        //  r.addProperty(vocabulary.isOfModel, vocabulary.TG585v7);
-        //  checkTipo(r);
-        //  String result = executeQueryBasicConcepts("enrutador wifi");
-        //  System.out.println(result);
-        //searchCharacteristics("wifi");
-         String pasoActual = getCurrentStep();
-         logger.info(pasoActual);
- 
     }
 
     public synchronized List<String> querySPARQL(String queryString, String param) {
@@ -125,69 +117,39 @@ public class Engine {
 
         return list;
     }
+   
 
-    public Resource getTipo(Individual router) {
-        Resource tipo = null;
-        if (router.hasProperty(vocabulary.hasComponent, vocabulary.antena)) {
-            tipo = vocabulary.INALAMBRICO;
-        } else if (router.hasProperty(vocabulary.hasComponent, vocabulary.puertoUSB)) {
-            tipo = vocabulary.USB;
-        } else {
-            tipo = vocabulary.MONOPUERTO;
-            router.addProperty(vocabulary.isOfTipo, vocabulary.MONOPUERTO);
-        }
-        router.addProperty(vocabulary.isOfTipo, tipo);
-        return tipo;
-    }
+    public Individual searchCharacteristics(String searchString) {
+        List<QueryResult> queryResults = fullSearchByLabel(searchString);
 
-    private void checkTipo(Individual router) {
-        Resource modeloRouter = router.getPropertyResourceValue(vocabulary.isOfModel);
+        Individual router = null;
 
-        if (router.hasProperty(vocabulary.hasComponent, vocabulary.antena)
-                || modeloRouter.equals(vocabulary.TG585v7)
-                || modeloRouter.equals(vocabulary.fast2604)
-                || modeloRouter.equals(vocabulary.x7028r)
-                || modeloRouter.equals(vocabulary.HG556)) {
-            router.addProperty(vocabulary.isOfTipo, vocabulary.INALAMBRICO);
-        } else if (modeloRouter.equals(vocabulary.CT_5071)) {
-            router.addProperty(vocabulary.isOfTipo, vocabulary.MONOPUERTO);
-        } else if (modeloRouter.equals(vocabulary.CT_351)||
-                router.hasProperty(vocabulary.hasComponent, vocabulary.puertoUSB)) {
-            router.addProperty(vocabulary.isOfTipo, vocabulary.USB);
-        }
-    }
+        Iterator<QueryResult> it = queryResults.iterator();
+        while (it.hasNext()) {
+            QueryResult queryResult = it.next();
 
-    public String executeQueryBasicConcepts(String searchString) {
-        List<List<String>> queryResults = fullSearchByLabel(searchString);
-        String basePage = null;
-
-        if (!queryResults.isEmpty()) {
-            //Buscar la página asociada con el recurso encontrado de mayor prioridad
-            basePage = getBasePageWithMaxPriority(queryResults);
-        }
-        return basePage;
-    }
-
-    public void searchCharacteristics(String searchString) {
-        List<List<String>> queryResults = fullSearchByLabel(searchString);
-
-        if (!queryResults.isEmpty()) {
             //Buscar que los recursos sean características
-            Iterator<List<String>> it = queryResults.iterator();
-            while (it.hasNext()) {
-                List<String> list1 = it.next();
+            Iterator<List<String>> it2 = queryResult.getResults().iterator();
+            while (it2.hasNext()) {
+                List<String> list1 = it2.next();
                 String resourceName = list1.get(0);
                
                 //Comprobar instancias
                 OntClass ontClass = getClassOfIndividual(resourceName);
                 if (ontClass != null) {
-                    if (ontClass.equals(vocabulary.tipoRouter)) {
-                        myRouter.addProperty(vocabulary.isOfTipo, model.getIndividual(resourceName));
-                    } else if (ontClass.equals(vocabulary.modeloRouter)) {
-                        myRouter.addProperty(vocabulary.isOfModel, model.getIndividual(resourceName));
-                        checkTipo(myRouter);
+                    if (ontClass.equals(vocabulary.router)) {
+                        router = model.getIndividual(resourceName);
+                    }
+                    else if(ontClass.equals(vocabulary.tipoRouter)) {
+                        if (router == null) {
+                            router = createRouter("newRouter");
+                        }
+                        router.addProperty(vocabulary.isOfTipo, model.getIndividual(resourceName));
                     } else if (ontClass.equals(vocabulary.proveedor)) {
-                        myRouter.addProperty(vocabulary.isOfProveedor, model.getIndividual(resourceName));
+                         if (router == null) {
+                            router = createRouter("newRouter");
+                        }
+                        router.addProperty(vocabulary.isOfProveedor, model.getIndividual(resourceName));
                     }
                 }
                 else {
@@ -195,15 +157,18 @@ public class Engine {
                     ontClass = getClass(resourceName);
                     if (ontClass != null) {
                         OntClass parent = ontClass.getSuperClass();
-                        if (parent.equals(vocabulary.componente) || parent.getSuperClass().equals(vocabulary.componente)) {
-                            myRouter.addProperty(vocabulary.hasComponent, ontClass);
-                       } else if (parent.equals(vocabulary.puerto)) {
-                             myRouter.addProperty(vocabulary.hasPort, ontClass);
+                        
+                        if (vocabulary.componente.equals(parent) || vocabulary.componente.equals(parent.getSuperClass())) {
+                            router.addProperty(vocabulary.hasComponent, ontClass);
+                       } else if (vocabulary.puerto.equals(parent) || vocabulary.puerto.equals(parent.getSuperClass())) {
+                             router.addProperty(vocabulary.hasPort, ontClass);
                         }
                     }
                 }
             }
         }
+
+        return router;
     }
 
     private OntClass getClassOfIndividual(String individualName) {
@@ -228,88 +193,81 @@ public class Engine {
 
     }
 
-    private List<List<String>> fullSearchByLabel(String searchString) {
+    public List<QueryResult> fullSearchByLabel(String searchString) {
         //Buscar por label en toda la cadena de entrada
-        List<List<String>> queryResults = searchByLabel(searchString);
+        List<QueryResult> queryResults = new ArrayList<QueryResult>();
 
         searchString = StringUtils.prepareSearchString(searchString);
-        if (queryResults.isEmpty()) {
+        QueryResult res = searchByLabel(searchString);
+        logger.info(res.getResults().size());
+        logger.info(res.getResults());
+        if (!res.getResults().isEmpty()) {
+            queryResults.add(res);
+        }else {
             //Repetir la búsqueda haciendo un split de la cadena de entrada
             String[] splittedString = searchString.split(" ");
             for (int i = 0; i < splittedString.length; i++) {
                 String s = splittedString[i];
-                queryResults.addAll(searchByLabel(s));
+                res = searchByLabel(s);
+                 if (!res.getResults().isEmpty()) {
+                    queryResults.add(res);
+                }
             }
         }
         return queryResults;
     }
 
-    private static String getBasePageWithMaxPriority(List<List<String>> queryResults) {
-        double maxP = 0;
-        String chosenBasePage = null;
-        Iterator<List<String>> it = queryResults.iterator();
-        while (it.hasNext()) {
-            List<String> list1 = it.next();
-            int priority = Integer.parseInt(list1.get(1));
-            if (priority > maxP) {
-                maxP = priority;
-                chosenBasePage = list1.get(2);
-            }
-        }
-
-        return chosenBasePage;
-    }
-
-    private List<List<String>> searchByLabel(String searchString) {
+     private QueryResult searchByLabel(String searchString) {
         String queryString = "PREFIX foaf:<" + defaultNameSpace + ">"
                 + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
                 + "PREFIX owl:    <http://www.w3.org/2002/07/owl#>"
                 + "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"
                 + "PREFIX fn: <http://www.w3.org/2005/xpath-functions#>"
-                + " SELECT ?resource ?priority ?basePage"
+                + " SELECT ?resource ?priority"
                 + " WHERE {"
                 + "   ?resource rdfs:label ?label ."
-                + "   ?resource foaf:hasPriority ?priority ."
-                + "   ?resource foaf:hasBasePage ?basePage ."
-                + "FILTER (regex(fn:lower-case(?label), \"" + searchString + "\")) "
+                + "   ?resource foaf:hasPriority ?priority "
+               + "FILTER (regex(fn:lower-case(?label), \"" + searchString + "\")) "
                 + "}";
 
         List<String> params = new ArrayList<String>();
         params.add("?resource");
         params.add("?priority");
-        params.add("?basePage");
 
         List<List<String>> list = querySPARQL(queryString, params);
-        return list;
+        return new QueryResult(list, searchString.length());
     }
-    
-        private String getCurrentStep() {
-        String queryString = "PREFIX foaf:<" + defaultNameSpace + ">"
-                + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
-                + "PREFIX owl:    <http://www.w3.org/2002/07/owl#>"
-                + "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"
-                + "PREFIX fn: <http://www.w3.org/2005/xpath-functions#>"
-                + " SELECT ?pasoActual  "
-                + " WHERE {"
-                + "   ?resource rdf:instanceOf foaf:Router ."
-                + "   ?resource foaf:pasoActual ?pasoActual ."
-                 + "}";
 
-        List<String> params = new ArrayList<String>();
-        params.add("?resource");
-        params.add("?priority");
-        params.add("?basePage");
+    public String getResourceWithMaxPriority(List<QueryResult> queryResults) {
+        double maxP = 0;
+        int maxLength = 0;
+        String chosenResource = null;
+        Iterator<QueryResult> itQ = queryResults.iterator();
+        while (itQ.hasNext()) {
+           QueryResult qRes = itQ.next();
+           Iterator<List<String>> it = qRes.getResults().iterator();
+            while (it.hasNext()) {
+            List<String> list1 = it.next();
+            int priority = Integer.parseInt(list1.get(1));
+            if (priority > maxP) {
+                maxP = priority;
+                 maxLength = qRes.getMatchLength();
+                chosenResource = list1.get(0);
+            } else if (priority == maxP) {
+                if (qRes.getMatchLength() > maxLength) {
+                    maxLength = qRes.getMatchLength();
+                    chosenResource = list1.get(0);
+                }
+            }
 
-        List<String> list = querySPARQL(queryString, "?pasoActual");
-        if (list.size() > 0) {
-            return list.get(0);
-        } else {
-            return null;
         }
+        
+        }
+
+        chosenResource = model.getResource(chosenResource).getLocalName();
+        return chosenResource;
     }
-
-
-
+  
 
     public synchronized void saveOntology(String file, String type) {
         try {
@@ -323,9 +281,11 @@ public class Engine {
         return model;
     }
 
-    public static void main(String[] args) {
-        Engine e = new Engine();
-        e.init();
-        e.test();
+    Individual getFirstStep(Individual router) {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    Vocabulary getVocabulary() {
+        return this.vocabulary;
     }
 }
