@@ -42,19 +42,19 @@ public class Ayuda extends javax.swing.JPanel {
             }
         });
         add(jButton1);
-        jButton1.setBounds(10, 40, 50, 50);
+        jButton1.setBounds(420, 20, 50, 50);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/help32.png"))); // NOI18N
         add(jLabel3);
-        jLabel3.setBounds(420, 50, 30, 30);
+        jLabel3.setBounds(10, 30, 30, 30);
 
         jLabel2.setBackground(new java.awt.Color(215, 227, 246));
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Ayuda");
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel2.setText("       Ayuda");
         jLabel2.setOpaque(true);
         add(jLabel2);
-        jLabel2.setBounds(0, 40, 480, 50);
+        jLabel2.setBounds(0, 20, 480, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr2.png"))); // NOI18N
         add(jLabel1);

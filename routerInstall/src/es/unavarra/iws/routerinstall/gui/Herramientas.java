@@ -49,7 +49,7 @@ public class Herramientas extends javax.swing.JPanel {
             }
         });
         add(jButton1);
-        jButton1.setBounds(10, 40, 50, 50);
+        jButton1.setBounds(420, 20, 50, 50);
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 239, 0));
@@ -71,7 +71,7 @@ public class Herramientas extends javax.swing.JPanel {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/addressbook32.png"))); // NOI18N
         add(jLabel3);
-        jLabel3.setBounds(420, 50, 30, 30);
+        jLabel3.setBounds(10, 30, 30, 30);
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 239, 0));
@@ -87,11 +87,11 @@ public class Herramientas extends javax.swing.JPanel {
 
         jLabel2.setBackground(new java.awt.Color(215, 227, 246));
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Acerca de");
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel2.setText("       Acerca de");
         jLabel2.setOpaque(true);
         add(jLabel2);
-        jLabel2.setBounds(0, 40, 480, 50);
+        jLabel2.setBounds(0, 20, 480, 50);
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         jLabel8.setForeground(java.awt.Color.white);
