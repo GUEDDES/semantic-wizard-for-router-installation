@@ -49,7 +49,7 @@ public class Herramientas extends javax.swing.JPanel {
             }
         });
         add(jButton1);
-        jButton1.setBounds(20, 580, 50, 50);
+        jButton1.setBounds(10, 40, 50, 50);
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 239, 0));

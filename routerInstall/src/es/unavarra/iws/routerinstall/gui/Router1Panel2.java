@@ -71,7 +71,7 @@ public class Router1Panel2 extends javax.swing.JPanel {
         jlIcono.setBackground(java.awt.Color.lightGray);
         jlIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/setting32.png"))); // NOI18N
         jlIcono.setOpaque(true);
-        jpTitulo.add(jlIcono, java.awt.BorderLayout.EAST);
+        jpTitulo.add(jlIcono, java.awt.BorderLayout.LINE_END);
 
         add(jpTitulo, java.awt.BorderLayout.NORTH);
 
@@ -83,7 +83,7 @@ public class Router1Panel2 extends javax.swing.JPanel {
         jLabel1.setPreferredSize(new java.awt.Dimension(252, 40));
         jpContenido.add(jLabel1, java.awt.BorderLayout.NORTH);
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(490, 192));
+        jPanel1.setPreferredSize(new java.awt.Dimension(480, 192));
         jPanel1.setLayout(new java.awt.GridLayout(0, 1));
         jPanel1.add(jLabel3);
 

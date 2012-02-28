@@ -48,7 +48,7 @@ public class Instalar extends javax.swing.JPanel {
             }
         });
         add(jbInicio);
-        jbInicio.setBounds(20, 580, 50, 50);
+        jbInicio.setBounds(10, 40, 50, 50);
 
         jbRouter4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/comtrend5365_60.png"))); // NOI18N
         jbRouter4.setText("      Router 4");
