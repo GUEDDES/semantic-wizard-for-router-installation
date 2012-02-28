@@ -4,12 +4,8 @@
  */
 package es.unavarra.iws.routerinstall.gui;
 
-import com.hp.hpl.jena.ontology.OntModel;
-import com.hp.hpl.jena.ontology.OntModelSpec;
-import com.hp.hpl.jena.query.*;
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.util.FileManager;
+import es.unavarra.iws.routerinstall.gui.wiz.Wizard;
+import es.unavarra.iws.routerinstall.gui.wiz.WizardPanelDescriptor;
 import java.awt.Container;
 
 /**
@@ -34,41 +30,55 @@ public class Instalar extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton2 = new javax.swing.JButton();
+        jbInicio = new javax.swing.JButton();
+        jbRouter4 = new javax.swing.JButton();
+        jbRouter3 = new javax.swing.JButton();
+        jbRouter2 = new javax.swing.JButton();
+        jbRouter1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(null);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/home32.png"))); // NOI18N
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jbInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/home32.png"))); // NOI18N
+        jbInicio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                jbInicioMouseClicked(evt);
             }
         });
-        add(jButton1);
-        jButton1.setBounds(20, 580, 50, 50);
+        add(jbInicio);
+        jbInicio.setBounds(20, 580, 50, 50);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jbRouter4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/comtrend5365_60.png"))); // NOI18N
+        jbRouter4.setText("      Router 4");
+        add(jbRouter4);
+        jbRouter4.setBounds(140, 470, 200, 80);
 
-        add(jScrollPane1);
-        jScrollPane1.setBounds(20, 120, 430, 330);
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/search32.png"))); // NOI18N
-        jButton2.setText("owl");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+        jbRouter3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/comtrend5365_60.png"))); // NOI18N
+        jbRouter3.setText("      Router 3");
+        jbRouter3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbRouter3ActionPerformed(evt);
             }
         });
-        add(jButton2);
-        jButton2.setBounds(370, 470, 80, 50);
+        add(jbRouter3);
+        jbRouter3.setBounds(140, 360, 200, 80);
+
+        jbRouter2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/comtrend5365_60.png"))); // NOI18N
+        jbRouter2.setText("      Router 2");
+        add(jbRouter2);
+        jbRouter2.setBounds(140, 240, 200, 80);
+
+        jbRouter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/comtrend5365_60.png"))); // NOI18N
+        jbRouter1.setText("      Router 1");
+        jbRouter1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbRouter1MouseClicked(evt);
+            }
+        });
+        add(jbRouter1);
+        jbRouter1.setBounds(140, 130, 200, 80);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr32.png"))); // NOI18N
         add(jLabel3);
@@ -87,7 +97,7 @@ public class Instalar extends javax.swing.JPanel {
         jLabel1.setBounds(0, 0, 480, 660);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void jbInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbInicioMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
         Container menu = this.getFocusCycleRootAncestor();
@@ -95,47 +105,39 @@ public class Instalar extends javax.swing.JPanel {
         menu.remove(this);
         principal.setSize(menu.getSize());
         menu.add(principal, 0);        
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_jbInicioMouseClicked
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        // TODO add your handling code here: /media/datos/muti/iws/iws3/SemanticWizardRouter/src/es/unavarra/muti/iws/owl/RouterInstall.owl
-        String defaultNameSpace = "http://www.owl-ontologies.com/Ontology1325175471.owl#";
-        Model ontology = FileManager.get().loadModel("file:/media/datos/muti/iws/iws3/SemanticWizardRouter/src/es/unavarra/muti/iws/owl/RouterInstall.owl"); 
-        OntModel ontModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM, ontology);
-        String resultado="";
-        String queryString = "PREFIX foaf:<" + defaultNameSpace + ">"
-                + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
-                + "PREFIX owl:    <http://www.w3.org/2002/07/owl#>"
-                + "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"
-                + "PREFIX fn: <http://www.w3.org/2005/xpath-functions#>"
-                + " SELECT ?pasoActual  "
-                + " WHERE {"
-                + "   ?resource rdf:instanceOf foaf:Router ."
-                + "   ?resource foaf:pasoActual ?pasoActual ."
-                 + "}";
+    private void jbRouter3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRouter3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbRouter3ActionPerformed
 
-        Query query = QueryFactory.create(queryString);
-        QueryExecution qe = QueryExecutionFactory.create(query, ontModel);
-        ResultSet results = qe.execSelect();
-        ResultSetFormatter.out(System.out, results, query);
-        qe.close();
-        this.jTextArea1.setText(results.toString());  
+    private void jbRouter1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbRouter1MouseClicked
+        // TODO add your handling code here:
         
-        try {
-            ResultSet results2 = qe.execSelect() ;
-            for ( ; results2.hasNext() ; )
-            {
-            QuerySolution soln = results.nextSolution() ;
-            /*RDFNode x = soln.get("varName") ;       // Get a result variable by name.
-            Resource r = soln.getResource("VarR") ; // Get a result variable - must be a resource
-            Literal l = soln.getLiteral("VarL") ;   // Get a result variable - must be a literal
-            * /
-            */
-            }
-        } finally { qe.close() ; }
+        Wizard wizard = new Wizard();
+        wizard.getDialog().setTitle("Instalación router 1");
         
-    }//GEN-LAST:event_jButton2MouseClicked
+        WizardPanelDescriptor descriptor1 = new Router1Panel1Descriptor();
+        wizard.registerWizardPanel(Router1Panel1Descriptor.IDENTIFIER, descriptor1);
 
+        WizardPanelDescriptor descriptor2 = new Router1Panel2Descriptor();
+        wizard.registerWizardPanel(Router1Panel2Descriptor.IDENTIFIER, descriptor2);
+
+        WizardPanelDescriptor descriptor3 = new Router1Panel3Descriptor();
+        wizard.registerWizardPanel(Router1Panel3Descriptor.IDENTIFIER, descriptor3);
+        
+        wizard.setCurrentPanel(Router1Panel1Descriptor.IDENTIFIER);
+        
+        int ret = wizard.showModalDialog();
+        /*
+        System.out.println("Dialog return code is (0=Finish,1=Cancel,2=Error): " + ret);
+        System.out.println("Second panel selection is: " + 
+            (((Router1Panel2)descriptor2.getPanelComponent()).getRadioButtonSelected()));    */    
+        
+    }//GEN-LAST:event_jbRouter1MouseClicked
+
+    /*    */
+    
     public String convertStreamToString(java.io.InputStream is) {
     try {
         return new java.util.Scanner(is).useDelimiter("\\A").next();
@@ -145,13 +147,14 @@ public class Instalar extends javax.swing.JPanel {
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JButton jbInicio;
+    private javax.swing.JButton jbRouter1;
+    private javax.swing.JButton jbRouter2;
+    private javax.swing.JButton jbRouter3;
+    private javax.swing.JButton jbRouter4;
     // End of variables declaration//GEN-END:variables
 }
 
