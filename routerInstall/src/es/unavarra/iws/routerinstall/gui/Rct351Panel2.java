@@ -5,6 +5,7 @@
 package es.unavarra.iws.routerinstall.gui;
 
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -46,12 +47,12 @@ public class Rct351Panel2 extends javax.swing.JPanel {
         jpContenido = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton1 = new javax.swing.JRadioButton();
-        jLabel2 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jbError = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
@@ -85,9 +86,8 @@ public class Rct351Panel2 extends javax.swing.JPanel {
         jLabel1.setPreferredSize(new java.awt.Dimension(252, 40));
         jpContenido.add(jLabel1, java.awt.BorderLayout.NORTH);
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(480, 192));
-        jPanel1.setLayout(new java.awt.GridLayout(0, 1));
-        jPanel1.add(jLabel3);
+        jPanel1.setPreferredSize(new java.awt.Dimension(600, 192));
+        jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.Y_AXIS));
 
         buttonGroup2.add(jRadioButton3);
         jRadioButton3.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
@@ -105,25 +105,58 @@ public class Rct351Panel2 extends javax.swing.JPanel {
         buttonGroup2.add(jRadioButton1);
         jRadioButton1.setText("Serial/Paralelo");
         jPanel1.add(jRadioButton1);
-        jPanel1.add(jLabel2);
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jbError.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/attention32.png"))); // NOI18N
+        jbError.setText("¿Errores?");
+        jbError.setMaximumSize(new java.awt.Dimension(116, 50));
+        jbError.setMinimumSize(new java.awt.Dimension(118, 41));
+        jbError.setPreferredSize(new java.awt.Dimension(100, 70));
+        jbError.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbErrorMouseClicked(evt);
+            }
+        });
+        jbError.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbErrorActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jbError, new org.netbeans.lib.awtextra.AbsoluteConstraints(506, 80, 120, 40));
+
+        jPanel1.add(jPanel2);
         jPanel1.add(jLabel4);
 
         jpContenido.add(jPanel1, java.awt.BorderLayout.CENTER);
 
-        add(jpContenido, java.awt.BorderLayout.WEST);
+        add(jpContenido, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbErrorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbErrorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbErrorActionPerformed
+
+    private void jbErrorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbErrorMouseClicked
+        //String txtResultado;
+        //txtResultado = qm.initInstallationByCharacteristics(txtBusqueda);
+        JOptionPane.showMessageDialog(this, "Consulte a su proveedor","En caso de error",JOptionPane.INFORMATION_MESSAGE);
+               
+
+    }//GEN-LAST:event_jbErrorMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JButton jbError;
     private javax.swing.JLabel jlIcono;
     private javax.swing.JLabel jlTexto;
     private javax.swing.JPanel jpContenido;
