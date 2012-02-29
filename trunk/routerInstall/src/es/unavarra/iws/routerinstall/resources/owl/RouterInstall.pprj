@@ -1,4 +1,4 @@
-; Tue Feb 28 19:26:27 VET 2012
+; Wed Feb 29 21:10:03 CET 2012
 ; 
 ;+ (version "3.4.7")
 ;+ (build "Build 620")
@@ -6,12 +6,11 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[RouterInstall_ProjectKB_Class10482]
-		[RouterInstall_ProjectKB_Class10483]
-		[RouterInstall_ProjectKB_Class10484]
-		[RouterInstall_ProjectKB_Class10485]
-		[RouterInstall_ProjectKB_Class10486]
-		[RouterInstall_ProjectKB_Class10487]))
+		[RouterInstall_ProjectKB_Class695]
+		[RouterInstall_ProjectKB_Class696]
+		[RouterInstall_ProjectKB_Class697]
+		[RouterInstall_ProjectKB_Class698]
+		[RouterInstall_ProjectKB_Class699]))
 
 ([CLSES_TAB] of  Widget
 
@@ -266,9 +265,6 @@
 	(y 0))
 
 ([KB_024013_Instance_5] of  Property_List
-)
-
-([KB_036886_Class0] of  Map
 )
 
 ([KB_100699_Instance_0] of  Widget
@@ -755,11 +751,6 @@
 
 	(name "owl_file_name")
 	(string_value "RouterInstall.owl"))
-
-([KB_425694_Class61] of  String
-
-	(name "RenameAcrossFiles")
-	(string_value "C:\\Archivos de programa\\Protege_3.4.7"))
 
 ([KB_444675_Instance_0] of  String
 
@@ -5353,9 +5344,9 @@
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
 		[KB_713803_Instance_477]
-		[PAL_FORM_WIDGET]
-		[KB_691299_Instance_398]
 		[KB_313796_Instance_852]
+		[KB_691299_Instance_398]
+		[PAL_FORM_WIDGET]
 		[Instance_581]
 		[KB_713803_Instance_693]
 		[RouterInstall_ProjectKB_Class1]
@@ -5391,8 +5382,8 @@
 		"http://www.w3.org/2001/XMLSchema#anySimpleType"
 		"http://www.w3.org/2001/XMLSchema#NOTATION"
 		":MODIFIER"
-		"http://www.w3.org/2000/01/rdf-schema#Container"
 		"http://protege.stanford.edu/plugins/owl/protege#SLOT-CONSTRAINTS"
+		"http://www.w3.org/2000/01/rdf-schema#Container"
 		":SLOT-NUMERIC-MINIMUM"
 		"http://www.w3.org/2001/XMLSchema#integer"
 		"http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"
@@ -5405,8 +5396,8 @@
 		"http://www.w3.org/2002/07/owl#InverseFunctionalProperty"
 		":ANNOTATED-INSTANCE"
 		"http://www.w3.org/2003/11/swrl#BuiltinAtom"
-		":OWL-ONTOLOGY-POINTER-CLASS"
 		"http://www.w3.org/2002/07/owl#Ontology"
+		":OWL-ONTOLOGY-POINTER-CLASS"
 		"http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
 		"http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
 		":VALUE-TYPE"
@@ -5428,22 +5419,22 @@
 		"http://www.w3.org/2002/07/owl#UnionClass"
 		"http://www.w3.org/2002/07/owl#sameAs"
 		":DIRECT-TYPE"
-		"http://www.w3.org/2002/07/owl#equivalentClass"
 		":NAME"
+		"http://www.w3.org/2002/07/owl#equivalentClass"
 		"http://www.w3.org/2002/07/owl#FunctionalProperty"
 		"http://protege.stanford.edu/plugins/owl/protege#inferredSubclassOf"
 		":PAL-DESCRIPTION"
 		"http://www.w3.org/2003/11/swrl#SameIndividualAtom"
-		"http://www.w3.org/2002/07/owl#MinCardinalityRestriction"
 		"http://www.w3.org/2001/XMLSchema#anyURI"
 		"http://www.w3.org/2002/07/owl#AnonymousClass"
+		"http://www.w3.org/2002/07/owl#MinCardinalityRestriction"
 		"http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
 		":CLASS"
 		"http://www.w3.org/2002/07/owl#complementOf"
 		":ROLE"
-		"http://www.w3.org/2002/07/owl#TransitiveProperty"
-		"http://www.w3.org/2002/07/owl#IntersectionClass"
 		":DOCUMENTATION-IN-FRAME"
+		"http://www.w3.org/2002/07/owl#IntersectionClass"
+		"http://www.w3.org/2002/07/owl#TransitiveProperty"
 		"http://www.w3.org/2000/01/rdf-schema#range"
 		"http://www.w3.org/2001/XMLSchema#gYearMonth"
 		":CREATOR"
@@ -5462,11 +5453,11 @@
 		"http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
 		"http://www.w3.org/2001/XMLSchema#normalizedString"
 		"http://www.w3.org/2001/XMLSchema#nonPositiveInteger"
-		"http://www.w3.org/2002/07/owl#someValuesFrom"
 		"http://protege.stanford.edu/plugins/owl/protege#classificationStatus"
+		"http://www.w3.org/2002/07/owl#someValuesFrom"
 		"http://protege.stanford.edu/plugins/owl/protege#inferredSuperclassOf"
-		"http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
 		"http://www.w3.org/2000/01/rdf-schema#subPropertyOf"
+		"http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
 		"http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"
 		"http://www.w3.org/2003/11/swrl#dataRange"
 		"http://www.w3.org/2002/07/owl#AllDifferent"
@@ -5499,15 +5490,15 @@
 		"http://protege.stanford.edu/plugins/owl/protege#PAL-NAME"
 		"http://www.w3.org/2001/XMLSchema#gMonth"
 		"http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"
-		"http://www.w3.org/2001/XMLSchema#unsignedShort"
 		":OWL-CLASS"
+		"http://www.w3.org/2001/XMLSchema#unsignedShort"
 		"http://www.w3.org/2001/XMLSchema#unsignedInt"
 		":STANDARD-FACET"
 		":STANDARD-CLASS"
 		"http://www.w3.org/2002/07/owl#Restriction"
 		"http://www.w3.org/2002/07/owl#MaxCardinalityRestriction"
-		"http://www.w3.org/2002/07/owl#Class"
 		"http://www.w3.org/2001/XMLSchema#NCName"
+		"http://www.w3.org/2002/07/owl#Class"
 		"http://www.w3.org/2001/XMLSchema#ID"
 		"http://www.w3.org/2003/11/swrlb#maxArgs"
 		"http://www.w3.org/2002/07/owl#imports"
@@ -5519,16 +5510,16 @@
 		"http://www.w3.org/2003/11/swrl#builtin"
 		"http://www.w3.org/2001/XMLSchema#decimal"
 		"http://www.w3.org/2003/11/swrl#AtomList"
-		"http://www.w3.org/2003/11/swrl#classPredicate"
 		"http://www.w3.org/2002/07/owl#equivalentProperty"
 		"http://www.w3.org/2000/01/rdf-schema#Literal"
-		"http://www.w3.org/2002/07/owl#SomeValuesFromRestriction"
+		"http://www.w3.org/2003/11/swrl#classPredicate"
 		"http://www.w3.org/2001/XMLSchema#long"
-		"http://www.w3.org/2002/07/owl#HasValueRestriction"
+		"http://www.w3.org/2002/07/owl#SomeValuesFromRestriction"
 		":SLOT-VALUE-TYPE"
-		"http://www.w3.org/2001/XMLSchema#positiveInteger"
-		"http://www.w3.org/2001/XMLSchema#duration"
+		"http://www.w3.org/2002/07/owl#HasValueRestriction"
 		"http://www.w3.org/2003/11/swrlb#minArgs"
+		"http://www.w3.org/2001/XMLSchema#duration"
+		"http://www.w3.org/2001/XMLSchema#positiveInteger"
 		"http://www.w3.org/2002/07/owl#oneOf"
 		":VALUES"
 		":ASSOCIATED-SLOT"
@@ -5563,14 +5554,14 @@
 		"http://www.w3.org/2002/07/owl#backwardCompatibleWith"
 		":RELATION"
 		"http://www.w3.org/2000/01/rdf-schema#Datatype"
-		"http://www.w3.org/2003/11/swrl#Atom"
 		"http://www.w3.org/2001/XMLSchema#QName"
+		"http://www.w3.org/2003/11/swrl#Atom"
 		"http://www.w3.org/2002/07/owl#EnumeratedClass"
 		"http://www.w3.org/2002/07/owl#disjointWith"
 		"http://www.w3.org/2001/XMLSchema#unsignedLong"
 		":MINIMUM-CARDINALITY"
-		":SLOT-DEFAULTS"
 		":TO"
+		":SLOT-DEFAULTS"
 		":SYSTEM-CLASS"
 		":SLOT-MAXIMUM-CARDINALITY"
 		":DEFAULTS"
@@ -5604,6 +5595,9 @@
 		[SLOTS_TAB]
 		[KB_865583_Instance_10]))
 
+([RouterInstall_ProjectKB_Class0] of  Map
+)
+
 ([RouterInstall_ProjectKB_Class1] of  Widget
 
 	(is_hidden FALSE)
@@ -5615,324 +5609,6 @@
 
 	(name "vertical_stretcher")
 	(string_value "http://www.w3.org/2003/11/swrl#body"))
-
-([RouterInstall_ProjectKB_Class10004] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10005])
-	(widget_class_name "se.liu.ida.JessTab.JessTab"))
-
-([RouterInstall_ProjectKB_Class10005] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10006] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10007])
-	(widget_class_name "edu.stanford.smi.protege.widget.ProtegePropertiesTab"))
-
-([RouterInstall_ProjectKB_Class10007] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10008] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10009])
-	(widget_class_name "ezpal.EZPalTab"))
-
-([RouterInstall_ProjectKB_Class10009] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10010] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10011])
-	(widget_class_name "edu.stanford.smi.protegex.server_changes.prompt.UsersTab"))
-
-([RouterInstall_ProjectKB_Class10011] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10012] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10013])
-	(widget_class_name "ca.uvic.csr.shrimp.jambalaya.JambalayaTab"))
-
-([RouterInstall_ProjectKB_Class10013] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10014] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10015])
-	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.InstanceTreeTab"))
-
-([RouterInstall_ProjectKB_Class10015] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10016] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10017])
-	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalConstraintsTab"))
-
-([RouterInstall_ProjectKB_Class10017] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10018] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10019])
-	(widget_class_name "edu.stanford.smi.RemoteKBTab.WordNetTab"))
-
-([RouterInstall_ProjectKB_Class10019] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10020] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10021])
-	(widget_class_name "org.protege.owl.mm.protege3.MappingMasterTab"))
-
-([RouterInstall_ProjectKB_Class10021] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10022] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10023])
-	(widget_class_name "edu.stanford.smi.protegex.evaluation.MetaAnalysis"))
-
-([RouterInstall_ProjectKB_Class10023] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10024] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10025])
-	(widget_class_name "uk.ac.man.cs.mig.coode.owlviz.ui.OWLVizTab"))
-
-([RouterInstall_ProjectKB_Class10025] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10026] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10027])
-	(widget_class_name "edu.stanford.smi.protege.query.LuceneQueryPlugin"))
-
-([RouterInstall_ProjectKB_Class10027] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10028] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10029])
-	(widget_class_name "edu.stanford.smi.RemoteKBTab.UMLSTab"))
-
-([RouterInstall_ProjectKB_Class10029] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10030] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10031])
-	(widget_class_name "edu.stanford.smi.protegex.changeanalysis.ChangeAnalysisTab"))
-
-([RouterInstall_ProjectKB_Class10031] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10032] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10033])
-	(widget_class_name "TGViztab.TGVizTab"))
-
-([RouterInstall_ProjectKB_Class10033] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10034] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10035])
-	(widget_class_name "org.algernon.kb.okbc.protege.plugins.AlgernonTab"))
-
-([RouterInstall_ProjectKB_Class10035] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10036] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10037])
-	(widget_class_name "edu.stanford.smi.protegex.changes.changesKBViewTab.ChangesKBViewTab"))
-
-([RouterInstall_ProjectKB_Class10037] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10038] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10039])
-	(widget_class_name "edu.stanford.smi.protegex.xml.tab.XMLTab"))
-
-([RouterInstall_ProjectKB_Class10039] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10040] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10041])
-	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalQueriesTab"))
-
-([RouterInstall_ProjectKB_Class10041] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10042] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10043])
-	(widget_class_name "edu.stanford.smi.protegex.chatPlugin.ChatTab"))
-
-([RouterInstall_ProjectKB_Class10043] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10044] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10045])
-	(widget_class_name "org.protege.owl.axiome.ui.AxiomeTab"))
-
-([RouterInstall_ProjectKB_Class10045] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10046] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10047])
-	(widget_class_name "edu.stanford.smi.protege.keywordsearch.StringSearch"))
-
-([RouterInstall_ProjectKB_Class10047] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10048] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10049])
-	(widget_class_name "script.ProtegeScriptTab"))
-
-([RouterInstall_ProjectKB_Class10049] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10050] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10051])
-	(widget_class_name "edu.stanford.smi.protegex.changes.ChangesTab"))
-
-([RouterInstall_ProjectKB_Class10051] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10052] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10053])
-	(widget_class_name "edu.stanford.smi.protegex.fctab.FacetConstraintsTab"))
-
-([RouterInstall_ProjectKB_Class10053] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10054] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10055])
-	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.KnowledgeTreeTab"))
-
-([RouterInstall_ProjectKB_Class10055] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10056] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10057])
-	(widget_class_name "edu.stanford.smi.protegex.datamaster.DataMasterTab"))
-
-([RouterInstall_ProjectKB_Class10057] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10058] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10059])
-	(widget_class_name "dfki.protege.ontoviz_tab.OntovizTab"))
-
-([RouterInstall_ProjectKB_Class10059] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10060] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10061])
-	(widget_class_name "edu.stanford.smi.protegex.changes.stats.ChangeStatisticsTab"))
-
-([RouterInstall_ProjectKB_Class10061] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10062] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [RouterInstall_ProjectKB_Class10063])
-	(widget_class_name "edu.stanford.smi.protegex.prompt.PromptTab"))
-
-([RouterInstall_ProjectKB_Class10063] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10064] of  Widget
-
-	(is_hidden FALSE)
-	(label "Name")
-	(name ":NAME")
-	(property_list [RouterInstall_ProjectKB_Class10066])
-	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
-
-([RouterInstall_ProjectKB_Class10065] of  Widget
-
-	(is_hidden FALSE)
-	(label "Comment")
-	(name "http://www.w3.org/2000/01/rdf-schema#comment")
-	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
-
-([RouterInstall_ProjectKB_Class10066] of  Property_List
-)
-
-([RouterInstall_ProjectKB_Class10482] of  String
-
-	(name "http://www.w3.org/2002/07/owl#Class")
-	(string_value "%3ANAME"))
-
-([RouterInstall_ProjectKB_Class10483] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([RouterInstall_ProjectKB_Class10484] of  String
-
-	(name "http://www.owl-ontologies.com/Ontology1325175471.owl#Cable")
-	(string_value "http%3A%2F%2Fwww.owl-ontologies.com%2FOntology1325175471.owl%23hasMicrofiltro"))
-
-([RouterInstall_ProjectKB_Class10485] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([RouterInstall_ProjectKB_Class10486] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([RouterInstall_ProjectKB_Class10487] of  String
-
-	(name "http://www.w3.org/2002/07/owl#Thing")
-	(string_value "%3ANAME"))
 
 ([RouterInstall_ProjectKB_Class11] of  Widget
 
@@ -6024,6 +5700,39 @@
 ([RouterInstall_ProjectKB_Class32] of  Property_List
 )
 
+([RouterInstall_ProjectKB_Class33] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class34])
+	(widget_class_name "se.liu.ida.JessTab.JessTab"))
+
+([RouterInstall_ProjectKB_Class34] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class35] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class36])
+	(widget_class_name "edu.stanford.smi.protege.widget.ProtegePropertiesTab"))
+
+([RouterInstall_ProjectKB_Class36] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class37] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class38])
+	(widget_class_name "ezpal.EZPalTab"))
+
+([RouterInstall_ProjectKB_Class38] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class39] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class40])
+	(widget_class_name "edu.stanford.smi.protegex.server_changes.prompt.UsersTab"))
+
 ([RouterInstall_ProjectKB_Class4] of  Property_List
 
 	(properties
@@ -6039,6 +5748,51 @@
 		[RouterInstall_ProjectKB_Class26]
 		[RouterInstall_ProjectKB_Class31]))
 
+([RouterInstall_ProjectKB_Class40] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class41] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class42])
+	(widget_class_name "ca.uvic.csr.shrimp.jambalaya.JambalayaTab"))
+
+([RouterInstall_ProjectKB_Class42] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class43] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class44])
+	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.InstanceTreeTab"))
+
+([RouterInstall_ProjectKB_Class44] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class45] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class46])
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalConstraintsTab"))
+
+([RouterInstall_ProjectKB_Class46] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class47] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class48])
+	(widget_class_name "edu.stanford.smi.RemoteKBTab.WordNetTab"))
+
+([RouterInstall_ProjectKB_Class48] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class49] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class50])
+	(widget_class_name "org.protege.owl.mm.protege3.MappingMasterTab"))
+
 ([RouterInstall_ProjectKB_Class5] of  Widget
 
 	(height 120)
@@ -6051,11 +5805,171 @@
 	(x 0)
 	(y 0))
 
+([RouterInstall_ProjectKB_Class50] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class51] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class52])
+	(widget_class_name "edu.stanford.smi.protegex.evaluation.MetaAnalysis"))
+
+([RouterInstall_ProjectKB_Class52] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class53] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class54])
+	(widget_class_name "uk.ac.man.cs.mig.coode.owlviz.ui.OWLVizTab"))
+
+([RouterInstall_ProjectKB_Class54] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class55] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class56])
+	(widget_class_name "edu.stanford.smi.protege.query.LuceneQueryPlugin"))
+
+([RouterInstall_ProjectKB_Class56] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class57] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class58])
+	(widget_class_name "edu.stanford.smi.RemoteKBTab.UMLSTab"))
+
+([RouterInstall_ProjectKB_Class58] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class59] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class60])
+	(widget_class_name "edu.stanford.smi.protegex.changeanalysis.ChangeAnalysisTab"))
+
 ([RouterInstall_ProjectKB_Class6] of  Property_List
 
 	(properties
-		[RouterInstall_ProjectKB_Class10064]
-		[RouterInstall_ProjectKB_Class10065]))
+		[RouterInstall_ProjectKB_Class93]
+		[RouterInstall_ProjectKB_Class94]))
+
+([RouterInstall_ProjectKB_Class60] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class61] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class62])
+	(widget_class_name "TGViztab.TGVizTab"))
+
+([RouterInstall_ProjectKB_Class62] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class63] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class64])
+	(widget_class_name "org.algernon.kb.okbc.protege.plugins.AlgernonTab"))
+
+([RouterInstall_ProjectKB_Class64] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class65] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class66])
+	(widget_class_name "edu.stanford.smi.protegex.changes.changesKBViewTab.ChangesKBViewTab"))
+
+([RouterInstall_ProjectKB_Class66] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class67] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class68])
+	(widget_class_name "edu.stanford.smi.protegex.xml.tab.XMLTab"))
+
+([RouterInstall_ProjectKB_Class68] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class69] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class70])
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalQueriesTab"))
+
+([RouterInstall_ProjectKB_Class695] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([RouterInstall_ProjectKB_Class696] of  String
+
+	(name "http://www.w3.org/2002/07/owl#Class")
+	(string_value "%3ANAME"))
+
+([RouterInstall_ProjectKB_Class697] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([RouterInstall_ProjectKB_Class698] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([RouterInstall_ProjectKB_Class699] of  String
+
+	(name "http://www.w3.org/2002/07/owl#Thing")
+	(string_value "%3ANAME"))
+
+([RouterInstall_ProjectKB_Class70] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class71] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class72])
+	(widget_class_name "edu.stanford.smi.protegex.chatPlugin.ChatTab"))
+
+([RouterInstall_ProjectKB_Class72] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class73] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class74])
+	(widget_class_name "org.protege.owl.axiome.ui.AxiomeTab"))
+
+([RouterInstall_ProjectKB_Class74] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class75] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class76])
+	(widget_class_name "edu.stanford.smi.protege.keywordsearch.StringSearch"))
+
+([RouterInstall_ProjectKB_Class76] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class77] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class78])
+	(widget_class_name "script.ProtegeScriptTab"))
+
+([RouterInstall_ProjectKB_Class78] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class79] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class80])
+	(widget_class_name "edu.stanford.smi.protegex.changes.ChangesTab"))
 
 ([RouterInstall_ProjectKB_Class8] of  Property_List
 
@@ -6064,10 +5978,85 @@
 		[RouterInstall_ProjectKB_Class9]
 		[RouterInstall_ProjectKB_Class10]))
 
+([RouterInstall_ProjectKB_Class80] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class81] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class82])
+	(widget_class_name "edu.stanford.smi.protegex.fctab.FacetConstraintsTab"))
+
+([RouterInstall_ProjectKB_Class82] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class83] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class84])
+	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.KnowledgeTreeTab"))
+
+([RouterInstall_ProjectKB_Class84] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class85] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class86])
+	(widget_class_name "edu.stanford.smi.protegex.datamaster.DataMasterTab"))
+
+([RouterInstall_ProjectKB_Class86] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class87] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class88])
+	(widget_class_name "dfki.protege.ontoviz_tab.OntovizTab"))
+
+([RouterInstall_ProjectKB_Class88] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class89] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class90])
+	(widget_class_name "edu.stanford.smi.protegex.changes.stats.ChangeStatisticsTab"))
+
 ([RouterInstall_ProjectKB_Class9] of  String
 
 	(name "horizontal_stretcher")
 	(string_value "<<all>>"))
+
+([RouterInstall_ProjectKB_Class90] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class91] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [RouterInstall_ProjectKB_Class92])
+	(widget_class_name "edu.stanford.smi.protegex.prompt.PromptTab"))
+
+([RouterInstall_ProjectKB_Class92] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class93] of  Widget
+
+	(is_hidden FALSE)
+	(label "Name")
+	(name ":NAME")
+	(property_list [RouterInstall_ProjectKB_Class95])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([RouterInstall_ProjectKB_Class94] of  Widget
+
+	(is_hidden FALSE)
+	(label "Comment")
+	(name "http://www.w3.org/2000/01/rdf-schema#comment")
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([RouterInstall_ProjectKB_Class95] of  Property_List
+)
 
 ([SLOTS_TAB] of  Widget
 
@@ -6089,8 +6078,7 @@
 		[KB_632156_Instance_0]
 		[KB_325529_Class4]
 		[empty.owl_ProjectKB_Class5]
-		[empty.owl_ProjectKB_Class6]
-		[KB_425694_Class61]))
+		[empty.owl_ProjectKB_Class6]))
 
 ([STANDARD_CLASS_FORM_WIDGET] of  Widget
 
@@ -6476,6 +6464,19 @@
 
 	(name "vertical_stretcher")
 	(string_value "http://www.w3.org/2002/07/owl#imports"))
+
+([XY_Instance_217] of  Widget
+
+	(height 0)
+	(is_hidden FALSE)
+	(name ":OWL-ONTOLOGY-PREFIXES")
+	(property_list [XY_Instance_218])
+	(width 0)
+	(x 0)
+	(y 0))
+
+([XY_Instance_218] of  Property_List
+)
 
 ([XY_Instance_235] of  Widget
 
