@@ -165,7 +165,12 @@ public class Busqueda extends javax.swing.JPanel {
                         jpContenido.removeAll();
                         jpContenido.add(new Cmicrofiltro());
                         jpContenido.revalidate();
-                    }
+                    }else if(txtResultado.toLowerCase().equals("ordenador")){
+                        jpContenido.removeAll();
+                        jpContenido.add(new Cordenador());
+                        jpContenido.revalidate();
+                    }else 
+                        JOptionPane.showMessageDialog(this, txtResultado,"Conceptos",JOptionPane.INFORMATION_MESSAGE);
                 }
             else
                 jlError.setVisible(true);
