@@ -21,7 +21,7 @@ public class Rct351Panel4Descriptor extends WizardPanelDescriptor implements Act
     public Rct351Panel4Descriptor() {
         
         panel4 = new Rct351Panel4();
-        panel4.addCheckBoxActionListener(this);
+        //panel4.addCheckBoxActionListener(this);
         
         setPanelDescriptorIdentifier(IDENTIFIER);
         setPanelComponent(panel4);
@@ -40,17 +40,18 @@ public class Rct351Panel4Descriptor extends WizardPanelDescriptor implements Act
     
     @Override
     public void aboutToDisplayPanel() {
-        setNextButtonAccordingToCheckBox();
+        //setNextButtonAccordingToCheckBox();
     }
     
     public void actionPerformed(ActionEvent ae) {
-        setNextButtonAccordingToCheckBox();
+        //setNextButtonAccordingToCheckBox();
     }
-    
+    /*
     private void setNextButtonAccordingToCheckBox() {
          if (panel4.isCheckBoxSelected())
             getWizard().setNextFinishButtonEnabled(true);
          else
             getWizard().setNextFinishButtonEnabled(false);           
     }
+    */
 }

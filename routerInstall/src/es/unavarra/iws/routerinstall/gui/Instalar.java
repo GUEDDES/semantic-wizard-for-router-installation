@@ -44,6 +44,8 @@ public class Instalar extends javax.swing.JPanel {
         jbRouter3 = new javax.swing.JButton();
         jbRouter2 = new javax.swing.JButton();
         jbRouter1 = new javax.swing.JButton();
+        jbRouter5 = new javax.swing.JButton();
+        jbRouter6 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jlBacground = new javax.swing.JLabel();
@@ -74,9 +76,9 @@ public class Instalar extends javax.swing.JPanel {
         jlError.setForeground(new java.awt.Color(255, 0, 51));
         jlError.setText("No se encuentran resultados...");
         add(jlError);
-        jlError.setBounds(20, 150, 200, 18);
+        jlError.setBounds(20, 160, 200, 14);
         add(jSeparator1);
-        jSeparator1.setBounds(-20, 190, 500, 10);
+        jSeparator1.setBounds(-20, 198, 500, 2);
 
         jbBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/search32.png"))); // NOI18N
         jbBuscar.setText("Buscar");
@@ -88,25 +90,25 @@ public class Instalar extends javax.swing.JPanel {
         add(jbBuscar);
         jbBuscar.setBounds(360, 100, 110, 40);
 
-        jbRouter4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/comtrend5365_60.png"))); // NOI18N
-        jbRouter4.setText("      Router 4");
+        jbRouter4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_tg585v7_60.png"))); // NOI18N
+        jbRouter4.setText("      TG585v7");
         add(jbRouter4);
-        jbRouter4.setBounds(120, 530, 200, 80);
+        jbRouter4.setBounds(250, 380, 200, 80);
 
-        jbRouter3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/comtrend5365_60.png"))); // NOI18N
-        jbRouter3.setText("      Router 3");
+        jbRouter3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_x70028r_60.png"))); // NOI18N
+        jbRouter3.setText("      x7028r");
         jbRouter3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbRouter3ActionPerformed(evt);
             }
         });
         add(jbRouter3);
-        jbRouter3.setBounds(120, 430, 200, 80);
+        jbRouter3.setBounds(20, 380, 200, 80);
 
-        jbRouter2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/comtrend5365_60.png"))); // NOI18N
-        jbRouter2.setText("      Router 2");
+        jbRouter2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_ct5071_60.png"))); // NOI18N
+        jbRouter2.setText("      CT-5071");
         add(jbRouter2);
-        jbRouter2.setBounds(120, 330, 200, 80);
+        jbRouter2.setBounds(250, 260, 200, 80);
 
         jbRouter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_ct-351_60.png"))); // NOI18N
         jbRouter1.setText("      CT-351");
@@ -116,7 +118,22 @@ public class Instalar extends javax.swing.JPanel {
             }
         });
         add(jbRouter1);
-        jbRouter1.setBounds(120, 230, 200, 80);
+        jbRouter1.setBounds(20, 260, 200, 80);
+
+        jbRouter5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_sagemFast2604_30.png"))); // NOI18N
+        jbRouter5.setText("  SagemFast_2604");
+        jbRouter5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbRouter5ActionPerformed(evt);
+            }
+        });
+        add(jbRouter5);
+        jbRouter5.setBounds(20, 500, 200, 80);
+
+        jbRouter6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_hg556_60.png"))); // NOI18N
+        jbRouter6.setText("      HG556");
+        add(jbRouter6);
+        jbRouter6.setBounds(250, 500, 200, 80);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr32.png"))); // NOI18N
         add(jLabel3);
@@ -199,10 +216,14 @@ public class Instalar extends javax.swing.JPanel {
     }//GEN-LAST:event_jtBusquedaKeyTyped
 
     private void jtBusquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtBusquedaKeyReleased
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+        /*if(evt.getKeyCode()==KeyEvent.VK_ENTER && evt.getComponent().equals(this)){
             busquedaRouter(this.jtBusqueda.getText());
-        }
+        }*/
     }//GEN-LAST:event_jtBusquedaKeyReleased
+
+    private void jbRouter5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRouter5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbRouter5ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;
@@ -214,6 +235,8 @@ public class Instalar extends javax.swing.JPanel {
     private javax.swing.JButton jbRouter2;
     private javax.swing.JButton jbRouter3;
     private javax.swing.JButton jbRouter4;
+    private javax.swing.JButton jbRouter5;
+    private javax.swing.JButton jbRouter6;
     private javax.swing.JLabel jlBacground;
     private javax.swing.JLabel jlError;
     private javax.swing.JTextField jtBusqueda;
