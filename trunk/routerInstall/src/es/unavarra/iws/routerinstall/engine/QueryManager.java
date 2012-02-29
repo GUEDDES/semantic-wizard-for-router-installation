@@ -6,7 +6,6 @@
 package es.unavarra.iws.routerinstall.engine;
 
 import com.hp.hpl.jena.ontology.Individual;
-import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.Statement;
 import es.unavarra.iws.routerinstall.engine.utils.QueryResult;
 import java.util.ArrayList;
@@ -122,11 +121,6 @@ public class QueryManager implements IQueryManager {
             videoURL = stmt.getString();
         }
         return videoURL;
-    }
-
-     public static void main(String[] args) {
-        QueryManager qm = new QueryManager();
-        logger.info(qm.getAvailableRouters());
     }
 
 }
