@@ -242,7 +242,7 @@ public class Engine {
     }
 
 
-     public List<String> searchAvailableRouters() {
+   public List<String> searchAvailableRouters() {
          String queryString = "PREFIX foaf:<" + defaultNameSpace + ">"
                 + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
                 + "PREFIX  afn:<http://jena.hpl.hp.com/ARQ/function#>"
@@ -258,11 +258,14 @@ public class Engine {
                 Iterator<String> it = resources.iterator();
                 while (it.hasNext()) {
                     String rURI = it.next();
+                    if (!rURI.contains("new")) {
                     routerNames.add(model.getResource(rURI).getLocalName());
+                    }
 
                 }
                 return routerNames;
      }
+
      
     public String getResourceWithMaxPriority(List<QueryResult> queryResults) {
         double maxP = 0;
