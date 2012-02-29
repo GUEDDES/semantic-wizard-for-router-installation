@@ -20,8 +20,7 @@ public class Rx7028rPanel1Descriptor extends WizardPanelDescriptor {
     
     @Override
     public Object getNextPanelDescriptor() {
-        //return Rx7028rPanel2Descriptor.IDENTIFIER;
-        return "RX7028R_INTRODUCTION_PANEL";
+        return Rx7028rPanel2Descriptor.IDENTIFIER;
     }
     
     @Override
