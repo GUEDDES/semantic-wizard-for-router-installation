@@ -11,7 +11,7 @@ package es.unavarra.iws.routerinstall.gui;
 public class Rct351Panel1 extends javax.swing.JPanel {
 
     /**
-     * Creates new form TestPanel11
+     * Creates new form Rct351Panel1
      */
     public Rct351Panel1(String primerPaso) {
         initComponents();
@@ -33,18 +33,13 @@ public class Rct351Panel1 extends javax.swing.JPanel {
         ContenidoTodo = new javax.swing.JPanel();
         lTitulo = new javax.swing.JLabel();
         ContenidoTexto = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        jlSeparador = new javax.swing.JLabel();
+        jlImagenRouter = new javax.swing.JLabel();
+        jlSeparador2 = new javax.swing.JLabel();
+        jlTexto = new javax.swing.JLabel();
         jlPrimerPaso = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        jlSeparador3 = new javax.swing.JLabel();
+        jlSiguiente = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -63,43 +58,31 @@ public class Rct351Panel1 extends javax.swing.JPanel {
 
         ContenidoTexto.setLayout(new javax.swing.BoxLayout(ContenidoTexto, javax.swing.BoxLayout.Y_AXIS));
 
-        jLabel4.setMaximumSize(new java.awt.Dimension(257, 18));
-        jLabel4.setMinimumSize(new java.awt.Dimension(257, 18));
-        ContenidoTexto.add(jLabel4);
+        jlSeparador.setMaximumSize(new java.awt.Dimension(257, 18));
+        jlSeparador.setMinimumSize(new java.awt.Dimension(257, 18));
+        ContenidoTexto.add(jlSeparador);
 
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_ct-351_60.png"))); // NOI18N
-        jLabel8.setMaximumSize(new java.awt.Dimension(531, 100));
-        jLabel8.setMinimumSize(new java.awt.Dimension(531, 100));
-        jLabel8.setPreferredSize(new java.awt.Dimension(531, 18));
-        ContenidoTexto.add(jLabel8);
+        jlImagenRouter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlImagenRouter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_ct-351_a.png"))); // NOI18N
+        jlImagenRouter.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jlImagenRouter.setMaximumSize(new java.awt.Dimension(490, 200));
+        jlImagenRouter.setPreferredSize(new java.awt.Dimension(531, 18));
+        ContenidoTexto.add(jlImagenRouter);
 
-        jLabel9.setMaximumSize(new java.awt.Dimension(257, 18));
-        jLabel9.setMinimumSize(new java.awt.Dimension(257, 18));
-        ContenidoTexto.add(jLabel9);
-        ContenidoTexto.add(jLabel5);
+        jlSeparador2.setMaximumSize(new java.awt.Dimension(257, 18));
+        jlSeparador2.setMinimumSize(new java.awt.Dimension(257, 18));
+        ContenidoTexto.add(jlSeparador2);
 
-        jLabel6.setText("Router ADSL inalámbrico multipuerto que permite la conexión de uno o varios");
-        ContenidoTexto.add(jLabel6);
-
-        jLabel3.setText("equipos a la línea ADSL para posibilitar el acceso a los servicios finales");
-        ContenidoTexto.add(jLabel3);
-
-        jLabel1.setText("(Internet, correo electrónico, …).");
-        ContenidoTexto.add(jLabel1);
-        ContenidoTexto.add(jLabel2);
-
-        jLabel11.setMaximumSize(new java.awt.Dimension(257, 30));
-        jLabel11.setMinimumSize(new java.awt.Dimension(257, 18));
-        ContenidoTexto.add(jLabel11);
+        jlTexto.setText("En los siguientes pasos se describe el proceso de instalación.");
+        ContenidoTexto.add(jlTexto);
         ContenidoTexto.add(jlPrimerPaso);
 
-        jLabel10.setMaximumSize(new java.awt.Dimension(257, 30));
-        jLabel10.setMinimumSize(new java.awt.Dimension(257, 18));
-        ContenidoTexto.add(jLabel10);
+        jlSeparador3.setMaximumSize(new java.awt.Dimension(257, 30));
+        jlSeparador3.setMinimumSize(new java.awt.Dimension(257, 18));
+        ContenidoTexto.add(jlSeparador3);
 
-        jLabel7.setText("Presione \"Siguiente\" para continuar...");
-        ContenidoTexto.add(jLabel7);
+        jlSiguiente.setText("Presione \"Siguiente\" para continuar...");
+        ContenidoTexto.add(jlSiguiente);
 
         ContenidoTodo.add(ContenidoTexto, java.awt.BorderLayout.CENTER);
 
@@ -112,18 +95,13 @@ public class Rct351Panel1 extends javax.swing.JPanel {
     private javax.swing.JPanel ContenidoTexto;
     private javax.swing.JPanel ContenidoTodo;
     private javax.swing.JLabel iconoLabel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jlImagenRouter;
     private javax.swing.JLabel jlPrimerPaso;
+    private javax.swing.JLabel jlSeparador;
+    private javax.swing.JLabel jlSeparador2;
+    private javax.swing.JLabel jlSeparador3;
+    private javax.swing.JLabel jlSiguiente;
+    private javax.swing.JLabel jlTexto;
     private javax.swing.JLabel lTitulo;
     // End of variables declaration//GEN-END:variables
 }
