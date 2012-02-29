@@ -69,14 +69,14 @@ public class Instalar extends javax.swing.JPanel {
             }
         });
         add(jtBusqueda);
-        jtBusqueda.setBounds(30, 100, 290, 40);
+        jtBusqueda.setBounds(20, 100, 330, 40);
 
         jlError.setForeground(new java.awt.Color(255, 0, 51));
         jlError.setText("No se encuentran resultados...");
         add(jlError);
-        jlError.setBounds(30, 150, 200, 14);
+        jlError.setBounds(20, 150, 200, 18);
         add(jSeparator1);
-        jSeparator1.setBounds(30, 190, 430, 10);
+        jSeparator1.setBounds(-20, 190, 500, 10);
 
         jbBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/search32.png"))); // NOI18N
         jbBuscar.setText("Buscar");
@@ -86,7 +86,7 @@ public class Instalar extends javax.swing.JPanel {
             }
         });
         add(jbBuscar);
-        jbBuscar.setBounds(350, 100, 110, 40);
+        jbBuscar.setBounds(360, 100, 110, 40);
 
         jbRouter4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/comtrend5365_60.png"))); // NOI18N
         jbRouter4.setText("      Router 4");

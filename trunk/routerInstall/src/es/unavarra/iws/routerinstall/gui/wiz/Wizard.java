@@ -362,8 +362,8 @@ public class Wizard extends WindowAdapter implements PropertyChangeListener {
         cardPanel.setLayout(cardLayout);
         
         //backButton = new JButton(new ImageIcon("/es/unavarra/iws/routerinstall/resources/img/backIcon.gif"));
-        backButton = new JButton(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/backIcon.gif")));
-        
+        //backButton = new JButton(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/backIcon.gif")));
+        backButton = new JButton();
         nextButton = new JButton();
         cancelButton = new JButton();
         

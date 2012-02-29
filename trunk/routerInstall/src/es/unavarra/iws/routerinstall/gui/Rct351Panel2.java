@@ -59,7 +59,7 @@ public class Rct351Panel2 extends javax.swing.JPanel {
 
         jlTexto.setBackground(java.awt.Color.lightGray);
         jlTexto.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jlTexto.setText("Tipo de conector");
+        jlTexto.setText("Conexionado de Módem Comtrend");
         jlTexto.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         jlTexto.setOpaque(true);
         jpTitulo.add(jlTexto, java.awt.BorderLayout.CENTER);
