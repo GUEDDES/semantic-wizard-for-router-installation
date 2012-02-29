@@ -6,6 +6,7 @@ package es.unavarra.iws.routerinstall.gui;
 
 import es.unavarra.iws.routerinstall.engine.QueryManager;
 import java.awt.Container;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,21 +33,56 @@ public class Busqueda extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        jbHome = new javax.swing.JButton();
+        jbBuscar = new javax.swing.JButton();
+        jtBusqueda = new javax.swing.JTextField();
+        jlError = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jpContenido = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jlBackground = new javax.swing.JLabel();
 
         setLayout(null);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/home32.png"))); // NOI18N
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jbHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/home32.png"))); // NOI18N
+        jbHome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                jbHomeMouseClicked(evt);
             }
         });
-        add(jButton1);
-        jButton1.setBounds(420, 20, 50, 50);
+        add(jbHome);
+        jbHome.setBounds(420, 20, 50, 50);
+
+        jbBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/search32.png"))); // NOI18N
+        jbBuscar.setText("Buscar");
+        jbBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbBuscarMouseClicked(evt);
+            }
+        });
+        add(jbBuscar);
+        jbBuscar.setBounds(360, 90, 110, 40);
+
+        jtBusqueda.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jtBusqueda.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jtBusquedaKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtBusquedaKeyTyped(evt);
+            }
+        });
+        add(jtBusqueda);
+        jtBusqueda.setBounds(20, 90, 330, 40);
+
+        jlError.setForeground(new java.awt.Color(255, 0, 51));
+        jlError.setText("No se encuentran resultados...");
+        add(jlError);
+        jlError.setBounds(20, 140, 200, 14);
+        add(jSeparator1);
+        jSeparator1.setBounds(-20, 170, 500, 30);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/question32.png"))); // NOI18N
         add(jLabel3);
@@ -56,18 +92,27 @@ public class Busqueda extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel2.setText("       Búsqueda");
+        jLabel2.setText("       Búsqueda de conceptos");
         jLabel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.white, java.awt.Color.black));
         jLabel2.setOpaque(true);
         add(jLabel2);
         jLabel2.setBounds(0, 20, 480, 50);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr2.png"))); // NOI18N
-        add(jLabel1);
-        jLabel1.setBounds(0, 0, 480, 660);
+        jpContenido.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jpContenido.setOpaque(false);
+
+        jLabel1.setText("...");
+        jpContenido.add(jLabel1);
+
+        add(jpContenido);
+        jpContenido.setBounds(10, 180, 460, 440);
+
+        jlBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr2.png"))); // NOI18N
+        add(jlBackground);
+        jlBackground.setBounds(0, 0, 480, 640);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void jbHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbHomeMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
         Container menu = this.getFocusCycleRootAncestor();
@@ -75,12 +120,56 @@ public class Busqueda extends javax.swing.JPanel {
         menu.remove(this);
         principal.setSize(menu.getSize());
         menu.add(principal, 0);        
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_jbHomeMouseClicked
+
+    private void jbBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbBuscarMouseClicked
+        busquedaconcepto(this.jtBusqueda.getText());
+    }//GEN-LAST:event_jbBuscarMouseClicked
+
+    private void jtBusquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtBusquedaKeyReleased
+        /*
+         * if(evt.getKeyCode()==KeyEvent.VK_ENTER &&
+         * evt.getComponent().equals(this)){
+         * busquedaRouter(this.jtBusqueda.getText());
+        }
+         */
+    }//GEN-LAST:event_jtBusquedaKeyReleased
+
+    private void jtBusquedaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtBusquedaKeyTyped
+        if (jlError.isVisible()) {
+            jlError.setVisible(false);
+        }
+    }//GEN-LAST:event_jtBusquedaKeyTyped
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JButton jbBuscar;
+    private javax.swing.JButton jbHome;
+    private javax.swing.JLabel jlBackground;
+    private javax.swing.JLabel jlError;
+    private javax.swing.JPanel jpContenido;
+    private javax.swing.JTextField jtBusqueda;
     // End of variables declaration//GEN-END:variables
+
+    private void busquedaconcepto(String txtBusqueda) {
+        String txtResultado;
+        jlError.setVisible(false);
+        if(!txtBusqueda.isEmpty()){
+            txtResultado = qm.executeQueryBasicConcepts(txtBusqueda);
+            if(txtResultado!=null && txtResultado.length()>0){
+                    //JOptionPane.showMessageDialog(this, txtResultado,"Conceptos",JOptionPane.INFORMATION_MESSAGE);
+                    if(txtResultado.toLowerCase().equals("microfiltro")){
+                        jpContenido.removeAll();
+                        jpContenido.add(new Cmicrofiltro());
+                        jpContenido.revalidate();
+                    }
+                }
+            else
+                jlError.setVisible(true);
+                
+        }
+    }
 }
