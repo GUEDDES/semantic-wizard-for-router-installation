@@ -21,15 +21,18 @@ public class Router1Panel2Descriptor extends WizardPanelDescriptor implements Ac
         
     }
     
+    @Override
     public Object getNextPanelDescriptor() {
         return Router1Panel3Descriptor.IDENTIFIER;
     }
     
+    @Override
     public Object getBackPanelDescriptor() {
         return Router1Panel1Descriptor.IDENTIFIER;
     }
     
     
+    @Override
     public void aboutToDisplayPanel() {
         setNextButtonAccordingToCheckBox();
     }    

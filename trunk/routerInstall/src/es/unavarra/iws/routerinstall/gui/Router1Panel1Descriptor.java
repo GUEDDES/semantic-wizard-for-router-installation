@@ -6,8 +6,8 @@ public class Router1Panel1Descriptor extends WizardPanelDescriptor {
     
     public static final String IDENTIFIER = "INTRODUCTION_PANEL";
     
-    public Router1Panel1Descriptor() {
-        super(IDENTIFIER, new Router1Panel1());
+    public Router1Panel1Descriptor(String primerPaso) {
+        super(IDENTIFIER, new Router1Panel1(primerPaso));
     }
     
     @Override
