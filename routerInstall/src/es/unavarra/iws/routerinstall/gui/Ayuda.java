@@ -40,7 +40,6 @@ public class Ayuda extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jlTitulo = new javax.swing.JLabel();
@@ -82,7 +81,7 @@ public class Ayuda extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
-                .addContainerGap(321, Short.MAX_VALUE))
+                .addContainerGap(351, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Preguntas Frecuentes", jPanel1);
@@ -103,7 +102,7 @@ public class Ayuda extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(jLabel4)
-                .addContainerGap(337, Short.MAX_VALUE))
+                .addContainerGap(367, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Incidencias", jPanel2);
@@ -116,34 +115,22 @@ public class Ayuda extends javax.swing.JPanel {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 382, Short.MAX_VALUE)
+            .addGap(0, 412, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Problemas comunes", jPanel3);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 415, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 382, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("tab4", jPanel4);
-
         add(jTabbedPane1);
-        jTabbedPane1.setBounds(30, 100, 420, 410);
+        jTabbedPane1.setBounds(30, 100, 420, 440);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/help32.png"))); // NOI18N
         add(jLabel3);
         jLabel3.setBounds(10, 30, 30, 30);
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/note_search32.png"))); // NOI18N
         jButton2.setText("Actualizar");
         add(jButton2);
-        jButton2.setBounds(353, 530, 90, 23);
+        jButton2.setBounds(330, 570, 120, 40);
 
         jlTitulo.setBackground(new java.awt.Color(0, 51, 102));
         jlTitulo.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
@@ -180,7 +167,6 @@ public class Ayuda extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel jlBackground;
     private javax.swing.JLabel jlTitulo;
