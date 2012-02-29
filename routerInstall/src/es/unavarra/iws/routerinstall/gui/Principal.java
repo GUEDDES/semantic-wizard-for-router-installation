@@ -11,6 +11,7 @@ import es.unavarra.iws.routerinstall.engine.QueryManager;
  * @author aqm
  */
 public class Principal extends javax.swing.JDialog {
+    
     QueryManager qm = null;
 
     /**

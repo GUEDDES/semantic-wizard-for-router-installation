@@ -10,7 +10,7 @@ public class TestMain {
         Wizard wizard = new Wizard();
         wizard.getDialog().setTitle("Test Wizard Dialog");
         
-        WizardPanelDescriptor descriptor1 = new Router1Panel1Descriptor();
+        WizardPanelDescriptor descriptor1 = new Router1Panel1Descriptor("");
         wizard.registerWizardPanel(Router1Panel1Descriptor.IDENTIFIER, descriptor1);
 
         WizardPanelDescriptor descriptor2 = new Router1Panel2Descriptor();

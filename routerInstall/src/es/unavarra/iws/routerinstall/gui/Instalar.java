@@ -108,8 +108,8 @@ public class Instalar extends javax.swing.JPanel {
         add(jbRouter2);
         jbRouter2.setBounds(120, 330, 200, 80);
 
-        jbRouter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/comtrend5365_60.png"))); // NOI18N
-        jbRouter1.setText("      Router 1");
+        jbRouter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_ct-351_60.png"))); // NOI18N
+        jbRouter1.setText("      CT-351");
         jbRouter1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jbRouter1MouseClicked(evt);
@@ -152,21 +152,33 @@ public class Instalar extends javax.swing.JPanel {
     }//GEN-LAST:event_jbRouter3ActionPerformed
 
     private void jbRouter1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbRouter1MouseClicked
-        QueryManager busquedas = new QueryManager();
-
+        String routerActual = "CT-351";
+        String primerPaso;
+        
+        primerPaso = qm.initInstallationByModelName(routerActual);
+        
         Wizard wizard = new Wizard();
-        wizard.getDialog().setTitle("Instalación router 1");
+        wizard.getDialog().setTitle("Instalación router " + routerActual);
         
-        WizardPanelDescriptor descriptor1 = new Router1Panel1Descriptor();
-        wizard.registerWizardPanel(Router1Panel1Descriptor.IDENTIFIER, descriptor1);
+        WizardPanelDescriptor descriptor1 = new Rct351Panel1Descriptor(primerPaso!=null ? primerPaso:"");
+        wizard.registerWizardPanel(Rct351Panel1Descriptor.IDENTIFIER, descriptor1);
 
-        WizardPanelDescriptor descriptor2 = new Router1Panel2Descriptor();
-        wizard.registerWizardPanel(Router1Panel2Descriptor.IDENTIFIER, descriptor2);
+        WizardPanelDescriptor descriptor2 = new Rct351Panel2Descriptor();
+        wizard.registerWizardPanel(Rct351Panel2Descriptor.IDENTIFIER, descriptor2);
 
-        WizardPanelDescriptor descriptor3 = new Router1Panel3Descriptor();
-        wizard.registerWizardPanel(Router1Panel3Descriptor.IDENTIFIER, descriptor3);
+        WizardPanelDescriptor descriptor3 = new Rct351Panel3Descriptor();
+        wizard.registerWizardPanel(Rct351Panel3Descriptor.IDENTIFIER, descriptor3);
         
-        wizard.setCurrentPanel(Router1Panel1Descriptor.IDENTIFIER);
+        WizardPanelDescriptor descriptor4 = new Rct351Panel4Descriptor();
+        wizard.registerWizardPanel(Rct351Panel4Descriptor.IDENTIFIER, descriptor4);
+        
+        WizardPanelDescriptor descriptor5 = new Rct351Panel5Descriptor();
+        wizard.registerWizardPanel(Rct351Panel5Descriptor.IDENTIFIER, descriptor5);
+        
+        WizardPanelDescriptor descriptor6 = new Rct351Panel6Descriptor();
+        wizard.registerWizardPanel(Rct351Panel6Descriptor.IDENTIFIER, descriptor6);
+        
+        wizard.setCurrentPanel(Rct351Panel1Descriptor.IDENTIFIER);
         
         int ret = wizard.showModalDialog();
         /*
