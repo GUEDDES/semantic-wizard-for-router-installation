@@ -78,6 +78,8 @@ public class Vocabulary {
     public final Property siguientePasoOK;
     public final Property siguientePasoError;
     public final Property seeAlso;
+    public final Property manualURL;
+    public final Property videoURL;
 
     
     /** Individuals */
@@ -93,7 +95,6 @@ public class Vocabulary {
     public final Individual TG585v7;
     public final Individual fast2604;
     public final Individual HG556;
-
 
 
     public Vocabulary(OntModel model) {
@@ -156,6 +157,9 @@ public class Vocabulary {
         estaEncendido = model.createProperty(uri+"estaEncendido");
         siguientePasoOK = model.createProperty(uri, "siguientePasoOK");
         siguientePasoError = model.createProperty(uri, "siguientePasoError");
+
+        manualURL = model.getProperty(uri+"manualURL");
+        videoURL = model.getProperty(uri+"videoURL");
 
         /**Instances*/
         INALAMBRICO = model.getIndividual(uri + "Inalambrico");
