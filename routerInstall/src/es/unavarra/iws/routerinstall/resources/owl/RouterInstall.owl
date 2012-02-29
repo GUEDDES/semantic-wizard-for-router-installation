@@ -3,7 +3,6 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
-    xmlns:assert="http://www.owl-ontologies.com/assert.owl#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:RouterInstall="http://www.owl-ontologies.com/Ontology1325175471.owl#"
     xmlns:sqwrl="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#"
@@ -14,7 +13,6 @@
     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
   xml:base="http://www.owl-ontologies.com/Ontology1325175471.owl">
   <owl:Ontology rdf:about="">
-    <owl:imports rdf:resource="http://www.owl-ontologies.com/assert.owl"/>
     <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/3.3/swrla.owl"/>
     <owl:imports rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl"/>
   </owl:Ontology>
