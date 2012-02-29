@@ -106,17 +106,27 @@ public class QueryManager implements IQueryManager {
         return engine.searchAvailableRouters();
     }
 
-    public static void main(String[] args) {
-        QueryManager qm = new QueryManager();
-        logger.info(qm.getAvailableRouters());
-    }
-
     public String getManualURL(String id) {
-        return "URLMANUAL";
+        Statement stmt = engine.getModel().getOntResource(Vocabulary.uri+id).getProperty(engine.getVocabulary().manualURL);
+        String manualURL = null;
+         if (stmt != null) {
+            manualURL = stmt.getString();
+        }
+        return manualURL;
     }
 
     public String getVideoURL(String id) {
-        return "URLVIDEO";
+        Statement stmt = engine.getModel().getOntResource(Vocabulary.uri+id).getProperty(engine.getVocabulary().videoURL);
+        String videoURL = null;
+         if (stmt != null) {
+            videoURL = stmt.getString();
+        }
+        return videoURL;
+    }
+
+     public static void main(String[] args) {
+        QueryManager qm = new QueryManager();
+        logger.info(qm.getAvailableRouters());
     }
 
 }
