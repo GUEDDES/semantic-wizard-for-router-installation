@@ -18,6 +18,7 @@ import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.ontology.OntModelSpec;
+import com.hp.hpl.jena.query.Syntax;
 import es.unavarra.iws.routerinstall.engine.utils.QueryResult;
 
 
@@ -57,8 +58,9 @@ public class Engine {
 
     public Individual getNextStep(Individual router, Individual currentStep, boolean prevStepOK) {
         if (prevStepOK) {
-            if (currentStep.hasProperty(vocabulary.siguientePasoOK)) {
-                return (Individual) currentStep.getPropertyResourceValue(vocabulary.siguientePasoOK);
+            if (currentStep.hasProperty(vocabulary.pasoSiguienteOK)) {
+                currentStep.addProperty(vocabulary.isPasoHecho, "true");
+                return model.getIndividual(currentStep.getProperty(vocabulary.pasoSiguienteOK).getString());
             } else {
                 return null;
             }
@@ -80,7 +82,7 @@ public class Engine {
 
     public synchronized List<String> querySPARQL(String queryString, String param) {
         ArrayList<String> list = new ArrayList<String>();
-        Query query = QueryFactory.create(queryString);
+        Query query = QueryFactory.create(queryString, Syntax.syntaxARQ);
         QueryExecution qe = QueryExecutionFactory.create(query, model);
         ResultSet rs = qe.execSelect();
         while (rs.hasNext()) {
@@ -266,12 +268,56 @@ public class Engine {
                 return routerNames;
      }
 
+
+   public List<String> searchStepsBeforePowerOn(Individual router) {
+       String pasoInstalacionHecho =  "?pasoInstalacion rdf:instanceOf <" +vocabulary.pasoInstalacion.getURI() + "> . "
+                                        +     "NOT EXISTS { ?pasoInstalacion foaf:isPasoHecho ?hecho }. ";
+
+
+
+       String queryString = "PREFIX foaf:<" + defaultNameSpace + ">"
+                + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
+                + "PREFIX  afn:<http://jena.hpl.hp.com/ARQ/function#>"
+                + " SELECT ?pasoInstalacion  "
+               + " WHERE {"
+               + "OPTIONAL{"
+                + pasoInstalacionHecho
+                + "<"+router.getURI()+"> foaf:hasMicrofiltroRouter ?microfiltro ."
+                + "FILTER(sameTerm(?pasoInstalacion, <"+vocabulary.PASO_M_LOCALIZAR_ADSL+">))}"
+                + "OPTIONAL{"
+                + pasoInstalacionHecho
+                 + "<"+router.getURI()+"> foaf:hasComponent <"+vocabulary.tarjetaInalambricaI+"> ."
+                + "FILTER(sameTerm(?pasoInstalacion, <"+vocabulary.PASO_CONECTAR_TARJETA_INALAMBRICA+">))}"
+                + "OPTIONAL{"
+                + pasoInstalacionHecho
+                 + "<"+router.getURI()+"> foaf:hasComponent <"+vocabulary.modemUSBI+"> ."
+                + "FILTER(sameTerm(?pasoInstalacion, <"+vocabulary.PASO_CONECTAR_TARJETA_INALAMBRICA+">))}"
+                + "OPTIONAL{"
+                + pasoInstalacionHecho
+                + "FILTER(sameTerm(?pasoInstalacion, <"+vocabulary.PASO_CONECTAR_ROUTER+">))}"
+
+                + "}";
+
+                logger.info(vocabulary.router.getURI());
+
+                List<String> steps = querySPARQL(queryString, "?pasoInstalacion");
+                
+                return steps;
+     }
+
+
+
+
+
+
+
      
     public String getResourceWithMaxPriority(List<QueryResult> queryResults) {
         double maxP = 0;
         int maxLength = 0;
         String chosenResource = null;
         Iterator<QueryResult> itQ = queryResults.iterator();
+        OntClass chosenClass = null;
         while (itQ.hasNext()) {
            QueryResult qRes = itQ.next();
            Iterator<List<String>> it = qRes.getResults().iterator();
@@ -282,10 +328,29 @@ public class Engine {
                 maxP = priority;
                  maxLength = qRes.getMatchLength();
                 chosenResource = list1.get(0);
+                OntClass c = model.getOntClass(chosenResource);
+                if (c != null) {
+                    chosenClass = c;
+                }
             } else if (priority == maxP) {
                 if (qRes.getMatchLength() > maxLength) {
                     maxLength = qRes.getMatchLength();
                     chosenResource = list1.get(0);
+                    OntClass c = model.getOntClass(chosenResource);
+                    if (c != null) {
+                        chosenClass = c;
+                }
+                }
+            } else if (chosenResource != null) {
+                logger.info("trying subclass of "+chosenResource);
+                if (chosenClass != null) {
+                    OntClass subClass = model.getOntClass(list1.get(0));
+                    if (subClass != null && chosenClass.hasSubClass(subClass)) {
+                        logger.info("subclass found!!");
+                        maxLength = qRes.getMatchLength();
+                        chosenResource = list1.get(0);
+                        maxP = priority + 10;
+                    }
                 }
             }
 
@@ -311,9 +376,21 @@ public class Engine {
     }
 
     Individual getFirstStep(Individual router) {
+     /*   if (router.hasProperty(vocabulary.hasMicrofiltro)) {
+            logger.info("tenemos microfiltro!!");
+            return vocabulary.PASO_M_LOCALIZAR_ADSL;
+        } else if (router.hasProperty(vocabulary.isOfTipo, vocabulary.USB)){
+            logger.info("NO tenemos microfiltro porque somos un modem usb");
+            return null;
+        } else {
+            return vocabulary.PASO_CONECTAR_ROUTER;
+        }
+
         //throw new UnsupportedOperationException("Not yet implemented");
         //<aqm des="solo para pruebas"/>
-        return router;
+        //return vocabulary.PASO_ERROR_DEF;*/
+        List<String> firstSteps = this.searchStepsBeforePowerOn(router);
+        return model.getIndividual(firstSteps.get(0));
     }
 
     Vocabulary getVocabulary() {
