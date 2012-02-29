@@ -59,7 +59,7 @@ public class Rct351Panel4 extends javax.swing.JPanel {
 
         jlTexto.setBackground(java.awt.Color.lightGray);
         jlTexto.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jlTexto.setText("Paso 4");
+        jlTexto.setText("Verificar funcionamiento del dispositivo");
         jlTexto.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         jlTexto.setOpaque(true);
         jpTitulo.add(jlTexto, java.awt.BorderLayout.CENTER);
@@ -105,7 +105,7 @@ public class Rct351Panel4 extends javax.swing.JPanel {
         jPanel1.add(jRadioButton1);
         jPanel1.add(jLabel2);
 
-        jCheckBox1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jCheckBox1.setFont(new java.awt.Font("Verdana", 0, 14));
         jCheckBox1.setText("Paso completado con exito");
         jCheckBox1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jCheckBox1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
