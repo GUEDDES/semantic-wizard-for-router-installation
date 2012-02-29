@@ -18,7 +18,8 @@ public class Rct351Panel5 extends javax.swing.JPanel {
     public Rct351Panel5() {
         initComponents();
     }
-
+    
+    /*
     public boolean isCheckBoxSelected() {
         return jCheckBox1.isSelected();
     }    
@@ -26,6 +27,8 @@ public class Rct351Panel5 extends javax.swing.JPanel {
     public void addCheckBoxActionListener(ActionListener l) {
         jCheckBox1.addActionListener(l);
     }    
+    */
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,7 +52,6 @@ public class Rct351Panel5 extends javax.swing.JPanel {
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton1 = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
         jLabel4 = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
@@ -104,14 +106,6 @@ public class Rct351Panel5 extends javax.swing.JPanel {
         jRadioButton1.setText("Serial/Paralelo");
         jPanel1.add(jRadioButton1);
         jPanel1.add(jLabel2);
-
-        jCheckBox1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jCheckBox1.setText("Paso completado con exito");
-        jCheckBox1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jCheckBox1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jCheckBox1.setMaximumSize(new java.awt.Dimension(315, 24));
-        jCheckBox1.setMinimumSize(new java.awt.Dimension(315, 24));
-        jPanel1.add(jCheckBox1);
         jPanel1.add(jLabel4);
 
         jpContenido.add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -120,7 +114,6 @@ public class Rct351Panel5 extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

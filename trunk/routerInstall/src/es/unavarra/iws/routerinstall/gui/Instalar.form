@@ -58,14 +58,14 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="20" y="150" width="200" height="-1"/>
+          <AbsoluteConstraints x="20" y="160" width="200" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator1">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="-20" y="190" width="500" height="10"/>
+          <AbsoluteConstraints x="-20" y="198" width="500" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -88,42 +88,42 @@
     <Component class="javax.swing.JButton" name="jbRouter4">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/es/unavarra/iws/routerinstall/resources/img/comtrend5365_60.png"/>
+          <Image iconType="3" name="/es/unavarra/iws/routerinstall/resources/img/r_tg585v7_60.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="      Router 4"/>
+        <Property name="text" type="java.lang.String" value="      TG585v7"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="120" y="530" width="200" height="80"/>
+          <AbsoluteConstraints x="250" y="380" width="200" height="80"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="jbRouter3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/es/unavarra/iws/routerinstall/resources/img/comtrend5365_60.png"/>
+          <Image iconType="3" name="/es/unavarra/iws/routerinstall/resources/img/r_x70028r_60.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="      Router 3"/>
+        <Property name="text" type="java.lang.String" value="      x7028r"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbRouter3ActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="120" y="430" width="200" height="80"/>
+          <AbsoluteConstraints x="20" y="380" width="200" height="80"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="jbRouter2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/es/unavarra/iws/routerinstall/resources/img/comtrend5365_60.png"/>
+          <Image iconType="3" name="/es/unavarra/iws/routerinstall/resources/img/r_ct5071_60.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="      Router 2"/>
+        <Property name="text" type="java.lang.String" value="      CT-5071"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="120" y="330" width="200" height="80"/>
+          <AbsoluteConstraints x="250" y="260" width="200" height="80"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -139,7 +139,36 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="120" y="230" width="200" height="80"/>
+          <AbsoluteConstraints x="20" y="260" width="200" height="80"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbRouter5">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/es/unavarra/iws/routerinstall/resources/img/r_sagemFast2604_30.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="  SagemFast_2604"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbRouter5ActionPerformed"/>
+      </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="20" y="500" width="200" height="80"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbRouter6">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/es/unavarra/iws/routerinstall/resources/img/r_hg556_60.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="      HG556"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="250" y="500" width="200" height="80"/>
         </Constraint>
       </Constraints>
     </Component>
