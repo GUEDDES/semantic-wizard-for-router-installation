@@ -44,10 +44,10 @@ public class Rct351Panel3 extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jLabel4 = new javax.swing.JLabel();
@@ -59,7 +59,7 @@ public class Rct351Panel3 extends javax.swing.JPanel {
 
         jlTexto.setBackground(java.awt.Color.lightGray);
         jlTexto.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jlTexto.setText("Paso 3");
+        jlTexto.setText("Conexión del router");
         jlTexto.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         jlTexto.setOpaque(true);
         jpTitulo.add(jlTexto, java.awt.BorderLayout.CENTER);
@@ -77,7 +77,6 @@ public class Rct351Panel3 extends javax.swing.JPanel {
 
         jpContenido.setLayout(new java.awt.BorderLayout());
 
-        jLabel1.setText("Por favor ingrese el tipo de conector");
         jLabel1.setMaximumSize(new java.awt.Dimension(252, 20));
         jLabel1.setMinimumSize(new java.awt.Dimension(252, 20));
         jLabel1.setPreferredSize(new java.awt.Dimension(252, 40));
@@ -85,24 +84,21 @@ public class Rct351Panel3 extends javax.swing.JPanel {
 
         jPanel1.setPreferredSize(new java.awt.Dimension(480, 192));
         jPanel1.setLayout(new java.awt.GridLayout(0, 1));
+
+        jLabel3.setText("5.- Conectar el cable ADSL de la clavija extensora al puerto ADSL del router.");
         jPanel1.add(jLabel3);
 
-        buttonGroup2.add(jRadioButton3);
-        jRadioButton3.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jRadioButton3.setText("802.11 b/g");
-        jPanel1.add(jRadioButton3);
+        jLabel5.setText("6.- Conectar el cable de alimentación al router y a la toma eléctrica.");
+        jPanel1.add(jLabel5);
 
-        buttonGroup2.add(jRadioButton4);
-        jRadioButton4.setText("Ethernet RJ-45");
-        jPanel1.add(jRadioButton4);
+        jLabel6.setText("7.- Una vez conectado el router a la toma de corriente, presionar el botón de encendido,");
+        jPanel1.add(jLabel6);
 
-        buttonGroup2.add(jRadioButton2);
-        jRadioButton2.setText("Ethernet 10 base T");
-        jPanel1.add(jRadioButton2);
+        jLabel7.setText("      verificando que el led de encendido se active");
+        jPanel1.add(jLabel7);
 
-        buttonGroup2.add(jRadioButton1);
-        jRadioButton1.setText("Serial/Paralelo");
-        jPanel1.add(jRadioButton1);
+        jLabel8.setText("Si el led no se enciende, ir al paso 6.");
+        jPanel1.add(jLabel8);
         jPanel1.add(jLabel2);
 
         jCheckBox1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
@@ -125,11 +121,11 @@ public class Rct351Panel3 extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel jlIcono;
     private javax.swing.JLabel jlTexto;
