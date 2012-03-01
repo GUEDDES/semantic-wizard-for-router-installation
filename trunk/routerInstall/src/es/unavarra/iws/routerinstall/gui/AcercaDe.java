@@ -5,7 +5,12 @@
 package es.unavarra.iws.routerinstall.gui;
 
 import es.unavarra.iws.routerinstall.engine.QueryManager;
+import java.awt.Color;
 import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Random;
+import javax.swing.Timer;
 
 /**
  *
@@ -13,12 +18,37 @@ import java.awt.Container;
  */
 public class AcercaDe extends javax.swing.JPanel {
     QueryManager qm = null;
+    private int alpha = 255;  
+    private int increment = -5;     
     /**
      * Creates new form Menu
      */
     public AcercaDe(QueryManager qm) {
         this.qm = qm;
         initComponents();
+        new Timer(40, new ActionListener() {  
+            public void actionPerformed(ActionEvent e) {  
+                alpha += increment;  
+                if (alpha >= 255) {  
+                    alpha = 255;  
+                    increment = -increment;  
+                }  
+                if (alpha <= 0) {  
+                    alpha = 0;  
+                    increment = -increment;  
+                    Random r = new Random();
+                    int n = (r.nextInt(4)+1);
+                    if(n==1){jlMariela.setText("Mariela");jlItziar.setText("Itziar");jlMikel.setText("Mikel");jlArnulfo.setText("Arnulfo");}
+                    if(n==2){jlMariela.setText("Itziar");jlItziar.setText("Mikel");jlMikel.setText("Arnulfo");jlArnulfo.setText("Mariela");}
+                    if(n==3){jlMariela.setText("Mikel");jlItziar.setText("Arnulfo");jlMikel.setText("Mariela");jlArnulfo.setText("Itziar");}
+                    if(n==4){jlMariela.setText("Arnulfo");jlItziar.setText("Mariela");jlMikel.setText("Itziar");jlArnulfo.setText("Mikel");}
+                }
+                jlMariela.setForeground(new Color(0, 0, 0, alpha));  
+                jlItziar.setForeground(new Color(0, 0, 0, alpha));  
+                jlMikel.setForeground(new Color(0, 0, 0, alpha));  
+                jlArnulfo.setForeground(new Color(0, 0, 0, alpha));  
+                }  
+            }).start();  
     }
 
     /**
@@ -30,91 +60,85 @@ public class AcercaDe extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        jbHome = new javax.swing.JButton();
+        jlUPNA = new javax.swing.JLabel();
+        jlArnulfo = new javax.swing.JLabel();
+        jlMariela = new javax.swing.JLabel();
+        jlItziar = new javax.swing.JLabel();
+        jlIcono = new javax.swing.JLabel();
+        jlMikel = new javax.swing.JLabel();
+        jlIWS = new javax.swing.JLabel();
+        jlTitulo = new javax.swing.JLabel();
+        jlMUTI = new javax.swing.JLabel();
         jlBackground = new javax.swing.JLabel();
 
         setLayout(null);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/home32.png"))); // NOI18N
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jbHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/home32.png"))); // NOI18N
+        jbHome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                jbHomeMouseClicked(evt);
             }
         });
-        add(jButton1);
-        jButton1.setBounds(420, 20, 50, 50);
+        add(jbHome);
+        jbHome.setBounds(420, 20, 50, 50);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 239, 0));
-        jLabel1.setText("Arnulfo");
-        add(jLabel1);
-        jLabel1.setBounds(290, 350, 80, 29);
+        jlUPNA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/upna2.png"))); // NOI18N
+        add(jlUPNA);
+        jlUPNA.setBounds(170, 270, 180, 100);
 
-        jLabel5.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 239, 0));
-        jLabel5.setText("Mariela");
-        add(jLabel5);
-        jLabel5.setBounds(130, 240, 80, 29);
+        jlArnulfo.setFont(new java.awt.Font("Arial", 0, 28)); // NOI18N
+        jlArnulfo.setText("Arnulfo");
+        add(jlArnulfo);
+        jlArnulfo.setBounds(270, 370, 120, 40);
 
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 239, 0));
-        jLabel4.setText("Itziar");
-        add(jLabel4);
-        jLabel4.setBounds(290, 240, 80, 29);
+        jlMariela.setFont(new java.awt.Font("Arial", 0, 28)); // NOI18N
+        jlMariela.setText("Mariela");
+        add(jlMariela);
+        jlMariela.setBounds(120, 230, 120, 33);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/addressbook32.png"))); // NOI18N
-        add(jLabel3);
-        jLabel3.setBounds(10, 30, 30, 30);
+        jlItziar.setFont(new java.awt.Font("Arial", 0, 28)); // NOI18N
+        jlItziar.setText("Itziar");
+        add(jlItziar);
+        jlItziar.setBounds(270, 220, 110, 50);
 
-        jLabel6.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 239, 0));
-        jLabel6.setText("Mikel");
-        add(jLabel6);
-        jLabel6.setBounds(130, 350, 80, 29);
+        jlIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/addressbook32.png"))); // NOI18N
+        add(jlIcono);
+        jlIcono.setBounds(10, 30, 30, 30);
 
-        jLabel7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel7.setForeground(java.awt.Color.white);
-        jLabel7.setText("Introducción a la Web Semántica - 2012");
-        add(jLabel7);
-        jLabel7.setBounds(140, 550, 230, 15);
+        jlMikel.setFont(new java.awt.Font("Arial", 0, 28)); // NOI18N
+        jlMikel.setText("Mikel");
+        add(jlMikel);
+        jlMikel.setBounds(120, 370, 100, 40);
 
-        jLabel2.setBackground(new java.awt.Color(0, 102, 153));
-        jLabel2.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel2.setText("       Acerca de");
-        jLabel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(0, 0, 0)));
-        jLabel2.setOpaque(true);
-        add(jLabel2);
-        jLabel2.setBounds(0, 20, 480, 50);
+        jlIWS.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jlIWS.setForeground(new java.awt.Color(255, 204, 0));
+        jlIWS.setText("Introducción a la Web Semántica - 2012");
+        add(jlIWS);
+        jlIWS.setBounds(140, 500, 230, 15);
 
-        jLabel8.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        jLabel8.setForeground(java.awt.Color.white);
-        jLabel8.setText("Universidad Pública de Navarra");
-        add(jLabel8);
-        jLabel8.setBounds(120, 500, 280, 29);
+        jlTitulo.setBackground(new java.awt.Color(0, 102, 153));
+        jlTitulo.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jlTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        jlTitulo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jlTitulo.setText("       Acerca de");
+        jlTitulo.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(0, 0, 0)));
+        jlTitulo.setOpaque(true);
+        add(jlTitulo);
+        jlTitulo.setBounds(0, 20, 480, 50);
 
-        jLabel9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel9.setForeground(java.awt.Color.white);
-        jLabel9.setText("Máster Universitario en Tecnologías Informáticas");
-        add(jLabel9);
-        jLabel9.setBounds(100, 530, 310, 17);
+        jlMUTI.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jlMUTI.setForeground(new java.awt.Color(255, 255, 102));
+        jlMUTI.setText("Máster Universitario en Tecnologías Informáticas");
+        add(jlMUTI);
+        jlMUTI.setBounds(90, 480, 310, 17);
 
         jlBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr1.png"))); // NOI18N
         add(jlBackground);
         jlBackground.setBounds(0, 0, 480, 660);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void jbHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbHomeMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
         Container menu = this.getFocusCycleRootAncestor();
@@ -122,19 +146,19 @@ public class AcercaDe extends javax.swing.JPanel {
         menu.remove(this);
         principal.setSize(menu.getSize());
         menu.add(principal, 0);        
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_jbHomeMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton jbHome;
+    private javax.swing.JLabel jlArnulfo;
     private javax.swing.JLabel jlBackground;
+    private javax.swing.JLabel jlIWS;
+    private javax.swing.JLabel jlIcono;
+    private javax.swing.JLabel jlItziar;
+    private javax.swing.JLabel jlMUTI;
+    private javax.swing.JLabel jlMariela;
+    private javax.swing.JLabel jlMikel;
+    private javax.swing.JLabel jlTitulo;
+    private javax.swing.JLabel jlUPNA;
     // End of variables declaration//GEN-END:variables
 }
