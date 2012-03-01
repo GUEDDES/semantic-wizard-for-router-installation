@@ -18,7 +18,7 @@ public class Rx7028rPanel2 extends javax.swing.JPanel {
     public Rx7028rPanel2() {
         initComponents();
     }
-
+/*
     public boolean isCheckBoxSelected() {
         return jCheckBox1.isSelected();
     }    
@@ -26,6 +26,8 @@ public class Rx7028rPanel2 extends javax.swing.JPanel {
     public void addCheckBoxActionListener(ActionListener l) {
         jCheckBox1.addActionListener(l);
     }    
+     * 
+     */
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -50,7 +52,6 @@ public class Rx7028rPanel2 extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -58,7 +59,7 @@ public class Rx7028rPanel2 extends javax.swing.JPanel {
         jpTitulo.setLayout(new java.awt.BorderLayout());
 
         jlTexto.setBackground(java.awt.Color.lightGray);
-        jlTexto.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jlTexto.setFont(new java.awt.Font("Verdana", 1, 14));
         jlTexto.setText("Instalación de microfiltros");
         jlTexto.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         jlTexto.setOpaque(true);
@@ -104,21 +105,12 @@ public class Rx7028rPanel2 extends javax.swing.JPanel {
         jPanel1.add(jLabel2);
         jPanel1.add(jLabel4);
 
-        jCheckBox1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jCheckBox1.setText("Paso completado con exito");
-        jCheckBox1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jCheckBox1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jCheckBox1.setMaximumSize(new java.awt.Dimension(315, 24));
-        jCheckBox1.setMinimumSize(new java.awt.Dimension(315, 24));
-        jPanel1.add(jCheckBox1);
-
         jpContenido.add(jPanel1, java.awt.BorderLayout.CENTER);
 
         add(jpContenido, java.awt.BorderLayout.WEST);
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

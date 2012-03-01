@@ -61,7 +61,7 @@ public class Instalar extends javax.swing.JPanel {
         add(jbInicio);
         jbInicio.setBounds(420, 20, 50, 50);
 
-        jtBusqueda.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jtBusqueda.setFont(new java.awt.Font("Tahoma", 0, 18));
         jtBusqueda.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jtBusquedaKeyReleased(evt);
@@ -97,6 +97,11 @@ public class Instalar extends javax.swing.JPanel {
 
         jbRouter3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_x70028r_60.png"))); // NOI18N
         jbRouter3.setText("      x7028r");
+        jbRouter3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbRouter3MouseClicked(evt);
+            }
+        });
         jbRouter3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbRouter3ActionPerformed(evt);
@@ -140,7 +145,7 @@ public class Instalar extends javax.swing.JPanel {
         jLabel3.setBounds(10, 30, 30, 30);
 
         jLabel2.setBackground(new java.awt.Color(0, 102, 153));
-        jLabel2.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Verdana", 0, 24));
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("       Instalación");
@@ -224,6 +229,45 @@ public class Instalar extends javax.swing.JPanel {
     private void jbRouter5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRouter5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbRouter5ActionPerformed
+
+private void jbRouter3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbRouter3MouseClicked
+// TODO add your handling code here:
+        String routerActual = "x7028r";
+        String primerPaso;
+        
+        primerPaso = qm.initInstallationByModelName(routerActual);
+        
+        Wizard wizard = new Wizard();
+        wizard.getDialog().setTitle("Instalación router " + routerActual);
+        
+        WizardPanelDescriptor descriptor1 = new Rx7028rPanel1Descriptor(primerPaso!=null ? primerPaso:"");
+        wizard.registerWizardPanel(Rx7028rPanel1Descriptor.IDENTIFIER, descriptor1);
+
+        WizardPanelDescriptor descriptor2 = new Rx7028rPanel2Descriptor();
+        wizard.registerWizardPanel(Rx7028rPanel2Descriptor.IDENTIFIER, descriptor2);
+
+        WizardPanelDescriptor descriptor3 = new Rx7028rPanel3Descriptor();
+        wizard.registerWizardPanel(Rx7028rPanel3Descriptor.IDENTIFIER, descriptor3);
+        
+        WizardPanelDescriptor descriptor4 = new Rx7028rPanel4Descriptor();
+        wizard.registerWizardPanel(Rx7028rPanel4Descriptor.IDENTIFIER, descriptor4);
+        
+        WizardPanelDescriptor descriptor5 = new Rx7028rPanel5Descriptor();
+        wizard.registerWizardPanel(Rx7028rPanel5Descriptor.IDENTIFIER, descriptor5);
+        
+        WizardPanelDescriptor descriptor6 = new Rx7028rPanel6Descriptor();
+        wizard.registerWizardPanel(Rx7028rPanel6Descriptor.IDENTIFIER, descriptor6);
+        
+        WizardPanelDescriptor descriptor7 = new Rx7028rPanel7Descriptor();
+        wizard.registerWizardPanel(Rx7028rPanel7Descriptor.IDENTIFIER, descriptor7);
+        
+        WizardPanelDescriptor descriptor8 = new Rx7028rPanel8Descriptor();
+        wizard.registerWizardPanel(Rx7028rPanel8Descriptor.IDENTIFIER, descriptor8);
+        
+        wizard.setCurrentPanel(Rx7028rPanel1Descriptor.IDENTIFIER);
+        
+        int ret = wizard.showModalDialog();
+}//GEN-LAST:event_jbRouter3MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;

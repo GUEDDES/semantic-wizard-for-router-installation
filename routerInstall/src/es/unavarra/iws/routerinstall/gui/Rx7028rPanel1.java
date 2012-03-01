@@ -57,7 +57,7 @@ public class Rx7028rPanel1 extends javax.swing.JPanel {
 
         ContenidoTodo.setLayout(new java.awt.BorderLayout());
 
-        lTitulo.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        lTitulo.setFont(new java.awt.Font("Verdana", 1, 14));
         lTitulo.setText("Instalación del Router x7028r wifi");
         ContenidoTodo.add(lTitulo, java.awt.BorderLayout.PAGE_START);
 
@@ -68,7 +68,7 @@ public class Rx7028rPanel1 extends javax.swing.JPanel {
         ContenidoTexto.add(jLabel4);
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_ct-351_60.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_x70028r_60.png"))); // NOI18N
         jLabel8.setMaximumSize(new java.awt.Dimension(531, 100));
         jLabel8.setMinimumSize(new java.awt.Dimension(531, 100));
         jLabel8.setPreferredSize(new java.awt.Dimension(531, 18));

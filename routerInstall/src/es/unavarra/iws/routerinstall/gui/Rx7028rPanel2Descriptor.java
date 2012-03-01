@@ -21,7 +21,7 @@ public class Rx7028rPanel2Descriptor extends WizardPanelDescriptor implements Ac
     public Rx7028rPanel2Descriptor() {
         
         panel2 = new Rx7028rPanel2();
-        panel2.addCheckBoxActionListener(this);
+        //panel2.addCheckBoxActionListener(this);
         
         setPanelDescriptorIdentifier(IDENTIFIER);
         setPanelComponent(panel2);
@@ -30,8 +30,7 @@ public class Rx7028rPanel2Descriptor extends WizardPanelDescriptor implements Ac
     
     @Override
     public Object getNextPanelDescriptor() {
-        //return Rx7028rPanel3Descriptor.IDENTIFIER;
-        return "RX7028R_PANEL2";
+        return Rx7028rPanel3Descriptor.IDENTIFIER;
     }
     
     @Override
@@ -41,17 +40,18 @@ public class Rx7028rPanel2Descriptor extends WizardPanelDescriptor implements Ac
     
     @Override
     public void aboutToDisplayPanel() {
-        setNextButtonAccordingToCheckBox();
+        //setNextButtonAccordingToCheckBox();
     }
     
     public void actionPerformed(ActionEvent ae) {
-        setNextButtonAccordingToCheckBox();
+        //setNextButtonAccordingToCheckBox();
     }
-    
+    /*
     private void setNextButtonAccordingToCheckBox() {
          if (panel2.isCheckBoxSelected())
             getWizard().setNextFinishButtonEnabled(true);
          else
             getWizard().setNextFinishButtonEnabled(false);           
     }
+     */
 }
