@@ -12,30 +12,30 @@ import java.awt.event.ActionListener;
  *
  * @author aqm
  */
-public class Router1Panel7Descriptor extends WizardPanelDescriptor implements ActionListener {
+public class RHG556Panel4Descriptor extends WizardPanelDescriptor implements ActionListener {
     
-    public static final String IDENTIFIER = "RCt5701_PANEL_7";
+    public static final String IDENTIFIER = "RHG556_PANEL_4";
     
-    Router1Panel7 panel7;
+    RHG556Panel4 panel4;
     
-    public Router1Panel7Descriptor() {
+    public RHG556Panel4Descriptor() {
         
-        panel7 = new Router1Panel7();
-        //panel6.addCheckBoxActionListener(this);
+        panel4 = new RHG556Panel4();
+        //panel4.addCheckBoxActionListener(this);
         
         setPanelDescriptorIdentifier(IDENTIFIER);
-        setPanelComponent(panel7);
+        setPanelComponent(panel4);
         
     }
     
     @Override
     public Object getNextPanelDescriptor() {
-        return FINISH;
+        return RHG556Panel5Descriptor.IDENTIFIER;
     }
     
     @Override
     public Object getBackPanelDescriptor() {
-        return Router1Panel6Descriptor.IDENTIFIER;
+        return RHG556Panel3Descriptor.IDENTIFIER;
     }    
     
     @Override
@@ -48,7 +48,7 @@ public class Router1Panel7Descriptor extends WizardPanelDescriptor implements Ac
     }
     /*
     private void setNextButtonAccordingToCheckBox() {
-         if (panel6.isCheckBoxSelected())
+         if (panel4.isCheckBoxSelected())
             getWizard().setNextFinishButtonEnabled(true);
          else
             getWizard().setNextFinishButtonEnabled(false);           
