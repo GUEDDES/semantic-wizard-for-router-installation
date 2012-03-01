@@ -171,7 +171,9 @@ public class Busqueda extends javax.swing.JPanel {
                     //sResultado = sResultado.toLowerCase();
                     jpContenido.removeAll();
                     if(sResultado.equals("Microfiltro")){
-                        jpContenido.add(new Cmicrofiltro());
+                        sComment = qm.getComment("Microfiltro");
+                        sSeeAlso = qm.getSeeAlso("Microfiltro");                        
+                        jpContenido.add(new Cmicrofiltro(sComment, sSeeAlso));
                     }else if(sResultado.equals("Ordenador")){
                         sComment = qm.getComment("Ordenador");
                         sSeeAlso = qm.getSeeAlso("Ordenador");                         
