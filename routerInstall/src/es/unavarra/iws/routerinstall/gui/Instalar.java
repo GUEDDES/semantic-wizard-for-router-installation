@@ -232,7 +232,7 @@ public class Instalar extends javax.swing.JPanel {
         
         wizard.setCurrentPanel(Rct351Panel1Descriptor.IDENTIFIER);
         
-        int ret = wizard.showModalDialog();
+        int ret = wizard.showModalDialog(); //Que boton se pulso: 0=Finish,1=Cancel,2=Error
         /*
         System.out.println("Dialog return code is (0=Finish,1=Cancel,2=Error): " + ret);
         System.out.println("Second panel selection is: " + 
@@ -325,8 +325,9 @@ private void jbCT5071MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:ev
         WizardPanelDescriptor descriptor7 = new Router1Panel7Descriptor(qm);
         wizard.registerWizardPanel(Router1Panel7Descriptor.IDENTIFIER, descriptor7);
 
-
         wizard.setCurrentPanel(Router1Panel1Descriptor.IDENTIFIER);
+        
+        int ret = wizard.showModalDialog();
 }//GEN-LAST:event_jbCT5071MouseClicked
 
 private void jbHG556MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbHG556MouseClicked
@@ -358,6 +359,8 @@ private void jbHG556MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
         wizard.registerWizardPanel(RHG556Panel6Descriptor.IDENTIFIER, descriptor6);
         
         wizard.setCurrentPanel(RHG556Panel1Descriptor.IDENTIFIER);
+        
+        int ret = wizard.showModalDialog();
 }//GEN-LAST:event_jbHG556MouseClicked
 
 private void jbTG585v7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbTG585v7MouseClicked
@@ -392,8 +395,10 @@ private void jbTG585v7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:e
         WizardPanelDescriptor descriptor7 = new RTG585v7Panel8Descriptor();
         wizard.registerWizardPanel(RTG585v7Panel8Descriptor.IDENTIFIER, descriptor7);
 
-
         wizard.setCurrentPanel(RTG585v7Panel1Descriptor.IDENTIFIER);
+        
+        int ret = wizard.showModalDialog();
+        
 }//GEN-LAST:event_jbTG585v7MouseClicked
 
 private void jbSagemFast2604MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbSagemFast2604MouseClicked
