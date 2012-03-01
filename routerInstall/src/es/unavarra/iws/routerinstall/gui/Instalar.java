@@ -5,6 +5,7 @@
 package es.unavarra.iws.routerinstall.gui;
 
 import es.unavarra.iws.routerinstall.engine.QueryManager;
+import es.unavarra.iws.routerinstall.engine.utils.StringUtils;
 import es.unavarra.iws.routerinstall.gui.wiz.Wizard;
 import es.unavarra.iws.routerinstall.gui.wiz.WizardPanelDescriptor;
 import java.awt.Container;
@@ -40,12 +41,12 @@ public class Instalar extends javax.swing.JPanel {
         jlError = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jbBuscar = new javax.swing.JButton();
-        jbRouter4 = new javax.swing.JButton();
-        jbRouter3 = new javax.swing.JButton();
-        jbRouter2 = new javax.swing.JButton();
-        jbRouter1 = new javax.swing.JButton();
-        jbRouter5 = new javax.swing.JButton();
-        jbRouter6 = new javax.swing.JButton();
+        jbTG585v7 = new javax.swing.JButton();
+        jbX7028r = new javax.swing.JButton();
+        jbCT5071 = new javax.swing.JButton();
+        jbCT351 = new javax.swing.JButton();
+        jbSagemFast2604 = new javax.swing.JButton();
+        jbHG556 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jlBacground = new javax.swing.JLabel();
@@ -61,10 +62,10 @@ public class Instalar extends javax.swing.JPanel {
         add(jbInicio);
         jbInicio.setBounds(420, 20, 50, 50);
 
-        jtBusqueda.setFont(new java.awt.Font("Tahoma", 0, 18));
+        jtBusqueda.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jtBusqueda.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jtBusquedaKeyReleased(evt);
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtBusquedaKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jtBusquedaKeyTyped(evt);
@@ -76,9 +77,9 @@ public class Instalar extends javax.swing.JPanel {
         jlError.setForeground(new java.awt.Color(255, 0, 51));
         jlError.setText("No se encuentran resultados...");
         add(jlError);
-        jlError.setBounds(20, 160, 200, 14);
+        jlError.setBounds(20, 160, 330, 18);
         add(jSeparator1);
-        jSeparator1.setBounds(-20, 198, 500, 2);
+        jSeparator1.setBounds(-20, 198, 500, 6);
 
         jbBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/search32.png"))); // NOI18N
         jbBuscar.setText("Buscar");
@@ -90,82 +91,82 @@ public class Instalar extends javax.swing.JPanel {
         add(jbBuscar);
         jbBuscar.setBounds(360, 100, 110, 40);
 
-        jbRouter4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_tg585v7_60.png"))); // NOI18N
-        jbRouter4.setText("      TG585v7");
-        jbRouter4.addMouseListener(new java.awt.event.MouseAdapter() {
+        jbTG585v7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_tg585v7_60.png"))); // NOI18N
+        jbTG585v7.setText("      TG585v7");
+        jbTG585v7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jbRouter4MouseClicked(evt);
+                jbTG585v7MouseClicked(evt);
             }
         });
-        add(jbRouter4);
-        jbRouter4.setBounds(250, 380, 200, 80);
+        add(jbTG585v7);
+        jbTG585v7.setBounds(250, 360, 200, 80);
 
-        jbRouter3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_x70028r_60.png"))); // NOI18N
-        jbRouter3.setText("      x7028r");
-        jbRouter3.addMouseListener(new java.awt.event.MouseAdapter() {
+        jbX7028r.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_x70028r_60.png"))); // NOI18N
+        jbX7028r.setText("      x7028r");
+        jbX7028r.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jbRouter3MouseClicked(evt);
+                jbX7028rMouseClicked(evt);
             }
         });
-        jbRouter3.addActionListener(new java.awt.event.ActionListener() {
+        jbX7028r.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbRouter3ActionPerformed(evt);
+                jbX7028rActionPerformed(evt);
             }
         });
-        add(jbRouter3);
-        jbRouter3.setBounds(20, 380, 200, 80);
+        add(jbX7028r);
+        jbX7028r.setBounds(20, 360, 200, 80);
 
-        jbRouter2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_ct5071_60.png"))); // NOI18N
-        jbRouter2.setText("      CT-5071");
-        jbRouter2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jbCT5071.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_ct5071_60.png"))); // NOI18N
+        jbCT5071.setText("      CT-5071");
+        jbCT5071.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jbRouter2MouseClicked(evt);
+                jbCT5071MouseClicked(evt);
             }
         });
-        add(jbRouter2);
-        jbRouter2.setBounds(250, 260, 200, 80);
+        add(jbCT5071);
+        jbCT5071.setBounds(250, 240, 200, 80);
 
-        jbRouter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_ct-351_60.png"))); // NOI18N
-        jbRouter1.setText("      CT-351");
-        jbRouter1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jbCT351.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_ct-351_60.png"))); // NOI18N
+        jbCT351.setText("      CT-351");
+        jbCT351.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jbRouter1MouseClicked(evt);
+                jbCT351MouseClicked(evt);
             }
         });
-        add(jbRouter1);
-        jbRouter1.setBounds(20, 260, 200, 80);
+        add(jbCT351);
+        jbCT351.setBounds(20, 240, 200, 80);
 
-        jbRouter5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_sagemFast2604_30.png"))); // NOI18N
-        jbRouter5.setText("  SagemFast_2604");
-        jbRouter5.addMouseListener(new java.awt.event.MouseAdapter() {
+        jbSagemFast2604.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_sagemFast2604_30.png"))); // NOI18N
+        jbSagemFast2604.setText("  SagemFast_2604");
+        jbSagemFast2604.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jbRouter5MouseClicked(evt);
+                jbSagemFast2604MouseClicked(evt);
             }
         });
-        jbRouter5.addActionListener(new java.awt.event.ActionListener() {
+        jbSagemFast2604.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbRouter5ActionPerformed(evt);
+                jbSagemFast2604ActionPerformed(evt);
             }
         });
-        add(jbRouter5);
-        jbRouter5.setBounds(20, 500, 200, 80);
+        add(jbSagemFast2604);
+        jbSagemFast2604.setBounds(20, 480, 200, 80);
 
-        jbRouter6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_hg556_60.png"))); // NOI18N
-        jbRouter6.setText("      HG556");
-        jbRouter6.addMouseListener(new java.awt.event.MouseAdapter() {
+        jbHG556.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_hg556_60.png"))); // NOI18N
+        jbHG556.setText("      HG556");
+        jbHG556.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jbRouter6MouseClicked(evt);
+                jbHG556MouseClicked(evt);
             }
         });
-        add(jbRouter6);
-        jbRouter6.setBounds(250, 500, 200, 80);
+        add(jbHG556);
+        jbHG556.setBounds(250, 480, 200, 80);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr32.png"))); // NOI18N
         add(jLabel3);
         jLabel3.setBounds(10, 30, 30, 30);
 
         jLabel2.setBackground(new java.awt.Color(0, 102, 153));
-        jLabel2.setFont(new java.awt.Font("Verdana", 0, 24));
+        jLabel2.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("       Instalación");
@@ -189,11 +190,11 @@ public class Instalar extends javax.swing.JPanel {
         menu.add(principal, 0);        
     }//GEN-LAST:event_jbInicioMouseClicked
 
-    private void jbRouter3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRouter3ActionPerformed
+    private void jbX7028rActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbX7028rActionPerformed
         
-    }//GEN-LAST:event_jbRouter3ActionPerformed
+    }//GEN-LAST:event_jbX7028rActionPerformed
 
-    private void jbRouter1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbRouter1MouseClicked
+    private void jbCT351MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbCT351MouseClicked
         String routerActual = "CT-351";
         String primerPaso;
         
@@ -237,7 +238,7 @@ public class Instalar extends javax.swing.JPanel {
         System.out.println("Second panel selection is: " + 
             (((Router1Panel2)descriptor2.getPanelComponent()).getRadioButtonSelected()));    */    
         
-    }//GEN-LAST:event_jbRouter1MouseClicked
+    }//GEN-LAST:event_jbCT351MouseClicked
 
     private void jbBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbBuscarMouseClicked
         busquedaRouter(this.jtBusqueda.getText());
@@ -249,17 +250,11 @@ public class Instalar extends javax.swing.JPanel {
 
     }//GEN-LAST:event_jtBusquedaKeyTyped
 
-    private void jtBusquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtBusquedaKeyReleased
-        /*if(evt.getKeyCode()==KeyEvent.VK_ENTER && evt.getComponent().equals(this)){
-            busquedaRouter(this.jtBusqueda.getText());
-        }*/
-    }//GEN-LAST:event_jtBusquedaKeyReleased
-
-    private void jbRouter5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRouter5ActionPerformed
+    private void jbSagemFast2604ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSagemFast2604ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbRouter5ActionPerformed
+    }//GEN-LAST:event_jbSagemFast2604ActionPerformed
 
-private void jbRouter3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbRouter3MouseClicked
+private void jbX7028rMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbX7028rMouseClicked
 // TODO add your handling code here:
         String routerActual = "x7028r";
         String primerPaso;
@@ -296,9 +291,9 @@ private void jbRouter3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:e
         wizard.setCurrentPanel(Rx7028rPanel1Descriptor.IDENTIFIER);
         
         int ret = wizard.showModalDialog();
-}//GEN-LAST:event_jbRouter3MouseClicked
+}//GEN-LAST:event_jbX7028rMouseClicked
 
-private void jbRouter2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbRouter2MouseClicked
+private void jbCT5071MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbCT5071MouseClicked
 // TODO add your handling code here:
         String routerActual = "CT-5071";
         String primerPaso;
@@ -332,9 +327,9 @@ private void jbRouter2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:e
 
 
         wizard.setCurrentPanel(Router1Panel1Descriptor.IDENTIFIER);
-}//GEN-LAST:event_jbRouter2MouseClicked
+}//GEN-LAST:event_jbCT5071MouseClicked
 
-private void jbRouter6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbRouter6MouseClicked
+private void jbHG556MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbHG556MouseClicked
 // TODO add your handling code here:
         String routerActual = "HG556";
         String primerPaso;
@@ -363,9 +358,9 @@ private void jbRouter6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:e
         wizard.registerWizardPanel(RHG556Panel6Descriptor.IDENTIFIER, descriptor6);
         
         wizard.setCurrentPanel(RHG556Panel1Descriptor.IDENTIFIER);
-}//GEN-LAST:event_jbRouter6MouseClicked
+}//GEN-LAST:event_jbHG556MouseClicked
 
-private void jbRouter4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbRouter4MouseClicked
+private void jbTG585v7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbTG585v7MouseClicked
 // TODO add your handling code here:
             String routerActual = "TG585v7";
         String primerPaso;
@@ -399,9 +394,9 @@ private void jbRouter4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:e
 
 
         wizard.setCurrentPanel(RTG585v7Panel1Descriptor.IDENTIFIER);
-}//GEN-LAST:event_jbRouter4MouseClicked
+}//GEN-LAST:event_jbTG585v7MouseClicked
 
-private void jbRouter5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbRouter5MouseClicked
+private void jbSagemFast2604MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbSagemFast2604MouseClicked
 // TODO add your handling code here:
         String routerActual = "SagemFast_2604";
         String primerPaso;
@@ -438,20 +433,26 @@ private void jbRouter5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:e
         wizard.setCurrentPanel(RSagemFast_2604Panel1Descriptor.IDENTIFIER);
         
         int ret = wizard.showModalDialog();
-}//GEN-LAST:event_jbRouter5MouseClicked
+}//GEN-LAST:event_jbSagemFast2604MouseClicked
+
+    private void jtBusquedaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtBusquedaKeyPressed
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+            busquedaRouter(this.jtBusqueda.getText());
+        }
+    }//GEN-LAST:event_jtBusquedaKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton jbBuscar;
+    private javax.swing.JButton jbCT351;
+    private javax.swing.JButton jbCT5071;
+    private javax.swing.JButton jbHG556;
     private javax.swing.JButton jbInicio;
-    private javax.swing.JButton jbRouter1;
-    private javax.swing.JButton jbRouter2;
-    private javax.swing.JButton jbRouter3;
-    private javax.swing.JButton jbRouter4;
-    private javax.swing.JButton jbRouter5;
-    private javax.swing.JButton jbRouter6;
+    private javax.swing.JButton jbSagemFast2604;
+    private javax.swing.JButton jbTG585v7;
+    private javax.swing.JButton jbX7028r;
     private javax.swing.JLabel jlBacground;
     private javax.swing.JLabel jlError;
     private javax.swing.JTextField jtBusqueda;
@@ -460,13 +461,45 @@ private void jbRouter5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:e
     private void busquedaRouter(String txtBusqueda) {
         String txtResultado;
         jlError.setVisible(false);
-        if(!txtBusqueda.isEmpty()){
+        //txtBusqueda = StringUtils.prepareSearchString(txtBusqueda);
+        if(txtBusqueda!=null && txtBusqueda.length()>0){
             txtResultado = qm.initInstallationByCharacteristics(txtBusqueda);
-            if(txtResultado!=null && txtResultado.length()>0)
-                JOptionPane.showMessageDialog(this, txtResultado,"Resultados",JOptionPane.INFORMATION_MESSAGE);
-            else
+            if(txtResultado!=null && txtResultado.length()>0){
+                habilitaBotones(false);
+                habilitaPorId(txtResultado);
+            }
+            else{
+                //habilitaBotones(true);
                 jlError.setVisible(true);
+            }
                 
+        }
+    }
+    
+    private void habilitaBotones(Boolean e){
+        jbCT351.setEnabled(e);
+        jbCT5071.setEnabled(e);
+        jbHG556.setEnabled(e);
+        jbSagemFast2604.setEnabled(e);
+        jbTG585v7.setEnabled(e);
+        jbX7028r.setEnabled(e);
+    }
+    
+    private void habilitaPorId(String id){
+        id = id.toLowerCase();
+        if(id.equals("tiporouterinalambrico")){
+            jbTG585v7.setEnabled(true);
+            jbHG556.setEnabled(true);
+        }else if(id.equals("tiporouterusb") ){
+            jbCT351.setEnabled(true);
+           
+        }else if(id.equals("movistar") ){
+            jbCT351.setEnabled(true);
+           jbCT5071.setEnabled(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(this, id,"Resultados",JOptionPane.INFORMATION_MESSAGE);
+            habilitaBotones(true);
         }
     }
 }
