@@ -169,6 +169,10 @@ public class Busqueda extends javax.swing.JPanel {
                         jpContenido.removeAll();
                         jpContenido.add(new Cordenador());
                         jpContenido.revalidate();
+                    }else if(txtResultado.toLowerCase().equals("tarjetadered")){
+                        jpContenido.removeAll();
+                        jpContenido.add(new Ctarjetaderedv3());
+                        jpContenido.revalidate();
                     }else 
                         JOptionPane.showMessageDialog(this, txtResultado,"Conceptos",JOptionPane.INFORMATION_MESSAGE);
                 }
