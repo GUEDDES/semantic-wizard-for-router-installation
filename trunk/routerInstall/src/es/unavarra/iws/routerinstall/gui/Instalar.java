@@ -485,13 +485,14 @@ private void jbSagemFast2604MouseClicked(java.awt.event.MouseEvent evt) {//GEN-F
             
 // <para_pruebas> 
             Boolean esRouter = true; 
-            Random r = new Random();
-            if((r.nextInt(6)+1)>3){
+            Random r = new Random(); //borrar lo de random cuando se tenga la funcion
+            if((r.nextInt(6)+1)<3){
                 list.add("CT-351"); //para el ejemplo devolvera los 2 routers que cumplan el requisito de la busqueda. Sino es asi idicar como devolvera
                 list.add("TG585v7");
-            }else{
-                list.add("SagemFast_2604"); //o 3
+            }else if((r.nextInt(6)+1)>5){
+                list.add("SagemFast_2604"); //o estos
                 list.add("HG556");
+            }else{
                 list.add("x7028r");
             }
 // </para_pruebas>
