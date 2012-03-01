@@ -4,6 +4,7 @@
  */
 package es.unavarra.iws.routerinstall.gui;
 
+import es.unavarra.iws.routerinstall.engine.QueryManager;
 import es.unavarra.iws.routerinstall.gui.wiz.WizardPanelDescriptor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,9 +19,9 @@ public class Router1Panel7Descriptor extends WizardPanelDescriptor implements Ac
     
     Router1Panel7 panel7;
     
-    public Router1Panel7Descriptor() {
+    public Router1Panel7Descriptor(QueryManager q) {
         
-        panel7 = new Router1Panel7();
+        panel7 = new Router1Panel7(q);
         //panel6.addCheckBoxActionListener(this);
         
         setPanelDescriptorIdentifier(IDENTIFIER);

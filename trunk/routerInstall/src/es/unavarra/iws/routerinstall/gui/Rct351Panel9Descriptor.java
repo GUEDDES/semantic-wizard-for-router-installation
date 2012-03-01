@@ -4,6 +4,7 @@
  */
 package es.unavarra.iws.routerinstall.gui;
 
+import es.unavarra.iws.routerinstall.engine.QueryManager;
 import es.unavarra.iws.routerinstall.gui.wiz.WizardPanelDescriptor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,9 +19,9 @@ public class Rct351Panel9Descriptor extends WizardPanelDescriptor implements Act
     
     Rct351Panel9 panel9;
     
-    public Rct351Panel9Descriptor() {
+    public Rct351Panel9Descriptor(QueryManager q) {
         
-        panel9 = new Rct351Panel9();
+        panel9 = new Rct351Panel9(q);
         //panel6.addCheckBoxActionListener(this);
         
         setPanelDescriptorIdentifier(IDENTIFIER);
