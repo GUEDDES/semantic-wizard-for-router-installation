@@ -83,11 +83,15 @@ public class Vocabulary {
     public final Property seeAlso;
     public final Property manualURL;
     public final Property videoURL;
-    public final Property imagenURL;
+    public final Property image;
+    public final Property logo;
+    public final Property title;
+    public final Property guideURL;
     public final Property descrPaso;
     public final Property pasoSiguienteOK;
     public final Property pasoSiguienteError;
     public final Property isPasoHecho;
+    public final Property hasCDInstalacion;
 
     
     /** Individuals */
@@ -108,9 +112,15 @@ public class Vocabulary {
     public final Individual PASO_M_LOCALIZAR_ADSL;
     public final Individual PASO_CONECTAR_ROUTER;
     public final Individual PASO_CONECTAR_TARJETA_INALAMBRICA;
+    public final Individual PASO_CONECTAR_MODEM_USB;
+    public final Individual PASO_CONECTAR_PC_USB;
+    public final Individual PASO_VERIFICACION_FINAL;
+    public final Individual PASO_CONECTAR_PC_RJ45;
+    public final Individual PASO_INSTALAR_CD;
 
     public final Individual tarjetaInalambricaI;
     public final Individual modemUSBI;
+    public final Individual cdI;
 
 
     public Vocabulary(OntModel model) {
@@ -176,9 +186,14 @@ public class Vocabulary {
         siguientePasoOK = model.createProperty(uri, "siguientePasoOK");
         siguientePasoError = model.createProperty(uri, "siguientePasoError");
 
+        hasCDInstalacion = model.getProperty(uri+"hasCDInstalacion");
+
         manualURL = model.getProperty(uri+"manual");
         videoURL = model.getProperty(uri+"video");
-        imagenURL = model.getProperty(uri+"imagen");
+        image = model.getProperty(uri+"imagen");
+        guideURL = model.getProperty(uri+"guia");
+        title = model.getProperty(uri+"titulo");
+        logo = model.getProperty(uri+"logo");
 
         descrPaso = model.getProperty(uri+"DesPaso");
         pasoSiguienteOK = model.getProperty(uri+"pasoSiguiente");
@@ -235,7 +250,7 @@ public class Vocabulary {
         puertoWLAN.addProperty(hasPriority, "7");
        
         INALAMBRICO.addProperty(hasPriority, "8");
-        USB.addProperty(hasPriority, "3");
+        USB.addProperty(hasPriority, "8");
         MONOPUERTO.addProperty(hasPriority, "3");
 
         MOVISTAR.addProperty(hasPriority, "9");
@@ -257,9 +272,21 @@ public class Vocabulary {
         PASO_CONECTAR_ROUTER = model.getIndividual(uri+"ConectarRouter_1");
         PASO_CONECTAR_ROUTER.addProperty(instanceOf, pasoInstalacion);
         PASO_CONECTAR_TARJETA_INALAMBRICA = model.getIndividual(uri+"CTarjetaInalambrica_1");
-PASO_CONECTAR_TARJETA_INALAMBRICA.addProperty(instanceOf, pasoInstalacion);
-        tarjetaInalambricaI = model.getIndividual(uri+"TarjetaInalambrica_1");
+        PASO_CONECTAR_TARJETA_INALAMBRICA.addProperty(instanceOf, pasoInstalacion);
+        PASO_CONECTAR_MODEM_USB = model.getIndividual(uri+"CModemUSBInsertarSIM_Modem");
+        PASO_CONECTAR_MODEM_USB.addProperty(instanceOf, pasoInstalacion);
+        PASO_CONECTAR_PC_USB = model.getIndividual(uri+"ConectarRouterPC_USB_1");
+        PASO_CONECTAR_PC_USB.addProperty(instanceOf, pasoInstalacion);
+        PASO_VERIFICACION_FINAL = model.getIndividual(uri+"VerificarTransmisionDatos_1");
+        PASO_VERIFICACION_FINAL.addProperty(instanceOf, pasoInstalacion);
+        PASO_CONECTAR_PC_RJ45 = model.getIndividual(uri+"ConectarRouterPC_Ethernet_1");
+        PASO_CONECTAR_PC_RJ45.addProperty(instanceOf, pasoInstalacion);
+        PASO_INSTALAR_CD = model.getIndividual(uri+"InstalacionSoftware_1");
+        PASO_INSTALAR_CD.addProperty(instanceOf, pasoInstalacion);
+
+tarjetaInalambricaI = model.getIndividual(uri+"TarjetaInalambrica_1");
         modemUSBI = model.getIndividual(uri+"ModemUSB_1");
+        cdI = model.getIndividual(uri+"CDInstalacion_1");
     }
 
     /** RDFDataTypes */

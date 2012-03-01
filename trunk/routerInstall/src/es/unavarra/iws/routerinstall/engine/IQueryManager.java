@@ -17,16 +17,28 @@ public interface IQueryManager {
     String getComment(String id);
     String getSeeAlso(String id);
     String getManualURL(String id);
+    String getGuideURL(String id);
     String getVideoURL(String id);
+    String getImage(String id);
+    String getLogo(String id);
+    String getTitle(String id);
 
-    String initInstallationByModelName(String routerModel);
-    String initInstallationByCharacteristics(String searchString);
-
-    String getNextStepOK();
-    String getNextStepError();
-    String getPrevStep();
 
     List<String> getAvailableRouters();
+
+
+    String initInstallationByModelName(String routerModel);
+    QueryResult initInstallationByCharacteristics(String searchString);
+
+    String getNextStepOK();
+    String getError();
+    String getPrevStep();
+
+    boolean isFirstStep();
+    boolean isLastStep();
+
+
+
 
 
 }
