@@ -22,6 +22,7 @@ public class Busqueda extends javax.swing.JPanel {
     public Busqueda(QueryManager qm) {
         this.qm = qm;
         initComponents();
+        jlError.setVisible(false);
     }
 
     /**
@@ -43,6 +44,7 @@ public class Busqueda extends javax.swing.JPanel {
         jpContenido = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jlBackground = new javax.swing.JLabel();
+        jtaSeeAlso = new javax.swing.JTextArea();
 
         setLayout(null);
 
@@ -67,8 +69,8 @@ public class Busqueda extends javax.swing.JPanel {
 
         jtBusqueda.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jtBusqueda.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jtBusquedaKeyReleased(evt);
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtBusquedaKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jtBusquedaKeyTyped(evt);
@@ -80,7 +82,7 @@ public class Busqueda extends javax.swing.JPanel {
         jlError.setForeground(new java.awt.Color(255, 0, 51));
         jlError.setText("No se encuentran resultados...");
         add(jlError);
-        jlError.setBounds(20, 140, 200, 14);
+        jlError.setBounds(20, 140, 320, 18);
         add(jSeparator1);
         jSeparator1.setBounds(-20, 170, 500, 30);
 
@@ -110,6 +112,13 @@ public class Busqueda extends javax.swing.JPanel {
         jlBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr2.png"))); // NOI18N
         add(jlBackground);
         jlBackground.setBounds(0, 0, 480, 640);
+
+        jtaSeeAlso.setColumns(20);
+        jtaSeeAlso.setLineWrap(true);
+        jtaSeeAlso.setRows(5);
+        jtaSeeAlso.setWrapStyleWord(true);
+        add(jtaSeeAlso);
+        jtaSeeAlso.setBounds(0, 0, 260, 90);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbHomeMouseClicked
@@ -126,20 +135,17 @@ public class Busqueda extends javax.swing.JPanel {
         busquedaconcepto(this.jtBusqueda.getText());
     }//GEN-LAST:event_jbBuscarMouseClicked
 
-    private void jtBusquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtBusquedaKeyReleased
-        /*
-         * if(evt.getKeyCode()==KeyEvent.VK_ENTER &&
-         * evt.getComponent().equals(this)){
-         * busquedaRouter(this.jtBusqueda.getText());
-        }
-         */
-    }//GEN-LAST:event_jtBusquedaKeyReleased
-
     private void jtBusquedaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtBusquedaKeyTyped
         if (jlError.isVisible()) {
             jlError.setVisible(false);
         }
     }//GEN-LAST:event_jtBusquedaKeyTyped
+
+    private void jtBusquedaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtBusquedaKeyPressed
+        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_ENTER ){
+          busquedaconcepto(this.jtBusqueda.getText());
+        }
+    }//GEN-LAST:event_jtBusquedaKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -152,29 +158,35 @@ public class Busqueda extends javax.swing.JPanel {
     private javax.swing.JLabel jlError;
     private javax.swing.JPanel jpContenido;
     private javax.swing.JTextField jtBusqueda;
+    private javax.swing.JTextArea jtaSeeAlso;
     // End of variables declaration//GEN-END:variables
 
-    private void busquedaconcepto(String txtBusqueda) {
-        String txtResultado;
+    private void busquedaconcepto(String sBusqueda) {
+        String sResultado, sComment, sSeeAlso;
         jlError.setVisible(false);
-        if(!txtBusqueda.isEmpty()){
-            txtResultado = qm.executeQueryBasicConcepts(txtBusqueda);
-            if(txtResultado!=null && txtResultado.length()>0){
-                    //JOptionPane.showMessageDialog(this, txtResultado,"Conceptos",JOptionPane.INFORMATION_MESSAGE);
-                    if(txtResultado.toLowerCase().equals("microfiltro")){
-                        jpContenido.removeAll();
+        if(!sBusqueda.isEmpty()){
+            sResultado = qm.executeQueryBasicConcepts(sBusqueda);
+            if(sResultado!=null && sResultado.length()>0){
+                    //JOptionPane.showMessageDialog(this, sResultado,"Conceptos",JOptionPane.INFORMATION_MESSAGE);
+                    //sResultado = sResultado.toLowerCase();
+                    jpContenido.removeAll();
+                    if(sResultado.equals("Microfiltro")){
                         jpContenido.add(new Cmicrofiltro());
-                        jpContenido.revalidate();
-                    }else if(txtResultado.toLowerCase().equals("ordenador")){
-                        jpContenido.removeAll();
-                        jpContenido.add(new Cordenador());
-                        jpContenido.revalidate();
-                    }else if(txtResultado.toLowerCase().equals("tarjetadered")){
-                        jpContenido.removeAll();
+                    }else if(sResultado.equals("Ordenador")){
+                        sComment = qm.getComment("Ordenador");
+                        sSeeAlso = qm.getSeeAlso("Ordenador");                         
+                        jpContenido.add(new Cordenador(sComment, sSeeAlso));
+                    }else if(sResultado.equals("TarjetaDeRed")){
                         jpContenido.add(new Ctarjetaderedv3());
-                        jpContenido.revalidate();
-                    }else 
-                        JOptionPane.showMessageDialog(this, txtResultado,"Conceptos",JOptionPane.INFORMATION_MESSAGE);
+                    }else if(sResultado.equals("PuertoUSB")){
+                        sComment = qm.getComment("PuertoUSB");
+                        sSeeAlso = qm.getSeeAlso("PuertoUSB");     
+                        jpContenido.add(new Cpuertousb(sComment, sSeeAlso));
+                    }
+                    else 
+                        JOptionPane.showMessageDialog(this, sResultado,"Conceptos",JOptionPane.INFORMATION_MESSAGE);
+                    jpContenido.revalidate();
+                    jpContenido.repaint();
                 }
             else
                 jlError.setVisible(true);
