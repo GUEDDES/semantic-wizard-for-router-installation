@@ -4,6 +4,7 @@
  */
 package es.unavarra.iws.routerinstall.gui;
 
+import es.unavarra.iws.routerinstall.engine.QueryManager;
 import java.awt.event.ActionListener;
 
 /**
@@ -11,12 +12,15 @@ import java.awt.event.ActionListener;
  * @author aqm
  */
 public class Router1Panel7 extends javax.swing.JPanel {
-
+    QueryManager qm=null;
     /**
      * Creates new form Router1Panel2
      */
-    public Router1Panel7() {
+    public Router1Panel7(QueryManager q) {
         initComponents();
+        this.qm = q;
+        String m = qm.getManualURL("CT-351");
+        jlManual.setText(qm.getManualURL(m!=null?m:"<html><a href=''>Enlace</a></html>"));
     }
     /*
     public boolean isCheckBoxSelected() {
@@ -47,10 +51,10 @@ public class Router1Panel7 extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jlManual = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jlVideo = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
@@ -59,7 +63,7 @@ public class Router1Panel7 extends javax.swing.JPanel {
         jpTitulo.setLayout(new java.awt.BorderLayout());
 
         jlTexto.setBackground(java.awt.Color.lightGray);
-        jlTexto.setFont(new java.awt.Font("Verdana", 1, 14));
+        jlTexto.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jlTexto.setText("Información de interés");
         jlTexto.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         jlTexto.setOpaque(true);
@@ -90,27 +94,27 @@ public class Router1Panel7 extends javax.swing.JPanel {
         jLabel7.setText("• Manual de Usuario:");
         jPanel1.add(jLabel7);
 
-        jLabel3.setText("<html><a href=\"\">Enlace</a></html>\");");
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        jlManual.setText("<html><a href=\"\">Enlace</a></html>\");");
+        jlManual.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                jlManualMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel3);
+        jPanel1.add(jlManual);
 
         jLabel8.setToolTipText("");
         jPanel1.add(jLabel8);
 
-        jLabel5.setText("• Guía Rápida: ");
+        jLabel5.setText("• Video Guía Rápida: ");
         jPanel1.add(jLabel5);
 
-        jLabel2.setText("<html><a href=\"\">Enlace</a></html>\");");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jlVideo.setText("<html><a href=\"\">Enlace</a></html>\");");
+        jlVideo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                jlVideoMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel2);
+        jPanel1.add(jlVideo);
         jPanel1.add(jLabel4);
 
         jpContenido.add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -118,7 +122,7 @@ public class Router1Panel7 extends javax.swing.JPanel {
         add(jpContenido, java.awt.BorderLayout.WEST);
     }// </editor-fold>//GEN-END:initComponents
 
-private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+private void jlManualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlManualMouseClicked
 // TODO add your handling code here:
     try {
         if (java.awt.Desktop.isDesktopSupported()) {
@@ -130,9 +134,9 @@ private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
     } catch (Exception e) {
         e.printStackTrace();
     }
-}//GEN-LAST:event_jLabel3MouseClicked
+}//GEN-LAST:event_jlManualMouseClicked
 
-private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+private void jlVideoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlVideoMouseClicked
 // TODO add your handling code here:
     // TODO add your handling code here:
     try {
@@ -145,13 +149,11 @@ private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
     } catch (Exception e) {
         e.printStackTrace();
     }
-}//GEN-LAST:event_jLabel2MouseClicked
+}//GEN-LAST:event_jlVideoMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -160,7 +162,9 @@ private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel jlIcono;
+    private javax.swing.JLabel jlManual;
     private javax.swing.JLabel jlTexto;
+    private javax.swing.JLabel jlVideo;
     private javax.swing.JPanel jpContenido;
     private javax.swing.JPanel jpTitulo;
     // End of variables declaration//GEN-END:variables

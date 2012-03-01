@@ -83,8 +83,8 @@ public class Rct351Panel3 extends javax.swing.JPanel {
         jLabel1.setPreferredSize(new java.awt.Dimension(252, 40));
         jpContenido.add(jLabel1, java.awt.BorderLayout.NORTH);
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(480, 192));
-        jPanel1.setLayout(new java.awt.GridLayout(0, 1));
+        jPanel1.setPreferredSize(new java.awt.Dimension(580, 192));
+        jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
         jLabel3.setText("• No encadenar dos microfiltros seguidos, solo debe haber uno por teléfono.");
         jPanel1.add(jLabel3);

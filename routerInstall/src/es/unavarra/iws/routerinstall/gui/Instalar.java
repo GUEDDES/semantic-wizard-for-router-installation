@@ -227,7 +227,7 @@ public class Instalar extends javax.swing.JPanel {
         WizardPanelDescriptor descriptor8 = new Rct351Panel8Descriptor();
         wizard.registerWizardPanel(Rct351Panel8Descriptor.IDENTIFIER, descriptor8);
         
-        WizardPanelDescriptor descriptor9 = new Rct351Panel9Descriptor();
+        WizardPanelDescriptor descriptor9 = new Rct351Panel9Descriptor(qm);
         wizard.registerWizardPanel(Rct351Panel9Descriptor.IDENTIFIER, descriptor9);
         
         wizard.setCurrentPanel(Rct351Panel1Descriptor.IDENTIFIER);
@@ -322,7 +322,7 @@ private void jbCT5071MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:ev
         WizardPanelDescriptor descriptor6 = new Router1Panel6Descriptor();
         wizard.registerWizardPanel(Router1Panel6Descriptor.IDENTIFIER, descriptor6);
         
-        WizardPanelDescriptor descriptor7 = new Router1Panel7Descriptor();
+        WizardPanelDescriptor descriptor7 = new Router1Panel7Descriptor(qm);
         wizard.registerWizardPanel(Router1Panel7Descriptor.IDENTIFIER, descriptor7);
 
 
