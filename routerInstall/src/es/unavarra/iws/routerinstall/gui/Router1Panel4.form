@@ -42,7 +42,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Verdana" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Actividades que no debe realizar con los microfiltros"/>
+            <Property name="text" type="java.lang.String" value="Conexi&#xf3;n del Router"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
                 <EmptyBorder bottom="10" left="10" right="10" top="10"/>
@@ -132,31 +132,31 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel3">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2022; No encadenar dos microfiltros seguidos, solo debe haber uno por tel&#xe9;fono."/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2022; Cada tel&#xe9;fono debe estar conectado a un microfiltro, de lo contrario es probable que se"/>
+                <Property name="text" type="java.lang.String" value="5.- Conectar el cable ADSL de la clavija extensora al puerto ADSL del router."/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
-                <Property name="text" type="java.lang.String" value="   produzcan interferencias en la l&#xed;nea telef&#xf3;nica o incluso que no tengas conexi&#xf3;n a internet."/>
+                <Property name="text" type="java.lang.String" value="6.- Conecta el cable de alimentaci&#xf3;n al router y a la toma el&#xe9;ctrica."/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2022; No realices cambios ni manipulaciones en la instalaci&#xf3;n de la l&#xed;nea telef&#xf3;nica, ni muevas"/>
+                <Property name="text" type="java.lang.String" value="7.- Una vez conectado el router a la toma de corriente, presionar el bot&#xf3;n de encendido, "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel8">
               <Properties>
-                <Property name="text" type="java.lang.String" value="   las rosetas de tel&#xe9;fono de una habitaci&#xf3;n a otra"/>
+                <Property name="text" type="java.lang.String" value="      verificando que el led de encendido se active. "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Si el led no se enciende ir al paso 6."/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
             </Component>

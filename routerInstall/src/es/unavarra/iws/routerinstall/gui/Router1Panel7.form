@@ -42,7 +42,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Verdana" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Actividades que no debe realizar con los microfiltros"/>
+            <Property name="text" type="java.lang.String" value="Informaci&#xf3;n de inter&#xe9;s"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
                 <EmptyBorder bottom="10" left="10" right="10" top="10"/>
@@ -131,32 +131,38 @@
             <Property name="rows" type="int" value="0"/>
           </Layout>
           <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel6">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel7">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#x2022; Manual de Usuario:"/>
+              </Properties>
+            </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2022; No encadenar dos microfiltros seguidos, solo debe haber uno por tel&#xe9;fono."/>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;a href=&quot;&quot;&gt;Enlace&lt;/a&gt;&lt;/html&gt;&quot;);"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel3MouseClicked"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel8">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2022; Cada tel&#xe9;fono debe estar conectado a un microfiltro, de lo contrario es probable que se"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel6">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="   produzcan interferencias en la l&#xed;nea telef&#xf3;nica o incluso que no tengas conexi&#xf3;n a internet."/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel7">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2022; No realices cambios ni manipulaciones en la instalaci&#xf3;n de la l&#xed;nea telef&#xf3;nica, ni muevas"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel8">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="   las rosetas de tel&#xe9;fono de una habitaci&#xf3;n a otra"/>
+                <Property name="text" type="java.lang.String" value="&#x2022; Gu&#xed;a R&#xe1;pida: "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;a href=&quot;&quot;&gt;Enlace&lt;/a&gt;&lt;/html&gt;&quot;);"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel2MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
             </Component>

@@ -60,7 +60,7 @@ public class Rct351Panel3 extends javax.swing.JPanel {
 
         jlTexto.setBackground(java.awt.Color.lightGray);
         jlTexto.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jlTexto.setText("Conexión del router");
+        jlTexto.setText("Actividades que no debe realizar con los microfiltros");
         jlTexto.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         jlTexto.setOpaque(true);
         jpTitulo.add(jlTexto, java.awt.BorderLayout.CENTER);
@@ -86,19 +86,19 @@ public class Rct351Panel3 extends javax.swing.JPanel {
         jPanel1.setPreferredSize(new java.awt.Dimension(480, 192));
         jPanel1.setLayout(new java.awt.GridLayout(0, 1));
 
-        jLabel3.setText("5.- Conectar el cable ADSL de la clavija extensora al puerto ADSL del router.");
+        jLabel3.setText("• No encadenar dos microfiltros seguidos, solo debe haber uno por teléfono.");
         jPanel1.add(jLabel3);
 
-        jLabel5.setText("6.- Conectar el cable de alimentación al router y a la toma eléctrica.");
+        jLabel5.setText("• Cada teléfono debe estar conectado a un microfiltro, de lo contrario es probable que se");
         jPanel1.add(jLabel5);
 
-        jLabel6.setText("7.- Una vez conectado el router a la toma de corriente, presionar el botón de encendido,");
+        jLabel6.setText("   produzcan interferencias en la línea telefónica o incluso que no tengas conexión a internet.");
         jPanel1.add(jLabel6);
 
-        jLabel7.setText("      verificando que el led de encendido se active");
+        jLabel7.setText("• No realices cambios ni manipulaciones en la instalación de la línea telefónica, ni muevas");
         jPanel1.add(jLabel7);
 
-        jLabel8.setText("Si el led no se enciende, ir al paso 6.");
+        jLabel8.setText("   las rosetas de teléfono de una habitación a otra");
         jPanel1.add(jLabel8);
         jPanel1.add(jLabel2);
         jPanel1.add(jLabel4);

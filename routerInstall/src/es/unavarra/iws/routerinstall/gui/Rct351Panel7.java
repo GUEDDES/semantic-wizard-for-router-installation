@@ -10,15 +10,16 @@ import java.awt.event.ActionListener;
  *
  * @author aqm
  */
-public class Router1Panel2 extends javax.swing.JPanel {
+public class Rct351Panel7 extends javax.swing.JPanel {
 
     /**
      * Creates new form Router1Panel2
      */
-    public Router1Panel2() {
+    public Rct351Panel7() {
         initComponents();
     }
-/*
+    
+    /*
     public boolean isCheckBoxSelected() {
         return jCheckBox1.isSelected();
     }    
@@ -26,8 +27,8 @@ public class Router1Panel2 extends javax.swing.JPanel {
     public void addCheckBoxActionListener(ActionListener l) {
         jCheckBox1.addActionListener(l);
     }    
-     * 
-     */
+    */
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,8 +44,9 @@ public class Router1Panel2 extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         jlIcono = new javax.swing.JLabel();
         jpContenido = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -59,8 +61,8 @@ public class Router1Panel2 extends javax.swing.JPanel {
         jpTitulo.setLayout(new java.awt.BorderLayout());
 
         jlTexto.setBackground(java.awt.Color.lightGray);
-        jlTexto.setFont(new java.awt.Font("Verdana", 1, 14));
-        jlTexto.setText("Instalación de microfiltros");
+        jlTexto.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jlTexto.setText("Verificar funcionamiento del dispositivo");
         jlTexto.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         jlTexto.setOpaque(true);
         jpTitulo.add(jlTexto, java.awt.BorderLayout.CENTER);
@@ -78,30 +80,21 @@ public class Router1Panel2 extends javax.swing.JPanel {
 
         jpContenido.setLayout(new java.awt.BorderLayout());
 
-        jLabel1.setMaximumSize(new java.awt.Dimension(252, 20));
-        jLabel1.setMinimumSize(new java.awt.Dimension(252, 20));
-        jLabel1.setPreferredSize(new java.awt.Dimension(252, 40));
-        jpContenido.add(jLabel1, java.awt.BorderLayout.NORTH);
-
         jPanel1.setPreferredSize(new java.awt.Dimension(480, 192));
         jPanel1.setLayout(new java.awt.GridLayout(0, 1));
-
-        jLabel3.setText("1.- Localizar la roseta telefónica de tu casa donde deseas instalar el router.");
+        jPanel1.add(jLabel1);
+        jPanel1.add(jLabel9);
         jPanel1.add(jLabel3);
-
-        jLabel5.setText("2.- Desconectar el teléfono de la roseta y conecte la clavija extensora a la roseta");
         jPanel1.add(jLabel5);
 
-        jLabel6.setText("      por el extremo adecuado. Ahora dispone del equivalente a dos rosetas telefónicas");
+        jLabel6.setText("10.- Verificar que los led del router esten encendidos. ");
         jPanel1.add(jLabel6);
 
-        jLabel7.setText("3.- Conectar uno de los microfiltros a una de las salidas de la clavija Extensora");
+        jLabel7.setToolTipText("");
         jPanel1.add(jLabel7);
 
-        jLabel8.setText("4.- Conectar el teléfono al microfiltro que acabas de colocar.");
+        jLabel8.setText("En caso de error volver al paso 6");
         jPanel1.add(jLabel8);
-
-        jLabel2.setText("      Repetir los últimos cuatro (4) pasos por cada línea de teléfono que tenga en casa");
         jPanel1.add(jLabel2);
         jPanel1.add(jLabel4);
 
@@ -119,6 +112,7 @@ public class Router1Panel2 extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel jlIcono;

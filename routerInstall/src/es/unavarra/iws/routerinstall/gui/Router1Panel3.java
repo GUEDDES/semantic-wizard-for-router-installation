@@ -4,6 +4,8 @@
  */
 package es.unavarra.iws.routerinstall.gui;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author aqm
@@ -11,18 +13,21 @@ package es.unavarra.iws.routerinstall.gui;
 public class Router1Panel3 extends javax.swing.JPanel {
 
     /**
-     * Creates new form Router1Panel33
+     * Creates new form Router1Panel2
      */
     public Router1Panel3() {
         initComponents();
     }
-    public void setProgressText(String s) {
-        progressDescription.setText(s);
-    }
+    /*
+    public boolean isCheckBoxSelected() {
+        return jCheckBox1.isSelected();
+    }    
     
-    public void setProgressValue(int i) {
-        progressSent.setValue(i);
-    }
+    public void addCheckBoxActionListener(ActionListener l) {
+        jCheckBox1.addActionListener(l);
+    } 
+    */
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,75 +37,92 @@ public class Router1Panel3 extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jpTitulo = new javax.swing.JPanel();
         jlTexto = new javax.swing.JLabel();
-        jlIcono = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        jlIcono = new javax.swing.JLabel();
         jpContenido = new javax.swing.JPanel();
-        jlTituloC = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        progressSent = new javax.swing.JProgressBar();
-        progressDescription = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
-        jpTitulo.setBackground(java.awt.Color.lightGray);
+        jpTitulo.setForeground(java.awt.Color.gray);
         jpTitulo.setLayout(new java.awt.BorderLayout());
 
-        jlTexto.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jlTexto.setText("Conectar con el Router");
+        jlTexto.setBackground(java.awt.Color.lightGray);
+        jlTexto.setFont(new java.awt.Font("Verdana", 1, 14));
+        jlTexto.setText("Actividades que no debe realizar con los microfiltros");
         jlTexto.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        jlTexto.setOpaque(true);
         jpTitulo.add(jlTexto, java.awt.BorderLayout.CENTER);
 
-        jlIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/key_orange32.png"))); // NOI18N
-        jpTitulo.add(jlIcono, java.awt.BorderLayout.EAST);
+        jSeparator1.setBackground(java.awt.Color.lightGray);
+        jSeparator1.setOpaque(true);
         jpTitulo.add(jSeparator1, java.awt.BorderLayout.SOUTH);
+
+        jlIcono.setBackground(java.awt.Color.lightGray);
+        jlIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/setting32.png"))); // NOI18N
+        jlIcono.setOpaque(true);
+        jpTitulo.add(jlIcono, java.awt.BorderLayout.LINE_END);
 
         add(jpTitulo, java.awt.BorderLayout.NORTH);
 
         jpContenido.setLayout(new java.awt.BorderLayout());
 
-        jlTituloC.setText("Intentando la conexión con el router");
-        jpContenido.add(jlTituloC, java.awt.BorderLayout.NORTH);
+        jLabel1.setMaximumSize(new java.awt.Dimension(252, 20));
+        jLabel1.setMinimumSize(new java.awt.Dimension(252, 20));
+        jLabel1.setPreferredSize(new java.awt.Dimension(252, 40));
+        jpContenido.add(jLabel1, java.awt.BorderLayout.NORTH);
 
-        jLabel5.setText("Después de que el envío se ha completado, los botones Atrás y Finalizar le permitirá continuar");
-        jpContenido.add(jLabel5, java.awt.BorderLayout.SOUTH);
-
+        jPanel1.setPreferredSize(new java.awt.Dimension(480, 192));
         jPanel1.setLayout(new java.awt.GridLayout(0, 1));
-        jPanel1.add(jLabel1);
 
-        progressSent.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        progressSent.setMaximumSize(new java.awt.Dimension(50, 19));
-        progressSent.setPreferredSize(new java.awt.Dimension(100, 19));
-        progressSent.setStringPainted(true);
-        jPanel1.add(progressSent);
-
-        progressDescription.setText("Conexión con el servidor ...");
-        jPanel1.add(progressDescription);
-        jPanel1.add(jLabel4);
+        jLabel3.setText("• No encadenar dos microfiltros seguidos, solo debe haber uno por teléfono.");
         jPanel1.add(jLabel3);
+
+        jLabel5.setText("• Cada teléfono debe estar conectado a un microfiltro, de lo contrario es probable que se");
+        jPanel1.add(jLabel5);
+
+        jLabel6.setText("   produzcan interferencias en la línea telefónica o incluso que no tengas conexión a internet.");
+        jPanel1.add(jLabel6);
+
+        jLabel7.setText("• No realices cambios ni manipulaciones en la instalación de la línea telefónica, ni muevas");
+        jLabel7.setToolTipText("");
+        jPanel1.add(jLabel7);
+
+        jLabel8.setText("   las rosetas de teléfono de una habitación a otra");
+        jPanel1.add(jLabel8);
+        jPanel1.add(jLabel2);
+        jPanel1.add(jLabel4);
 
         jpContenido.add(jPanel1, java.awt.BorderLayout.CENTER);
 
-        add(jpContenido, java.awt.BorderLayout.CENTER);
+        add(jpContenido, java.awt.BorderLayout.WEST);
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel jlIcono;
     private javax.swing.JLabel jlTexto;
-    private javax.swing.JLabel jlTituloC;
     private javax.swing.JPanel jpContenido;
     private javax.swing.JPanel jpTitulo;
-    private javax.swing.JLabel progressDescription;
-    private javax.swing.JProgressBar progressSent;
     // End of variables declaration//GEN-END:variables
 }

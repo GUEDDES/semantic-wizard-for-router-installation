@@ -112,6 +112,11 @@ public class Instalar extends javax.swing.JPanel {
 
         jbRouter2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_ct5071_60.png"))); // NOI18N
         jbRouter2.setText("      CT-5071");
+        jbRouter2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbRouter2MouseClicked(evt);
+            }
+        });
         add(jbRouter2);
         jbRouter2.setBounds(250, 260, 200, 80);
 
@@ -200,6 +205,15 @@ public class Instalar extends javax.swing.JPanel {
         WizardPanelDescriptor descriptor6 = new Rct351Panel6Descriptor();
         wizard.registerWizardPanel(Rct351Panel6Descriptor.IDENTIFIER, descriptor6);
         
+        WizardPanelDescriptor descriptor7 = new Rct351Panel7Descriptor();
+        wizard.registerWizardPanel(Rct351Panel7Descriptor.IDENTIFIER, descriptor7);
+        
+        WizardPanelDescriptor descriptor8 = new Rct351Panel8Descriptor();
+        wizard.registerWizardPanel(Rct351Panel8Descriptor.IDENTIFIER, descriptor8);
+        
+        WizardPanelDescriptor descriptor9 = new Rct351Panel9Descriptor();
+        wizard.registerWizardPanel(Rct351Panel9Descriptor.IDENTIFIER, descriptor9);
+        
         wizard.setCurrentPanel(Rct351Panel1Descriptor.IDENTIFIER);
         
         int ret = wizard.showModalDialog();
@@ -268,6 +282,42 @@ private void jbRouter3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:e
         
         int ret = wizard.showModalDialog();
 }//GEN-LAST:event_jbRouter3MouseClicked
+
+private void jbRouter2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbRouter2MouseClicked
+// TODO add your handling code here:
+        String routerActual = "CT-5071";
+        String primerPaso;
+        
+        primerPaso = qm.initInstallationByModelName(routerActual);
+        
+        Wizard wizard = new Wizard();
+        
+        wizard.getDialog().setTitle("Instalación router " + routerActual);
+        
+        WizardPanelDescriptor descriptor1 = new Router1Panel1Descriptor(primerPaso!=null ? primerPaso:"");
+        wizard.registerWizardPanel(Router1Panel1Descriptor.IDENTIFIER, descriptor1);
+
+        WizardPanelDescriptor descriptor2 = new Router1Panel2Descriptor();
+        wizard.registerWizardPanel(Router1Panel2Descriptor.IDENTIFIER, descriptor2);
+
+        WizardPanelDescriptor descriptor3 = new Router1Panel3Descriptor();
+        wizard.registerWizardPanel(Router1Panel3Descriptor.IDENTIFIER, descriptor3);
+        
+        WizardPanelDescriptor descriptor4 = new Router1Panel4Descriptor();
+        wizard.registerWizardPanel(Router1Panel4Descriptor.IDENTIFIER, descriptor4);
+        
+        WizardPanelDescriptor descriptor5 = new Router1Panel5Descriptor();
+        wizard.registerWizardPanel(Router1Panel5Descriptor.IDENTIFIER, descriptor5);
+        
+        WizardPanelDescriptor descriptor6 = new Router1Panel6Descriptor();
+        wizard.registerWizardPanel(Router1Panel6Descriptor.IDENTIFIER, descriptor6);
+        
+        WizardPanelDescriptor descriptor7 = new Router1Panel7Descriptor();
+        wizard.registerWizardPanel(Router1Panel7Descriptor.IDENTIFIER, descriptor7);
+
+
+        wizard.setCurrentPanel(Router1Panel1Descriptor.IDENTIFIER);
+}//GEN-LAST:event_jbRouter2MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;
