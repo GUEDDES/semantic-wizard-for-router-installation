@@ -142,6 +142,11 @@ public class Instalar extends javax.swing.JPanel {
 
         jbRouter6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_hg556_60.png"))); // NOI18N
         jbRouter6.setText("      HG556");
+        jbRouter6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbRouter6MouseClicked(evt);
+            }
+        });
         add(jbRouter6);
         jbRouter6.setBounds(250, 500, 200, 80);
 
@@ -318,6 +323,37 @@ private void jbRouter2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:e
 
         wizard.setCurrentPanel(Router1Panel1Descriptor.IDENTIFIER);
 }//GEN-LAST:event_jbRouter2MouseClicked
+
+private void jbRouter6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbRouter6MouseClicked
+// TODO add your handling code here:
+        String routerActual = "HG556";
+        String primerPaso;
+        
+        primerPaso = qm.initInstallationByModelName(routerActual);
+        
+        Wizard wizard = new Wizard();
+        wizard.getDialog().setTitle("Instalación router " + routerActual);
+        
+        WizardPanelDescriptor descriptor1 = new RHG556Panel1Descriptor(primerPaso!=null ? primerPaso:"");
+        wizard.registerWizardPanel(RHG556Panel1Descriptor.IDENTIFIER, descriptor1);
+
+        WizardPanelDescriptor descriptor2 = new RHG556Panel2Descriptor();
+        wizard.registerWizardPanel(RHG556Panel2Descriptor.IDENTIFIER, descriptor2);
+
+        WizardPanelDescriptor descriptor3 = new RHG556Panel3Descriptor();
+        wizard.registerWizardPanel(RHG556Panel3Descriptor.IDENTIFIER, descriptor3);
+        
+        WizardPanelDescriptor descriptor4 = new RHG556Panel4Descriptor();
+        wizard.registerWizardPanel(RHG556Panel4Descriptor.IDENTIFIER, descriptor4);
+        
+        WizardPanelDescriptor descriptor5 = new RHG556Panel5Descriptor();
+        wizard.registerWizardPanel(RHG556Panel5Descriptor.IDENTIFIER, descriptor5);
+        
+        WizardPanelDescriptor descriptor6 = new RHG556Panel6Descriptor();
+        wizard.registerWizardPanel(RHG556Panel6Descriptor.IDENTIFIER, descriptor6);
+        
+        wizard.setCurrentPanel(RHG556Panel1Descriptor.IDENTIFIER);
+}//GEN-LAST:event_jbRouter6MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;

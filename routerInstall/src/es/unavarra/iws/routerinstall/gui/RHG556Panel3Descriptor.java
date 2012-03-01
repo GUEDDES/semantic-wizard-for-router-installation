@@ -3,26 +3,26 @@ package es.unavarra.iws.routerinstall.gui;
 import es.unavarra.iws.routerinstall.gui.wiz.WizardPanelDescriptor;
 
 
-public class Router1Panel3Descriptor extends WizardPanelDescriptor {
+public class RHG556Panel3Descriptor extends WizardPanelDescriptor {
     
-    public static final String IDENTIFIER = "RCT5071_PANEL_3";
+    public static final String IDENTIFIER = "RHG556_PANEL_3";
     
-    Router1Panel3 panel3;
+    RHG556Panel3 panel3;
     
-    public Router1Panel3Descriptor() {
+    public RHG556Panel3Descriptor() {
         
-        panel3 = new Router1Panel3();
+        panel3 = new RHG556Panel3();
         setPanelDescriptorIdentifier(IDENTIFIER);
         setPanelComponent(panel3);
         
     }
 
     public Object getNextPanelDescriptor() {
-        return Router1Panel4Descriptor.IDENTIFIER;
+        return RHG556Panel4Descriptor.IDENTIFIER;
     }
     
     public Object getBackPanelDescriptor() {
-        return Router1Panel2Descriptor.IDENTIFIER;
+        return RHG556Panel2Descriptor.IDENTIFIER;
     }
     
     
