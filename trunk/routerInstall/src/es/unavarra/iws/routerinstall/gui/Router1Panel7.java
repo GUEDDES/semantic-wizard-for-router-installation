@@ -19,8 +19,6 @@ public class Router1Panel7 extends javax.swing.JPanel {
     public Router1Panel7(QueryManager q) {
         initComponents();
         this.qm = q;
-        String m = qm.getManualURL("CT-351");
-        jlManual.setText(qm.getManualURL(m!=null?m:"<html><a href=''>Enlace</a></html>"));
     }
     /*
     public boolean isCheckBoxSelected() {
@@ -128,7 +126,8 @@ private void jlManualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:ev
         if (java.awt.Desktop.isDesktopSupported()) {
             java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
             if (desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
-                desktop.browse(new java.net.URI("http://www.movistar.es/on/io/es/atencion/soporte_tecnico_y_averias/internet/adsl/equipos/router_monopuerto/ConectaBOX_Comtrend/manual_usuario_Vista_CT5071.pdf"));
+                String m = qm.getManualURL("CT-5071");
+                desktop.browse(new java.net.URI(m!=null?m:"http://www.movistar.es/on/io/es/atencion/soporte_tecnico_y_averias/internet/adsl/equipos/router_monopuerto/ConectaBOX_Comtrend/manual_usuario_Vista_CT5071.pdf"));
             }
         }
     } catch (Exception e) {

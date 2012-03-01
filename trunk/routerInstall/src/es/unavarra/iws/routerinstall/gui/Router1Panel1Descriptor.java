@@ -12,7 +12,7 @@ import es.unavarra.iws.routerinstall.gui.wiz.WizardPanelDescriptor;
  */
 public class Router1Panel1Descriptor extends WizardPanelDescriptor {
     
-    public static final String IDENTIFIER = "RCT5071_INTRODUCTION_PANEL";
+    public static final String IDENTIFIER = "RCT5071_PANEL1";
     
     public Router1Panel1Descriptor(String primerPaso) {
         super(IDENTIFIER, new Router1Panel1(primerPaso));
