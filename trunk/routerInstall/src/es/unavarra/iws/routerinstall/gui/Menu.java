@@ -168,7 +168,7 @@ public class Menu extends javax.swing.JPanel {
         this.setVisible(false);
         Container menu = this.getFocusCycleRootAncestor();
         menu.remove(this);
-        Herramientas herramientas = new Herramientas(qm);
+        AcercaDe herramientas = new AcercaDe(qm);
         herramientas.setSize(menu.getSize());
         menu.add(herramientas, 0);
     }//GEN-LAST:event_jButton3MouseClicked

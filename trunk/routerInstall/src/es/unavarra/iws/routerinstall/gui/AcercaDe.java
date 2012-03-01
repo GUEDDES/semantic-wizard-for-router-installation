@@ -11,12 +11,12 @@ import java.awt.Container;
  *
  * @author aqm
  */
-public class Herramientas extends javax.swing.JPanel {
+public class AcercaDe extends javax.swing.JPanel {
     QueryManager qm = null;
     /**
      * Creates new form Menu
      */
-    public Herramientas(QueryManager qm) {
+    public AcercaDe(QueryManager qm) {
         this.qm = qm;
         initComponents();
     }
