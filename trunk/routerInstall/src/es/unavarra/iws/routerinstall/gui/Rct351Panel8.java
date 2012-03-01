@@ -10,24 +10,24 @@ import java.awt.event.ActionListener;
  *
  * @author aqm
  */
-public class Router1Panel2 extends javax.swing.JPanel {
+public class Rct351Panel8 extends javax.swing.JPanel {
 
     /**
      * Creates new form Router1Panel2
      */
-    public Router1Panel2() {
+    public Rct351Panel8() {
         initComponents();
     }
-/*
+    /*
     public boolean isCheckBoxSelected() {
         return jCheckBox1.isSelected();
     }    
     
     public void addCheckBoxActionListener(ActionListener l) {
         jCheckBox1.addActionListener(l);
-    }    
-     * 
-     */
+    } 
+    */
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,13 +43,14 @@ public class Router1Panel2 extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         jlIcono = new javax.swing.JLabel();
         jpContenido = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -59,8 +60,8 @@ public class Router1Panel2 extends javax.swing.JPanel {
         jpTitulo.setLayout(new java.awt.BorderLayout());
 
         jlTexto.setBackground(java.awt.Color.lightGray);
-        jlTexto.setFont(new java.awt.Font("Verdana", 1, 14));
-        jlTexto.setText("Instalación de microfiltros");
+        jlTexto.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jlTexto.setText("Posibles errores presentados");
         jlTexto.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         jlTexto.setOpaque(true);
         jpTitulo.add(jlTexto, java.awt.BorderLayout.CENTER);
@@ -78,37 +79,63 @@ public class Router1Panel2 extends javax.swing.JPanel {
 
         jpContenido.setLayout(new java.awt.BorderLayout());
 
-        jLabel1.setMaximumSize(new java.awt.Dimension(252, 20));
-        jLabel1.setMinimumSize(new java.awt.Dimension(252, 20));
-        jLabel1.setPreferredSize(new java.awt.Dimension(252, 40));
-        jpContenido.add(jLabel1, java.awt.BorderLayout.NORTH);
-
         jPanel1.setPreferredSize(new java.awt.Dimension(480, 192));
         jPanel1.setLayout(new java.awt.GridLayout(0, 1));
 
-        jLabel3.setText("1.- Localizar la roseta telefónica de tu casa donde deseas instalar el router.");
-        jPanel1.add(jLabel3);
+        jLabel1.setText("• Error: Al marcar un número en el terminal telefónico, aparecen problemas ");
+        jPanel1.add(jLabel1);
 
-        jLabel5.setText("2.- Desconectar el teléfono de la roseta y conecte la clavija extensora a la roseta");
-        jPanel1.add(jLabel5);
+        jLabel9.setText("   en las comunicaciones ADSL.");
+        jPanel1.add(jLabel9);
 
-        jLabel6.setText("      por el extremo adecuado. Ahora dispone del equivalente a dos rosetas telefónicas");
+        jLabel6.setText("• Solución: Si el terminal utilizado es un terminal de marcación decádica (Pulsos), ");
         jPanel1.add(jLabel6);
 
-        jLabel7.setText("3.- Conectar uno de los microfiltros a una de las salidas de la clavija Extensora");
+        jLabel7.setText("   sustituya el terminal por otro de marcación Multi-Frecuencia (Tonos).");
         jPanel1.add(jLabel7);
 
-        jLabel8.setText("4.- Conectar el teléfono al microfiltro que acabas de colocar.");
+        jLabel3.setText("• Error: Al instalar el primer microfiltro observa que en el terminal hay un aumento notable ");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel3);
+
+        jLabel8.setText("   del ruido en el microteléfono.");
+        jLabel8.setToolTipText("");
         jPanel1.add(jLabel8);
 
-        jLabel2.setText("      Repetir los últimos cuatro (4) pasos por cada línea de teléfono que tenga en casa");
+        jLabel5.setText("• Solución: Si el número de microfiltros instalados es igual o superior a 3, por las características ");
+        jPanel1.add(jLabel5);
+
+        jLabel2.setText("   propias de la instalación privada del cliente puede suceder que no se puedan instalar ");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
         jPanel1.add(jLabel2);
+
+        jLabel4.setText("   más de 2 microfiltros.");
         jPanel1.add(jLabel4);
 
         jpContenido.add(jPanel1, java.awt.BorderLayout.CENTER);
 
         add(jpContenido, java.awt.BorderLayout.WEST);
     }// </editor-fold>//GEN-END:initComponents
+
+private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+// TODO add your handling code here:
+
+}//GEN-LAST:event_jLabel3MouseClicked
+
+private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+// TODO add your handling code here:
+    // TODO add your handling code here:
+
+}//GEN-LAST:event_jLabel2MouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel jLabel1;
@@ -119,6 +146,7 @@ public class Router1Panel2 extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel jlIcono;

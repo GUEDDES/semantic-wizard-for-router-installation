@@ -10,24 +10,24 @@ import java.awt.event.ActionListener;
  *
  * @author aqm
  */
-public class Router1Panel2 extends javax.swing.JPanel {
+public class Rct351Panel9 extends javax.swing.JPanel {
 
     /**
      * Creates new form Router1Panel2
      */
-    public Router1Panel2() {
+    public Rct351Panel9() {
         initComponents();
     }
-/*
+    /*
     public boolean isCheckBoxSelected() {
         return jCheckBox1.isSelected();
     }    
     
     public void addCheckBoxActionListener(ActionListener l) {
         jCheckBox1.addActionListener(l);
-    }    
-     * 
-     */
+    } 
+    */
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,10 +47,10 @@ public class Router1Panel2 extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
@@ -59,8 +59,8 @@ public class Router1Panel2 extends javax.swing.JPanel {
         jpTitulo.setLayout(new java.awt.BorderLayout());
 
         jlTexto.setBackground(java.awt.Color.lightGray);
-        jlTexto.setFont(new java.awt.Font("Verdana", 1, 14));
-        jlTexto.setText("Instalación de microfiltros");
+        jlTexto.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jlTexto.setText("Información de interés");
         jlTexto.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         jlTexto.setOpaque(true);
         jpTitulo.add(jlTexto, java.awt.BorderLayout.CENTER);
@@ -86,29 +86,87 @@ public class Router1Panel2 extends javax.swing.JPanel {
         jPanel1.setPreferredSize(new java.awt.Dimension(480, 192));
         jPanel1.setLayout(new java.awt.GridLayout(0, 1));
 
-        jLabel3.setText("1.- Localizar la roseta telefónica de tu casa donde deseas instalar el router.");
+        jLabel3.setText("• Manual de Usuario:");
         jPanel1.add(jLabel3);
 
-        jLabel5.setText("2.- Desconectar el teléfono de la roseta y conecte la clavija extensora a la roseta");
+        jLabel5.setText("<html><a href=\"\">Enlace</a></html>\");");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
         jPanel1.add(jLabel5);
 
-        jLabel6.setText("      por el extremo adecuado. Ahora dispone del equivalente a dos rosetas telefónicas");
-        jPanel1.add(jLabel6);
-
-        jLabel7.setText("3.- Conectar uno de los microfiltros a una de las salidas de la clavija Extensora");
+        jLabel7.setText("• Guía Rápida: ");
         jPanel1.add(jLabel7);
 
-        jLabel8.setText("4.- Conectar el teléfono al microfiltro que acabas de colocar.");
+        jLabel8.setText("<html><a href=\"\">Enlace</a></html>\");");
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
         jPanel1.add(jLabel8);
 
-        jLabel2.setText("      Repetir los últimos cuatro (4) pasos por cada línea de teléfono que tenga en casa");
+        jLabel2.setText("• Video: ");
         jPanel1.add(jLabel2);
+
+        jLabel6.setText("<html><a href=\"\">Enlace</a></html>\");");
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel6);
         jPanel1.add(jLabel4);
 
         jpContenido.add(jPanel1, java.awt.BorderLayout.CENTER);
 
         add(jpContenido, java.awt.BorderLayout.WEST);
     }// </editor-fold>//GEN-END:initComponents
+
+private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+// TODO add your handling code here:
+        try {
+        if (java.awt.Desktop.isDesktopSupported()) {
+            java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+            if (desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+                desktop.browse(new java.net.URI("http://www.movistar.es/on/io/es/atencion/soporte_tecnico_y_averias/internet/adsl/equipos/modem_USB/CT350/ManualComtrendCT350_351.pdf"));
+            }
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}//GEN-LAST:event_jLabel5MouseClicked
+
+private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+// TODO add your handling code here:
+        try {
+        if (java.awt.Desktop.isDesktopSupported()) {
+            java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+            if (desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+                desktop.browse(new java.net.URI("http://www.movistar.es/on/io/es/atencion/soporte_tecnico_y_averias/internet/adsl/equipos/modem_USB/CT350/GuiaRapidaComtrendCT350_351.pdf"));
+            }
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}//GEN-LAST:event_jLabel8MouseClicked
+
+private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+// TODO add your handling code here:
+        try {
+        if (java.awt.Desktop.isDesktopSupported()) {
+            java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+            if (desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+                desktop.browse(new java.net.URI("http://www.movistar.es/on/io/es/atencion/soporte_tecnico_y_averias/internet/adsl/equipos/modem_USB/CT351/comtrend.swf"));
+            }
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}//GEN-LAST:event_jLabel6MouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel jLabel1;

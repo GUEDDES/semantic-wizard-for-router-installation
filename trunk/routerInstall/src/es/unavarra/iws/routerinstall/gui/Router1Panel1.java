@@ -48,7 +48,7 @@ public class Router1Panel1 extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
-        iconoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/clouds.jpg"))); // NOI18N
+        iconoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_movistar.jpg"))); // NOI18N
         iconoLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
         add(iconoLabel, java.awt.BorderLayout.WEST);
 
@@ -57,8 +57,8 @@ public class Router1Panel1 extends javax.swing.JPanel {
 
         ContenidoTodo.setLayout(new java.awt.BorderLayout());
 
-        lTitulo.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        lTitulo.setText("Instalación del Router 1");
+        lTitulo.setFont(new java.awt.Font("Verdana", 1, 14));
+        lTitulo.setText("Instalación del CT-5071 monopuerto");
         ContenidoTodo.add(lTitulo, java.awt.BorderLayout.PAGE_START);
 
         ContenidoTexto.setLayout(new javax.swing.BoxLayout(ContenidoTexto, javax.swing.BoxLayout.Y_AXIS));
@@ -68,7 +68,7 @@ public class Router1Panel1 extends javax.swing.JPanel {
         ContenidoTexto.add(jLabel4);
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/comtrend5365.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_ct5071_60.png"))); // NOI18N
         jLabel8.setMaximumSize(new java.awt.Dimension(531, 100));
         jLabel8.setMinimumSize(new java.awt.Dimension(531, 100));
         jLabel8.setPreferredSize(new java.awt.Dimension(531, 18));

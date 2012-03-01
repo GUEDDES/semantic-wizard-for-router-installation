@@ -7,14 +7,14 @@ import java.awt.event.ActionListener;
 
 public class Router1Panel2Descriptor extends WizardPanelDescriptor implements ActionListener {
     
-    public static final String IDENTIFIER = "CONNECTOR_CHOOSE_PANEL";
+    public static final String IDENTIFIER = "RCT5071_PANEL_2";
     
     Router1Panel2 panel2;
     
     public Router1Panel2Descriptor() {
         
         panel2 = new Router1Panel2();
-        panel2.addCheckBoxActionListener(this);
+        //panel2.addCheckBoxActionListener(this);
         
         setPanelDescriptorIdentifier(IDENTIFIER);
         setPanelComponent(panel2);
@@ -34,14 +34,14 @@ public class Router1Panel2Descriptor extends WizardPanelDescriptor implements Ac
     
     @Override
     public void aboutToDisplayPanel() {
-        setNextButtonAccordingToCheckBox();
+        //setNextButtonAccordingToCheckBox();
     }    
 
     public void actionPerformed(ActionEvent e) {
-        setNextButtonAccordingToCheckBox();
+        //setNextButtonAccordingToCheckBox();
     }
             
-    
+    /*
     private void setNextButtonAccordingToCheckBox() {
          if (panel2.isCheckBoxSelected())
             getWizard().setNextFinishButtonEnabled(true);
@@ -49,4 +49,5 @@ public class Router1Panel2Descriptor extends WizardPanelDescriptor implements Ac
             getWizard().setNextFinishButtonEnabled(false);           
     
     }
+     * */
 }

@@ -35,7 +35,7 @@ public class Rx7028rPanel7Descriptor extends WizardPanelDescriptor implements Ac
     
     @Override
     public Object getBackPanelDescriptor() {
-        return Rx7028rPanel8Descriptor.IDENTIFIER;
+        return Rx7028rPanel6Descriptor.IDENTIFIER;
     }    
     
     @Override

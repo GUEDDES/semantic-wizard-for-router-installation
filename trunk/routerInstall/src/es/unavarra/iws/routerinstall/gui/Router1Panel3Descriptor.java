@@ -5,7 +5,7 @@ import es.unavarra.iws.routerinstall.gui.wiz.WizardPanelDescriptor;
 
 public class Router1Panel3Descriptor extends WizardPanelDescriptor {
     
-    public static final String IDENTIFIER = "SERVER_CONNECT_PANEL";
+    public static final String IDENTIFIER = "RCT5071_PANEL_3";
     
     Router1Panel3 panel3;
     
@@ -28,17 +28,19 @@ public class Router1Panel3Descriptor extends WizardPanelDescriptor {
     
     public void aboutToDisplayPanel() {
         
-        panel3.setProgressValue(0);
+       /* panel3.setProgressValue(0);
         panel3.setProgressText("Conexión con el servidor ...");
 
         getWizard().setNextFinishButtonEnabled(false);
         getWizard().setBackButtonEnabled(false);
+        * 
+        */
         
     }
     
     public void displayingPanel() {
 
-            Thread t = new Thread() {
+            /*Thread t = new Thread() {
 
             public void run() {
 
@@ -71,6 +73,8 @@ public class Router1Panel3Descriptor extends WizardPanelDescriptor {
         };
 
         t.start();
+             * 
+             */
     }
     
     public void aboutToHidePanel() {

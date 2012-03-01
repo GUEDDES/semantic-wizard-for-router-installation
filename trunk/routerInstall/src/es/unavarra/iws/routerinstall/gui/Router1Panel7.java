@@ -10,24 +10,24 @@ import java.awt.event.ActionListener;
  *
  * @author aqm
  */
-public class Router1Panel2 extends javax.swing.JPanel {
+public class Router1Panel7 extends javax.swing.JPanel {
 
     /**
      * Creates new form Router1Panel2
      */
-    public Router1Panel2() {
+    public Router1Panel7() {
         initComponents();
     }
-/*
+    /*
     public boolean isCheckBoxSelected() {
         return jCheckBox1.isSelected();
     }    
     
     public void addCheckBoxActionListener(ActionListener l) {
         jCheckBox1.addActionListener(l);
-    }    
-     * 
-     */
+    } 
+    */
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,11 +45,11 @@ public class Router1Panel2 extends javax.swing.JPanel {
         jpContenido = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -60,7 +60,7 @@ public class Router1Panel2 extends javax.swing.JPanel {
 
         jlTexto.setBackground(java.awt.Color.lightGray);
         jlTexto.setFont(new java.awt.Font("Verdana", 1, 14));
-        jlTexto.setText("Instalación de microfiltros");
+        jlTexto.setText("Información de interés");
         jlTexto.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         jlTexto.setOpaque(true);
         jpTitulo.add(jlTexto, java.awt.BorderLayout.CENTER);
@@ -85,23 +85,31 @@ public class Router1Panel2 extends javax.swing.JPanel {
 
         jPanel1.setPreferredSize(new java.awt.Dimension(480, 192));
         jPanel1.setLayout(new java.awt.GridLayout(0, 1));
-
-        jLabel3.setText("1.- Localizar la roseta telefónica de tu casa donde deseas instalar el router.");
-        jPanel1.add(jLabel3);
-
-        jLabel5.setText("2.- Desconectar el teléfono de la roseta y conecte la clavija extensora a la roseta");
-        jPanel1.add(jLabel5);
-
-        jLabel6.setText("      por el extremo adecuado. Ahora dispone del equivalente a dos rosetas telefónicas");
         jPanel1.add(jLabel6);
 
-        jLabel7.setText("3.- Conectar uno de los microfiltros a una de las salidas de la clavija Extensora");
+        jLabel7.setText("• Manual de Usuario:");
         jPanel1.add(jLabel7);
 
-        jLabel8.setText("4.- Conectar el teléfono al microfiltro que acabas de colocar.");
+        jLabel3.setText("<html><a href=\"\">Enlace</a></html>\");");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel3);
+
+        jLabel8.setToolTipText("");
         jPanel1.add(jLabel8);
 
-        jLabel2.setText("      Repetir los últimos cuatro (4) pasos por cada línea de teléfono que tenga en casa");
+        jLabel5.setText("• Guía Rápida: ");
+        jPanel1.add(jLabel5);
+
+        jLabel2.setText("<html><a href=\"\">Enlace</a></html>\");");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
         jPanel1.add(jLabel2);
         jPanel1.add(jLabel4);
 
@@ -109,6 +117,36 @@ public class Router1Panel2 extends javax.swing.JPanel {
 
         add(jpContenido, java.awt.BorderLayout.WEST);
     }// </editor-fold>//GEN-END:initComponents
+
+private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+// TODO add your handling code here:
+    try {
+        if (java.awt.Desktop.isDesktopSupported()) {
+            java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+            if (desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+                desktop.browse(new java.net.URI("http://www.movistar.es/on/io/es/atencion/soporte_tecnico_y_averias/internet/adsl/equipos/router_monopuerto/ConectaBOX_Comtrend/manual_usuario_Vista_CT5071.pdf"));
+            }
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}//GEN-LAST:event_jLabel3MouseClicked
+
+private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+// TODO add your handling code here:
+    // TODO add your handling code here:
+    try {
+        if (java.awt.Desktop.isDesktopSupported()) {
+            java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+            if (desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+                desktop.browse(new java.net.URI("http://www.movistar.es/on/io/es/atencion/soporte_tecnico_y_averias/internet/adsl/equipos/router_monopuerto/ConectaBOX_Comtrend/GuiaRapidaComtrendCT5071.pdf"));
+            }
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}//GEN-LAST:event_jLabel2MouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel jLabel1;
