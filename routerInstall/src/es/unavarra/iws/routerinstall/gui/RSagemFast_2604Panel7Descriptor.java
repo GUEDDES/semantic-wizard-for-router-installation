@@ -12,30 +12,30 @@ import java.awt.event.ActionListener;
  *
  * @author aqm
  */
-public class Router1Panel6Descriptor extends WizardPanelDescriptor implements ActionListener {
+public class RSagemFast_2604Panel7Descriptor extends WizardPanelDescriptor implements ActionListener {
     
-    public static final String IDENTIFIER = "RCT5701_PANEL_6";
+    public static final String IDENTIFIER = "RSAGEMFAST_2604_PANEL_7";
     
-    Router1Panel6 panel6;
+    RSagemFast_2604Panel7 panel7;
     
-    public Router1Panel6Descriptor() {
+    public RSagemFast_2604Panel7Descriptor() {
         
-        panel6 = new Router1Panel6();
+        panel7 = new RSagemFast_2604Panel7();
         //panel5.addCheckBoxActionListener(this);
         
         setPanelDescriptorIdentifier(IDENTIFIER);
-        setPanelComponent(panel6);
+        setPanelComponent(panel7);
         
     }
     
     @Override
     public Object getNextPanelDescriptor() {
-        return Router1Panel7Descriptor.IDENTIFIER;
+        return RSagemFast_2604Panel8Descriptor.IDENTIFIER;
     }
     
     @Override
     public Object getBackPanelDescriptor() {
-        return Router1Panel5Descriptor.IDENTIFIER;
+        return RSagemFast_2604Panel6Descriptor.IDENTIFIER;
     }    
     
     @Override
