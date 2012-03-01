@@ -10,6 +10,10 @@ import es.unavarra.iws.routerinstall.gui.wiz.Wizard;
 import es.unavarra.iws.routerinstall.gui.wiz.WizardPanelDescriptor;
 import java.awt.Container;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
 import javax.swing.JOptionPane;
 
 /**
@@ -468,14 +472,42 @@ private void jbSagemFast2604MouseClicked(java.awt.event.MouseEvent evt) {//GEN-F
         jlError.setVisible(false);
         //txtBusqueda = StringUtils.prepareSearchString(txtBusqueda);
         if(txtBusqueda!=null && txtBusqueda.length()>0){
-            txtResultado = qm.initInstallationByCharacteristics(txtBusqueda);
-            if(txtResultado!=null && txtResultado.length()>0){
-                habilitaBotones(false);
-                habilitaPorId(txtResultado);
-            }
-            else{
-                //habilitaBotones(true);
+            
+            List<String> list = new ArrayList<String>(); //1er resultado que retorna: Lista con los routers
+            String idPantalla = "";                      //2do resultado que retorna: ID (String) de la ventana
+            
+//          txtResultado = qm.initInstallationByCharacteristics(txtBusqueda);  //mientras llega el API
+            txtResultado = "vale_el_pronto_se_implementara";
+            if(txtResultado==null || txtResultado.length()<1){
                 jlError.setVisible(true);
+                return;
+            }
+            
+// <para_pruebas> 
+            Boolean esRouter = true; 
+            Random r = new Random();
+            if((r.nextInt(6)+1)>3){
+                list.add("CT-351"); //para el ejemplo devolvera los 2 routers que cumplan el requisito de la busqueda. Sino es asi idicar como devolvera
+                list.add("TG585v7");
+            }else{
+                list.add("SagemFast_2604"); //o 3
+                list.add("HG556");
+                list.add("x7028r");
+            }
+// </para_pruebas>
+            
+// <para_pruebas>             
+            Boolean esIDPantalla = false; 
+            idPantalla = "RHG_PANEL_LOQUESEA";
+// </para_pruebas>            
+            
+            if(esRouter){
+                habilitaBotones(false);
+                habilitaRouter(list);
+            }
+            if(esIDPantalla){
+                habilitaBotones(true);
+                muestraPantallaID(idPantalla);
             }
                 
         }
@@ -506,6 +538,33 @@ private void jbSagemFast2604MouseClicked(java.awt.event.MouseEvent evt) {//GEN-F
             JOptionPane.showMessageDialog(this, id,"Resultados",JOptionPane.INFORMATION_MESSAGE);
             habilitaBotones(true);
         }
+    }
+
+    private void habilitaRouter(List<String> list) {
+        String router = "";
+        Iterator iter = list.iterator();
+        while (iter.hasNext()){
+                router = ((String )iter.next()).toLowerCase();
+                if(router.equals("ct-351")){
+                    jbCT351.setEnabled(true);
+                }else if(router.equals("ct-5071")){
+                    jbCT5071.setEnabled(true);
+                }else if(router.equals("x7028r")){
+                    jbX7028r.setEnabled(true);
+                }else if(router.equals("tg585v7")){
+                    jbTG585v7.setEnabled(true);
+                }else if(router.equals("sagemfast_2604")){
+                    jbSagemFast2604.setEnabled(true);
+                }else if(router.equals("hg556")){
+                    jbHG556.setEnabled(true);
+                }
+                    
+                        
+            }
+    }
+
+    private void muestraPantallaID(String idPantalla) {
+       //show al panel correspondiente
     }
 }
 
