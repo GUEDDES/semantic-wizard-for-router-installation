@@ -6,6 +6,10 @@ package es.unavarra.iws.routerinstall.gui;
 
 import es.unavarra.iws.routerinstall.engine.QueryManager;
 import java.awt.Container;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
 
 /**
  *
@@ -33,13 +37,16 @@ public class Ayuda extends javax.swing.JPanel {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        jtpAyuda = new javax.swing.JTabbedPane();
+        jpPF = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtaPF = new javax.swing.JTextArea();
+        jpIN = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jtaIN = new javax.swing.JTextArea();
+        jpPC = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jtaPC = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jlTitulo = new javax.swing.JLabel();
@@ -56,72 +63,55 @@ public class Ayuda extends javax.swing.JPanel {
         add(jButton1);
         jButton1.setBounds(420, 20, 50, 50);
 
-        jLabel1.setText("Pregunta");
+        jtpAyuda.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
 
-        jLabel2.setText("Respuesta");
+        jpPF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpPF.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
+        jpPF.setOpaque(false);
+        jpPF.setLayout(new java.awt.BorderLayout());
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addComponent(jLabel2)))
-                .addContainerGap(298, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addContainerGap(351, Short.MAX_VALUE))
-        );
+        jtaPF.setColumns(20);
+        jtaPF.setLineWrap(true);
+        jtaPF.setRows(5);
+        jtaPF.setWrapStyleWord(true);
+        jScrollPane1.setViewportView(jtaPF);
 
-        jTabbedPane1.addTab("Preguntas Frecuentes", jPanel1);
+        jpPF.add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
-        jLabel4.setText("Incidencia 1");
+        jtpAyuda.addTab("Preguntas Frecuentes", new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/misc_03_16.png")), jpPF); // NOI18N
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel4)
-                .addContainerGap(338, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel4)
-                .addContainerGap(367, Short.MAX_VALUE))
-        );
+        jpIN.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpIN.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
+        jpIN.setOpaque(false);
+        jpIN.setLayout(new java.awt.BorderLayout());
 
-        jTabbedPane1.addTab("Incidencias", jPanel2);
+        jtaIN.setColumns(20);
+        jtaIN.setLineWrap(true);
+        jtaIN.setRows(5);
+        jtaIN.setWrapStyleWord(true);
+        jScrollPane2.setViewportView(jtaIN);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 415, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 412, Short.MAX_VALUE)
-        );
+        jpIN.add(jScrollPane2, java.awt.BorderLayout.CENTER);
 
-        jTabbedPane1.addTab("Problemas comunes", jPanel3);
+        jtpAyuda.addTab("Incidencias", new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/misc_53_16.png")), jpIN); // NOI18N
 
-        add(jTabbedPane1);
-        jTabbedPane1.setBounds(30, 100, 420, 440);
+        jpPC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpPC.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
+        jpPC.setOpaque(false);
+        jpPC.setLayout(new java.awt.BorderLayout());
+
+        jtaPC.setColumns(20);
+        jtaPC.setLineWrap(true);
+        jtaPC.setRows(5);
+        jtaPC.setWrapStyleWord(true);
+        jScrollPane3.setViewportView(jtaPC);
+
+        jpPC.add(jScrollPane3, java.awt.BorderLayout.CENTER);
+
+        jtpAyuda.addTab("Problemas comunes", new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/misc_13_16.png")), jpPC); // NOI18N
+
+        add(jtpAyuda);
+        jtpAyuda.setBounds(30, 100, 420, 440);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/help32.png"))); // NOI18N
         add(jLabel3);
@@ -129,6 +119,11 @@ public class Ayuda extends javax.swing.JPanel {
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/note_search32.png"))); // NOI18N
         jButton2.setText("Actualizar");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
         add(jButton2);
         jButton2.setBounds(330, 570, 120, 40);
 
@@ -157,18 +152,43 @@ public class Ayuda extends javax.swing.JPanel {
         menu.add(principal, 0);        
     }//GEN-LAST:event_jButton1MouseClicked
 
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        String sResultado = "";
+        List<String> list = new ArrayList<String>();
+        Random r = new Random();
+        
+        int sel = jtpAyuda.getSelectedIndex(); 
+        if(sel==0){
+            list = qm.getAvailableRouters();
+            Iterator iter = list.iterator();
+            while (iter.hasNext()){
+                sResultado += (iter.next() + "\n\n");
+            }
+            jtaPF.setText(sResultado);
+        }else if(sel==1){
+            jtaIN.setText("\nIncidencias: " + (r.nextInt(10)+1) );
+        }else if(sel==2){
+            jtaPC.setText("\nProblemas comunes: " + (r.nextInt(10)+1) );
+        }
+            
+    }//GEN-LAST:event_jButton2MouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel jlBackground;
     private javax.swing.JLabel jlTitulo;
+    private javax.swing.JPanel jpIN;
+    private javax.swing.JPanel jpPC;
+    private javax.swing.JPanel jpPF;
+    private javax.swing.JTextArea jtaIN;
+    private javax.swing.JTextArea jtaPC;
+    private javax.swing.JTextArea jtaPF;
+    private javax.swing.JTabbedPane jtpAyuda;
     // End of variables declaration//GEN-END:variables
 }
