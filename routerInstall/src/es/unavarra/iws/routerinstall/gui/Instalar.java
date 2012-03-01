@@ -92,6 +92,11 @@ public class Instalar extends javax.swing.JPanel {
 
         jbRouter4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_tg585v7_60.png"))); // NOI18N
         jbRouter4.setText("      TG585v7");
+        jbRouter4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbRouter4MouseClicked(evt);
+            }
+        });
         add(jbRouter4);
         jbRouter4.setBounds(250, 380, 200, 80);
 
@@ -132,6 +137,11 @@ public class Instalar extends javax.swing.JPanel {
 
         jbRouter5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_sagemFast2604_30.png"))); // NOI18N
         jbRouter5.setText("  SagemFast_2604");
+        jbRouter5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbRouter5MouseClicked(evt);
+            }
+        });
         jbRouter5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbRouter5ActionPerformed(evt);
@@ -354,6 +364,81 @@ private void jbRouter6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:e
         
         wizard.setCurrentPanel(RHG556Panel1Descriptor.IDENTIFIER);
 }//GEN-LAST:event_jbRouter6MouseClicked
+
+private void jbRouter4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbRouter4MouseClicked
+// TODO add your handling code here:
+            String routerActual = "TG585v7";
+        String primerPaso;
+        
+        primerPaso = qm.initInstallationByModelName(routerActual);
+        
+        Wizard wizard = new Wizard();
+        
+        wizard.getDialog().setTitle("Instalación router " + routerActual);
+        
+        WizardPanelDescriptor descriptor1 = new RTG585v7Panel1Descriptor(primerPaso!=null ? primerPaso:"");
+        wizard.registerWizardPanel(RTG585v7Panel1Descriptor.IDENTIFIER, descriptor1);
+
+        WizardPanelDescriptor descriptor2 = new RTG585v7Panel2Descriptor();
+        wizard.registerWizardPanel(RTG585v7Panel2Descriptor.IDENTIFIER, descriptor2);
+
+        WizardPanelDescriptor descriptor3 = new RTG585v7Panel3Descriptor();
+        wizard.registerWizardPanel(RTG585v7Panel3Descriptor.IDENTIFIER, descriptor3);
+        
+        WizardPanelDescriptor descriptor4 = new RTG585v7Panel4Descriptor();
+        wizard.registerWizardPanel(RTG585v7Panel4Descriptor.IDENTIFIER, descriptor4);
+        
+        WizardPanelDescriptor descriptor5 = new RTG585v7Panel5Descriptor();
+        wizard.registerWizardPanel(RTG585v7Panel5Descriptor.IDENTIFIER, descriptor5);
+        
+        WizardPanelDescriptor descriptor6 = new RTG585v7Panel7Descriptor();
+        wizard.registerWizardPanel(RTG585v7Panel7Descriptor.IDENTIFIER, descriptor6);
+        
+        WizardPanelDescriptor descriptor7 = new RTG585v7Panel8Descriptor();
+        wizard.registerWizardPanel(RTG585v7Panel8Descriptor.IDENTIFIER, descriptor7);
+
+
+        wizard.setCurrentPanel(RTG585v7Panel1Descriptor.IDENTIFIER);
+}//GEN-LAST:event_jbRouter4MouseClicked
+
+private void jbRouter5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbRouter5MouseClicked
+// TODO add your handling code here:
+        String routerActual = "SagemFast_2604";
+        String primerPaso;
+        
+        primerPaso = qm.initInstallationByModelName(routerActual);
+        
+        Wizard wizard = new Wizard();
+        wizard.getDialog().setTitle("Instalación router " + routerActual);
+        
+        WizardPanelDescriptor descriptor1 = new RSagemFast_2604Panel1Descriptor(primerPaso!=null ? primerPaso:"");
+        wizard.registerWizardPanel(RSagemFast_2604Panel1Descriptor.IDENTIFIER, descriptor1);
+
+        WizardPanelDescriptor descriptor2 = new RSagemFast_2604Panel2Descriptor();
+        wizard.registerWizardPanel(RSagemFast_2604Panel2Descriptor.IDENTIFIER, descriptor2);
+
+        WizardPanelDescriptor descriptor3 = new RSagemFast_2604Panel3Descriptor();
+        wizard.registerWizardPanel(RSagemFast_2604Panel3Descriptor.IDENTIFIER, descriptor3);
+        
+        WizardPanelDescriptor descriptor4 = new RSagemFast_2604Panel4Descriptor();
+        wizard.registerWizardPanel(RSagemFast_2604Panel4Descriptor.IDENTIFIER, descriptor4);
+        
+        WizardPanelDescriptor descriptor5 = new RSagemFast_2604Panel5Descriptor();
+        wizard.registerWizardPanel(RSagemFast_2604Panel5Descriptor.IDENTIFIER, descriptor5);
+        
+        WizardPanelDescriptor descriptor6 = new RSagemFast_2604Panel6Descriptor();
+        wizard.registerWizardPanel(RSagemFast_2604Panel6Descriptor.IDENTIFIER, descriptor6);
+        
+        WizardPanelDescriptor descriptor7 = new RSagemFast_2604Panel7Descriptor();
+        wizard.registerWizardPanel(RSagemFast_2604Panel7Descriptor.IDENTIFIER, descriptor7);
+        
+        WizardPanelDescriptor descriptor8 = new RSagemFast_2604Panel8Descriptor();
+        wizard.registerWizardPanel(RSagemFast_2604Panel8Descriptor.IDENTIFIER, descriptor8);
+        
+        wizard.setCurrentPanel(RSagemFast_2604Panel1Descriptor.IDENTIFIER);
+        
+        int ret = wizard.showModalDialog();
+}//GEN-LAST:event_jbRouter5MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;
