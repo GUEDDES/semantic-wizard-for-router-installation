@@ -30,7 +30,7 @@ public class RSagemFast_2604Panel5Descriptor extends WizardPanelDescriptor imple
     
     @Override
     public Object getNextPanelDescriptor() {
-        return RSagemFast_2604Panel7Descriptor.IDENTIFIER;
+        return RSagemFast_2604Panel6Descriptor.IDENTIFIER;
     }
     
     @Override
