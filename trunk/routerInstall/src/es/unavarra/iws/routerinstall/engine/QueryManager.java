@@ -125,7 +125,22 @@ public class QueryManager implements IQueryManager {
 
     public QueryResult initInstallationByCharacteristics(String searchString) {
          engine.init();
-        return engine.searchCharacteristics(searchString);
+          QueryResult qr = new QueryResult(null, null);
+            List<MatchingResult> queryResults = engine.fullSearchByLabel(searchString);
+            List<String> routers = engine.tryToGetRouters(queryResults);
+
+            if (routers.size() == engine.searchAvailableRouters().size()) {
+                logger.info("look for steps");
+                currentStep = engine.searchInstallSteps(searchString);
+                if (currentStep != null) {
+                    String stepID = ("_"+currentStep.getLocalName()).toUpperCase();
+                    qr = new QueryResult(stepID, null);
+                } 
+        } else {
+             logger.info("look for routers "+routers);
+            qr = new QueryResult(null, routers);
+        }
+        return qr;
     }
 
     public List<String> getAvailableRouters() {
@@ -158,19 +173,5 @@ public class QueryManager implements IQueryManager {
          return engine.getPropertyValue(id, engine.getVocabulary().guideURL);
     }
 
-    public static void main(String[] args) {
-        QueryManager qm = new QueryManager();
-        String step= qm.initInstallationByModelName("CT-351");
-        while (!qm.isLastStep()) {
-           
-           qm.getNextStepOK();
-           logger.info("is first"+qm.getCurrentStepName());
-
-
-    }
-
-
-
-    }
 }
 

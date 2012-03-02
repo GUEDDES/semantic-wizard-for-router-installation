@@ -316,7 +316,6 @@ public class Engine {
         List<String> steps = querySPARQL(queryString, "?pasoInstalacion");
         return steps;
 
-
     }
 
     private List<String> searchStepsAfterPowerOn(Individual router) {
@@ -349,23 +348,7 @@ public class Engine {
 
     }
 
-    public QueryResult searchCharacteristics(String searchString) {
-        QueryResult qr = null;
-        List<MatchingResult> queryResults = fullSearchByLabel(searchString);
-        List<String> routers = tryToGetRouters(queryResults);
-
-        if (routers.size() == searchAvailableRouters().size()) {
-            logger.info("look for steps");
-            String screenID = searchInstallSteps(searchString);
-            qr = new QueryResult(screenID, null);
-        } else {
-             logger.info("look for other"+routers);
-            qr = new QueryResult(null, routers);
-        }
-        return qr;
-    }
-
-    private List<String> tryToGetRouters(List<MatchingResult> queryResults) {
+    public List<String> tryToGetRouters(List<MatchingResult> queryResults) {
         List<String> routerIndividuals = new ArrayList<String>();
         Individual newRouter = null;
         Iterator<MatchingResult> it = queryResults.iterator();
@@ -477,7 +460,7 @@ public class Engine {
     }
 
 
-     private String searchInstallSteps(String searchString) {
+     public Individual searchInstallSteps(String searchString) {
         //Buscar por label en toda la cadena de entrada
         List<MatchingResult> queryResults = new ArrayList<MatchingResult>();
 
@@ -493,8 +476,7 @@ public class Engine {
             String[] splittedString = searchString.split(" ");
 
             if (splittedString.length > 1) {
-                for (int i = 0; i
-                        < splittedString.length; i++) {
+                for (int i = 0; i   < splittedString.length; i++) {
                     String s = splittedString[i];
                     res = searchStepsByLabel(s);
 
@@ -506,7 +488,8 @@ public class Engine {
             }
         }
         String chosenStep = getResourceWithMaxPriority(queryResults);
-        return chosenStep;
+        
+        return model.getIndividual(Vocabulary.uri+chosenStep);
     }
 
     private MatchingResult searchStepsByLabel(String searchString) {
@@ -517,7 +500,7 @@ public class Engine {
                 + " SELECT ?step ?priority"
                 + " WHERE {"
                 + "   ?step rdf:instanceOf <"+vocabulary.pasoInstalacion+">  ."
-                + "   ?step RouterInstall:hasPriority ?priority . "
+                + "   ?step RouterInstall:hasPriority ?priority ."
                 + "   ?step rdfs:label ?label ."
                 + "FILTER (regex(fn:lower-case(?label), \"" + searchString + "\")) "
                 + "}";
