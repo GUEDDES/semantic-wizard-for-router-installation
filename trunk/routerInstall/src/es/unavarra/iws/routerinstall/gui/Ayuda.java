@@ -36,7 +36,10 @@ public class Ayuda extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        jlIcono = new javax.swing.JLabel();
+        jbHome = new javax.swing.JButton();
+        jlTitulo = new javax.swing.JLabel();
+        jlBarra = new javax.swing.JLabel();
         jtpAyuda = new javax.swing.JTabbedPane();
         jpPF = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -47,21 +50,34 @@ public class Ayuda extends javax.swing.JPanel {
         jpPC = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jtaPC = new javax.swing.JTextArea();
-        jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jlTitulo = new javax.swing.JLabel();
+        jbActualizar = new javax.swing.JButton();
         jlBackground = new javax.swing.JLabel();
 
         setLayout(null);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/home32.png"))); // NOI18N
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jlIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/help32.png"))); // NOI18N
+        add(jlIcono);
+        jlIcono.setBounds(35, 30, 30, 30);
+
+        jbHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/home32.png"))); // NOI18N
+        jbHome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                jbHomeMouseClicked(evt);
             }
         });
-        add(jButton1);
-        jButton1.setBounds(420, 20, 50, 50);
+        add(jbHome);
+        jbHome.setBounds(420, 20, 50, 50);
+
+        jlTitulo.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jlTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        jlTitulo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jlTitulo.setText("Ayuda");
+        add(jlTitulo);
+        jlTitulo.setBounds(100, 20, 160, 50);
+
+        jlBarra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/w70.png"))); // NOI18N
+        add(jlBarra);
+        jlBarra.setBounds(0, 20, 840, 50);
 
         jtpAyuda.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
 
@@ -96,6 +112,7 @@ public class Ayuda extends javax.swing.JPanel {
         jtpAyuda.addTab("Incidencias", new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/misc_53_16.png")), jpIN); // NOI18N
 
         jpPC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpPC.setEnabled(false);
         jpPC.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
         jpPC.setOpaque(false);
         jpPC.setLayout(new java.awt.BorderLayout());
@@ -113,36 +130,22 @@ public class Ayuda extends javax.swing.JPanel {
         add(jtpAyuda);
         jtpAyuda.setBounds(30, 100, 420, 440);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/help32.png"))); // NOI18N
-        add(jLabel3);
-        jLabel3.setBounds(10, 30, 30, 30);
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/note_search32.png"))); // NOI18N
-        jButton2.setText("Actualizar");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jbActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/note_search32.png"))); // NOI18N
+        jbActualizar.setText("Actualizar");
+        jbActualizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                jbActualizarMouseClicked(evt);
             }
         });
-        add(jButton2);
-        jButton2.setBounds(330, 570, 120, 40);
-
-        jlTitulo.setBackground(new java.awt.Color(0, 51, 102));
-        jlTitulo.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jlTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        jlTitulo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jlTitulo.setText("       Ayuda");
-        jlTitulo.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(0, 0, 0)));
-        jlTitulo.setOpaque(true);
-        add(jlTitulo);
-        jlTitulo.setBounds(0, 20, 480, 50);
+        add(jbActualizar);
+        jbActualizar.setBounds(330, 570, 120, 40);
 
         jlBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr2.png"))); // NOI18N
         add(jlBackground);
-        jlBackground.setBounds(0, 0, 480, 660);
+        jlBackground.setBounds(0, 0, 480, 640);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void jbHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbHomeMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
         Container menu = this.getFocusCycleRootAncestor();
@@ -150,9 +153,9 @@ public class Ayuda extends javax.swing.JPanel {
         menu.remove(this);
         principal.setSize(menu.getSize());
         menu.add(principal, 0);        
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_jbHomeMouseClicked
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void jbActualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbActualizarMouseClicked
         // TODO add your handling code here:
         String sResultado = "";
         List<String> list = new ArrayList<String>();
@@ -172,16 +175,17 @@ public class Ayuda extends javax.swing.JPanel {
             jtaPC.setText("\nProblemas comunes: " + (r.nextInt(10)+1) );
         }
             
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_jbActualizarMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JButton jbActualizar;
+    private javax.swing.JButton jbHome;
     private javax.swing.JLabel jlBackground;
+    private javax.swing.JLabel jlBarra;
+    private javax.swing.JLabel jlIcono;
     private javax.swing.JLabel jlTitulo;
     private javax.swing.JPanel jpIN;
     private javax.swing.JPanel jpPC;

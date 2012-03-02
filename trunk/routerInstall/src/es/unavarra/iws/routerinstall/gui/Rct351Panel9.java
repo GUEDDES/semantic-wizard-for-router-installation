@@ -12,17 +12,13 @@ import java.awt.event.ActionListener;
  * @author aqm
  */
 public class Rct351Panel9 extends javax.swing.JPanel {
-
+    QueryManager qm = null;
     /**
      * Creates new form Router1Panel2
      */
     public Rct351Panel9(QueryManager q) {
+        this.qm = q;
         initComponents();
-        String m = q.getManualURL("CT-351");
-        jlManual.setText(m!=null?"<html><a href='+m+'>"+m+"</a></html>":"<html><a href=''>Enlace</a></html>");
-        m = q.getVideoURL("CT-351");
-        jlManual.setText(m!=null?m:"<html><a href=''>Enlace</a></html>");
-        
     }
     /*
     public boolean isCheckBoxSelected() {
@@ -137,7 +133,9 @@ private void jlManualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:ev
         if (java.awt.Desktop.isDesktopSupported()) {
             java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
             if (desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
-                desktop.browse(new java.net.URI("http://www.movistar.es/on/io/es/atencion/soporte_tecnico_y_averias/internet/adsl/equipos/modem_USB/CT350/ManualComtrendCT350_351.pdf"));
+                String m = qm.getManualURL("CT-351");
+                //desktop.browse(new java.net.URI("http://www.movistar.es/on/io/es/atencion/soporte_tecnico_y_averias/internet/adsl/equipos/modem_USB/CT350/ManualComtrendCT350_351.pdf"));
+                desktop.browse(new java.net.URI(m));
             }
         }
     } catch (Exception e) {
@@ -165,7 +163,9 @@ private void jlVideoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
         if (java.awt.Desktop.isDesktopSupported()) {
             java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
             if (desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
-                desktop.browse(new java.net.URI("http://www.movistar.es/on/io/es/atencion/soporte_tecnico_y_averias/internet/adsl/equipos/modem_USB/CT351/comtrend.swf"));
+                String m = qm.getVideoURL("CT-351");
+                //desktop.browse(new java.net.URI("http://www.movistar.es/on/io/es/atencion/soporte_tecnico_y_averias/internet/adsl/equipos/modem_USB/CT351/comtrend.swf"));
+                desktop.browse(new java.net.URI(m));
             }
         }
     } catch (Exception e) {

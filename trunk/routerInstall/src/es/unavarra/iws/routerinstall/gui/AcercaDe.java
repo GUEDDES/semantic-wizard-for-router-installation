@@ -60,19 +60,31 @@ public class AcercaDe extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jlIcono = new javax.swing.JLabel();
+        jlTitulo = new javax.swing.JLabel();
         jbHome = new javax.swing.JButton();
+        jlBarra = new javax.swing.JLabel();
         jlUPNA = new javax.swing.JLabel();
         jlArnulfo = new javax.swing.JLabel();
         jlMariela = new javax.swing.JLabel();
         jlItziar = new javax.swing.JLabel();
-        jlIcono = new javax.swing.JLabel();
         jlMikel = new javax.swing.JLabel();
         jlIWS = new javax.swing.JLabel();
-        jlTitulo = new javax.swing.JLabel();
         jlMUTI = new javax.swing.JLabel();
         jlBackground = new javax.swing.JLabel();
 
         setLayout(null);
+
+        jlIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/addressbook32.png"))); // NOI18N
+        add(jlIcono);
+        jlIcono.setBounds(35, 30, 30, 30);
+
+        jlTitulo.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jlTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        jlTitulo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jlTitulo.setText("Acerca de");
+        add(jlTitulo);
+        jlTitulo.setBounds(100, 20, 150, 50);
 
         jbHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/home32.png"))); // NOI18N
         jbHome.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -83,6 +95,10 @@ public class AcercaDe extends javax.swing.JPanel {
         add(jbHome);
         jbHome.setBounds(420, 20, 50, 50);
 
+        jlBarra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/w70.png"))); // NOI18N
+        add(jlBarra);
+        jlBarra.setBounds(0, 20, 600, 50);
+
         jlUPNA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/upna2.png"))); // NOI18N
         add(jlUPNA);
         jlUPNA.setBounds(170, 270, 180, 100);
@@ -90,7 +106,7 @@ public class AcercaDe extends javax.swing.JPanel {
         jlArnulfo.setFont(new java.awt.Font("Arial", 0, 28)); // NOI18N
         jlArnulfo.setText("Arnulfo");
         add(jlArnulfo);
-        jlArnulfo.setBounds(270, 370, 120, 40);
+        jlArnulfo.setBounds(270, 370, 120, 33);
 
         jlMariela.setFont(new java.awt.Font("Arial", 0, 28)); // NOI18N
         jlMariela.setText("Mariela");
@@ -100,32 +116,18 @@ public class AcercaDe extends javax.swing.JPanel {
         jlItziar.setFont(new java.awt.Font("Arial", 0, 28)); // NOI18N
         jlItziar.setText("Itziar");
         add(jlItziar);
-        jlItziar.setBounds(270, 220, 110, 50);
-
-        jlIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/addressbook32.png"))); // NOI18N
-        add(jlIcono);
-        jlIcono.setBounds(10, 30, 30, 30);
+        jlItziar.setBounds(270, 230, 110, 33);
 
         jlMikel.setFont(new java.awt.Font("Arial", 0, 28)); // NOI18N
         jlMikel.setText("Mikel");
         add(jlMikel);
-        jlMikel.setBounds(120, 370, 100, 40);
+        jlMikel.setBounds(120, 370, 100, 33);
 
         jlIWS.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jlIWS.setForeground(new java.awt.Color(255, 204, 0));
         jlIWS.setText("Introducción a la Web Semántica - 2012");
         add(jlIWS);
-        jlIWS.setBounds(140, 500, 230, 15);
-
-        jlTitulo.setBackground(new java.awt.Color(0, 102, 153));
-        jlTitulo.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jlTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        jlTitulo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jlTitulo.setText("       Acerca de");
-        jlTitulo.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(0, 0, 0)));
-        jlTitulo.setOpaque(true);
-        add(jlTitulo);
-        jlTitulo.setBounds(0, 20, 480, 50);
+        jlIWS.setBounds(140, 510, 230, 15);
 
         jlMUTI.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jlMUTI.setForeground(new java.awt.Color(255, 255, 102));
@@ -152,6 +154,7 @@ public class AcercaDe extends javax.swing.JPanel {
     private javax.swing.JButton jbHome;
     private javax.swing.JLabel jlArnulfo;
     private javax.swing.JLabel jlBackground;
+    private javax.swing.JLabel jlBarra;
     private javax.swing.JLabel jlIWS;
     private javax.swing.JLabel jlIcono;
     private javax.swing.JLabel jlItziar;
