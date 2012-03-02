@@ -47,9 +47,6 @@ public class Ayuda extends javax.swing.JPanel {
         jpIN = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jtaIN = new javax.swing.JTextArea();
-        jpPC = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jtaPC = new javax.swing.JTextArea();
         jbActualizar = new javax.swing.JButton();
         jlBackground = new javax.swing.JLabel();
 
@@ -111,22 +108,6 @@ public class Ayuda extends javax.swing.JPanel {
 
         jtpAyuda.addTab("Incidencias", new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/misc_53_16.png")), jpIN); // NOI18N
 
-        jpPC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jpPC.setEnabled(false);
-        jpPC.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
-        jpPC.setOpaque(false);
-        jpPC.setLayout(new java.awt.BorderLayout());
-
-        jtaPC.setColumns(20);
-        jtaPC.setLineWrap(true);
-        jtaPC.setRows(5);
-        jtaPC.setWrapStyleWord(true);
-        jScrollPane3.setViewportView(jtaPC);
-
-        jpPC.add(jScrollPane3, java.awt.BorderLayout.CENTER);
-
-        jtpAyuda.addTab("Problemas comunes", new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/misc_13_16.png")), jpPC); // NOI18N
-
         add(jtpAyuda);
         jtpAyuda.setBounds(30, 100, 420, 440);
 
@@ -171,8 +152,6 @@ public class Ayuda extends javax.swing.JPanel {
             jtaPF.setText(sResultado);
         }else if(sel==1){
             jtaIN.setText("\nIncidencias: " + (r.nextInt(10)+1) );
-        }else if(sel==2){
-            jtaPC.setText("\nProblemas comunes: " + (r.nextInt(10)+1) );
         }
             
     }//GEN-LAST:event_jbActualizarMouseClicked
@@ -180,7 +159,6 @@ public class Ayuda extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton jbActualizar;
     private javax.swing.JButton jbHome;
     private javax.swing.JLabel jlBackground;
@@ -188,10 +166,8 @@ public class Ayuda extends javax.swing.JPanel {
     private javax.swing.JLabel jlIcono;
     private javax.swing.JLabel jlTitulo;
     private javax.swing.JPanel jpIN;
-    private javax.swing.JPanel jpPC;
     private javax.swing.JPanel jpPF;
     private javax.swing.JTextArea jtaIN;
-    private javax.swing.JTextArea jtaPC;
     private javax.swing.JTextArea jtaPF;
     private javax.swing.JTabbedPane jtpAyuda;
     // End of variables declaration//GEN-END:variables
