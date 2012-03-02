@@ -103,7 +103,7 @@ public class Menu extends javax.swing.JPanel {
             }
         });
         add(jbAyuda);
-        jbAyuda.setBounds(70, 430, 110, 80);
+        jbAyuda.setBounds(70, 410, 110, 100);
 
         jbBusqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/question.png"))); // NOI18N
         jbBusqueda.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -112,7 +112,7 @@ public class Menu extends javax.swing.JPanel {
             }
         });
         add(jbBusqueda);
-        jbBusqueda.setBounds(300, 180, 110, 80);
+        jbBusqueda.setBounds(300, 160, 110, 100);
 
         jbInstalacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr.png"))); // NOI18N
         jbInstalacion.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -126,7 +126,7 @@ public class Menu extends javax.swing.JPanel {
             }
         });
         add(jbInstalacion);
-        jbInstalacion.setBounds(70, 180, 110, 80);
+        jbInstalacion.setBounds(70, 160, 110, 100);
 
         jbAcercade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/addressbook.png"))); // NOI18N
         jbAcercade.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -135,7 +135,7 @@ public class Menu extends javax.swing.JPanel {
             }
         });
         add(jbAcercade);
-        jbAcercade.setBounds(300, 430, 110, 80);
+        jbAcercade.setBounds(300, 410, 110, 100);
 
         jlBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr2.png"))); // NOI18N
         add(jlBackground);
