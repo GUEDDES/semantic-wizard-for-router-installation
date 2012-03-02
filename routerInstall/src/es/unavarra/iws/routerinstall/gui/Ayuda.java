@@ -91,7 +91,7 @@ public class Ayuda extends javax.swing.JPanel {
 
         jpPF.add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
-        jtpAyuda.addTab("Preguntas Frecuentes", new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/misc_03_16.png")), jpPF); // NOI18N
+        jtpAyuda.addTab("Problemas Frecuentes", new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/misc_03_16.png")), jpPF); // NOI18N
 
         jpIN.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jpIN.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
@@ -106,10 +106,11 @@ public class Ayuda extends javax.swing.JPanel {
 
         jpIN.add(jScrollPane2, java.awt.BorderLayout.CENTER);
 
-        jtpAyuda.addTab("Incidencias", new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/misc_53_16.png")), jpIN); // NOI18N
+        jtpAyuda.addTab("Routers soportados", new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/misc_53_16.png")), jpIN); // NOI18N
 
         add(jtpAyuda);
         jtpAyuda.setBounds(30, 100, 420, 440);
+        jtpAyuda.getAccessibleContext().setAccessibleName("routerS");
 
         jbActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/note_search32.png"))); // NOI18N
         jbActualizar.setText("Actualizar");
@@ -143,15 +144,15 @@ public class Ayuda extends javax.swing.JPanel {
         Random r = new Random();
         
         int sel = jtpAyuda.getSelectedIndex(); 
-        if(sel==0){
+        if(sel==1){
             list = qm.getAvailableRouters();
             Iterator iter = list.iterator();
             while (iter.hasNext()){
                 sResultado += (iter.next() + "\n\n");
             }
             jtaPF.setText(sResultado);
-        }else if(sel==1){
-            jtaIN.setText("\nIncidencias: " + (r.nextInt(10)+1) );
+        }else if(sel==2){
+            jtaIN.setText(jtaIN.getText()+ "\nProblema: " + (r.nextInt(10)+1) );
         }
             
     }//GEN-LAST:event_jbActualizarMouseClicked
