@@ -55,6 +55,7 @@ public class Vocabulary {
     public final OntClass puertoWLAN;
     public final OntClass tarjetaDeRed;
     public final OntClass pasoInstalacion;
+    public final OntClass problemaInstalacion;
 
 
 
@@ -154,6 +155,7 @@ public class Vocabulary {
         tarjetaDeRed = model.getOntClass(uri+"TarjetaDeRed");
 
         pasoInstalacion = model.getOntClass(uri+"PasoInstalacion");
+        problemaInstalacion = model.getOntClass(uri+"Problemas");
 
         /**Properties*/
        hasComponent = model.getProperty(uri + "hasComponent");

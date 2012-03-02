@@ -26,7 +26,7 @@ public interface IQueryManager {
 
 
     List<String> getAvailableRouters();
-
+    List<String> getFrequentErrors();
 
     String initInstallationByModelName(String routerModel);
     QueryResult initInstallationByCharacteristics(String searchString);
@@ -35,6 +35,8 @@ public interface IQueryManager {
     String getError();
     String getPrevStep();
     String getCurrentStepDescription();
+    String getCurrentStepName();
+    
 
     boolean isFirstStep();
     boolean isLastStep();

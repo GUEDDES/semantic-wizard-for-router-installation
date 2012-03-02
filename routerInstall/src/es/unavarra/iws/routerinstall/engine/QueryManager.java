@@ -83,14 +83,13 @@ public class QueryManager implements IQueryManager {
         prevSteps.add(currentStep);
         currentStep = engine.getNextStep(router, currentStep);
         if (currentStep != null) {
-        return (router.getLocalName() +"_" + currentStep.getLocalName()).toUpperCase();
+        return getCurrentStepName();
         } else {
-            return router.getLocalName() +"_FINISH";
+            return (router.getLocalName() +"_FINISH").toUpperCase();
         }
     }
 
     public String getError() {
-        prevSteps.add(currentStep);
         return engine.getModel().getIndividual(currentStep.getProperty(engine.getVocabulary().pasoSiguienteError).getString()).getLocalName();
     }
 
@@ -98,9 +97,9 @@ public class QueryManager implements IQueryManager {
         if (!isFirstStep()) {
             currentStep = prevSteps.remove(prevSteps.size()-1);
             currentStep.removeAll(engine.getVocabulary().isPasoHecho);
-            return currentStep.getLocalName();
+            return (router.getLocalName() +"_" + currentStep.getLocalName()).toUpperCase();
         } else {
-            return router.getLocalName() + "_START";
+            return (router.getLocalName() + "_START").toUpperCase();
         }
     }
     
@@ -120,6 +119,9 @@ public class QueryManager implements IQueryManager {
         }
     }
 
+    public String getCurrentStepName() {
+        return (router.getLocalName() +"_" + currentStep.getLocalName()).toUpperCase();
+    }
 
     public QueryResult initInstallationByCharacteristics(String searchString) {
          engine.init();
@@ -128,6 +130,10 @@ public class QueryManager implements IQueryManager {
 
     public List<String> getAvailableRouters() {
         return engine.searchAvailableRouters();
+    }
+
+    public List<String> getFrequentErrors() {
+        return engine.searchFrequentErrors();
     }
 
     public String getManualURL(String id) {
@@ -155,14 +161,16 @@ public class QueryManager implements IQueryManager {
     public static void main(String[] args) {
         QueryManager qm = new QueryManager();
         String step= qm.initInstallationByModelName("CT-351");
-      //  while (step != null) {
-      //      logger.info("is first"+qm.isFirstStep());
-      //     qm.getNextStepOK();
-      //       logger.info(qm.getCurrentStepDescription()) ;
+        while (!qm.isLastStep()) {
+           
+           qm.getNextStepOK();
+           logger.info("is first"+qm.getCurrentStepName());
 
-   // }
-       // QueryResult qr = qm.initInstallationByCharacteristics("instalar router wifi telefonica");
-        logger.info(qm.initInstallationByCharacteristics("cd").getStepID());
+
+    }
+
+
+
     }
 }
 
