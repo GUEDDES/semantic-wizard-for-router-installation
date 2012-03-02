@@ -52,7 +52,7 @@ public class Menu extends javax.swing.JPanel {
         jlBusqueda.setForeground(new java.awt.Color(254, 254, 254));
         jlBusqueda.setText("Búsqueda");
         add(jlBusqueda);
-        jlBusqueda.setBounds(290, 270, 130, 30);
+        jlBusqueda.setBounds(300, 270, 130, 30);
 
         jlIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/home32.png"))); // NOI18N
         add(jlIcono);
@@ -112,7 +112,7 @@ public class Menu extends javax.swing.JPanel {
             }
         });
         add(jbBusqueda);
-        jbBusqueda.setBounds(290, 180, 110, 80);
+        jbBusqueda.setBounds(300, 180, 110, 80);
 
         jbInstalacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr.png"))); // NOI18N
         jbInstalacion.addMouseListener(new java.awt.event.MouseAdapter() {
