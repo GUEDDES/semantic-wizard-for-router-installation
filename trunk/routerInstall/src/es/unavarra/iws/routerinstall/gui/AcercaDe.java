@@ -127,7 +127,7 @@ public class AcercaDe extends javax.swing.JPanel {
         jlIWS.setForeground(new java.awt.Color(255, 204, 0));
         jlIWS.setText("Introducción a la Web Semántica - 2012");
         add(jlIWS);
-        jlIWS.setBounds(140, 510, 230, 15);
+        jlIWS.setBounds(140, 500, 230, 15);
 
         jlMUTI.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jlMUTI.setForeground(new java.awt.Color(255, 255, 102));
