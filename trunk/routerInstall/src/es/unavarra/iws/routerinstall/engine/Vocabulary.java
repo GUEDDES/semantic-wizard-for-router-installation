@@ -54,7 +54,6 @@ public class Vocabulary {
     public final OntClass tarjetaDeRed;
     public final OntClass pasoInstalacion;
 
-    public final OntClass pasoConectarCorriente;
 
 
 
@@ -71,8 +70,6 @@ public class Vocabulary {
     public final Property proveedorOfModelo;
     public final Property isOfTipo;
     public final Property tipoOfRouter;
-
-
     public final Property hasPriority;
     public final Property instanceOf;
     public final Property estaConectado;
@@ -151,10 +148,7 @@ public class Vocabulary {
         puertoWLAN = model.getOntClass(uri + "PuertoWLAN");
         tarjetaDeRed = model.getOntClass(uri+"TarjetaDeRed");
 
-        pasoConectarCorriente = model.createClass(uri+"ConectarCorriente");
-
         pasoInstalacion = model.getOntClass(uri+"PasoInstalacion");
-
 
         /**Properties*/
        hasComponent = model.getProperty(uri + "hasComponent");
@@ -284,7 +278,7 @@ public class Vocabulary {
         PASO_INSTALAR_CD = model.getIndividual(uri+"InstalacionSoftware_1");
         PASO_INSTALAR_CD.addProperty(instanceOf, pasoInstalacion);
 
-tarjetaInalambricaI = model.getIndividual(uri+"TarjetaInalambrica_1");
+        tarjetaInalambricaI = model.getIndividual(uri+"TarjetaInalambrica_1");
         modemUSBI = model.getIndividual(uri+"ModemUSB_1");
         cdI = model.getIndividual(uri+"CDInstalacion_1");
     }

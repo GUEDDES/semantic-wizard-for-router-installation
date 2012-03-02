@@ -20,10 +20,18 @@ public class QueryResult {
         this.routerList = routerList;
     }
 
+    /**
+     * Get the list of routers that match the query.
+     * @return
+     */
     public List<String> getRouterList() {
         return routerList;
     }
 
+    /**
+     * Get the ID for the first step to be shown to the user.
+     * @return
+     */
     public String getStepID() {
         return stepID;
     }

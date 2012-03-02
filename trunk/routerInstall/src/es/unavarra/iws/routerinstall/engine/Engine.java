@@ -28,6 +28,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.FileWriter;
+import java.util.Collection;
 import java.util.Iterator;
 import org.apache.log4j.Logger;
 
@@ -58,58 +59,18 @@ public class Engine {
         logger.info("Engine init");
     }
 
-    public Individual getNextStep(Individual router, Individual currentStep) {
-        if (currentStep.hasProperty(vocabulary.pasoSiguienteOK)) {
-            currentStep.addProperty(vocabulary.isPasoHecho, "true");
-            return model.getIndividual(currentStep.getProperty(vocabulary.pasoSiguienteOK).getString());
-        } else if (!currentStep.equals(vocabulary.PASO_VERIFICACION_FINAL)) {
-            if (!vocabulary.PASO_CONECTAR_ROUTER.hasProperty(vocabulary.isPasoHecho)) {
-                List<String> steps = searchStepsBeforePowerOn(router);
-                return model.getIndividual(steps.get(0));
-            } else {
-                List<String> steps = searchStepsAfterPowerOn(router);
-                return model.getIndividual(steps.get(0));
-            }
-        } else {
-            return null;
-        }
-    }
-
-    private Individual createRouter(String id) {
-        Individual router = model.createIndividual(Vocabulary.getURI() + id, vocabulary.router);
-        router.addProperty(vocabulary.instanceOf, vocabulary.router);
-        router.addProperty(vocabulary.hasPort, vocabulary.puertoCorriente);
-        router.addProperty(vocabulary.hasComponent, vocabulary.botonEncendido);
-        router.addProperty(vocabulary.hasComponent, vocabulary.botonReset);
-        router.addProperty(vocabulary.hasComponent, vocabulary.ledEncendido);
-
-
-        return router;
-
-
-
-    }
-
     public synchronized List<String> querySPARQL(String queryString, String param) {
         ArrayList<String> list = new ArrayList<String>();
         Query query = QueryFactory.create(queryString, Syntax.syntaxARQ);
         QueryExecution qe = QueryExecutionFactory.create(query, model);
         ResultSet rs = qe.execSelect();
 
-
         while (rs.hasNext()) {
             QuerySolution binding = rs.nextSolution();
             list.add(binding.get(param).toString());
-
-
         }
         qe.close();
-
-
-
         return list;
-
-
     }
 
     public synchronized List<List<String>> querySPARQL(String queryString, List<String> params) {
@@ -126,146 +87,29 @@ public class Engine {
 
             Iterator<String> it = params.iterator();
 
-
             while (it.hasNext()) {
                 String param = it.next();
-
-
                 if (param.isEmpty()) {
                     inside.add("");
-
-
                 } else {
                     inside.add(binding.get(param).toString());
-
-
                 }
             }
             list.add(inside);
-
-
         }
         qe.close();
-
-
-
         return list;
-
-
     }
 
-    public Individual searchCharacteristics(String searchString) {
-        List<MatchingResult> queryResults = fullSearchByLabel(searchString);
-
-        Individual router = null;
-
-        Iterator<MatchingResult> it = queryResults.iterator();
-
-
-        while (it.hasNext()) {
-            MatchingResult queryResult = it.next();
-
-            //Buscar que los recursos sean características
-            Iterator<List<String>> it2 = queryResult.getResults().iterator();
-
-
-            while (it2.hasNext()) {
-                List<String> list1 = it2.next();
-                String resourceName = list1.get(0);
-
-                //Comprobar instancias
-                OntClass ontClass = getClassOfIndividual(resourceName);
-
-
-                if (ontClass != null) {
-                    if (ontClass.equals(vocabulary.router)) {
-                        router = model.getIndividual(resourceName);
-
-
-                    } else if (ontClass.equals(vocabulary.tipoRouter)) {
-                        if (router == null) {
-                            router = createRouter("newRouter");
-
-
-                        }
-                        router.addProperty(vocabulary.isOfTipo, model.getIndividual(resourceName));
-
-
-                    } else if (ontClass.equals(vocabulary.proveedor)) {
-                        if (router == null) {
-                            router = createRouter("newRouter");
-
-
-                        }
-                        router.addProperty(vocabulary.isOfProveedor, model.getIndividual(resourceName));
-
-
-                    }
-                } else {
-                    //Comprobar componentes
-                    ontClass = getClass(resourceName);
-
-
-                    if (ontClass != null) {
-                        OntClass parent = ontClass.getSuperClass();
-
-
-
-                        if (vocabulary.componente.equals(parent) || vocabulary.componente.equals(parent.getSuperClass())) {
-                            router.addProperty(vocabulary.hasComponent, ontClass);
-
-
-                        } else if (vocabulary.puerto.equals(parent) || vocabulary.puerto.equals(parent.getSuperClass())) {
-                            router.addProperty(vocabulary.hasPort, ontClass);
-
-
-                        }
-                    }
-                }
-            }
-        }
+    private Individual createRouter(String id) {
+        Individual router = model.createIndividual(Vocabulary.getURI() + id, vocabulary.router);
+        router.addProperty(vocabulary.instanceOf, vocabulary.router);
+        router.addProperty(vocabulary.hasPort, vocabulary.puertoCorriente);
+        router.addProperty(vocabulary.hasComponent, vocabulary.botonEncendido);
+        router.addProperty(vocabulary.hasComponent, vocabulary.botonReset);
+        router.addProperty(vocabulary.hasComponent, vocabulary.ledEncendido);
 
         return router;
-
-
-    }
-
-    private OntClass getClassOfIndividual(String individualName) {
-        OntClass ontClass = null;
-
-
-        try {
-            Individual individual = model.getIndividual(individualName);
-            ontClass = individual.getOntClass();
-
-
-        } catch (Exception ex) {
-            logger.info("Not an individual");
-
-
-        }
-        return ontClass;
-
-
-    }
-
-    private OntClass getClass(String className) {
-        OntClass ontClass = null;
-
-
-        try {
-            ontClass = model.getOntClass(className);
-
-
-        } catch (Exception ex) {
-            logger.info("Not a class");
-
-
-        }
-        return ontClass;
-
-
-
     }
 
     public List<MatchingResult> fullSearchByLabel(String searchString) {
@@ -297,14 +141,11 @@ public class Engine {
 
                     if (!res.getResults().isEmpty()) {
                         queryResults.add(res);
-
-
                     }
                 }
             }
         }
         return queryResults;
-
 
     }
 
@@ -326,14 +167,11 @@ public class Engine {
         params.add("?priority");
 
         List<List<String>> list = querySPARQL(queryString, params);
-
-
         return new MatchingResult(list, searchString.length());
-
 
     }
 
-    public List<String> searchAvailableRouters() {
+    private List<String> getAllRouters() {
         String queryString = "PREFIX RouterInstall:<" + defaultNameSpace + ">"
                 + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
                 + "PREFIX  afn:<http://jena.hpl.hp.com/ARQ/function#>"
@@ -341,51 +179,40 @@ public class Engine {
                 + " WHERE {"
                 + "   ?routerName rdf:instanceOf <" + vocabulary.router.getURI() + ">  "
                 + "}";
+        List<String> allRouters = querySPARQL(queryString, "?routerName");
+        return allRouters;
 
-        logger.info(vocabulary.router.getURI());
+    }
 
-        List<String> resources = querySPARQL(queryString, "?routerName");
+    public List<String> searchAvailableRouters() {
+        List<String> resources = getAllRouters();
         List<String> routerNames = new ArrayList<String>();
         Iterator<String> it = resources.iterator();
 
-
         while (it.hasNext()) {
             String rURI = it.next();
-
-
             if (!rURI.contains("new")) {
                 routerNames.add(model.getResource(rURI).getLocalName());
-
-
             }
-
         }
         return routerNames;
-
-
     }
 
     public String getResourceWithMaxPriority(List<MatchingResult> queryResults) {
         double maxP = 0;
-
-
         int maxLength = 0;
         String chosenResource = null;
         Iterator<MatchingResult> itQ = queryResults.iterator();
         OntClass chosenClass = null;
 
-
         while (itQ.hasNext()) {
             MatchingResult qRes = itQ.next();
             Iterator<List<String>> it = qRes.getResults().iterator();
 
-
             while (it.hasNext()) {
                 List<String> list1 = it.next();
 
-
                 int priority = Integer.parseInt(list1.get(1));
-
 
                 if (priority > maxP) {
                     maxP = priority;
@@ -393,11 +220,8 @@ public class Engine {
                     chosenResource = list1.get(0);
                     OntClass c = model.getOntClass(chosenResource);
 
-
                     if (c != null) {
                         chosenClass = c;
-
-
                     }
                 } else if (priority == maxP) {
                     if (qRes.getMatchLength() > maxLength) {
@@ -405,88 +229,57 @@ public class Engine {
                         chosenResource = list1.get(0);
                         OntClass c = model.getOntClass(chosenResource);
 
-
                         if (c != null) {
                             chosenClass = c;
-
-
                         }
                     }
                 } else if (chosenResource != null) {
-                    logger.info("trying subclass of " + chosenResource);
-
-
                     if (chosenClass != null) {
                         OntClass subClass = model.getOntClass(list1.get(0));
-
-
                         if (subClass != null && chosenClass.hasSubClass(subClass)) {
-                            logger.info("subclass found!!");
                             maxLength = qRes.getMatchLength();
                             chosenResource = list1.get(0);
                             maxP = priority + 10;
-
-
                         }
                     }
                 }
-
             }
-
         }
 
         chosenResource = model.getResource(chosenResource).getLocalName();
-
-
         return chosenResource;
-
-
-    }
-
-    public synchronized void saveOntology(String file, String type) {
-        try {
-            model.write(new FileWriter(file), type);
-
-
-        } catch (Exception e) {
-            System.out.println("Error: " + e);
-
-
-        }
-    }
-
-    public synchronized OntModel getModel() {
-        return model;
-
-
-    }
-
-    Vocabulary getVocabulary() {
-        return this.vocabulary;
-
-
     }
 
     public String getPropertyValue(String rId, Property property) {
         Statement stmt = model.getOntResource(Vocabulary.uri + rId).getProperty(property);
         String value = "";
 
-
         if (stmt != null) {
             value = stmt.getString();
-
-
         }
         return value;
+    }
 
-
+    public Individual getNextStep(Individual router, Individual currentStep) {
+        if (currentStep.hasProperty(vocabulary.pasoSiguienteOK)) {
+            currentStep.addProperty(vocabulary.isPasoHecho, "true");
+            return model.getIndividual(currentStep.getProperty(vocabulary.pasoSiguienteOK).getString());
+        } else if (!currentStep.equals(vocabulary.PASO_VERIFICACION_FINAL)) {
+            if (!vocabulary.PASO_CONECTAR_ROUTER.hasProperty(vocabulary.isPasoHecho)) {
+                List<String> steps = searchStepsBeforePowerOn(router);
+                return model.getIndividual(steps.get(0));
+            } else {
+                List<String> steps = searchStepsAfterPowerOn(router);
+                return model.getIndividual(steps.get(0));
+            }
+        } else {
+            return null;
+        }
     }
 
     public List<String> searchStepsBeforePowerOn(Individual router) {
         String isStepPending = "?pasoInstalacion rdf:instanceOf <" + vocabulary.pasoInstalacion.getURI() + "> . "
                 + "NOT EXISTS { ?pasoInstalacion RouterInstall:isPasoHecho ?hecho }. ";
-
-
 
         String queryString = "PREFIX RouterInstall:<" + defaultNameSpace + ">"
                 + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
@@ -516,9 +309,6 @@ public class Engine {
                 + "}";
 
         List<String> steps = querySPARQL(queryString, "?pasoInstalacion");
-
-
-
         return steps;
 
 
@@ -527,8 +317,6 @@ public class Engine {
     private List<String> searchStepsAfterPowerOn(Individual router) {
         String isStepPending = "?pasoInstalacion rdf:instanceOf <" + vocabulary.pasoInstalacion.getURI() + "> . "
                 + "NOT EXISTS { ?pasoInstalacion RouterInstall:isPasoHecho ?hecho }. ";
-
-
 
         String queryString = "PREFIX RouterInstall:<" + defaultNameSpace + ">"
                 + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
@@ -553,8 +341,169 @@ public class Engine {
                 + "}";
 
         List<String> steps = querySPARQL(queryString, "?pasoInstalacion");
-
         return steps;
 
+    }
+
+    public QueryResult searchCharacteristics(String searchString) {
+        QueryResult qr = null;
+        List<MatchingResult> queryResults = fullSearchByLabel(searchString);
+        List<String> routers = tryToGetRouters(queryResults);
+
+        if (routers.size() == searchAvailableRouters().size()) {
+            String screenID = "fñkljfds";
+            qr = new QueryResult(screenID, null);
+        } else {
+            qr = new QueryResult(null, routers);
+        }
+        return qr;
+    }
+
+    private List<String> tryToGetRouters(List<MatchingResult> queryResults) {
+        List<String> routerIndividuals = new ArrayList<String>();
+        Individual newRouter = null;
+        Iterator<MatchingResult> it = queryResults.iterator();
+
+        boolean filterByProvider = false;
+        boolean filterByType = false;
+
+        while (it.hasNext()) {
+            MatchingResult queryResult = it.next();
+
+            //Buscar que los recursos sean características
+            Iterator<List<String>> it2 = queryResult.getResults().iterator();
+
+            while (it2.hasNext()) {
+                List<String> list1 = it2.next();
+                String resourceName = list1.get(0);
+
+                //Comprobar instancias
+                OntClass ontClass = getClassOfIndividual(resourceName);
+
+                if (ontClass != null) {
+                    if (ontClass.equals(vocabulary.router)) {
+                        routerIndividuals.add(model.getIndividual(resourceName).getURI());
+                    } else if (ontClass.equals(vocabulary.tipoRouter)) {
+                        filterByType = true;
+                        if (newRouter == null) {
+                            newRouter = createRouter("newRouter");
+                        }
+                        newRouter.addProperty(vocabulary.isOfTipo, model.getIndividual(resourceName));
+
+                    } else if (ontClass.equals(vocabulary.proveedor)) {
+                        filterByProvider = true;
+                        if (newRouter == null) {
+                            newRouter = createRouter("newRouter");
+                        }
+                        newRouter.addProperty(vocabulary.isOfProveedor, model.getIndividual(resourceName));
+                    }
+                } else {
+                    //Comprobar componentes
+                    ontClass = getClass(resourceName);
+
+                    if (ontClass != null) {
+                        OntClass parent = ontClass.getSuperClass();
+                        if (vocabulary.componente.equals(parent) || vocabulary.componente.equals(parent.getSuperClass())) {
+                            newRouter.addProperty(vocabulary.hasComponent, ontClass);
+
+                        } else if (vocabulary.puerto.equals(parent) || vocabulary.puerto.equals(parent.getSuperClass())) {
+                            newRouter.addProperty(vocabulary.hasPort, ontClass);
+                        }
+                    }
+                }
+            }
+        }
+
+        List<String> availableRouters = getAllRouters();
+        if (filterByProvider) {
+            availableRouters.retainAll(filterByProvider(routerIndividuals, newRouter));
+        }
+
+        if (filterByType) {
+            availableRouters.retainAll(filterByType(routerIndividuals, newRouter));
+        }
+
+
+        return availableRouters;
+    }
+
+    private List<String> filterByProvider(List<String> routerIndividuals, Individual newRouter) {
+
+        String queryString = "PREFIX RouterInstall:<" + defaultNameSpace + ">"
+                + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
+                + " SELECT ?routerName  "
+                + " WHERE {"
+                + " ?routerName rdf:instanceOf <" + vocabulary.router.getURI() + "> . "
+                + "FILTER(!sameTerm(?routerName, <" + newRouter.getURI() + ">)) ."
+                + "?routerName RouterInstall:isOfProveedor ?proveedor ."
+                + "<" + newRouter.getURI() + "> RouterInstall:isOfProveedor ?proveedor"
+                + "}";
+
+        List<String> matchingRouters = querySPARQL(queryString, "?routerName");
+
+        if (!routerIndividuals.isEmpty()) {
+            matchingRouters.retainAll(routerIndividuals);
+        }
+
+
+        return matchingRouters;
+
+    }
+
+    private List<String> filterByType(List<String> routerIndividuals, Individual newRouter) {
+
+        String queryString = "PREFIX RouterInstall:<" + defaultNameSpace + ">"
+                + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
+                + " SELECT ?routerName  "
+                + " WHERE {"
+                + " ?routerName rdf:instanceOf <" + vocabulary.router.getURI() + "> . "
+                + "FILTER(!sameTerm(?routerName, <" + newRouter.getURI() + ">)) ."
+                + "?routerName RouterInstall:isOfTipo ?tipo ."
+                + "<" + newRouter.getURI() + "> RouterInstall:isOfTipo ?tipo"
+                + "}";
+
+        List<String> matchingRouters = querySPARQL(queryString, "?routerName");
+        if (!routerIndividuals.isEmpty()) {
+            matchingRouters.retainAll(routerIndividuals);
+        }
+        return matchingRouters;
+
+    }
+
+    private OntClass getClassOfIndividual(String individualName) {
+        OntClass ontClass = null;
+        try {
+            Individual individual = model.getIndividual(individualName);
+            ontClass = individual.getOntClass();
+        } catch (Exception ex) {
+            logger.info("Not an individual");
+        }
+        return ontClass;
+    }
+
+    private OntClass getClass(String className) {
+        OntClass ontClass = null;
+        try {
+            ontClass = model.getOntClass(className);
+        } catch (Exception ex) {
+            logger.info("Not a class");
+        }
+        return ontClass;
+    }
+
+    public synchronized void saveOntology(String file, String type) {
+        try {
+            model.write(new FileWriter(file), type);
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+    }
+
+    public synchronized OntModel getModel() {
+        return model;
+    }
+
+    Vocabulary getVocabulary() {
+        return this.vocabulary;
     }
 }
