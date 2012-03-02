@@ -20,6 +20,10 @@ public class MatchingResult {
         this.matchLength = matchLength;
     }
 
+    /**
+     * Returns the length of matching characters.
+     * @return
+     */
     public int getMatchLength() {
         return matchLength;
     }
@@ -28,6 +32,10 @@ public class MatchingResult {
         this.matchLength = matchLength;
     }
 
+    /**
+     * Returns the list of results returned by the query.
+     * @return
+     */
     public List<List<String>> getResults() {
         return results;
     }

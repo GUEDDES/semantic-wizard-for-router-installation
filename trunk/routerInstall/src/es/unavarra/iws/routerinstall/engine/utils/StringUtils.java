@@ -49,9 +49,13 @@ public class StringUtils {
 
         searchString = searchString.trim();
         return searchString;
-
     }
 
+    /**
+     * Prepares a search string in order to execute a query.
+     * @param searchString
+     * @return
+     */
     public static String prepareSearchString(String searchString) {
         searchString = searchString.trim();
         searchString = searchString.toLowerCase();
@@ -59,6 +63,7 @@ public class StringUtils {
         searchString = searchString.replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("ú", "u");
         searchString = searchString.replaceAll("( )+", " ");
 
+        //Remove common words
         searchString = removeCommonWords(searchString);
 
         return searchString;
