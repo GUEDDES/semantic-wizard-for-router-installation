@@ -78,6 +78,9 @@
       <Properties>
         <Property name="tabLayoutPolicy" type="int" value="1"/>
       </Properties>
+      <AccessibilityProperties>
+        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="routerS"/>
+      </AccessibilityProperties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="30" y="100" width="420" height="440"/>
@@ -100,8 +103,8 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Preguntas Frecuentes">
-                <Property name="tabTitle" type="java.lang.String" value="Preguntas Frecuentes"/>
+              <JTabbedPaneConstraints tabName="Problemas Frecuentes">
+                <Property name="tabTitle" type="java.lang.String" value="Problemas Frecuentes"/>
                 <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/es/unavarra/iws/routerinstall/resources/img/misc_03_16.png"/>
                 </Property>
@@ -146,8 +149,8 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Incidencias">
-                <Property name="tabTitle" type="java.lang.String" value="Incidencias"/>
+              <JTabbedPaneConstraints tabName="Routers soportados">
+                <Property name="tabTitle" type="java.lang.String" value="Routers soportados"/>
                 <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/es/unavarra/iws/routerinstall/resources/img/misc_53_16.png"/>
                 </Property>

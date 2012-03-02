@@ -159,9 +159,12 @@ public class Busqueda extends javax.swing.JPanel {
             if(sResultado!=null && sResultado.length()>0){
                     sComment = qm.getComment(sResultado);
                     sURI = qm.getSeeAlso(sResultado);
-                    sTitulo = sResultado;                           //cambiar por la funcion
-                    sLogo = "c_"+sResultado.toLowerCase() + ".png"; //cambiar por la funcion
-                    jpContenido.add(new CConceptos(sTitulo, sLogo, sComment, 
+                    //sTitulo = sResultado;                           //cambiar por la funcion
+                    sTitulo = qm.getTitle(sResultado);
+                    //sLogo = "c_"+sResultado.toLowerCase() + ".png"; //cambiar por la funcion
+                    sLogo = qm.getImage(sResultado);
+                    jpContenido.add(new CConceptos((sTitulo!=null && sTitulo.length()>0)?sTitulo:sResultado, 
+                            sLogo, sComment, 
                             (sURI!=null && sURI.length()>0) ? sURI : ("http://www.google.es/search?q=" + (sBusqueda.replaceAll(" ", "+")) + "+" + sResultado)));
                 }
             else{
