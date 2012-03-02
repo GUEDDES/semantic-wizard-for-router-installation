@@ -32,118 +32,120 @@ public class Menu extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel4 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jlBusqueda = new javax.swing.JLabel();
         jlIcono = new javax.swing.JLabel();
         jlTItulo = new javax.swing.JLabel();
+        jbSalir = new javax.swing.JButton();
+        jlBarra = new javax.swing.JLabel();
+        jlAyuda = new javax.swing.JLabel();
+        jlAcercade = new javax.swing.JLabel();
+        jlInstalacion = new javax.swing.JLabel();
+        jbAyuda = new javax.swing.JButton();
+        jbBusqueda = new javax.swing.JButton();
+        jbInstalacion = new javax.swing.JButton();
+        jbAcercade = new javax.swing.JButton();
         jlBackground = new javax.swing.JLabel();
 
         setLayout(null);
 
-        jLabel4.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(254, 254, 254));
-        jLabel4.setText("Búsqueda");
-        add(jLabel4);
-        jLabel4.setBounds(290, 270, 130, 30);
-
-        jLabel7.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(254, 254, 254));
-        jLabel7.setText("Ayuda");
-        add(jLabel7);
-        jLabel7.setBounds(80, 520, 110, 30);
-
-        jLabel6.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(254, 254, 254));
-        jLabel6.setText("Acerca de");
-        add(jLabel6);
-        jLabel6.setBounds(300, 520, 117, 30);
-
-        jLabel5.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(254, 254, 254));
-        jLabel5.setText("Instalación");
-        add(jLabel5);
-        jLabel5.setBounds(70, 270, 140, 30);
-
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/exit32.png"))); // NOI18N
-        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton5MouseClicked(evt);
-            }
-        });
-        add(jButton5);
-        jButton5.setBounds(420, 20, 50, 50);
-
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/help.png"))); // NOI18N
-        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton4MouseClicked(evt);
-            }
-        });
-        add(jButton4);
-        jButton4.setBounds(70, 430, 110, 80);
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/question.png"))); // NOI18N
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
-            }
-        });
-        add(jButton2);
-        jButton2.setBounds(290, 180, 110, 80);
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr.png"))); // NOI18N
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
-            }
-        });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        add(jButton1);
-        jButton1.setBounds(70, 180, 110, 80);
-
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/addressbook.png"))); // NOI18N
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
-            }
-        });
-        add(jButton3);
-        jButton3.setBounds(300, 430, 110, 80);
+        jlBusqueda.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jlBusqueda.setForeground(new java.awt.Color(254, 254, 254));
+        jlBusqueda.setText("Búsqueda");
+        add(jlBusqueda);
+        jlBusqueda.setBounds(290, 270, 130, 30);
 
         jlIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/home32.png"))); // NOI18N
         add(jlIcono);
-        jlIcono.setBounds(10, 30, 30, 30);
+        jlIcono.setBounds(35, 30, 30, 30);
 
-        jlTItulo.setBackground(new java.awt.Color(0, 102, 153));
         jlTItulo.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jlTItulo.setForeground(new java.awt.Color(255, 255, 255));
         jlTItulo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jlTItulo.setText("       Semantic Router");
-        jlTItulo.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(51, 51, 51)));
-        jlTItulo.setOpaque(true);
+        jlTItulo.setText("Semantic Router");
         add(jlTItulo);
-        jlTItulo.setBounds(0, 20, 480, 50);
+        jlTItulo.setBounds(100, 20, 210, 50);
+
+        jbSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/exit32.png"))); // NOI18N
+        jbSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbSalirMouseClicked(evt);
+            }
+        });
+        add(jbSalir);
+        jbSalir.setBounds(420, 20, 50, 50);
+
+        jlBarra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/w70.png"))); // NOI18N
+        add(jlBarra);
+        jlBarra.setBounds(0, 20, 530, 50);
+
+        jlAyuda.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jlAyuda.setForeground(new java.awt.Color(254, 254, 254));
+        jlAyuda.setText("Ayuda");
+        add(jlAyuda);
+        jlAyuda.setBounds(80, 520, 110, 30);
+
+        jlAcercade.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jlAcercade.setForeground(new java.awt.Color(254, 254, 254));
+        jlAcercade.setText("Acerca de");
+        add(jlAcercade);
+        jlAcercade.setBounds(300, 520, 117, 30);
+
+        jlInstalacion.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jlInstalacion.setForeground(new java.awt.Color(254, 254, 254));
+        jlInstalacion.setText("Instalación");
+        add(jlInstalacion);
+        jlInstalacion.setBounds(70, 270, 140, 30);
+
+        jbAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/help.png"))); // NOI18N
+        jbAyuda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbAyudaMouseClicked(evt);
+            }
+        });
+        add(jbAyuda);
+        jbAyuda.setBounds(70, 430, 110, 80);
+
+        jbBusqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/question.png"))); // NOI18N
+        jbBusqueda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbBusquedaMouseClicked(evt);
+            }
+        });
+        add(jbBusqueda);
+        jbBusqueda.setBounds(290, 180, 110, 80);
+
+        jbInstalacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr.png"))); // NOI18N
+        jbInstalacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbInstalacionMouseClicked(evt);
+            }
+        });
+        jbInstalacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbInstalacionActionPerformed(evt);
+            }
+        });
+        add(jbInstalacion);
+        jbInstalacion.setBounds(70, 180, 110, 80);
+
+        jbAcercade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/addressbook.png"))); // NOI18N
+        jbAcercade.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbAcercadeMouseClicked(evt);
+            }
+        });
+        add(jbAcercade);
+        jbAcercade.setBounds(300, 430, 110, 80);
 
         jlBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr2.png"))); // NOI18N
         add(jlBackground);
         jlBackground.setBounds(0, 0, 480, 640);
     }// </editor-fold>//GEN-END:initComponents
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jbInstalacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbInstalacionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jbInstalacionActionPerformed
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void jbInstalacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbInstalacionMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
         Container menu = this.getFocusCycleRootAncestor();
@@ -151,9 +153,9 @@ public class Menu extends javax.swing.JPanel {
         Instalar instala = new Instalar(qm);
         instala.setSize(menu.getSize());
         menu.add(instala, 0);
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_jbInstalacionMouseClicked
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void jbBusquedaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbBusquedaMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
         Container menu = this.getFocusCycleRootAncestor();
@@ -161,9 +163,9 @@ public class Menu extends javax.swing.JPanel {
         Busqueda busqueda = new Busqueda(qm);
         busqueda.setSize(menu.getSize());
         menu.add(busqueda, 0);
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_jbBusquedaMouseClicked
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+    private void jbAcercadeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbAcercadeMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
         Container menu = this.getFocusCycleRootAncestor();
@@ -171,9 +173,9 @@ public class Menu extends javax.swing.JPanel {
         AcercaDe herramientas = new AcercaDe(qm);
         herramientas.setSize(menu.getSize());
         menu.add(herramientas, 0);
-    }//GEN-LAST:event_jButton3MouseClicked
+    }//GEN-LAST:event_jbAcercadeMouseClicked
 
-    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+    private void jbAyudaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbAyudaMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
         Container menu = this.getFocusCycleRootAncestor();
@@ -181,25 +183,26 @@ public class Menu extends javax.swing.JPanel {
         Ayuda ayuda = new Ayuda(qm);
         ayuda.setSize(menu.getSize());
         menu.add(ayuda, 0);        
-    }//GEN-LAST:event_jButton4MouseClicked
+    }//GEN-LAST:event_jbAyudaMouseClicked
 
-    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+    private void jbSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbSalirMouseClicked
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_jButton5MouseClicked
+    }//GEN-LAST:event_jbSalirMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JButton jbAcercade;
+    private javax.swing.JButton jbAyuda;
+    private javax.swing.JButton jbBusqueda;
+    private javax.swing.JButton jbInstalacion;
+    private javax.swing.JButton jbSalir;
+    private javax.swing.JLabel jlAcercade;
+    private javax.swing.JLabel jlAyuda;
     private javax.swing.JLabel jlBackground;
+    private javax.swing.JLabel jlBarra;
+    private javax.swing.JLabel jlBusqueda;
     private javax.swing.JLabel jlIcono;
+    private javax.swing.JLabel jlInstalacion;
     private javax.swing.JLabel jlTItulo;
     // End of variables declaration//GEN-END:variables
 }

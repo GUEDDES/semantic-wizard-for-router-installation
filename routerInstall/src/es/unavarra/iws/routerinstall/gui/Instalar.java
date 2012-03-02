@@ -40,7 +40,10 @@ public class Instalar extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jlIcono = new javax.swing.JLabel();
+        jlTitulo = new javax.swing.JLabel();
         jbInicio = new javax.swing.JButton();
+        jlBarra = new javax.swing.JLabel();
         jtBusqueda = new javax.swing.JTextField();
         jlError = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -51,11 +54,20 @@ public class Instalar extends javax.swing.JPanel {
         jbCT351 = new javax.swing.JButton();
         jbSagemFast2604 = new javax.swing.JButton();
         jbHG556 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jlBacground = new javax.swing.JLabel();
 
         setLayout(null);
+
+        jlIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr32.png"))); // NOI18N
+        add(jlIcono);
+        jlIcono.setBounds(35, 30, 30, 30);
+
+        jlTitulo.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jlTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        jlTitulo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jlTitulo.setText("Instalación");
+        add(jlTitulo);
+        jlTitulo.setBounds(100, 20, 160, 50);
 
         jbInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/home32.png"))); // NOI18N
         jbInicio.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -65,6 +77,10 @@ public class Instalar extends javax.swing.JPanel {
         });
         add(jbInicio);
         jbInicio.setBounds(420, 20, 50, 50);
+
+        jlBarra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/w70.png"))); // NOI18N
+        add(jlBarra);
+        jlBarra.setBounds(0, 20, 600, 50);
 
         jtBusqueda.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jtBusqueda.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -81,9 +97,9 @@ public class Instalar extends javax.swing.JPanel {
         jlError.setForeground(new java.awt.Color(255, 0, 51));
         jlError.setText("No se encuentran resultados...");
         add(jlError);
-        jlError.setBounds(20, 160, 330, 18);
+        jlError.setBounds(20, 160, 330, 14);
         add(jSeparator1);
-        jSeparator1.setBounds(-20, 198, 500, 6);
+        jSeparator1.setBounds(-20, 198, 500, 2);
 
         jbBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/search32.png"))); // NOI18N
         jbBuscar.setText("Buscar");
@@ -165,23 +181,9 @@ public class Instalar extends javax.swing.JPanel {
         add(jbHG556);
         jbHG556.setBounds(250, 480, 200, 80);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr32.png"))); // NOI18N
-        add(jLabel3);
-        jLabel3.setBounds(10, 30, 30, 30);
-
-        jLabel2.setBackground(new java.awt.Color(0, 102, 153));
-        jLabel2.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel2.setText("       Instalación");
-        jLabel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.white, java.awt.Color.black));
-        jLabel2.setOpaque(true);
-        add(jLabel2);
-        jLabel2.setBounds(0, 20, 480, 50);
-
         jlBacground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr2.png"))); // NOI18N
         add(jlBacground);
-        jlBacground.setBounds(0, 0, 480, 660);
+        jlBacground.setBounds(0, 0, 480, 640);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbInicioMouseClicked
@@ -451,8 +453,6 @@ private void jbSagemFast2604MouseClicked(java.awt.event.MouseEvent evt) {//GEN-F
     }//GEN-LAST:event_jtBusquedaKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton jbBuscar;
     private javax.swing.JButton jbCT351;
@@ -463,7 +463,10 @@ private void jbSagemFast2604MouseClicked(java.awt.event.MouseEvent evt) {//GEN-F
     private javax.swing.JButton jbTG585v7;
     private javax.swing.JButton jbX7028r;
     private javax.swing.JLabel jlBacground;
+    private javax.swing.JLabel jlBarra;
     private javax.swing.JLabel jlError;
+    private javax.swing.JLabel jlIcono;
+    private javax.swing.JLabel jlTitulo;
     private javax.swing.JTextField jtBusqueda;
     // End of variables declaration//GEN-END:variables
 
