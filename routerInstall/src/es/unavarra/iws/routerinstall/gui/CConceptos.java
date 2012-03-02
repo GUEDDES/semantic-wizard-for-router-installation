@@ -4,6 +4,8 @@
  */
 package es.unavarra.iws.routerinstall.gui;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author aqm
@@ -14,9 +16,11 @@ public class CConceptos extends javax.swing.JPanel {
      * Creates new form CConceptos
      */
     public CConceptos(String titulo, String logo, String comments, String url) {
+        ImageIcon icon = createImageIcon("/es/unavarra/iws/routerinstall/resources/img/"+logo,"");
         initComponents();
         this.jlTitulo.setText(titulo);
-        this.jlLogo.setText(logo);
+        this.jlLogo.setIcon(icon);
+        this.jlLogo.setText(icon==null?logo:"");
         this.jtaComments.setText(comments);
         this.jtURI.setText(url);
     }
@@ -72,13 +76,13 @@ public class CConceptos extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jtaComments);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(20, 80, 240, 270);
+        jScrollPane1.setBounds(15, 80, 240, 270);
 
         jLabel1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel1.setText("Más Información:");
         add(jLabel1);
-        jLabel1.setBounds(20, 380, 130, 16);
+        jLabel1.setBounds(15, 375, 130, 16);
 
         jbWeb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/browser25.png"))); // NOI18N
         jbWeb.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -108,6 +112,17 @@ public class CConceptos extends javax.swing.JPanel {
         }        
     }//GEN-LAST:event_jbWebMouseClicked
 
+    /** Returns an ImageIcon, or null if the path was invalid. */
+    protected ImageIcon createImageIcon(String path,
+                                           String description) {
+    java.net.URL imgURL = getClass().getResource(path);
+    if (imgURL != null) {
+        return new ImageIcon(imgURL, description);
+    } else {
+        System.err.println("Couldn't find file: " + path);
+        return null;
+    }
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;

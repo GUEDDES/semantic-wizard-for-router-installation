@@ -5,6 +5,7 @@
 package es.unavarra.iws.routerinstall.gui;
 
 import es.unavarra.iws.routerinstall.engine.QueryManager;
+import es.unavarra.iws.routerinstall.engine.utils.StringUtils;
 import java.awt.Container;
 import javax.swing.JOptionPane;
 
@@ -44,7 +45,6 @@ public class Busqueda extends javax.swing.JPanel {
         jtBusqueda = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jpContenido = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jlBackground = new javax.swing.JLabel();
 
         setLayout(null);
@@ -102,10 +102,6 @@ public class Busqueda extends javax.swing.JPanel {
         jSeparator1.setBounds(-20, 170, 500, 10);
 
         jpContenido.setOpaque(false);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/vista_c.png"))); // NOI18N
-        jpContenido.add(jLabel2);
-
         add(jpContenido);
         jpContenido.setBounds(0, 180, 480, 460);
 
@@ -129,9 +125,9 @@ public class Busqueda extends javax.swing.JPanel {
     }//GEN-LAST:event_jbBuscarMouseClicked
 
     private void jtBusquedaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtBusquedaKeyTyped
-        if(jlError.getText()!=null && jlError.getText().length()<=0){
+        /*if(jlError.getText()!=null && jlError.getText().length()>0){
             jlError.setText("");
-        }
+        }*/
     }//GEN-LAST:event_jtBusquedaKeyTyped
 
     private void jtBusquedaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtBusquedaKeyPressed
@@ -142,7 +138,6 @@ public class Busqueda extends javax.swing.JPanel {
     }//GEN-LAST:event_jtBusquedaKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton jbBuscar;
     private javax.swing.JButton jbHome;
@@ -157,23 +152,23 @@ public class Busqueda extends javax.swing.JPanel {
 
     private void busquedaconcepto(String sBusqueda) {
         String sResultado, sTitulo, sLogo, sComment, sURI;
-
-        jlError.setText("");
         if(!sBusqueda.isEmpty()){
+            jpContenido.removeAll();
+            jlError.setText("");            
             sResultado = qm.executeQueryBasicConcepts(sBusqueda);
             if(sResultado!=null && sResultado.length()>0){
-                    jpContenido.removeAll();
                     sComment = qm.getComment(sResultado);
                     sURI = qm.getSeeAlso(sResultado);
-                    sTitulo = sResultado; //cambiar por la funcion
-                    sLogo = sResultado + ".png"; //cambiar por la funcion
-                    jpContenido.add(new CConceptos(sTitulo, sLogo, sComment, (sURI!=null && sURI.length()>0)?sURI:"http://www.google.es/search?q="+sBusqueda));
-                    jpContenido.revalidate();
-                    jpContenido.repaint();
+                    sTitulo = sResultado;                           //cambiar por la funcion
+                    sLogo = "c_"+sResultado.toLowerCase() + ".png"; //cambiar por la funcion
+                    jpContenido.add(new CConceptos(sTitulo, sLogo, sComment, 
+                            (sURI!=null && sURI.length()>0) ? sURI : ("http://www.google.es/search?q=" + (sBusqueda.replaceAll(" ", "+")) + "+" + sResultado)));
                 }
             else{
                 this.jlError.setText(ERROR);
             }
+            jpContenido.revalidate();
+            jpContenido.repaint();
         }
     }
 }
