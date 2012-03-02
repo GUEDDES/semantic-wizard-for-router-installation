@@ -28,7 +28,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.FileWriter;
-import java.util.Collection;
 import java.util.Iterator;
 import org.apache.log4j.Logger;
 
@@ -118,9 +117,6 @@ public class Engine {
 
         searchString = StringUtils.prepareSearchString(searchString);
         MatchingResult res = searchByLabel(searchString);
-        logger.info(res.getResults().size());
-        logger.info(res.getResults());
-
 
         if (!res.getResults().isEmpty()) {
             queryResults.add(res);
@@ -152,7 +148,6 @@ public class Engine {
     private MatchingResult searchByLabel(String searchString) {
         String queryString = "PREFIX RouterInstall:<" + defaultNameSpace + ">"
                 + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
-                + "PREFIX owl:    <http://www.w3.org/2002/07/owl#>"
                 + "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"
                 + "PREFIX fn: <http://www.w3.org/2005/xpath-functions#>"
                 + " SELECT ?resource ?priority"
@@ -174,7 +169,6 @@ public class Engine {
     private List<String> getAllRouters() {
         String queryString = "PREFIX RouterInstall:<" + defaultNameSpace + ">"
                 + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
-                + "PREFIX  afn:<http://jena.hpl.hp.com/ARQ/function#>"
                 + " SELECT ?routerName "
                 + " WHERE {"
                 + "   ?routerName rdf:instanceOf <" + vocabulary.router.getURI() + ">  "
@@ -283,7 +277,6 @@ public class Engine {
 
         String queryString = "PREFIX RouterInstall:<" + defaultNameSpace + ">"
                 + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
-                + "PREFIX  afn:<http://jena.hpl.hp.com/ARQ/function#>"
                 + " SELECT ?pasoInstalacion  "
                 + " WHERE {"
                 + "OPTIONAL{"
@@ -320,7 +313,6 @@ public class Engine {
 
         String queryString = "PREFIX RouterInstall:<" + defaultNameSpace + ">"
                 + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
-                + "PREFIX  afn:<http://jena.hpl.hp.com/ARQ/function#>"
                 + " SELECT ?pasoInstalacion  "
                 + " WHERE {"
                 + "OPTIONAL{"
@@ -351,9 +343,11 @@ public class Engine {
         List<String> routers = tryToGetRouters(queryResults);
 
         if (routers.size() == searchAvailableRouters().size()) {
-            String screenID = "fñkljfds";
+            logger.info("look for steps");
+            String screenID = searchInstallSteps(searchString);
             qr = new QueryResult(screenID, null);
         } else {
+             logger.info("look for other"+routers);
             qr = new QueryResult(null, routers);
         }
         return qr;
@@ -399,7 +393,7 @@ public class Engine {
                     }
                 } else {
                     //Comprobar componentes
-                    ontClass = getClass(resourceName);
+                  /*  ontClass = getClass(resourceName);
 
                     if (ontClass != null) {
                         OntClass parent = ontClass.getSuperClass();
@@ -409,7 +403,7 @@ public class Engine {
                         } else if (vocabulary.puerto.equals(parent) || vocabulary.puerto.equals(parent.getSuperClass())) {
                             newRouter.addProperty(vocabulary.hasPort, ontClass);
                         }
-                    }
+                    }*/
                 }
             }
         }
@@ -469,6 +463,61 @@ public class Engine {
         return matchingRouters;
 
     }
+
+
+     private String searchInstallSteps(String searchString) {
+        //Buscar por label en toda la cadena de entrada
+        List<MatchingResult> queryResults = new ArrayList<MatchingResult>();
+
+        searchString = StringUtils.prepareSearchString(searchString);
+        MatchingResult res = searchStepsByLabel(searchString);
+
+        if (!res.getResults().isEmpty()) {
+            queryResults.add(res);
+
+        } else {
+            //Repetir la búsqueda haciendo un split de la cadena de entrada
+            //<aqm des="solo si la cadena tiene " ", sino se repetira la busqueda"/>
+            String[] splittedString = searchString.split(" ");
+
+            if (splittedString.length > 1) {
+                for (int i = 0; i
+                        < splittedString.length; i++) {
+                    String s = splittedString[i];
+                    res = searchStepsByLabel(s);
+
+
+                    if (!res.getResults().isEmpty()) {
+                        queryResults.add(res);
+                    }
+                }
+            }
+        }
+        String chosenStep = getResourceWithMaxPriority(queryResults);
+        return chosenStep;
+    }
+
+    private MatchingResult searchStepsByLabel(String searchString) {
+         String queryString = "PREFIX RouterInstall:<" + defaultNameSpace + ">"
+                + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
+                + "PREFIX fn: <http://www.w3.org/2005/xpath-functions#>"
+                + "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"
+                + " SELECT ?step ?priority"
+                + " WHERE {"
+                + "   ?step rdf:instanceOf <"+vocabulary.pasoInstalacion+">  ."
+                + "   ?step RouterInstall:hasPriority ?priority . "
+                + "   ?step rdfs:label ?label ."
+                + "FILTER (regex(fn:lower-case(?label), \"" + searchString + "\")) "
+                + "}";
+
+        List<String> params = new ArrayList<String>();
+        params.add("?step");
+        params.add("?priority");
+
+        List<List<String>> list = querySPARQL(queryString, params);
+        return new MatchingResult(list, searchString.length());
+    }
+
 
     private OntClass getClassOfIndividual(String individualName) {
         OntClass ontClass = null;
