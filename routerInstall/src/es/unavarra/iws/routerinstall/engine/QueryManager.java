@@ -112,8 +112,17 @@ public class QueryManager implements IQueryManager {
         return currentStep == null;
     }
 
+    public String getCurrentStepDescription() {
+        if (!isLastStep()) {
+            return currentStep.getProperty(engine.getVocabulary().descrPaso).getString();
+        } else {
+            return "";
+        }
+    }
+
 
     public QueryResult initInstallationByCharacteristics(String searchString) {
+         engine.init();
         return engine.searchCharacteristics(searchString);
     }
 
@@ -145,6 +154,15 @@ public class QueryManager implements IQueryManager {
 
     public static void main(String[] args) {
         QueryManager qm = new QueryManager();
-        qm.initInstallationByCharacteristics("un microfiltro");
+        String step= qm.initInstallationByModelName("CT-351");
+      //  while (step != null) {
+      //      logger.info("is first"+qm.isFirstStep());
+      //     qm.getNextStepOK();
+      //       logger.info(qm.getCurrentStepDescription()) ;
+
+   // }
+       // QueryResult qr = qm.initInstallationByCharacteristics("instalar router wifi telefonica");
+        logger.info(qm.initInstallationByCharacteristics("cd").getStepID());
     }
 }
+

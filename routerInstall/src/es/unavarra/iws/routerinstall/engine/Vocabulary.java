@@ -28,6 +28,8 @@ public class Vocabulary {
         return uri;
     }
     /** Classes */
+    public final OntClass dSwitch;
+    public final OntClass dHub;
     public final OntClass router;
     public final OntClass antena;
     public final OntClass proveedor;
@@ -123,6 +125,9 @@ public class Vocabulary {
     public Vocabulary(OntModel model) {
 
         /**Classes*/
+
+        dHub = model.getOntClass(uri+"HUB");
+        dSwitch  = model.getOntClass(uri+"Switch");
         router = model.getOntClass(uri + "Router");
         antena = model.getOntClass(uri + "Antena");
         proveedor = model.getOntClass(uri + "Proveedor");
@@ -229,6 +234,8 @@ public class Vocabulary {
         //Añadir propiedades
       
          //Añadir prioridades
+        dHub.addProperty(hasPriority, "3");
+        dSwitch.addProperty(hasPriority, "3");
         router.addProperty(hasPriority, "1");
        
         microfiltro.addProperty(hasPriority, "5");
@@ -278,6 +285,15 @@ public class Vocabulary {
         PASO_INSTALAR_CD = model.getIndividual(uri+"InstalacionSoftware_1");
         PASO_INSTALAR_CD.addProperty(instanceOf, pasoInstalacion);
 
+        PASO_M_LOCALIZAR_ADSL.addProperty(hasPriority, "5");
+        PASO_CONECTAR_ROUTER.addProperty(hasPriority, "5");
+        PASO_CONECTAR_TARJETA_INALAMBRICA.addProperty(hasPriority, "5");
+        PASO_CONECTAR_MODEM_USB.addProperty(hasPriority, "5");
+        PASO_CONECTAR_PC_USB.addProperty(hasPriority, "5");
+        PASO_VERIFICACION_FINAL.addProperty(hasPriority, "5");
+        PASO_CONECTAR_PC_RJ45.addProperty(hasPriority, "5");
+        PASO_INSTALAR_CD.addProperty(hasPriority, "5");
+        
         tarjetaInalambricaI = model.getIndividual(uri+"TarjetaInalambrica_1");
         modemUSBI = model.getIndividual(uri+"ModemUSB_1");
         cdI = model.getIndividual(uri+"CDInstalacion_1");

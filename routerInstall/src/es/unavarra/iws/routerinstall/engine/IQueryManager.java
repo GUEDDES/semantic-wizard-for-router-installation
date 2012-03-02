@@ -34,6 +34,7 @@ public interface IQueryManager {
     String getNextStepOK();
     String getError();
     String getPrevStep();
+    String getCurrentStepDescription();
 
     boolean isFirstStep();
     boolean isLastStep();
