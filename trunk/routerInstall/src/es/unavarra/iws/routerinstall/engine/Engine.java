@@ -166,6 +166,18 @@ public class Engine {
 
     }
 
+     public  List<String> searchFrequentErrors() {
+        String queryString = "PREFIX RouterInstall:<" + defaultNameSpace + ">"
+                + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
+                + " SELECT ?error "
+                + " WHERE {"
+                + "   ?error rdf:instanceOf <" + vocabulary.problemaInstalacion.getURI() + ">  "
+                + "}";
+        List<String> allRouters = querySPARQL(queryString, "?error");
+        return allRouters;
+    }
+
+
     private List<String> getAllRouters() {
         String queryString = "PREFIX RouterInstall:<" + defaultNameSpace + ">"
                 + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
