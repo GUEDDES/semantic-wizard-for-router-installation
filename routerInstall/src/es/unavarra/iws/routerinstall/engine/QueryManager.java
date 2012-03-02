@@ -83,9 +83,9 @@ public class QueryManager implements IQueryManager {
         prevSteps.add(currentStep);
         currentStep = engine.getNextStep(router, currentStep);
         if (currentStep != null) {
-        return currentStep.getLocalName();
+        return (router.getLocalName() +"_" + currentStep.getLocalName()).toUpperCase();
         } else {
-            return "FINISH";
+            return router.getLocalName() +"_FINISH";
         }
     }
 
@@ -100,7 +100,7 @@ public class QueryManager implements IQueryManager {
             currentStep.removeAll(engine.getVocabulary().isPasoHecho);
             return currentStep.getLocalName();
         } else {
-            return "START";
+            return router.getLocalName() + "_START";
         }
     }
     
@@ -109,23 +109,12 @@ public class QueryManager implements IQueryManager {
     }
 
     public boolean isLastStep() {
-        return false;
+        return currentStep == null;
     }
 
 
-
     public QueryResult initInstallationByCharacteristics(String searchString) {
-        router = engine.searchCharacteristics(searchString);
-        //
-        //<aqm des="si falla?, por el momento que retorne null"/>
-        if(router!=null){
-        //    currentStep = engine.getFirstStep(router);
-            prevSteps = new ArrayList<Individual>();
-           // return currentStep.getLocalName();
-            return null;
-        }
-        else
-            return null;
+        return engine.searchCharacteristics(searchString);
     }
 
     public List<String> getAvailableRouters() {
@@ -154,5 +143,8 @@ public class QueryManager implements IQueryManager {
          return engine.getPropertyValue(id, engine.getVocabulary().guideURL);
     }
 
-
+    public static void main(String[] args) {
+        QueryManager qm = new QueryManager();
+        qm.initInstallationByCharacteristics("un microfiltro");
     }
+}

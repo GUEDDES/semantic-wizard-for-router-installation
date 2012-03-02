@@ -12,6 +12,7 @@ import java.util.List;
  * @author Itziar
  */
 public interface IQueryManager {
+    
     String executeQueryBasicConcepts(String searchString);
 
     String getComment(String id);
