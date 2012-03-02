@@ -201,15 +201,31 @@ public class Instalar extends javax.swing.JPanel {
     }//GEN-LAST:event_jbX7028rActionPerformed
 
     private void jbCT351MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbCT351MouseClicked
-        String routerActual = "CT-351";
+        String routerActual = "CT-5071";
         String primerPaso;
+        String ident;
+        String ultimo = "";
         
         primerPaso = qm.initInstallationByModelName(routerActual);
         
         Wizard wizard = new Wizard();
         wizard.getDialog().setTitle("Instalación router " + routerActual);
-        
-        WizardPanelDescriptor descriptor1 = new Rct351Panel1Descriptor(primerPaso!=null ? primerPaso:"");
+        System.out.println("1");
+        WizardPanelDescriptor descriptor1 = new Rct351Panel1Descriptor(primerPaso!=null ? primerPaso:"", qm);
+        wizard.registerWizardPanel(Rct351Panel1Descriptor.IDENTIFIER, descriptor1);
+        ident = Rct351Panel1Descriptor.IDENTIFIER;
+        System.out.println("2");
+        while (qm.isLastStep() == false){
+            WizardPanelDescriptor descriptor = new InstalacionGeneralDescriptor(qm, ident);
+            wizard.registerWizardPanel(descriptor.getPanelDescriptorIdentifier(), descriptor);
+            ident = descriptor.getPanelDescriptorIdentifier().toString();
+            ultimo = descriptor.getNextPanelDescriptor().toString();
+        }
+        System.out.println("3");
+        WizardPanelDescriptor descriptor = new UltimoPasoDescriptor(qm, ident, ultimo);
+        wizard.registerWizardPanel(qm.getCurrentStepDescription(), descriptor);
+        System.out.println("4");
+        /*WizardPanelDescriptor descriptor1 = new Rct351Panel1Descriptor(primerPaso!=null ? primerPaso:"");
         wizard.registerWizardPanel(Rct351Panel1Descriptor.IDENTIFIER, descriptor1);
 
         WizardPanelDescriptor descriptor2 = new Rct351Panel2Descriptor();
@@ -234,8 +250,8 @@ public class Instalar extends javax.swing.JPanel {
         wizard.registerWizardPanel(Rct351Panel8Descriptor.IDENTIFIER, descriptor8);
         
         WizardPanelDescriptor descriptor9 = new Rct351Panel9Descriptor(qm);
-        wizard.registerWizardPanel(Rct351Panel9Descriptor.IDENTIFIER, descriptor9);
-        
+        wizard.registerWizardPanel(Rct351Panel9Descriptor.IDENTIFIER, descriptor9);*/
+        primerPaso = qm.initInstallationByModelName(routerActual);
         wizard.setCurrentPanel(Rct351Panel1Descriptor.IDENTIFIER);
         
         int ret = wizard.showModalDialog(); //Que boton se pulso: 0=Finish,1=Cancel,2=Error
