@@ -29,6 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.FileWriter;
 import java.util.Iterator;
+import java.util.regex.Matcher;
 import org.apache.log4j.Logger;
 
 /**
@@ -166,17 +167,40 @@ public class Engine {
 
     }
 
-     public  List<String> searchFrequentErrors() {
+    public List<InstallationError> searchFrequentErrors() {
         String queryString = "PREFIX RouterInstall:<" + defaultNameSpace + ">"
                 + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
-                + " SELECT ?error "
+                + " SELECT ?error ?title ?descr ?solProb"
                 + " WHERE {"
-                + "   ?error rdf:instanceOf <" + vocabulary.problemaInstalacion.getURI() + ">  "
+                + "   ?error rdf:instanceOf <" + vocabulary.problemaInstalacion.getURI() + "> . "
+                + "   ?error RouterInstall:title ?title . "
+                + "   ?error RouterInstall:Problema ?descr . "
+                + "   ?error RouterInstall:SolucionProblema ?solProb "
                 + "}";
-        List<String> allRouters = querySPARQL(queryString, "?error");
-        return allRouters;
+        List<String> params = new ArrayList<String>();
+        params.add("?error");
+        List<List<String>> allErrors = querySPARQL(queryString, params);
+
+        List<InstallationError> problems = new ArrayList<InstallationError>();
+
+        Iterator<List<String>> it = allErrors.iterator();
+        while (it.hasNext()) {
+            List<String> list = it.next();
+            Individual error = model.getIndividual(list.get(0));  
+            problems.add(createInstallationError(error));
+        }
+
+        return problems;
     }
 
+    public InstallationError createInstallationError(Individual error) {
+        String id = "ERROR_" + error.getProperty(vocabulary.isProblemOf).getObject().asResource().getLocalName().toUpperCase();
+        String title = error.getProperty(vocabulary.title).getString();
+        String descr = error.getProperty(vocabulary.problemDescr).getString();
+        String solution = error.getProperty(vocabulary.problemSolution).getString();
+        InstallationError p = new InstallationError(id, title, descr, solution);
+        return p;
+    }
 
     private List<String> getAllRouters() {
         String queryString = "PREFIX RouterInstall:<" + defaultNameSpace + ">"
@@ -391,13 +415,13 @@ public class Engine {
                   /*  ontClass = getClass(resourceName);
 
                     if (ontClass != null) {
-                        OntClass parent = ontClass.getSuperClass();
-                        if (vocabulary.componente.equals(parent) || vocabulary.componente.equals(parent.getSuperClass())) {
-                            newRouter.addProperty(vocabulary.hasComponent, ontClass);
+                    OntClass parent = ontClass.getSuperClass();
+                    if (vocabulary.componente.equals(parent) || vocabulary.componente.equals(parent.getSuperClass())) {
+                    newRouter.addProperty(vocabulary.hasComponent, ontClass);
 
-                        } else if (vocabulary.puerto.equals(parent) || vocabulary.puerto.equals(parent.getSuperClass())) {
-                            newRouter.addProperty(vocabulary.hasPort, ontClass);
-                        }
+                    } else if (vocabulary.puerto.equals(parent) || vocabulary.puerto.equals(parent.getSuperClass())) {
+                    newRouter.addProperty(vocabulary.hasPort, ontClass);
+                    }
                     }*/
                 }
             }
@@ -405,18 +429,21 @@ public class Engine {
 
         List<String> availableRouters = getAllRouters();
         if (filterByProvider) {
-            availableRouters.retainAll(filterByProvider(routerIndividuals, newRouter));
+            availableRouters.retainAll(filterByProvider(newRouter));
         }
 
         if (filterByType) {
-            availableRouters.retainAll(filterByType(routerIndividuals, newRouter));
+            availableRouters.retainAll(filterByType(newRouter));
         }
 
+        if (!routerIndividuals.isEmpty()) {
+            availableRouters.retainAll(routerIndividuals);
+        }
 
         return availableRouters;
     }
 
-    private List<String> filterByProvider(List<String> routerIndividuals, Individual newRouter) {
+    private List<String> filterByProvider(Individual newRouter) {
 
         String queryString = "PREFIX RouterInstall:<" + defaultNameSpace + ">"
                 + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
@@ -429,17 +456,11 @@ public class Engine {
                 + "}";
 
         List<String> matchingRouters = querySPARQL(queryString, "?routerName");
-
-        if (!routerIndividuals.isEmpty()) {
-            matchingRouters.retainAll(routerIndividuals);
-        }
-
-
         return matchingRouters;
 
     }
 
-    private List<String> filterByType(List<String> routerIndividuals, Individual newRouter) {
+    private List<String> filterByType(Individual newRouter) {
 
         String queryString = "PREFIX RouterInstall:<" + defaultNameSpace + ">"
                 + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
@@ -452,15 +473,12 @@ public class Engine {
                 + "}";
 
         List<String> matchingRouters = querySPARQL(queryString, "?routerName");
-        if (!routerIndividuals.isEmpty()) {
-            matchingRouters.retainAll(routerIndividuals);
-        }
+
         return matchingRouters;
 
     }
 
-
-     public Individual searchInstallSteps(String searchString) {
+    public Individual searchInstallSteps(String searchString) {
         //Buscar por label en toda la cadena de entrada
         List<MatchingResult> queryResults = new ArrayList<MatchingResult>();
 
@@ -476,7 +494,7 @@ public class Engine {
             String[] splittedString = searchString.split(" ");
 
             if (splittedString.length > 1) {
-                for (int i = 0; i   < splittedString.length; i++) {
+                for (int i = 0; i < splittedString.length; i++) {
                     String s = splittedString[i];
                     res = searchStepsByLabel(s);
 
@@ -488,19 +506,19 @@ public class Engine {
             }
         }
         String chosenStep = getResourceWithMaxPriority(queryResults);
-        
-        return model.getIndividual(Vocabulary.uri+chosenStep);
+
+        return model.getIndividual(Vocabulary.uri + chosenStep);
     }
 
     private MatchingResult searchStepsByLabel(String searchString) {
-         String queryString = "PREFIX RouterInstall:<" + defaultNameSpace + ">"
+        String queryString = "PREFIX RouterInstall:<" + defaultNameSpace + ">"
                 + "PREFIX  rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
                 + "PREFIX fn: <http://www.w3.org/2005/xpath-functions#>"
                 + "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"
                 + " SELECT ?step ?priority"
                 + " WHERE {"
-                + "   ?step rdf:instanceOf <"+vocabulary.pasoInstalacion+">  ."
-                + "   ?step RouterInstall:hasPriority ?priority ."
+                + "   ?step rdf:instanceOf <" + vocabulary.pasoInstalacion + ">  ."
+                + "   ?step RouterInstall:hasStepPriority ?priority ."
                 + "   ?step rdfs:label ?label ."
                 + "FILTER (regex(fn:lower-case(?label), \"" + searchString + "\")) "
                 + "}";
@@ -512,7 +530,6 @@ public class Engine {
         List<List<String>> list = querySPARQL(queryString, params);
         return new MatchingResult(list, searchString.length());
     }
-
 
     private OntClass getClassOfIndividual(String individualName) {
         OntClass ontClass = null;
