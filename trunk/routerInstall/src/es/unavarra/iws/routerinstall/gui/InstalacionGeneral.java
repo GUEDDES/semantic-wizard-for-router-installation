@@ -111,8 +111,7 @@ public class InstalacionGeneral extends javax.swing.JPanel {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-        final JComponent[] panelError = new JComponent[] {new PanelError(titError, comError)
-        };
+        final JComponent[] panelError = new JComponent[] {new PanelError(titError, comError)};
         JOptionPane.showMessageDialog(null, panelError, "Errores", JOptionPane.PLAIN_MESSAGE);
 
     }//GEN-LAST:event_jButton1MouseClicked
