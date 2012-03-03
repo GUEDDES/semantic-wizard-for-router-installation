@@ -6,7 +6,7 @@ package es.unavarra.iws.routerinstall.gui;
 
 import java.awt.Container;
 import java.awt.event.ActionListener;
-import javax.swing.JFrame;
+import javax.swing.*;
 
 /**
  *
@@ -111,14 +111,10 @@ public class InstalacionGeneral extends javax.swing.JPanel {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-        javax.swing.JFrame jf = new JFrame();
-        jf.setSize(this.getSize());
-        jf.add(new PanelError(titError, comError));
-        jf.setFocusable(true);
-        jf.setAlwaysOnTop(true);
-        this.setFocusable(false);
-        this.setVisible(false);
-        jf.setVisible(true);
+        final JComponent[] panelError = new JComponent[] {new PanelError(titError, comError)
+        };
+        JOptionPane.showMessageDialog(null, panelError, "Errores", JOptionPane.PLAIN_MESSAGE);
+
     }//GEN-LAST:event_jButton1MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

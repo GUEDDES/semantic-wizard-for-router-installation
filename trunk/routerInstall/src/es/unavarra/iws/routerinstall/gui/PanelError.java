@@ -58,7 +58,7 @@ public class PanelError extends javax.swing.JPanel {
         jpTitulo.setForeground(java.awt.Color.gray);
         jpTitulo.setLayout(new java.awt.BorderLayout());
 
-        jlTitulo.setBackground(java.awt.Color.lightGray);
+        jlTitulo.setBackground(new java.awt.Color(204, 204, 204));
         jlTitulo.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jlTitulo.setText("Conectar SIM al Modem");
         jlTitulo.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -69,8 +69,8 @@ public class PanelError extends javax.swing.JPanel {
         jSeparator1.setOpaque(true);
         jpTitulo.add(jSeparator1, java.awt.BorderLayout.SOUTH);
 
-        jlIcono.setBackground(java.awt.Color.lightGray);
-        jlIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/setting32.png"))); // NOI18N
+        jlIcono.setBackground(new java.awt.Color(204, 204, 204));
+        jlIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/attention32.png"))); // NOI18N
         jlIcono.setOpaque(true);
         jpTitulo.add(jlIcono, java.awt.BorderLayout.LINE_END);
 

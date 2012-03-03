@@ -37,7 +37,7 @@
         <Component class="javax.swing.JLabel" name="jlTitulo">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="c0" green="c0" id="lightGray" palette="1" red="c0" type="palette"/>
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Verdana" size="14" style="1"/>
@@ -72,10 +72,10 @@
         <Component class="javax.swing.JLabel" name="jlIcono">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="c0" green="c0" id="lightGray" palette="1" red="c0" type="palette"/>
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/es/unavarra/iws/routerinstall/resources/img/setting32.png"/>
+              <Image iconType="3" name="/es/unavarra/iws/routerinstall/resources/img/attention32.png"/>
             </Property>
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
