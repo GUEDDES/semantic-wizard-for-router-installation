@@ -26,16 +26,17 @@ public interface IQueryManager {
 
 
     List<String> getAvailableRouters();
-    List<String> getFrequentErrors();
+     List<InstallationError> getFrequentErrors();
 
     String initInstallationByModelName(String routerModel);
     QueryResult initInstallationByCharacteristics(String searchString);
 
     String getNextStepOK();
-    String getError();
+    InstallationError getError();
     String getPrevStep();
     String getCurrentStepDescription();
     String getCurrentStepName();
+    String getCurrentStepTitle();
     
 
     boolean isFirstStep();
