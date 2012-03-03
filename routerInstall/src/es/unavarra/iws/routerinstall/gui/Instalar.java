@@ -4,8 +4,7 @@
  */
 package es.unavarra.iws.routerinstall.gui;
 
-import es.unavarra.iws.routerinstall.engine.QueryManager;
-import es.unavarra.iws.routerinstall.engine.utils.StringUtils;
+import es.unavarra.iws.routerinstall.engine.*;
 import es.unavarra.iws.routerinstall.gui.wiz.Wizard;
 import es.unavarra.iws.routerinstall.gui.wiz.WizardPanelDescriptor;
 import java.awt.Container;
@@ -356,6 +355,31 @@ private void jbHG556MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
 // TODO add your handling code here:
         String routerActual = "HG556";
         String primerPaso;
+        String ident;
+        String ultimo = "";
+        
+        primerPaso = qm.initInstallationByModelName(routerActual);
+        
+        Wizard wizard = new Wizard();
+        wizard.getDialog().setTitle("Instalación router " + routerActual);
+        
+        WizardPanelDescriptor descriptor1 = new RHG556Panel1Descriptor(primerPaso!=null ? primerPaso:"", qm);
+        wizard.registerWizardPanel(RHG556Panel1Descriptor.IDENTIFIER, descriptor1);
+        ident = RHG556Panel1Descriptor.IDENTIFIER;
+        
+        while (qm.isLastStep() == false){
+            WizardPanelDescriptor descriptor = new InstalacionGeneralDescriptor(qm, ident);
+            wizard.registerWizardPanel(descriptor.getPanelDescriptorIdentifier(), descriptor);
+            ident = descriptor.getPanelDescriptorIdentifier().toString();
+            ultimo = descriptor.getNextPanelDescriptor().toString();
+        }
+        
+        WizardPanelDescriptor descriptor = new UltimoPasoDescriptor(qm, ident, ultimo, routerActual);
+        wizard.registerWizardPanel(descriptor.getPanelDescriptorIdentifier(), descriptor);
+    
+    
+        /*String routerActual = "HG556";
+        String primerPaso;
         
         primerPaso = qm.initInstallationByModelName(routerActual);
         
@@ -379,6 +403,8 @@ private void jbHG556MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
         
         WizardPanelDescriptor descriptor6 = new RHG556Panel6Descriptor();
         wizard.registerWizardPanel(RHG556Panel6Descriptor.IDENTIFIER, descriptor6);
+        * 
+        */
         
         wizard.setCurrentPanel(RHG556Panel1Descriptor.IDENTIFIER);
         
@@ -487,49 +513,35 @@ private void jbSagemFast2604MouseClicked(java.awt.event.MouseEvent evt) {//GEN-F
     // End of variables declaration//GEN-END:variables
 
     private void busquedaRouter(String txtBusqueda) {
-        String txtResultado;
+        jbCT351.setEnabled(true);
+        jbCT5071.setEnabled(true);
+        jbHG556.setEnabled(true);
+        jbSagemFast2604.setEnabled(true);
+        jbTG585v7.setEnabled(true);
+        jbX7028r.setEnabled(true);
+        QueryResult txtResultado;
         jlError.setVisible(false);
-        //txtBusqueda = StringUtils.prepareSearchString(txtBusqueda);
+        String router;
+        
         if(txtBusqueda!=null && txtBusqueda.length()>0){
             
-            List<String> list = new ArrayList<String>(); //1er resultado que retorna: Lista con los routers
-            String idPantalla = "";                      //2do resultado que retorna: ID (String) de la ventana
+            txtResultado = qm.initInstallationByCharacteristics(txtBusqueda);
             
-//          txtResultado = qm.initInstallationByCharacteristics(txtBusqueda);  //mientras llega el API
-            txtResultado = "vale_el_pronto_se_implementara";
-            if(txtResultado==null || txtResultado.length()<1){
-                jlError.setVisible(true);
-                return;
-            }
+            List<String> list = txtResultado.getRouterList(); //1er resultado que retorna: Lista con los routers
+            String idPantalla = txtResultado.getStepID();                      //2do resultado que retorna: ID (String) de la ventana
             
-// <para_pruebas> 
-            Boolean esRouter = true; 
-            Random r = new Random(); //borrar lo de random cuando se tenga la funcion
-            if((r.nextInt(6)+1)<3){
-                list.add("CT-351"); //para el ejemplo devolvera los 2 routers que cumplan el requisito de la busqueda. Sino es asi idicar como devolvera
-                list.add("TG585v7");
-            }else if((r.nextInt(6)+1)>5){
-                list.add("SagemFast_2604"); //o estos
-                list.add("HG556");
-            }else{
-                list.add("x7028r");
-            }
-// </para_pruebas>
-            
-// <para_pruebas>             
-            Boolean esIDPantalla = false; 
-            idPantalla = "RHG_PANEL_LOQUESEA";
-// </para_pruebas>            
-            
-            if(esRouter){
+            if (txtResultado.getStepID() != null){
+                System.out.println("##########Ha devuelto un concpto##########");
+                System.out.println(txtResultado.getStepID());
+            }else if (list != null){
+                System.out.println("########## Ha devuelto una lista con "+list.size()+" elementos ##########");
+                System.out.println(list.iterator().next().toString());
                 habilitaBotones(false);
                 habilitaRouter(list);
+            }else{
+                jlError.setVisible(true);
             }
-            if(esIDPantalla){
-                habilitaBotones(true);
-                muestraPantallaID(idPantalla);
-            }
-                
+   
         }
     }
     
@@ -564,7 +576,7 @@ private void jbSagemFast2604MouseClicked(java.awt.event.MouseEvent evt) {//GEN-F
         String router = "";
         Iterator iter = list.iterator();
         while (iter.hasNext()){
-                router = ((String )iter.next()).toLowerCase();
+                router = iter.next().toString().split("#")[1].toLowerCase();
                 if(router.equals("ct-351")){
                     jbCT351.setEnabled(true);
                 }else if(router.equals("ct-5071")){
