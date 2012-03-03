@@ -149,9 +149,6 @@
       <owl:Class rdf:ID="ProblemasWifi"/>
     </owl:disjointWith>
     <owl:disjointWith>
-      <owl:Class rdf:ID="ProblemasTransmision"/>
-    </owl:disjointWith>
-    <owl:disjointWith>
       <owl:Class rdf:ID="ProblemasCMicrofiltros"/>
     </owl:disjointWith>
     <owl:disjointWith>
@@ -2302,9 +2299,6 @@ adaptador que acompaña al router.</rdfs:comment>
     </owl:disjointWith>
     <owl:disjointWith rdf:resource="#ProblemasUSB"/>
     <owl:disjointWith>
-      <owl:Class rdf:about="#ProblemasTransmision"/>
-    </owl:disjointWith>
-    <owl:disjointWith>
       <owl:Class rdf:about="#ProblemasCMicrofiltros"/>
     </owl:disjointWith>
     <owl:disjointWith>
@@ -2393,9 +2387,6 @@ adaptador que acompaña al router.</rdfs:comment>
     </owl:disjointWith>
   </owl:Class>
   <owl:Class rdf:about="#ProblemasCMicrofiltros">
-    <owl:disjointWith>
-      <owl:Class rdf:about="#ProblemasTransmision"/>
-    </owl:disjointWith>
     <owl:disjointWith rdf:resource="#ProblemasUSB"/>
     <owl:disjointWith rdf:resource="#DispositivoRedes"/>
     <owl:disjointWith rdf:resource="#ClavijaExtensora"/>
@@ -2719,24 +2710,6 @@ adaptador que acompaña al router.</rdfs:comment>
       <owl:Class rdf:about="#Switch"/>
     </owl:disjointWith>
   </owl:Class>
-  <owl:Class rdf:about="#ProblemasTransmision">
-    <owl:disjointWith>
-      <owl:Class rdf:about="#ProblemasWifi"/>
-    </owl:disjointWith>
-    <owl:disjointWith rdf:resource="#ProblemasUSB"/>
-    <owl:disjointWith rdf:resource="#ProblemasCMicrofiltros"/>
-    <owl:disjointWith rdf:resource="#ProblemasConfiguracionRouter"/>
-    <owl:disjointWith>
-      <owl:Class rdf:about="#ProblemasEthernet"/>
-    </owl:disjointWith>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >problemas transmision</rdfs:label>
-    <RouterInstall:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Problemas al verificar la Transmision</RouterInstall:title>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Problemas"/>
-    </rdfs:subClassOf>
-  </owl:Class>
   <owl:Class rdf:about="#Antena">
     <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >http://es.wikipedia.org/wiki/Antena</rdfs:seeAlso>
@@ -2950,7 +2923,6 @@ adaptador que acompaña al router.</rdfs:comment>
   </owl:Class>
   <owl:Class rdf:about="#ProblemasWifi">
     <owl:disjointWith rdf:resource="#ProblemasUSB"/>
-    <owl:disjointWith rdf:resource="#ProblemasTransmision"/>
     <owl:disjointWith rdf:resource="#ProblemasCMicrofiltros"/>
     <owl:disjointWith rdf:resource="#ProblemasConfiguracionRouter"/>
     <owl:disjointWith>
@@ -2959,6 +2931,54 @@ adaptador que acompaña al router.</rdfs:comment>
     <rdfs:subClassOf>
       <owl:Class rdf:about="#Problemas"/>
     </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Componente">
+    <owl:disjointWith rdf:resource="#Proveedor"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PuertoEthernet"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableRJ11"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Ordenador"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#CableRJ45"/>
+    <owl:disjointWith rdf:resource="#ClavijaExtensora"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >parte</rdfs:label>
+    <owl:disjointWith rdf:resource="#TarjetaDeRed"/>
+    <owl:disjointWith rdf:resource="#TipoRouter"/>
+    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
+    <owl:disjointWith rdf:resource="#Microfiltro"/>
+    <owl:disjointWith rdf:resource="#Router"/>
+    <owl:disjointWith rdf:resource="#PuertoUSB"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#PasoInstalacion"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#CableCorriente"/>
+    <owl:disjointWith rdf:resource="#DispositivoRedes"/>
+    <owl:disjointWith rdf:resource="#PuertoADSL"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Switch"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >componente</rdfs:label>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Cable"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
+    <RouterInstall:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Componentes de un router</RouterInstall:title>
+    <owl:disjointWith rdf:resource="#Puerto"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#CableUSB"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Problemas"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#HUB"/>
+    <owl:disjointWith rdf:resource="#Instalacion"/>
   </owl:Class>
   <owl:Class rdf:about="#Cable">
     <owl:disjointWith rdf:resource="#LedEstadoSistema"/>
@@ -3010,56 +3030,8 @@ adaptador que acompaña al router.</rdfs:comment>
     >cordon</rdfs:label>
     <owl:disjointWith rdf:resource="#TipoRouter"/>
     <owl:disjointWith rdf:resource="#CDInstalacion"/>
-    <owl:disjointWith>
-      <owl:Class rdf:about="#Componente"/>
-    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="#Componente"/>
     <owl:disjointWith rdf:resource="#Microfiltro"/>
-  </owl:Class>
-  <owl:Class rdf:about="#Componente">
-    <owl:disjointWith rdf:resource="#Proveedor"/>
-    <owl:disjointWith>
-      <owl:Class rdf:about="#PuertoEthernet"/>
-    </owl:disjointWith>
-    <owl:disjointWith>
-      <owl:Class rdf:about="#CableRJ11"/>
-    </owl:disjointWith>
-    <owl:disjointWith>
-      <owl:Class rdf:about="#Ordenador"/>
-    </owl:disjointWith>
-    <owl:disjointWith rdf:resource="#CableRJ45"/>
-    <owl:disjointWith rdf:resource="#ClavijaExtensora"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >parte</rdfs:label>
-    <owl:disjointWith rdf:resource="#TarjetaDeRed"/>
-    <owl:disjointWith rdf:resource="#TipoRouter"/>
-    <owl:disjointWith rdf:resource="#PuertoCorriente"/>
-    <owl:disjointWith rdf:resource="#Microfiltro"/>
-    <owl:disjointWith rdf:resource="#Router"/>
-    <owl:disjointWith rdf:resource="#PuertoUSB"/>
-    <owl:disjointWith>
-      <owl:Class rdf:about="#PasoInstalacion"/>
-    </owl:disjointWith>
-    <owl:disjointWith rdf:resource="#CableCorriente"/>
-    <owl:disjointWith rdf:resource="#DispositivoRedes"/>
-    <owl:disjointWith rdf:resource="#PuertoADSL"/>
-    <owl:disjointWith>
-      <owl:Class rdf:about="#Switch"/>
-    </owl:disjointWith>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >componente</rdfs:label>
-    <owl:disjointWith rdf:resource="#Cable"/>
-    <owl:disjointWith rdf:resource="#PuertoWLAN"/>
-    <RouterInstall:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Componentes de un router</RouterInstall:title>
-    <owl:disjointWith rdf:resource="#Puerto"/>
-    <owl:disjointWith>
-      <owl:Class rdf:about="#CableUSB"/>
-    </owl:disjointWith>
-    <owl:disjointWith>
-      <owl:Class rdf:about="#Problemas"/>
-    </owl:disjointWith>
-    <owl:disjointWith rdf:resource="#HUB"/>
-    <owl:disjointWith rdf:resource="#Instalacion"/>
   </owl:Class>
   <owl:Class rdf:about="#PuertoEthernet">
     <owl:disjointWith rdf:resource="#PuertoUSB"/>
@@ -3157,7 +3129,6 @@ adaptador que acompaña al router.</rdfs:comment>
     </rdfs:subClassOf>
     <owl:disjointWith rdf:resource="#ProblemasWifi"/>
     <owl:disjointWith rdf:resource="#ProblemasUSB"/>
-    <owl:disjointWith rdf:resource="#ProblemasTransmision"/>
     <owl:disjointWith rdf:resource="#ProblemasCMicrofiltros"/>
     <owl:disjointWith rdf:resource="#ProblemasConfiguracionRouter"/>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -4268,34 +4239,6 @@ Los principales modelos de router que ofrece Movistar son:
       </swrl:IndividualPropertyAtom>
     </rdf:first>
   </swrl:AtomList>
-  <RouterInstall:ConectarRouter rdf:ID="EncenderRouter">
-    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.owl-ontologies.com/Ontology1325175471.owl#PuertoCorriente</rdfs:seeAlso>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Encender</rdfs:label>
-    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.owl-ontologies.com/Ontology1325175471.owl#CableCorriente</rdfs:seeAlso>
-    <RouterInstall:alertas rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >En caso que el roter utilice microfiltros, no se debe colocar ningun microfiltro entre el router y la roseta de linea telefonica. El router debe ir conectado directamente a la clavija extensora y los microfiltros solo se colocan en los telefonos u otros equipos que utilicen lineas analogicas de telefono</RouterInstall:alertas>
-    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.owl-ontologies.com/Ontology1325175471.owl#BotonEncendido</rdfs:seeAlso>
-    <RouterInstall:alertas rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >El cable telefónico de conexión entre el router y la roseta no debe superar los 5 metros de largo</RouterInstall:alertas>
-    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.owl-ontologies.com/Ontology1325175471.owl#LedEncendido</rdfs:seeAlso>
-    <RouterInstall:paso rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-    >3</RouterInstall:paso>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Enchufar</rdfs:label>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Conectar</rdfs:label>
-    <RouterInstall:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Conexión del Router</RouterInstall:title>
-    <RouterInstall:DesPaso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >1. Conecte el cable ADSL de la clavija extensora al puerto ADSL del router.
-2. Conecte el cable de alimentación al router y a la toma eléctrica.
-3. Una vez conectado el router a la toma de corriente, presione el boton de encendido, verificando que el led de encendido se active.</RouterInstall:DesPaso>
-  </RouterInstall:ConectarRouter>
   <swrl:Imp rdf:about="http://www.owl-ontologies.com/RuleCT-5071">
     <swrl:body>
       <swrl:AtomList>
@@ -4865,16 +4808,6 @@ Los principales modelos de router que ofrece Movistar son:
       <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
     </owl:oneOf>
   </owl:DataRange>
-  <RouterInstall:CTarjetaInalambrica rdf:ID="CTarjetaInalambrica_1">
-    <RouterInstall:paso rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-    >1</RouterInstall:paso>
-    <RouterInstall:DesPaso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Introduzca en la ranura identificada como  WLAN la tarjeta con la etiqueta de la cara principal hacia arriba y empuje fisicamente hata conseguir su plena conexion. La parte metálica de la tarjeta sobresaldrá unos 1.5 cm aproximadamente.</RouterInstall:DesPaso>
-    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.owl-ontologies.com/Ontology1325175471.owl#TarjetaInalambrica</rdfs:seeAlso>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Conectar Tarjeta Inalambrica wifi wireless</rdfs:label>
-  </RouterInstall:CTarjetaInalambrica>
   <owl:AnnotationProperty rdf:ID="manual">
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >Contiene el enlace a el manual para la instalación de un router determinado</rdfs:comment>
@@ -4896,6 +4829,8 @@ Los principales modelos de router que ofrece Movistar son:
     >http://www.owl-ontologies.com/Ontology1325175471.owl#CableRJ11</rdfs:seeAlso>
     <RouterInstall:hasProblema>
       <RouterInstall:ProblemasCMicrofiltros rdf:ID="ComunicacionADSL">
+        <RouterInstall:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Problema de comunicación vía ADSL</RouterInstall:title>
         <RouterInstall:isProblemaOf rdf:resource="#MicrofiltroLocalizarADSL"/>
         <RouterInstall:SolucionProblema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >Si el terminal utilizado es un terminal de marcación decádica (Pulsos), sustituya el terminal por otro de marcación Multi-Frecuencia (Tonos).</RouterInstall:SolucionProblema>
@@ -4909,6 +4844,8 @@ Los principales modelos de router que ofrece Movistar son:
     </RouterInstall:hasProblema>
     <RouterInstall:hasProblema>
       <RouterInstall:ProblemasCMicrofiltros rdf:ID="RecepcioLLamadas">
+        <RouterInstall:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Problemas con la conexión ADSL y la línea telefónica.</RouterInstall:title>
         <RouterInstall:isProblemaOf rdf:resource="#MicrofiltroLocalizarADSL"/>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >http://www.owl-ontologies.com/Ontology1325175471.owl#Microfiltro</rdfs:seeAlso>
@@ -4942,6 +4879,8 @@ Repita estos cuatro pasos por cada línea de teléfono que tenga en casa.</Route
         >Al instalar el primer microfiltro observa que en el terminal hay un aumento notable del ruido en el teléfono.</RouterInstall:Problema>
         <RouterInstall:paso rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >1</RouterInstall:paso>
+        <RouterInstall:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Eco en la línea telefónica</RouterInstall:title>
         <RouterInstall:isProblemaOf rdf:resource="#MicrofiltroLocalizarADSL"/>
       </RouterInstall:ProblemasCMicrofiltros>
     </RouterInstall:hasProblema>
@@ -4959,6 +4898,46 @@ Repita estos cuatro pasos por cada línea de teléfono que tenga en casa.</Route
     >Se debe volver a la configuración inicial, para esto localiza el botón llamado Reset o Rst. Se trata de un botón incrustado en la carcasa del equipo para evitar pulsaciones involuntarias.
 Con un lápiz o un clip, mantén pulsado durante 10 segundos el botón Reset. Si esto no funciona dirigete a tu proveedor de rervicio.</RouterInstall:SolucionProblema>
     <RouterInstall:isProblemaOf>
+      <RouterInstall:VerificarTransmision rdf:ID="VerificarTransmisionDatos_1">
+        <RouterInstall:hasProblema rdf:resource="#ProblemasConfiguracionRouter_1"/>
+        <RouterInstall:paso rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</RouterInstall:paso>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Verificar Transmision de Datos leds</rdfs:label>
+        <RouterInstall:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Verificar Transmisión de Datos</RouterInstall:title>
+        <RouterInstall:DesPaso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Verifique que los leds están encendidos y proceda a la configuración de la conexión.</RouterInstall:DesPaso>
+      </RouterInstall:VerificarTransmision>
+    </RouterInstall:isProblemaOf>
+    <RouterInstall:Problema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >No funciona la configuración del router</RouterInstall:Problema>
+  </RouterInstall:ProblemasConfiguracionRouter>
+  <RouterInstall:ProblemasWifi rdf:ID="ProblemasTarjetaInalambrica">
+    <RouterInstall:Problema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >No es posible insertar la tarjeta inalámbrica.</RouterInstall:Problema>
+    <RouterInstall:SolucionProblema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Compruebe que la tarjeta inalámbrica se encuentra en buen estado y que la estái insertando en el puerto WLAN correctamente. Si la tarjeta presenta algún desperfecto, consulte a su proveedor de servicios.</RouterInstall:SolucionProblema>
+    <RouterInstall:isProblemaOf>
+      <RouterInstall:CTarjetaInalambrica rdf:ID="CTarjetaInalambrica_1">
+        <RouterInstall:hasProblema rdf:resource="#ProblemasTarjetaInalambrica"/>
+        <RouterInstall:paso rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</RouterInstall:paso>
+        <RouterInstall:DesPaso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Introduzca en la ranura identificada como  WLAN la tarjeta con la etiqueta de la cara principal hacia arriba y empuje fisicamente hata conseguir su plena conexion. La parte metálica de la tarjeta sobresaldrá unos 1.5 cm aproximadamente.</RouterInstall:DesPaso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >http://www.owl-ontologies.com/Ontology1325175471.owl#TarjetaInalambrica</rdfs:seeAlso>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Conectar Tarjeta Inalambrica wifi wireless</rdfs:label>
+      </RouterInstall:CTarjetaInalambrica>
+    </RouterInstall:isProblemaOf>
+    <RouterInstall:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Problema al insertar la tarjeta inalámbrica</RouterInstall:title>
+  </RouterInstall:ProblemasWifi>
+  <RouterInstall:ProblemasConfiguracionRouter rdf:ID="ProblemaSoftware">
+    <RouterInstall:Problema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >La instalación del CD no ha terminado correctamente.</RouterInstall:Problema>
+    <RouterInstall:isProblemaOf>
       <RouterInstall:EjecutarCDInstalacion rdf:ID="InstalacionSoftware_1">
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >http://www.owl-ontologies.com/Ontology1325175471.owl#CDInstalacion</rdfs:seeAlso>
@@ -4966,7 +4945,7 @@ Con un lápiz o un clip, mantén pulsado durante 10 segundos el botón Reset. Si
         >Inserte el CD de instalacion en su computadora y siga los pasos de instalación.</RouterInstall:DesPaso>
         <RouterInstall:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >Instalación del Software</RouterInstall:title>
-        <RouterInstall:hasProblema rdf:resource="#ProblemasConfiguracionRouter_1"/>
+        <RouterInstall:hasProblema rdf:resource="#ProblemaSoftware"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >CD Instalacion</rdfs:label>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -4977,90 +4956,115 @@ Con un lápiz o un clip, mantén pulsado durante 10 segundos el botón Reset. Si
         >1</RouterInstall:paso>
       </RouterInstall:EjecutarCDInstalacion>
     </RouterInstall:isProblemaOf>
-    <RouterInstall:Problema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >No funciona la configuración del router</RouterInstall:Problema>
-  </RouterInstall:ProblemasConfiguracionRouter>
-  <RouterInstall:ProblemasEthernet rdf:ID="ProblemasEthernet_1">
     <RouterInstall:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Problemas al conectar el router por puerto Ethernet</RouterInstall:title>
-    <RouterInstall:Problema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Al conectar el router Ethernet al ordenador no lo reconoce</RouterInstall:Problema>
+    >Problema con la configuración software</RouterInstall:title>
     <RouterInstall:SolucionProblema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Asegurese que el cable Ethernet este en buen estado, en caso contrario, consulte con el proveedor de servicio.</RouterInstall:SolucionProblema>
+    >Compruebe que el sistema operativo de su máquina es compatible con los requerimientos del CD. En otro caso, diríjase a su proveedor de servicios.</RouterInstall:SolucionProblema>
+  </RouterInstall:ProblemasConfiguracionRouter>
+  <RouterInstall:ConectarRouterEthertnet rdf:ID="ConectarRouterPC_Ethernet_1">
+    <RouterInstall:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Conectar Router al Ordenador por cable Ethernet</RouterInstall:title>
+    <RouterInstall:DesPaso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Conecte ell router al ordenador mediante el cable Ethernet (RJ45), en caso de tener más de un puerto, conectar al primer puerto libre.</RouterInstall:DesPaso>
+    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.owl-ontologies.com/Ontology1325175471.owl#PuertoEthernet</rdfs:seeAlso>
+    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.owl-ontologies.com/Ontology1325175471.owl#CableRJ45</rdfs:seeAlso>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >problemas conexion router ethernet</rdfs:label>
-    <RouterInstall:isProblemaOf>
-      <RouterInstall:ConectarRouterEthertnet rdf:ID="ConectarRouterPC_Ethernet_1">
+    >Conectar Ethernet RJ45 LAN</rdfs:label>
+    <RouterInstall:paso rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</RouterInstall:paso>
+    <RouterInstall:hasProblema>
+      <RouterInstall:ProblemasEthernet rdf:ID="ProblemasEthernet_1">
         <RouterInstall:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Conectar Router al Ordenador por cable Ethernet</RouterInstall:title>
-        <RouterInstall:DesPaso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Conecte ell router al ordenador mediante el cable Ethernet (RJ45), en caso de tener más de un puerto, conectar al primer puerto libre.</RouterInstall:DesPaso>
-        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >http://www.owl-ontologies.com/Ontology1325175471.owl#PuertoEthernet</rdfs:seeAlso>
-        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >http://www.owl-ontologies.com/Ontology1325175471.owl#CableRJ45</rdfs:seeAlso>
+        >Problemas al conectar el router por puerto Ethernet</RouterInstall:title>
+        <RouterInstall:Problema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Al conectar el router Ethernet al ordenador no lo reconoce</RouterInstall:Problema>
+        <RouterInstall:SolucionProblema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Asegurese de que el cable Ethernet está correctamente conectado al router y al PC, y que ambos están encendidos.
+Asegúrese de que el cable Ethernet este en buen estado, en caso contrario, consulte con el proveedor de servicio.</RouterInstall:SolucionProblema>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Conectar Ethernet RJ45</rdfs:label>
+        >problemas conexion router ethernet</rdfs:label>
+        <RouterInstall:isProblemaOf rdf:resource="#ConectarRouterPC_Ethernet_1"/>
+      </RouterInstall:ProblemasEthernet>
+    </RouterInstall:hasProblema>
+  </RouterInstall:ConectarRouterEthertnet>
+  <RouterInstall:ProblemasUSB rdf:ID="ProblemasConectarRouterUSB_1">
+    <RouterInstall:isProblemaOf>
+      <RouterInstall:ConectarRouterUSB rdf:ID="ConectarRouterPC_USB_1">
+        <RouterInstall:DesPaso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Conecte ell router al ordenador mediante el cable USB, los led  etiquetados como Conexión y Datos se iluminarán.</RouterInstall:DesPaso>
+        <RouterInstall:hasProblema rdf:resource="#ProblemasConectarRouterUSB_1"/>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >http://www.owl-ontologies.com/Ontology1325175471.owl#LedEstadoConexion</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >http://www.owl-ontologies.com/Ontology1325175471.owl#PuertoUSB</rdfs:seeAlso>
+        <RouterInstall:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Conectar Router al Ordenador por Cable USB</RouterInstall:title>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Conectar cable USB</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >http://www.owl-ontologies.com/Ontology1325175471.owl#LedEstadoLAN</rdfs:seeAlso>
         <RouterInstall:paso rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >1</RouterInstall:paso>
-        <RouterInstall:hasProblema rdf:resource="#ProblemasEthernet_1"/>
-      </RouterInstall:ConectarRouterEthertnet>
+        <RouterInstall:pasoSiguiente rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >http://www.owl-ontologies.com/Ontology1325175471.owl#VerificarTransmisionDatos_CT-351</RouterInstall:pasoSiguiente>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >http://www.owl-ontologies.com/Ontology1325175471.owl#CableUSB</rdfs:seeAlso>
+      </RouterInstall:ConectarRouterUSB>
     </RouterInstall:isProblemaOf>
-  </RouterInstall:ProblemasEthernet>
-  <RouterInstall:VerificarTransmision rdf:ID="VerificarTransmisionDatos_1">
-    <RouterInstall:hasProblema>
-      <RouterInstall:ProblemasTransmision rdf:ID="ProblemasTransmision_1">
+    <RouterInstall:Problema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Luego de realizar la conexión del router al ordenador, no reconoce el dispositivo</RouterInstall:Problema>
+    <RouterInstall:SolucionProblema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Verifique que el puerto USB del ordenador funciona correctamente. Para probarlo puede conectar otro dispositivo al puerto y comprobar que funcione correctamente, en caso contrario diríjase al proveedor de servicio.</RouterInstall:SolucionProblema>
+    <RouterInstall:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Problema al Conectar el Router USB</RouterInstall:title>
+  </RouterInstall:ProblemasUSB>
+  <RouterInstall:ProblemasConfiguracionRouter rdf:ID="ProblemaEncendido">
+    <RouterInstall:Problema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >El router no se enciende.</RouterInstall:Problema>
+    <RouterInstall:isProblemaOf>
+      <RouterInstall:ConectarRouter rdf:ID="EncenderRouter">
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >http://www.owl-ontologies.com/Ontology1325175471.owl#PuertoCorriente</rdfs:seeAlso>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >problemas transmision</rdfs:label>
+        >Encender</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >http://www.owl-ontologies.com/Ontology1325175471.owl#CableCorriente</rdfs:seeAlso>
+        <RouterInstall:alertas rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >En caso que el roter utilice microfiltros, no se debe colocar ningun microfiltro entre el router y la roseta de linea telefonica. El router debe ir conectado directamente a la clavija extensora y los microfiltros solo se colocan en los telefonos u otros equipos que utilicen lineas analogicas de telefono</RouterInstall:alertas>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >http://www.owl-ontologies.com/Ontology1325175471.owl#BotonEncendido</rdfs:seeAlso>
+        <RouterInstall:alertas rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >El cable telefónico de conexión entre el router y la roseta no debe superar los 5 metros de largo</RouterInstall:alertas>
+        <RouterInstall:hasProblema rdf:resource="#ProblemaEncendido"/>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >http://www.owl-ontologies.com/Ontology1325175471.owl#LedEncendido</rdfs:seeAlso>
+        <RouterInstall:paso rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >3</RouterInstall:paso>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Enchufar</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Conectar</rdfs:label>
         <RouterInstall:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Problemas al Verificar la Transmisión</RouterInstall:title>
-        <RouterInstall:Problema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Al verificar el router solo enciende el led de encendido</RouterInstall:Problema>
-        <RouterInstall:isProblemaOf rdf:resource="#VerificarTransmisionDatos_1"/>
-        <RouterInstall:SolucionProblema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Si el router tiene boton de reset o rst, tome un lapiz y con la punta presionelo, luego repita todos los pasos de instalación, si esto no funciona  consulte consu proveedor de servicios de internet.</RouterInstall:SolucionProblema>
-      </RouterInstall:ProblemasTransmision>
-    </RouterInstall:hasProblema>
-    <RouterInstall:paso rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-    >1</RouterInstall:paso>
+        >Conexión del Router</RouterInstall:title>
+        <RouterInstall:DesPaso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >1. Conecte el cable ADSL de la clavija extensora al puerto ADSL del router.
+2. Conecte el cable de alimentación al router y a la toma eléctrica.
+3. Una vez conectado el router a la toma de corriente, presione el boton de encendido, verificando que el led de encendido se active.</RouterInstall:DesPaso>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Encendido</rdfs:label>
+      </RouterInstall:ConectarRouter>
+    </RouterInstall:isProblemaOf>
+    <RouterInstall:SolucionProblema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Compruebe que la toma de corriente a la que ha conectado el router proporciona electricidad.
+Revise que ha enchufado el router a la toma de corriente correctamente.
+Compruebe que el botón de encendido se encuentra pulsado.</RouterInstall:SolucionProblema>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Verificar Transmision de Datos leds</rdfs:label>
+    >El router no se enciende.</rdfs:label>
     <RouterInstall:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Verificar Transmisión de Datos</RouterInstall:title>
-    <RouterInstall:DesPaso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Verifique que los leds están encendidos y proceda a la configuración de la conexión.</RouterInstall:DesPaso>
-  </RouterInstall:VerificarTransmision>
-  <RouterInstall:ConectarRouterUSB rdf:ID="ConectarRouterPC_USB_1">
-    <RouterInstall:DesPaso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Conecte ell router al ordenador mediante el cable USB, los led  etiquetados como Conexión y Datos se iluminarán.</RouterInstall:DesPaso>
-    <RouterInstall:hasProblema>
-      <RouterInstall:ProblemasUSB rdf:ID="ProblemasConectarRouterUSB_1">
-        <RouterInstall:isProblemaOf rdf:resource="#ConectarRouterPC_USB_1"/>
-        <RouterInstall:Problema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Luego de realizar la conexión del router al ordenador, no reconoce el dispositivo</RouterInstall:Problema>
-        <RouterInstall:SolucionProblema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Verifique que el puerto USB del ordenador funciona correctamente. Para probarlo puede conectar otro dispositivo al puerto y comprobar que funcione correctamente, en caso contrario dirgirse al proveedor de servicio para que se revición del router.</RouterInstall:SolucionProblema>
-        <RouterInstall:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Problema al Conectar el Router USB</RouterInstall:title>
-      </RouterInstall:ProblemasUSB>
-    </RouterInstall:hasProblema>
-    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.owl-ontologies.com/Ontology1325175471.owl#LedEstadoConexion</rdfs:seeAlso>
-    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.owl-ontologies.com/Ontology1325175471.owl#PuertoUSB</rdfs:seeAlso>
-    <RouterInstall:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Conectar Router al Ordenador por Cable USB</RouterInstall:title>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Conectar cable USB</rdfs:label>
-    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.owl-ontologies.com/Ontology1325175471.owl#LedEstadoLAN</rdfs:seeAlso>
-    <RouterInstall:paso rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-    >1</RouterInstall:paso>
-    <RouterInstall:pasoSiguiente rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.owl-ontologies.com/Ontology1325175471.owl#VerificarTransmisionDatos_CT-351</RouterInstall:pasoSiguiente>
-    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.owl-ontologies.com/Ontology1325175471.owl#CableUSB</rdfs:seeAlso>
-  </RouterInstall:ConectarRouterUSB>
+    >El router no se enciende.</RouterInstall:title>
+  </RouterInstall:ProblemasConfiguracionRouter>
 </rdf:RDF>
 
 <!-- Created with Protege (with OWL Plugin 3.4.7, Build 620)  http://protege.stanford.edu -->
