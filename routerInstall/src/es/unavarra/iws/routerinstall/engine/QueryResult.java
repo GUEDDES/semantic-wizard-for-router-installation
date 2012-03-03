@@ -8,7 +8,7 @@ package es.unavarra.iws.routerinstall.engine;
 import java.util.List;
 
 /**
- *
+ * Object returned by installation search queries.
  * @author Itziar
  */
 public class QueryResult {
@@ -29,7 +29,7 @@ public class QueryResult {
     }
 
     /**
-     * Get the ID for the first step to be shown to the user.
+     * Get the ID for the first installation step to be shown to the user.
      * @return
      */
     public String getStepID() {

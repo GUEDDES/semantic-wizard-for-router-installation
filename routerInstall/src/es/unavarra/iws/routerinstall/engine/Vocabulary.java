@@ -4,13 +4,15 @@
  */
 package es.unavarra.iws.routerinstall.engine;
 
-import com.hp.hpl.jena.rdf.model.*;
-import com.hp.hpl.jena.datatypes.*;
+import com.hp.hpl.jena.datatypes.BaseDatatype;
+import com.hp.hpl.jena.datatypes.RDFDatatype;
 import com.hp.hpl.jena.ontology.Individual;
 import com.hp.hpl.jena.ontology.OntClass;
 import com.hp.hpl.jena.ontology.OntModel;
+import com.hp.hpl.jena.rdf.model.Property;
 
 /**
+ * Includes the vocabulary supported by the OWL model.
  *
  * @author Itziar
  */
@@ -20,14 +22,18 @@ public class Vocabulary {
     protected static final String uriRDFDatatype = "http://www.w3.org/2001/XMLSchema#";
     protected static final String uriRDF = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
     protected static final String uriRDFS = "http://www.w3.org/2000/01/rdf-schema#";
-   
-    /** returns the URI for this schema
+
+    /**
+     * Returns the URI for this schema.
+     *
      * @return the URI for this schema
      */
     public static String getURI() {
         return uri;
     }
-    /** Classes */
+    /**
+     * Classes
+     */
     public final OntClass dSwitch;
     public final OntClass dHub;
     public final OntClass router;
@@ -56,29 +62,20 @@ public class Vocabulary {
     public final OntClass tarjetaDeRed;
     public final OntClass pasoInstalacion;
     public final OntClass problemaInstalacion;
-
-
-
-
-    /** Properties */
+   
+    /**
+     * Properties
+     */
     public final Property hasComponent;
-    public final Property isComponentOf;
     public final Property hasMicrofiltro;
-    public final Property isOfCable;
     public final Property hasPort;
-    public final Property isPortOf;
     public final Property hasTarjetaDeRed;
-    public final Property isTarjetaDeRedOf;
     public final Property isOfProveedor;
     public final Property proveedorOfModelo;
     public final Property isOfTipo;
     public final Property tipoOfRouter;
     public final Property hasPriority;
     public final Property instanceOf;
-    public final Property estaConectado;
-    public final Property estaActivado;
-    public final Property estaEncendido;
-    public final Property siguientePasoOK;
     public final Property siguientePasoError;
     public final Property seeAlso;
     public final Property manualURL;
@@ -89,7 +86,6 @@ public class Vocabulary {
     public final Property guideURL;
     public final Property descrPaso;
     public final Property pasoSiguienteOK;
-    public final Property pasoSiguienteError;
     public final Property isPasoHecho;
     public final Property hasCDInstalacion;
     public final Property hasStepPriority;
@@ -97,9 +93,10 @@ public class Vocabulary {
     public final Property problemSolution;
     public final Property isProblemOf;
     public final Property hasProblema;
-
     
-    /** Individuals */
+    /**
+     * Individuals
+     */
     public final Individual INALAMBRICO;
     public final Individual USB;
     public final Individual MONOPUERTO;
@@ -112,7 +109,6 @@ public class Vocabulary {
     public final Individual TG585v7;
     public final Individual fast2604;
     public final Individual HG556;
-
     public final Individual PASO_M_LOCALIZAR_ADSL;
     public final Individual PASO_CONECTAR_ROUTER;
     public final Individual PASO_CONECTAR_TARJETA_INALAMBRICA;
@@ -121,31 +117,26 @@ public class Vocabulary {
     public final Individual PASO_VERIFICACION_FINAL;
     public final Individual PASO_CONECTAR_PC_RJ45;
     public final Individual PASO_INSTALAR_CD;
-
-
     public final Individual ERROR_LLAMADAS;
     public final Individual ERROR_ECO;
     public final Individual ERROR_COMUNICACION_ADSL;
-    
     public final Individual ERROR_ENCENDER;
     public final Individual ERROR_SOFTWARE;
     public final Individual ERROR_ETHERNET;
     public final Individual ERROR_USB;
     public final Individual ERROR_CONFIGURACION;
     public final Individual ERROR_TARJETA_INALAMBRICA;
-    
-
     public final Individual tarjetaInalambricaI;
     public final Individual modemUSBI;
     public final Individual cdI;
 
-
     public Vocabulary(OntModel model) {
 
-        /**Classes*/
-
-        dHub = model.getOntClass(uri+"HUB");
-        dSwitch  = model.getOntClass(uri+"Switch");
+        /**
+         * Classes
+         */
+        dHub = model.getOntClass(uri + "HUB");
+        dSwitch = model.getOntClass(uri + "Switch");
         router = model.getOntClass(uri + "Router");
         antena = model.getOntClass(uri + "Antena");
         proveedor = model.getOntClass(uri + "Proveedor");
@@ -169,62 +160,44 @@ public class Vocabulary {
         puertoEthernet = model.getOntClass(uri + "PuertoEthernet");
         puertoUSB = model.getOntClass(uri + "PuertoUSB");
         puertoWLAN = model.getOntClass(uri + "PuertoWLAN");
-        tarjetaDeRed = model.getOntClass(uri+"TarjetaDeRed");
+        tarjetaDeRed = model.getOntClass(uri + "TarjetaDeRed");
+        pasoInstalacion = model.getOntClass(uri + "PasoInstalacion");
+        problemaInstalacion = model.getOntClass(uri + "Problemas");
 
-        pasoInstalacion = model.getOntClass(uri+"PasoInstalacion");
-        problemaInstalacion = model.getOntClass(uri+"Problemas");
-
-        /**Properties*/
-       hasComponent = model.getProperty(uri + "hasComponent");
-       isComponentOf = model.getProperty(uri+"isComponentOf");
-
-       //TODO: inversed
-        hasMicrofiltro = model.getProperty(uri+"hasMicrofiltroRouter");
-        isOfCable = model.getProperty(uri+"isOfCable");
-
-        hasPort = model.getProperty(uri+"hasPort");
-        isPortOf = model.getProperty(uri+"isPortOf");
-
-        hasTarjetaDeRed = model.getProperty(uri+"hasTarjetaDeRed");
-        isTarjetaDeRedOf = model.getProperty(uri+"isTarjetaDeRedOf");
-
+        /**
+         * Properties
+         */
+        hasComponent = model.getProperty(uri + "hasComponent");
+        hasMicrofiltro = model.getProperty(uri + "hasMicrofiltroRouter");
+        hasPort = model.getProperty(uri + "hasPort");
+        hasTarjetaDeRed = model.getProperty(uri + "hasTarjetaDeRed");
         isOfProveedor = model.getProperty(uri + "isOfProveedor");
-        proveedorOfModelo = model.getProperty(uri+"proveedorOfModelo");
-
+        proveedorOfModelo = model.getProperty(uri + "proveedorOfModelo");
         isOfTipo = model.getProperty(uri + "isOfTipo");
-        tipoOfRouter = model.getProperty(uri+"tipoOfRouter");
-
+        tipoOfRouter = model.getProperty(uri + "tipoOfRouter");
         hasPriority = model.createProperty(uri + "hasPriority");
-        hasStepPriority = model.createProperty(uri+"hasStepPriority");
+        hasStepPriority = model.createProperty(uri + "hasStepPriority");
         instanceOf = model.getProperty(uriRDF + "instanceOf");
-        seeAlso = model.getProperty(uriRDFS+"seeAlso");
-
-        estaConectado = model.createProperty(uri+"estaConectado");
-        estaActivado = model.createProperty(uri+"estaActivado");
-        estaEncendido = model.createProperty(uri+"estaEncendido");
-        siguientePasoOK = model.createProperty(uri, "siguientePasoOK");
+        seeAlso = model.getProperty(uriRDFS + "seeAlso");
         siguientePasoError = model.createProperty(uri, "siguientePasoError");
+        hasCDInstalacion = model.getProperty(uri + "hasCDInstalacion");
+        manualURL = model.getProperty(uri + "manual");
+        videoURL = model.getProperty(uri + "video");
+        image = model.getProperty(uri + "imagen");
+        guideURL = model.getProperty(uri + "guia");
+        title = model.getProperty(uri + "title");
+        logo = model.getProperty(uri + "logo");
+        descrPaso = model.getProperty(uri + "DesPaso");
+        pasoSiguienteOK = model.getProperty(uri + "pasoSiguiente");
+        isPasoHecho = model.getProperty(uri + "isPasoHecho");
+        problemDescr = model.getProperty(uri + "Problema");
+        problemSolution = model.getProperty(uri + "SolucionProblema");
+        isProblemOf = model.getProperty(uri + "isProblemaOf");
+        hasProblema = model.getProperty(uri + "hasProblema");
 
-        hasCDInstalacion = model.getProperty(uri+"hasCDInstalacion");
-
-        manualURL = model.getProperty(uri+"manual");
-        videoURL = model.getProperty(uri+"video");
-        image = model.getProperty(uri+"imagen");
-        guideURL = model.getProperty(uri+"guia");
-        title = model.getProperty(uri+"title");
-        logo = model.getProperty(uri+"logo");
-
-        descrPaso = model.getProperty(uri+"DesPaso");
-        pasoSiguienteOK = model.getProperty(uri+"pasoSiguiente");
-        pasoSiguienteError = model.getProperty(uri+"saltoPaso");
-        isPasoHecho = model.getProperty(uri+"isPasoHecho");
-
-         problemDescr = model.getProperty(uri+"Problema");
-         problemSolution = model.getProperty(uri+"SolucionProblema");
-         isProblemOf = model.getProperty(uri+"isProblemaOf");
-         hasProblema = model.getProperty(uri+"hasProblema");
-
-        /**Instances*/
+        /**
+         * Instances
+         */
         INALAMBRICO = model.getIndividual(uri + "Inalambrico");
         USB = model.getIndividual(uri + "USB");
         MONOPUERTO = model.getIndividual(uri + "Monopuerto");
@@ -240,119 +213,101 @@ public class Vocabulary {
         fast2604 = model.getIndividual(uri + "SagemFast_2604");
         HG556 = model.getIndividual(uri + "HG556");
 
-        //Establecer instancias
         INALAMBRICO.addProperty(instanceOf, tipoRouter);
         USB.addProperty(instanceOf, tipoRouter);
         MONOPUERTO.addProperty(instanceOf, tipoRouter);
-
         MOVISTAR.addProperty(instanceOf, proveedor);
         ORANGE.addProperty(instanceOf, proveedor);
         VODAFONE.addProperty(instanceOf, proveedor);
-
-         CT_351.addProperty(instanceOf, router);
-         CT_5071.addProperty(instanceOf, router);
+        CT_351.addProperty(instanceOf, router);
+        CT_5071.addProperty(instanceOf, router);
         x7028r.addProperty(instanceOf, router);
         TG585v7.addProperty(instanceOf, router);
         fast2604.addProperty(instanceOf, router);
-        HG556.addProperty(instanceOf, router);     
-       
-        //Añadir propiedades
-      
-         //Añadir prioridades
+        HG556.addProperty(instanceOf, router);
+
+        //Set priorities
         dHub.addProperty(hasPriority, "3");
         dSwitch.addProperty(hasPriority, "3");
         router.addProperty(hasPriority, "1");
-       
         microfiltro.addProperty(hasPriority, "5");
         ordenador.addProperty(hasPriority, "5");
         tarjetaDeRed.addProperty(hasPriority, "9");
-
         puerto.addProperty(hasPriority, "3");
-
         puertoADSL.addProperty(hasPriority, "7");
         puertoCorriente.addProperty(hasPriority, "7");
         puertoEthernet.addProperty(hasPriority, "7");
         puertoUSB.addProperty(hasPriority, "7");
         puertoWLAN.addProperty(hasPriority, "7");
-       
         INALAMBRICO.addProperty(hasPriority, "8");
         USB.addProperty(hasPriority, "8");
         MONOPUERTO.addProperty(hasPriority, "3");
-
         MOVISTAR.addProperty(hasPriority, "9");
         ORANGE.addProperty(hasPriority, "9");
         VODAFONE.addProperty(hasPriority, "9");
-
         CT_351.addProperty(hasPriority, "10");
         CT_5071.addProperty(hasPriority, "10");
         x7028r.addProperty(hasPriority, "10");
         TG585v7.addProperty(hasPriority, "10");
         fast2604.addProperty(hasPriority, "10");
         HG556.addProperty(hasPriority, "10");
-
-
-        PASO_M_LOCALIZAR_ADSL = model.getIndividual(uri+"MicrofiltroLocalizarADSL");
+        
+        tarjetaInalambricaI = model.getIndividual(uri + "TarjetaInalambrica_1");
+        modemUSBI = model.getIndividual(uri + "ModemUSB_1");
+        cdI = model.getIndividual(uri + "CDInstalacion_1");
+        
+        PASO_M_LOCALIZAR_ADSL = model.getIndividual(uri + "MicrofiltroLocalizarADSL");
+        PASO_CONECTAR_ROUTER = model.getIndividual(uri + "EncenderRouter");
+        PASO_CONECTAR_TARJETA_INALAMBRICA = model.getIndividual(uri + "CTarjetaInalambrica_1");
+        PASO_CONECTAR_MODEM_USB = model.getIndividual(uri + "CModemUSBInsertarSIM_Modem");
+        PASO_CONECTAR_PC_USB = model.getIndividual(uri + "ConectarRouterPC_USB_1");
+        PASO_VERIFICACION_FINAL = model.getIndividual(uri + "VerificarTransmisionDatos_1");
+        PASO_CONECTAR_PC_RJ45 = model.getIndividual(uri + "ConectarRouterPC_Ethernet_1");
+        PASO_INSTALAR_CD = model.getIndividual(uri + "InstalacionSoftware_1");
+       
+        ERROR_LLAMADAS = model.getIndividual(uri + "RecepcioLLamadas");
+        ERROR_COMUNICACION_ADSL = model.getIndividual(uri + "ComunicacionADSL");
+        ERROR_ECO = model.getIndividual(uri + "Eco");
+        ERROR_ETHERNET = model.getIndividual(uri + "ProblemasEthernet_1");
+        ERROR_USB = model.getIndividual(uri + "ProblemasConectarRouterUSB_1");
+        ERROR_ENCENDER = model.getIndividual(uri + "ProblemaEncendido");
+        ERROR_SOFTWARE = model.getIndividual(uri + "ProblemaSoftware");
+        ERROR_CONFIGURACION = model.getIndividual(uri + "ProblemasConfiguracionRouter_1");
+        ERROR_TARJETA_INALAMBRICA = model.getIndividual(uri + "ProblemasTarjetaInalambrica");
+        
         PASO_M_LOCALIZAR_ADSL.addProperty(instanceOf, pasoInstalacion);
-        PASO_CONECTAR_ROUTER = model.getIndividual(uri+"EncenderRouter");
         PASO_CONECTAR_ROUTER.addProperty(instanceOf, pasoInstalacion);
-        PASO_CONECTAR_TARJETA_INALAMBRICA = model.getIndividual(uri+"CTarjetaInalambrica_1");
         PASO_CONECTAR_TARJETA_INALAMBRICA.addProperty(instanceOf, pasoInstalacion);
-        PASO_CONECTAR_MODEM_USB = model.getIndividual(uri+"CModemUSBInsertarSIM_Modem");
         PASO_CONECTAR_MODEM_USB.addProperty(instanceOf, pasoInstalacion);
-        PASO_CONECTAR_PC_USB = model.getIndividual(uri+"ConectarRouterPC_USB_1");
         PASO_CONECTAR_PC_USB.addProperty(instanceOf, pasoInstalacion);
-        PASO_VERIFICACION_FINAL = model.getIndividual(uri+"VerificarTransmisionDatos_1");
         PASO_VERIFICACION_FINAL.addProperty(instanceOf, pasoInstalacion);
-        PASO_CONECTAR_PC_RJ45 = model.getIndividual(uri+"ConectarRouterPC_Ethernet_1");
         PASO_CONECTAR_PC_RJ45.addProperty(instanceOf, pasoInstalacion);
-        PASO_INSTALAR_CD = model.getIndividual(uri+"InstalacionSoftware_1");
         PASO_INSTALAR_CD.addProperty(instanceOf, pasoInstalacion);
-
-        PASO_M_LOCALIZAR_ADSL.addProperty(hasStepPriority, "5");
+              
+        ERROR_LLAMADAS.addProperty(instanceOf, problemaInstalacion);
+        ERROR_COMUNICACION_ADSL.addProperty(instanceOf, problemaInstalacion);
+        ERROR_ECO.addProperty(instanceOf, problemaInstalacion);
+        ERROR_ETHERNET.addProperty(instanceOf, problemaInstalacion);
+        ERROR_USB.addProperty(instanceOf, problemaInstalacion);
+        ERROR_ENCENDER.addProperty(instanceOf, problemaInstalacion);
+        ERROR_SOFTWARE.addProperty(instanceOf, problemaInstalacion);
+        ERROR_CONFIGURACION.addProperty(instanceOf, problemaInstalacion);
+        ERROR_TARJETA_INALAMBRICA.addProperty(instanceOf, problemaInstalacion);
+        
+        //Set step priorities
+        PASO_M_LOCALIZAR_ADSL.addProperty(hasStepPriority, "6");
         PASO_CONECTAR_ROUTER.addProperty(hasStepPriority, "5");
         PASO_CONECTAR_TARJETA_INALAMBRICA.addProperty(hasStepPriority, "5");
         PASO_CONECTAR_MODEM_USB.addProperty(hasStepPriority, "5");
         PASO_CONECTAR_PC_USB.addProperty(hasStepPriority, "5");
         PASO_VERIFICACION_FINAL.addProperty(hasStepPriority, "5");
         PASO_CONECTAR_PC_RJ45.addProperty(hasStepPriority, "5");
-        PASO_INSTALAR_CD.addProperty(hasStepPriority, "5");
-        
-        tarjetaInalambricaI = model.getIndividual(uri+"TarjetaInalambrica_1");
-        modemUSBI = model.getIndividual(uri+"ModemUSB_1");
-        cdI = model.getIndividual(uri+"CDInstalacion_1");
-
-
-        ERROR_LLAMADAS = model.getIndividual(uri+"RecepcioLLamadas");
-        ERROR_COMUNICACION_ADSL = model.getIndividual(uri+"ComunicacionADSL");
-        ERROR_ECO = model.getIndividual(uri+"Eco");
-        
-        ERROR_ETHERNET=  model.getIndividual(uri+"ProblemasEthernet_1");
-        ERROR_USB =  model.getIndividual(uri+"ProblemasConectarRouterUSB_1");
-        
-        ERROR_ENCENDER = model.getIndividual(uri+"ProblemaEncendido");
-        ERROR_SOFTWARE = model.getIndividual(uri+"ProblemaSoftware");
-        ERROR_CONFIGURACION=  model.getIndividual(uri+"ProblemasConfiguracionRouter_1");
-        
-        ERROR_TARJETA_INALAMBRICA=  model.getIndividual(uri+"ProblemasTarjetaInalambrica");
-        
-        ERROR_LLAMADAS.addProperty(instanceOf, problemaInstalacion);
-        ERROR_COMUNICACION_ADSL.addProperty(instanceOf, problemaInstalacion);
-        ERROR_ECO.addProperty(instanceOf, problemaInstalacion);
-        
-        ERROR_ETHERNET.addProperty(instanceOf, problemaInstalacion);
-        ERROR_USB.addProperty(instanceOf, problemaInstalacion);
-        
-        ERROR_ENCENDER.addProperty(instanceOf, problemaInstalacion);
-        ERROR_SOFTWARE.addProperty(instanceOf, problemaInstalacion);
-        ERROR_CONFIGURACION.addProperty(instanceOf, problemaInstalacion);
-        
-        ERROR_TARJETA_INALAMBRICA.addProperty(instanceOf, problemaInstalacion);
-
-
-
+        PASO_INSTALAR_CD.addProperty(hasStepPriority, "4");
     }
 
-    /** RDFDataTypes */
+    /**
+     * RDFDataTypes
+     */
     public static RDFDatatype getRDFDatatype(String type) {
         return new BaseDatatype(uriRDFDatatype + type);
     }

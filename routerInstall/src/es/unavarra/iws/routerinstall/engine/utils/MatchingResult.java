@@ -8,7 +8,7 @@ package es.unavarra.iws.routerinstall.engine.utils;
 import java.util.List;
 
 /**
- *
+ * Object returned by search queries.
  * @author Itziar
  */
 public class MatchingResult {

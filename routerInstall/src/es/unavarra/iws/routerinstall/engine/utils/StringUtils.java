@@ -15,7 +15,7 @@ import java.util.Iterator;
 import org.apache.log4j.Logger;
 
 /**
- *
+ * Help methods that prepare string for executing queries.
  * @author Itziar
  */
 public class StringUtils {
