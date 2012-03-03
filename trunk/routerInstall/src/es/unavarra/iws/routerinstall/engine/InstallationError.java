@@ -6,7 +6,7 @@
 package es.unavarra.iws.routerinstall.engine;
 
 /**
- *
+ * Includes the information related to an installation error.
  * @author Itziar
  */
 public class InstallationError {
@@ -22,17 +22,34 @@ public class InstallationError {
         this.problemSolution = problemSolution;
     }
 
+    /**
+     * Returns the error ID.
+     * @return 
+     */
     public String getErrorID() {
         return errorID;
     }
+    
+    /**
+     * Returns the description of the problem.
+     * @return 
+     */
     public String getProblemDescription() {
         return problemDescription;
     }
 
+    /**
+     * Returns the description of the problem solution.
+     * @return 
+     */
     public String getProblemSolution() {
         return problemSolution;
     }
 
+    /**
+     * Returns the title associated to the error screen.
+     * @return 
+     */
     public String getTitle() {
         return title;
     }

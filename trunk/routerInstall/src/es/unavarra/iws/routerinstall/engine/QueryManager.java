@@ -8,12 +8,11 @@ import com.hp.hpl.jena.ontology.Individual;
 import com.hp.hpl.jena.rdf.model.Statement;
 import es.unavarra.iws.routerinstall.engine.utils.MatchingResult;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import org.apache.log4j.Logger;
 
 /**
- *
+ * Implements IQueryManager.
  * @author Itziar
  */
 public class QueryManager implements IQueryManager {
@@ -27,7 +26,6 @@ public class QueryManager implements IQueryManager {
     public QueryManager() {
         engine = new Engine();
         engine.init();
-
     }
 
     public String executeQueryBasicConcepts(String searchString) {
@@ -35,8 +33,7 @@ public class QueryManager implements IQueryManager {
         String chosenResource = null;
 
         if (!queryResults.isEmpty()) {
-            //Buscar la página asociada con el recurso encontrado de mayor prioridad
-            chosenResource = engine.getResourceWithMaxPriority(queryResults);
+           chosenResource = engine.getResourceWithMaxPriority(queryResults);
         }
         return chosenResource;
     }
@@ -46,7 +43,6 @@ public class QueryManager implements IQueryManager {
 
         if (stmt != null) {
             String seeAlso = stmt.getString();
-
             if (seeAlso.startsWith(Vocabulary.uri)) {
                 return engine.getModel().getResource(seeAlso).getLocalName();
             } else {
@@ -62,22 +58,33 @@ public class QueryManager implements IQueryManager {
     }
 
     public String initInstallationByModelName(String routerModel) {
+        //Start the engine
         engine.init();
+        
+        //Get the individual corresponding to the router
         router = engine.getModel().getIndividual(Vocabulary.uri + routerModel);
+        
+        //Initialize the list of previous steps
+        prevSteps = new ArrayList<Individual>();
 
+        //Create the first installation step
         String firstStepName = Vocabulary.uri + routerModel + "_START";
         currentStep = engine.getModel().getIndividual(firstStepName);
         if (currentStep == null) {
             currentStep = engine.getModel().createIndividual(firstStepName, engine.getVocabulary().pasoInstalacion);
         }
-        prevSteps = new ArrayList<Individual>();
+        
         return currentStep.getLocalName().toUpperCase();
     }
 
     public String getNextStepOK() {
+        
+        //Mark the step as done
         currentStep.addProperty(engine.getVocabulary().isPasoHecho, "true");
-
+        
         prevSteps.add(currentStep);
+        
+        //Look for the next step
         currentStep = engine.getNextStep(router, currentStep);
         if (currentStep != null) {
             return getCurrentStepName();
@@ -93,12 +100,11 @@ public class QueryManager implements IQueryManager {
        } else {
            return null;
        }
-     //   return engine.getModel().getIndividual(currentStep.getProperty(engine.getVocabulary().pasoSiguienteError).getString()).getLocalName();
-
     }
 
     public String getPrevStep() {
         if (!isFirstStep()) {
+            //Go back to the previous step
             currentStep = prevSteps.remove(prevSteps.size() - 1);
             currentStep.removeAll(engine.getVocabulary().isPasoHecho);
             return (router.getLocalName() + "_" + currentStep.getLocalName()).toUpperCase();
@@ -124,7 +130,11 @@ public class QueryManager implements IQueryManager {
     }
 
     public String getCurrentStepName() {
+        if (currentStep != null && router != null) {
         return (router.getLocalName() + "_" + currentStep.getLocalName()).toUpperCase();
+        } else {
+            return "";
+        }
     }
 
     public String getCurrentStepTitle() {
@@ -136,19 +146,25 @@ public class QueryManager implements IQueryManager {
     }
 
     public QueryResult initInstallationByCharacteristics(String searchString) {
+        //Start the engine
         engine.init();
+        
         QueryResult qr = new QueryResult(null, null);
+        
+        //Try to get a list of routers whose characteristics match the search string.
         List<MatchingResult> queryResults = engine.fullSearchByLabel(searchString);
         List<String> routers = engine.tryToGetRouters(queryResults);
+        
+        //If a set of routers has not been found, search an installation step
+        //that matches the query
         if (routers.size() == engine.searchAvailableRouters().size()) {
-            logger.info("look for steps");
             currentStep = engine.searchInstallSteps(searchString);
             if (currentStep != null) {
                 String stepID = ("_" + currentStep.getLocalName()).toUpperCase();
                 qr = new QueryResult(stepID, null);
             }
+        //Otherwise, return the list of matching routers.
         } else {
-            logger.info("look for routers " + routers);
             qr = new QueryResult(null, routers);
         }
         return qr;
@@ -174,19 +190,13 @@ public class QueryManager implements IQueryManager {
         return engine.getPropertyValue(id, engine.getVocabulary().image);
     }
 
-    ;
-
     public String getLogo(String id) {
         return engine.getPropertyValue(id, engine.getVocabulary().logo);
     }
 
-    ;
-
     public String getTitle(String id) {
         return engine.getPropertyValue(id, engine.getVocabulary().title);
     }
-
-    ;
 
     public String getGuideURL(String id) {
         return engine.getPropertyValue(id, engine.getVocabulary().guideURL);
@@ -232,9 +242,7 @@ public class QueryManager implements IQueryManager {
         logger.info("list: "+qr.getRouterList());
         logger.info("step: "+qr.getStepID());
         logger.info(qm.getError().getTitle());
-
-         
-        
+     
     }
     
 }
