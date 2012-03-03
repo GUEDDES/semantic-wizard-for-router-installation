@@ -2,15 +2,18 @@ package es.unavarra.iws.routerinstall.gui;
 
 import es.unavarra.iws.routerinstall.gui.wiz.Wizard;
 import es.unavarra.iws.routerinstall.gui.wiz.WizardPanelDescriptor;
+import es.unavarra.iws.routerinstall.engine.*;
 
 public class TestMain {
     
     public static void main(String[] args) {
         
+        QueryManager qm = new QueryManager();
+        
         Wizard wizard = new Wizard();
         wizard.getDialog().setTitle("Test Wizard Dialog");
         
-        WizardPanelDescriptor descriptor1 = new Router1Panel1Descriptor("");
+        WizardPanelDescriptor descriptor1 = new Router1Panel1Descriptor("", qm);
         wizard.registerWizardPanel(Router1Panel1Descriptor.IDENTIFIER, descriptor1);
 
         WizardPanelDescriptor descriptor2 = new Router1Panel2Descriptor();

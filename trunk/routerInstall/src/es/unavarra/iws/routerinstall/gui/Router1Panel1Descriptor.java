@@ -5,6 +5,7 @@
 package es.unavarra.iws.routerinstall.gui;
 
 import es.unavarra.iws.routerinstall.gui.wiz.WizardPanelDescriptor;
+import es.unavarra.iws.routerinstall.engine.*;
 
 /**
  *
@@ -12,15 +13,19 @@ import es.unavarra.iws.routerinstall.gui.wiz.WizardPanelDescriptor;
  */
 public class Router1Panel1Descriptor extends WizardPanelDescriptor {
     
-    public static final String IDENTIFIER = "RCT5071_PANEL1";
+    public static final String IDENTIFIER = "CT-5071_START";
+    QueryManager qm;
+    String nextStep;
     
-    public Router1Panel1Descriptor(String primerPaso) {
-        super(IDENTIFIER, new Router1Panel1(primerPaso));
+    public Router1Panel1Descriptor(String primerPaso, QueryManager qm) {
+        super(IDENTIFIER, new Router1Panel1(qm.getCurrentStepTitle()));
+        this.qm = qm;
+        this.nextStep = qm.getNextStepOK();
     }
     
     @Override
     public Object getNextPanelDescriptor() {
-        return Router1Panel2Descriptor.IDENTIFIER;
+        return nextStep;
     }
     
     @Override
