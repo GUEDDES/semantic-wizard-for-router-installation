@@ -201,7 +201,7 @@ public class Instalar extends javax.swing.JPanel {
     }//GEN-LAST:event_jbX7028rActionPerformed
 
     private void jbCT351MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbCT351MouseClicked
-        String routerActual = "CT-5071";
+        String routerActual = "CT-351";
         String primerPaso;
         String ident;
         String ultimo = "";
@@ -210,21 +210,21 @@ public class Instalar extends javax.swing.JPanel {
         
         Wizard wizard = new Wizard();
         wizard.getDialog().setTitle("Instalación router " + routerActual);
-        System.out.println("1");
+        
         WizardPanelDescriptor descriptor1 = new Rct351Panel1Descriptor(primerPaso!=null ? primerPaso:"", qm);
         wizard.registerWizardPanel(Rct351Panel1Descriptor.IDENTIFIER, descriptor1);
         ident = Rct351Panel1Descriptor.IDENTIFIER;
-        System.out.println("2");
+        
         while (qm.isLastStep() == false){
             WizardPanelDescriptor descriptor = new InstalacionGeneralDescriptor(qm, ident);
             wizard.registerWizardPanel(descriptor.getPanelDescriptorIdentifier(), descriptor);
             ident = descriptor.getPanelDescriptorIdentifier().toString();
             ultimo = descriptor.getNextPanelDescriptor().toString();
         }
-        System.out.println("3");
-        WizardPanelDescriptor descriptor = new UltimoPasoDescriptor(qm, ident, ultimo);
-        wizard.registerWizardPanel(qm.getCurrentStepDescription(), descriptor);
-        System.out.println("4");
+        
+        WizardPanelDescriptor descriptor = new UltimoPasoDescriptor(qm, ident, ultimo, routerActual);
+        wizard.registerWizardPanel(descriptor.getPanelDescriptorIdentifier(), descriptor);
+        
         /*WizardPanelDescriptor descriptor1 = new Rct351Panel1Descriptor(primerPaso!=null ? primerPaso:"");
         wizard.registerWizardPanel(Rct351Panel1Descriptor.IDENTIFIER, descriptor1);
 
