@@ -201,48 +201,5 @@ public class QueryManager implements IQueryManager {
     public String getGuideURL(String id) {
         return engine.getPropertyValue(id, engine.getVocabulary().guideURL);
     }
-
-    public static void main(String[] args) {
-        QueryManager qm = new QueryManager();
-        String[] s = {"Router", "Switch", "HUB", 
-        "CT-351", "CT-5071", "SagemFast_2604", "x7028r", "TG585v7", "HG556",
-        "Inalambrico", "USB", "Monopuerto",
-            "Movistar", "Orange", "Vodafone", "TarjetaDeRed", "TarjetaDeRed", "Microfiltro", "Ordenador",
-            "PuertoADSL", "PuertoCorriente", "PuertoEthernet", "PuertoUSB", "PuertoWLAN"};
-
-      /*  for (int i = 0; i < s.length; i++) {
-            String test = s[i];
-            logger.info("------ ID: "+test+"-----");
-            logger.info("title: "+qm.getTitle(test));
-            logger.info("comment: "+qm.getComment(test));
-            logger.info("guide"+qm.getGuideURL(test));
-            logger.info("img: "+qm.getImage(test));
-            logger.info("logo: "+qm.getLogo(test));
-            logger.info("manual: "+qm.getManualURL(test));
-            logger.info("video: "+qm.getVideoURL(test));
-            logger.info("seeAlso: "+qm.getSeeAlso(test));
-        }
-        * */
-     
-
-        String step = qm.initInstallationByModelName("x7028r");
-      /*  while(!qm.isLastStep()) {
-           
-            step = qm.getNextStepOK();
-             logger.info("-------------");
-             logger.info(step);
-            logger.info(qm.getCurrentStepDescription());
-            logger.info(qm.getCurrentStepName());
-            logger.info(qm.getCurrentStepTitle());
-
-        }
-        */
-
-        QueryResult qr = qm.initInstallationByCharacteristics("sim");
-        logger.info("list: "+qr.getRouterList());
-        logger.info("step: "+qr.getStepID());
-        logger.info(qm.getError().getTitle());
-     
-    }
-    
+        
 }
