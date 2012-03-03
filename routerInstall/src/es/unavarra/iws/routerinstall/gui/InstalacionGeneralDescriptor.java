@@ -22,17 +22,14 @@ public class InstalacionGeneralDescriptor extends WizardPanelDescriptor {
     public InstalacionGeneralDescriptor(QueryManager qm, String prevStep) {
         this.qm = qm;
         IDENTIFIER = qm.getCurrentStepName();
-        panel = new InstalacionGeneral(qm.getCurrentStepName(), qm.getCurrentStepDescription());
+        //panel = new InstalacionGeneral(qm.getCurrentStepName(), qm.getCurrentStepDescription());
+        InstallationError err = qm.getError();
+        panel = new InstalacionGeneral(qm.getCurrentStepTitle(), qm.getCurrentStepDescription(), err.getTitle(), err.getProblemDescription()+err.getProblemSolution());
         this.prevStep = prevStep;
         nextStep = qm.getNextStepOK();
         
         setPanelDescriptorIdentifier(IDENTIFIER);
         setPanelComponent(panel);
-        
-        System.out.println(prevStep);
-        System.out.println(IDENTIFIER);
-        System.out.println(nextStep);
-        System.out.println("#################");
     }
     
     public String getIdentifier(){

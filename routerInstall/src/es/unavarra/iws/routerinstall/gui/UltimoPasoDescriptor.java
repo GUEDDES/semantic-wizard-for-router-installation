@@ -27,9 +27,6 @@ public class UltimoPasoDescriptor extends WizardPanelDescriptor implements Actio
         
         setPanelDescriptorIdentifier(IDENTIFIER);
         setPanelComponent(panel);
-        System.out.println(prevStep);
-        System.out.println(IDENTIFIER);
-        System.out.println("############");
     }
     
     @Override

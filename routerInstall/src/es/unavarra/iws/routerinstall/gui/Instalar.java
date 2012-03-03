@@ -279,6 +279,30 @@ private void jbX7028rMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:ev
 // TODO add your handling code here:
         String routerActual = "x7028r";
         String primerPaso;
+        String ident;
+        String ultimo = "";
+        
+        primerPaso = qm.initInstallationByModelName(routerActual);
+        
+        Wizard wizard = new Wizard();
+        wizard.getDialog().setTitle("Instalación router " + routerActual);
+        
+        WizardPanelDescriptor descriptor1 = new Rx7028rPanel1Descriptor(primerPaso!=null ? primerPaso:"", qm);
+        wizard.registerWizardPanel(Rx7028rPanel1Descriptor.IDENTIFIER, descriptor1);
+        ident = Rx7028rPanel1Descriptor.IDENTIFIER;
+        
+        while (qm.isLastStep() == false){
+            WizardPanelDescriptor descriptor = new InstalacionGeneralDescriptor(qm, ident);
+            wizard.registerWizardPanel(descriptor.getPanelDescriptorIdentifier(), descriptor);
+            ident = descriptor.getPanelDescriptorIdentifier().toString();
+            ultimo = descriptor.getNextPanelDescriptor().toString();
+        }
+        
+        WizardPanelDescriptor descriptor = new UltimoPasoDescriptor(qm, ident, ultimo, routerActual);
+        wizard.registerWizardPanel(descriptor.getPanelDescriptorIdentifier(), descriptor);
+    
+        /*String routerActual = "x7028r";
+        String primerPaso;
         
         primerPaso = qm.initInstallationByModelName(routerActual);
         
@@ -308,6 +332,8 @@ private void jbX7028rMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:ev
         
         WizardPanelDescriptor descriptor8 = new Rx7028rPanel8Descriptor();
         wizard.registerWizardPanel(Rx7028rPanel8Descriptor.IDENTIFIER, descriptor8);
+        * 
+        */
         
         wizard.setCurrentPanel(Rx7028rPanel1Descriptor.IDENTIFIER);
         
@@ -317,6 +343,30 @@ private void jbX7028rMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:ev
 private void jbCT5071MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbCT5071MouseClicked
 // TODO add your handling code here:
         String routerActual = "CT-5071";
+        String primerPaso;
+        String ident;
+        String ultimo = "";
+        
+        primerPaso = qm.initInstallationByModelName(routerActual);
+        
+        Wizard wizard = new Wizard();
+        wizard.getDialog().setTitle("Instalación router " + routerActual);
+        
+        WizardPanelDescriptor descriptor1 = new Router1Panel1Descriptor(primerPaso!=null ? primerPaso:"", qm);
+        wizard.registerWizardPanel(Router1Panel1Descriptor.IDENTIFIER, descriptor1);
+        ident = Router1Panel1Descriptor.IDENTIFIER;
+        
+        while (qm.isLastStep() == false){
+            WizardPanelDescriptor descriptor = new InstalacionGeneralDescriptor(qm, ident);
+            wizard.registerWizardPanel(descriptor.getPanelDescriptorIdentifier(), descriptor);
+            ident = descriptor.getPanelDescriptorIdentifier().toString();
+            ultimo = descriptor.getNextPanelDescriptor().toString();
+        }
+        
+        WizardPanelDescriptor descriptor = new UltimoPasoDescriptor(qm, ident, ultimo, routerActual);
+        wizard.registerWizardPanel(descriptor.getPanelDescriptorIdentifier(), descriptor);
+    
+        /*String routerActual = "CT-5071";
         String primerPaso;
         
         primerPaso = qm.initInstallationByModelName(routerActual);
@@ -345,6 +395,8 @@ private void jbCT5071MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:ev
         
         WizardPanelDescriptor descriptor7 = new Router1Panel7Descriptor(qm);
         wizard.registerWizardPanel(Router1Panel7Descriptor.IDENTIFIER, descriptor7);
+        * 
+        */
 
         wizard.setCurrentPanel(Router1Panel1Descriptor.IDENTIFIER);
         
@@ -413,7 +465,31 @@ private void jbHG556MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
 
 private void jbTG585v7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbTG585v7MouseClicked
 // TODO add your handling code here:
-            String routerActual = "TG585v7";
+        String routerActual = "TG585v7";
+        String primerPaso;
+        String ident;
+        String ultimo = "";
+        
+        primerPaso = qm.initInstallationByModelName(routerActual);
+        
+        Wizard wizard = new Wizard();
+        wizard.getDialog().setTitle("Instalación router " + routerActual);
+        
+        WizardPanelDescriptor descriptor1 = new RTG585v7Panel1Descriptor(primerPaso!=null ? primerPaso:"", qm);
+        wizard.registerWizardPanel(RTG585v7Panel1Descriptor.IDENTIFIER, descriptor1);
+        ident = RTG585v7Panel1Descriptor.IDENTIFIER;
+        
+        while (qm.isLastStep() == false){
+            WizardPanelDescriptor descriptor = new InstalacionGeneralDescriptor(qm, ident);
+            wizard.registerWizardPanel(descriptor.getPanelDescriptorIdentifier(), descriptor);
+            ident = descriptor.getPanelDescriptorIdentifier().toString();
+            ultimo = descriptor.getNextPanelDescriptor().toString();
+        }
+        
+        WizardPanelDescriptor descriptor = new UltimoPasoDescriptor(qm, ident, ultimo, routerActual);
+        wizard.registerWizardPanel(descriptor.getPanelDescriptorIdentifier(), descriptor);
+    
+        /*String routerActual = "TG585v7";
         String primerPaso;
         
         primerPaso = qm.initInstallationByModelName(routerActual);
@@ -442,6 +518,8 @@ private void jbTG585v7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:e
         
         WizardPanelDescriptor descriptor7 = new RTG585v7Panel8Descriptor();
         wizard.registerWizardPanel(RTG585v7Panel8Descriptor.IDENTIFIER, descriptor7);
+        * 
+        */
 
         wizard.setCurrentPanel(RTG585v7Panel1Descriptor.IDENTIFIER);
         
@@ -452,6 +530,30 @@ private void jbTG585v7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:e
 private void jbSagemFast2604MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbSagemFast2604MouseClicked
 // TODO add your handling code here:
         String routerActual = "SagemFast_2604";
+        String primerPaso;
+        String ident;
+        String ultimo = "";
+        
+        primerPaso = qm.initInstallationByModelName(routerActual);
+        
+        Wizard wizard = new Wizard();
+        wizard.getDialog().setTitle("Instalación router " + routerActual);
+        
+        WizardPanelDescriptor descriptor1 = new RSagemFast_2604Panel1Descriptor(primerPaso!=null ? primerPaso:"", qm);
+        wizard.registerWizardPanel(RSagemFast_2604Panel1Descriptor.IDENTIFIER, descriptor1);
+        ident = RSagemFast_2604Panel1Descriptor.IDENTIFIER;
+        
+        while (qm.isLastStep() == false){
+            WizardPanelDescriptor descriptor = new InstalacionGeneralDescriptor(qm, ident);
+            wizard.registerWizardPanel(descriptor.getPanelDescriptorIdentifier(), descriptor);
+            ident = descriptor.getPanelDescriptorIdentifier().toString();
+            ultimo = descriptor.getNextPanelDescriptor().toString();
+        }
+        
+        WizardPanelDescriptor descriptor = new UltimoPasoDescriptor(qm, ident, ultimo, routerActual);
+        wizard.registerWizardPanel(descriptor.getPanelDescriptorIdentifier(), descriptor);
+    
+        /*String routerActual = "SagemFast_2604";
         String primerPaso;
         
         primerPaso = qm.initInstallationByModelName(routerActual);
@@ -482,6 +584,8 @@ private void jbSagemFast2604MouseClicked(java.awt.event.MouseEvent evt) {//GEN-F
         
         WizardPanelDescriptor descriptor8 = new RSagemFast_2604Panel8Descriptor();
         wizard.registerWizardPanel(RSagemFast_2604Panel8Descriptor.IDENTIFIER, descriptor8);
+        * 
+        */
         
         wizard.setCurrentPanel(RSagemFast_2604Panel1Descriptor.IDENTIFIER);
         

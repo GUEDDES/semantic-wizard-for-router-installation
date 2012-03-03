@@ -18,12 +18,10 @@ public class Rct351Panel1Descriptor extends WizardPanelDescriptor {
     String nextStep;
     
     public Rct351Panel1Descriptor(String primerPaso, QueryManager qm) {
-        super(IDENTIFIER, new Rct351Panel1(primerPaso));
+        super(IDENTIFIER, new Rct351Panel1(qm.getCurrentStepTitle()));
         this.qm = qm;
         this.nextStep = qm.getNextStepOK();
         
-        System.out.println(nextStep);
-        System.out.println("############");
     }
     
     @Override

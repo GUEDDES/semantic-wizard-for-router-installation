@@ -5,6 +5,7 @@
 package es.unavarra.iws.routerinstall.gui;
 
 import es.unavarra.iws.routerinstall.gui.wiz.WizardPanelDescriptor;
+import es.unavarra.iws.routerinstall.engine.*;
 
 /**
  *
@@ -12,15 +13,19 @@ import es.unavarra.iws.routerinstall.gui.wiz.WizardPanelDescriptor;
  */
 public class RSagemFast_2604Panel1Descriptor extends WizardPanelDescriptor {
     
-    public static final String IDENTIFIER = "RSAGEMFAST_2604_INTRODUCTION_PANEL";
+    public static final String IDENTIFIER = "SAGEMFAST_2604_START";
+    QueryManager qm;
+    String nextStep;
     
-    public RSagemFast_2604Panel1Descriptor(String primerPaso) {
-        super(IDENTIFIER, new RSagemFast_2604Panel1(primerPaso));
+    public RSagemFast_2604Panel1Descriptor(String primerPaso, QueryManager qm) {
+        super(IDENTIFIER, new RSagemFast_2604Panel1(qm.getCurrentStepTitle()));
+        this.qm = qm;
+        this.nextStep = qm.getNextStepOK();
     }
     
     @Override
     public Object getNextPanelDescriptor() {
-        return RSagemFast_2604Panel2Descriptor.IDENTIFIER;
+        return nextStep;
     }
     
     @Override
