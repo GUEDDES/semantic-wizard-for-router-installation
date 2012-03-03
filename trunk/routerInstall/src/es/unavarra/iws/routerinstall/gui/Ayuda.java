@@ -85,6 +85,7 @@ public class Ayuda extends javax.swing.JPanel {
         jpPF.setLayout(new java.awt.BorderLayout());
 
         jtaPF.setColumns(20);
+        jtaPF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jtaPF.setLineWrap(true);
         jtaPF.setRows(5);
         jtaPF.setWrapStyleWord(true);
@@ -100,6 +101,7 @@ public class Ayuda extends javax.swing.JPanel {
         jpIN.setLayout(new java.awt.BorderLayout());
 
         jtaRS.setColumns(20);
+        jtaRS.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jtaRS.setLineWrap(true);
         jtaRS.setRows(5);
         jtaRS.setWrapStyleWord(true);
@@ -157,7 +159,9 @@ public class Ayuda extends javax.swing.JPanel {
             Iterator iter = list.iterator();
             while (iter.hasNext()){
                 InstallationError ie = (InstallationError)iter.next();
-                sResultado += ("["+i+"] "+ie.getProblemDescription()+ "\n"+ie.getProblemSolution()+"\n\n");
+                sResultado += ("[ " + i + " ] " + ie.getProblemDescription()+ "\n"
+                        +"-----------------------------------------------------\n"
+                        +ie.getProblemSolution()+"\n\n");
                 i++;
             }
             jtaPF.setText(sResultado);
