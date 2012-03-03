@@ -21,20 +21,26 @@ public class UltimoPaso extends javax.swing.JPanel {
     String video;
     public UltimoPaso(QueryManager qm, String id) {
         initComponents();
-        manual = qm.getManualURL("CT-351");
-        guia = qm.getGuideURL("CT-351");
-        video = qm.getVideoURL("CT-351");
+        manual = qm.getManualURL(id);
+        guia = qm.getGuideURL(id);
+        video = qm.getVideoURL(id);
         if (manual.length() == 0){
             jLabel7.setEnabled(false);
+            jLabel7.setVisible(false);
             jLabel3.setEnabled(false);
+            jLabel3.setVisible(false);
         }
         if (guia.length() == 0){
             jLabel8.setEnabled(false);
+            jLabel8.setVisible(false);
             jLabel5.setEnabled(false);
+            jLabel5.setVisible(false);
         }
         if (video.length() == 0){
             jLabel2.setEnabled(false);
+            jLabel2.setVisible(false);
             jLabel4.setEnabled(false);
+            jLabel4.setVisible(false);
         }
     }
     /*
@@ -133,6 +139,11 @@ public class UltimoPaso extends javax.swing.JPanel {
         jPanel1.add(jLabel2);
 
         jLabel4.setText("<html><a href=\"\">Enlace</a></html>\");");
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
         jPanel1.add(jLabel4);
 
         jpContenido.add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -146,7 +157,7 @@ private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
         if (java.awt.Desktop.isDesktopSupported()) {
             java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
             if (desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
-                desktop.browse(new java.net.URI("http://movil.orange.es/contenidos/pdf/internet/manual_instalacion_sagemf2604.pdf"));
+                desktop.browse(new java.net.URI(manual));
             }
         }
     } catch (Exception e) {
@@ -156,7 +167,31 @@ private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
 
 private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
 // TODO add your handling code here:
+        try {
+        if (java.awt.Desktop.isDesktopSupported()) {
+            java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+            if (desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+                desktop.browse(new java.net.URI(guia));
+            }
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
 }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+            try {
+        if (java.awt.Desktop.isDesktopSupported()) {
+            java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+            if (desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+                desktop.browse(new java.net.URI(video));
+            }
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup2;

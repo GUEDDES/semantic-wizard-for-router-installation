@@ -20,14 +20,15 @@ public class UltimoPasoDescriptor extends WizardPanelDescriptor implements Actio
     UltimoPaso panel;
     String prevStep;
     
-    public UltimoPasoDescriptor(QueryManager qm, String prevStep, String ultimo) {
+    public UltimoPasoDescriptor(QueryManager qm, String prevStep, String ultimo, String router) {
         IDENTIFIER = ultimo;
-        panel = new UltimoPaso(qm, IDENTIFIER);
+        panel = new UltimoPaso(qm, router);
         this.prevStep = prevStep;
         
         setPanelDescriptorIdentifier(IDENTIFIER);
         setPanelComponent(panel);
         System.out.println(prevStep);
+        System.out.println(IDENTIFIER);
         System.out.println("############");
     }
     
