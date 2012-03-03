@@ -1,4 +1,4 @@
-; Sat Mar 03 18:28:26 CET 2012
+; Sat Mar 03 20:59:00 CET 2012
 ; 
 ;+ (version "3.4.7")
 ;+ (build "Build 620")
@@ -6,11 +6,11 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[RouterInstall_ProjectKB_Class853]
-		[RouterInstall_ProjectKB_Class854]
-		[RouterInstall_ProjectKB_Class855]
-		[RouterInstall_ProjectKB_Class856]
-		[RouterInstall_ProjectKB_Class857]))
+		[RouterInstall_ProjectKB_Class868]
+		[RouterInstall_ProjectKB_Class869]
+		[RouterInstall_ProjectKB_Class870]
+		[RouterInstall_ProjectKB_Class871]
+		[RouterInstall_ProjectKB_Class872]))
 
 ([CLSES_TAB] of  Widget
 
@@ -6282,39 +6282,39 @@
 	(property_list [RouterInstall_ProjectKB_Class86])
 	(widget_class_name "edu.stanford.smi.protegex.datamaster.DataMasterTab"))
 
-([RouterInstall_ProjectKB_Class853] of  String
+([RouterInstall_ProjectKB_Class86] of  Property_List
+)
+
+([RouterInstall_ProjectKB_Class868] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([RouterInstall_ProjectKB_Class854] of  String
+([RouterInstall_ProjectKB_Class869] of  String
 
 	(name "http://www.w3.org/2002/07/owl#Class")
 	(string_value "%3ANAME"))
-
-([RouterInstall_ProjectKB_Class855] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([RouterInstall_ProjectKB_Class856] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([RouterInstall_ProjectKB_Class857] of  String
-
-	(name "http://www.w3.org/2002/07/owl#Thing")
-	(string_value "%3ANAME"))
-
-([RouterInstall_ProjectKB_Class86] of  Property_List
-)
 
 ([RouterInstall_ProjectKB_Class87] of  Widget
 
 	(is_hidden TRUE)
 	(property_list [RouterInstall_ProjectKB_Class88])
 	(widget_class_name "dfki.protege.ontoviz_tab.OntovizTab"))
+
+([RouterInstall_ProjectKB_Class870] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([RouterInstall_ProjectKB_Class871] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([RouterInstall_ProjectKB_Class872] of  String
+
+	(name "http://www.w3.org/2002/07/owl#Thing")
+	(string_value "%3ANAME"))
 
 ([RouterInstall_ProjectKB_Class88] of  Property_List
 )

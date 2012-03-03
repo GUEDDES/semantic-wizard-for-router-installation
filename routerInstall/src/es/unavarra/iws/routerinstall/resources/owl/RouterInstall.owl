@@ -4917,7 +4917,7 @@ Con un lápiz o un clip, mantén pulsado durante 10 segundos el botón Reset. Si
     <RouterInstall:Problema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >No es posible insertar la tarjeta inalámbrica.</RouterInstall:Problema>
     <RouterInstall:SolucionProblema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Compruebe que la tarjeta inalámbrica se encuentra en buen estado y que la estái insertando en el puerto WLAN correctamente. Si la tarjeta presenta algún desperfecto, consulte a su proveedor de servicios.</RouterInstall:SolucionProblema>
+    >Compruebe que la tarjeta inalámbrica se encuentra en buen estado y que la está insertando en el puerto WLAN correctamente. Si la tarjeta presenta algún desperfecto, consulte a su proveedor de servicios.</RouterInstall:SolucionProblema>
     <RouterInstall:isProblemaOf>
       <RouterInstall:CTarjetaInalambrica rdf:ID="CTarjetaInalambrica_1">
         <RouterInstall:hasProblema rdf:resource="#ProblemasTarjetaInalambrica"/>
@@ -5040,6 +5040,8 @@ Asegúrese de que el cable Ethernet este en buen estado, en caso contrario, cons
         <RouterInstall:hasProblema rdf:resource="#ProblemaEncendido"/>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >http://www.owl-ontologies.com/Ontology1325175471.owl#LedEncendido</rdfs:seeAlso>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Enciende</rdfs:label>
         <RouterInstall:paso rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >3</RouterInstall:paso>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -5052,8 +5054,6 @@ Asegúrese de que el cable Ethernet este en buen estado, en caso contrario, cons
         >1. Conecte el cable ADSL de la clavija extensora al puerto ADSL del router.
 2. Conecte el cable de alimentación al router y a la toma eléctrica.
 3. Una vez conectado el router a la toma de corriente, presione el boton de encendido, verificando que el led de encendido se active.</RouterInstall:DesPaso>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Encendido</rdfs:label>
       </RouterInstall:ConectarRouter>
     </RouterInstall:isProblemaOf>
     <RouterInstall:SolucionProblema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"

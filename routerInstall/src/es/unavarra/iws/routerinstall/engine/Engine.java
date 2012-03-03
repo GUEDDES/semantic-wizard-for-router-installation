@@ -603,7 +603,7 @@ public class Engine {
         List<List<String>> list = querySPARQL(queryString, params);
         return new MatchingResult(list, searchString.length());
     }
-
+    
     private OntClass getClassOfIndividual(String individualName) {
         OntClass ontClass = null;
         try {
