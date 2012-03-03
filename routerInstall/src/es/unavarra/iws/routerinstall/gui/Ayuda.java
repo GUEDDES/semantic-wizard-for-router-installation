@@ -4,6 +4,7 @@
  */
 package es.unavarra.iws.routerinstall.gui;
 
+import es.unavarra.iws.routerinstall.engine.InstallationError;
 import es.unavarra.iws.routerinstall.engine.QueryManager;
 import java.awt.Container;
 import java.util.ArrayList;
@@ -46,7 +47,7 @@ public class Ayuda extends javax.swing.JPanel {
         jtaPF = new javax.swing.JTextArea();
         jpIN = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jtaIN = new javax.swing.JTextArea();
+        jtaRS = new javax.swing.JTextArea();
         jbActualizar = new javax.swing.JButton();
         jlBackground = new javax.swing.JLabel();
 
@@ -98,11 +99,11 @@ public class Ayuda extends javax.swing.JPanel {
         jpIN.setOpaque(false);
         jpIN.setLayout(new java.awt.BorderLayout());
 
-        jtaIN.setColumns(20);
-        jtaIN.setLineWrap(true);
-        jtaIN.setRows(5);
-        jtaIN.setWrapStyleWord(true);
-        jScrollPane2.setViewportView(jtaIN);
+        jtaRS.setColumns(20);
+        jtaRS.setLineWrap(true);
+        jtaRS.setRows(5);
+        jtaRS.setWrapStyleWord(true);
+        jScrollPane2.setViewportView(jtaRS);
 
         jpIN.add(jScrollPane2, java.awt.BorderLayout.CENTER);
 
@@ -140,19 +141,26 @@ public class Ayuda extends javax.swing.JPanel {
     private void jbActualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbActualizarMouseClicked
         // TODO add your handling code here:
         String sResultado = "";
-        List<String> list = new ArrayList<String>();
-        Random r = new Random();
-        
         int sel = jtpAyuda.getSelectedIndex(); 
         if(sel==1){
+            List<String> list = new ArrayList<String>();
             list = qm.getAvailableRouters();
             Iterator iter = list.iterator();
             while (iter.hasNext()){
                 sResultado += (iter.next() + "\n\n");
             }
+            jtaRS.setText(sResultado);
+        }else if(sel==0){
+            List<InstallationError> list = new ArrayList<InstallationError>();
+            int i=1;
+            list = qm.getFrequentErrors();
+            Iterator iter = list.iterator();
+            while (iter.hasNext()){
+                InstallationError ie = (InstallationError)iter.next();
+                sResultado += ("["+i+"] "+ie.getProblemDescription()+ "\n"+ie.getProblemSolution()+"\n\n");
+                i++;
+            }
             jtaPF.setText(sResultado);
-        }else if(sel==2){
-            jtaIN.setText(jtaIN.getText()+ "\nProblema: " + (r.nextInt(10)+1) );
         }
             
     }//GEN-LAST:event_jbActualizarMouseClicked
@@ -168,8 +176,8 @@ public class Ayuda extends javax.swing.JPanel {
     private javax.swing.JLabel jlTitulo;
     private javax.swing.JPanel jpIN;
     private javax.swing.JPanel jpPF;
-    private javax.swing.JTextArea jtaIN;
     private javax.swing.JTextArea jtaPF;
+    private javax.swing.JTextArea jtaRS;
     private javax.swing.JTabbedPane jtpAyuda;
     // End of variables declaration//GEN-END:variables
 }
