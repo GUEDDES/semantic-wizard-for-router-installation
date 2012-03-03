@@ -113,7 +113,6 @@ public class Vocabulary {
     public final Individual fast2604;
     public final Individual HG556;
 
-    public final Individual PASO_ERROR_DEF;
     public final Individual PASO_M_LOCALIZAR_ADSL;
     public final Individual PASO_CONECTAR_ROUTER;
     public final Individual PASO_CONECTAR_TARJETA_INALAMBRICA;
@@ -124,12 +123,17 @@ public class Vocabulary {
     public final Individual PASO_INSTALAR_CD;
 
 
-    public final Individual ERROR_MICROFILTRO;
+    public final Individual ERROR_LLAMADAS;
+    public final Individual ERROR_ECO;
+    public final Individual ERROR_COMUNICACION_ADSL;
+    
     public final Individual ERROR_ENCENDER;
-    public final Individual ERROR_CD;
+    public final Individual ERROR_SOFTWARE;
     public final Individual ERROR_ETHERNET;
+    public final Individual ERROR_USB;
     public final Individual ERROR_CONFIGURACION;
-    public final Individual ERROR_TRANSMISION;
+    public final Individual ERROR_TARJETA_INALAMBRICA;
+    
 
     public final Individual tarjetaInalambricaI;
     public final Individual modemUSBI;
@@ -287,8 +291,6 @@ public class Vocabulary {
         HG556.addProperty(hasPriority, "10");
 
 
-        PASO_ERROR_DEF = model.getIndividual(uri+"PasoErrorDef");
-        PASO_ERROR_DEF.addProperty(instanceOf, pasoInstalacion);
         PASO_M_LOCALIZAR_ADSL = model.getIndividual(uri+"MicrofiltroLocalizarADSL");
         PASO_M_LOCALIZAR_ADSL.addProperty(instanceOf, pasoInstalacion);
         PASO_CONECTAR_ROUTER = model.getIndividual(uri+"EncenderRouter");
@@ -320,19 +322,31 @@ public class Vocabulary {
         cdI = model.getIndividual(uri+"CDInstalacion_1");
 
 
-       ERROR_MICROFILTRO = model.getIndividual(uri+"ComunicacionADSL");
-      
-    ERROR_ENCENDER = model.getIndividual(uri+"ProblemasConectaRouterEthernet_1");
-    ERROR_CD=  model.getIndividual(uri+"ProblemasConectarRouterUSB_1");
-    ERROR_ETHERNET=  model.getIndividual(uri+"ProblemasConectaRouterEthernet_1");
-   ERROR_CONFIGURACION=  model.getIndividual(uri+"ProblemasConfiguracionRouter_1");
-    ERROR_TRANSMISION=  model.getIndividual(uri+"ProblemasTransmision_1");
-
-     ERROR_MICROFILTRO.addProperty(instanceOf, problemaInstalacion);
-      ERROR_ENCENDER.addProperty(instanceOf, problemaInstalacion);
-       ERROR_CD.addProperty(instanceOf, problemaInstalacion);
+        ERROR_LLAMADAS = model.getIndividual(uri+"RecepcioLLamadas");
+        ERROR_COMUNICACION_ADSL = model.getIndividual(uri+"ComunicacionADSL");
+        ERROR_ECO = model.getIndividual(uri+"Eco");
+        
+        ERROR_ETHERNET=  model.getIndividual(uri+"ProblemasEthernet_1");
+        ERROR_USB =  model.getIndividual(uri+"ProblemasConectarRouterUSB_1");
+        
+        ERROR_ENCENDER = model.getIndividual(uri+"ProblemaEncendido");
+        ERROR_SOFTWARE = model.getIndividual(uri+"ProblemaSoftware");
+        ERROR_CONFIGURACION=  model.getIndividual(uri+"ProblemasConfiguracionRouter_1");
+        
+        ERROR_TARJETA_INALAMBRICA=  model.getIndividual(uri+"ProblemasTarjetaInalambrica");
+        
+        ERROR_LLAMADAS.addProperty(instanceOf, problemaInstalacion);
+        ERROR_COMUNICACION_ADSL.addProperty(instanceOf, problemaInstalacion);
+        ERROR_ECO.addProperty(instanceOf, problemaInstalacion);
+        
+        ERROR_ETHERNET.addProperty(instanceOf, problemaInstalacion);
+        ERROR_USB.addProperty(instanceOf, problemaInstalacion);
+        
+        ERROR_ENCENDER.addProperty(instanceOf, problemaInstalacion);
+        ERROR_SOFTWARE.addProperty(instanceOf, problemaInstalacion);
         ERROR_CONFIGURACION.addProperty(instanceOf, problemaInstalacion);
-        ERROR_TRANSMISION.addProperty(instanceOf, problemaInstalacion);
+        
+        ERROR_TARJETA_INALAMBRICA.addProperty(instanceOf, problemaInstalacion);
 
 
 

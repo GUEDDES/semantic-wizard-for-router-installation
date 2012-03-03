@@ -194,6 +194,7 @@ public class Engine {
     }
 
     public InstallationError createInstallationError(Individual error) {
+        logger.info(error);
         String id = "ERROR_" + error.getProperty(vocabulary.isProblemOf).getObject().asResource().getLocalName().toUpperCase();
         String title = error.getProperty(vocabulary.title).getString();
         String descr = error.getProperty(vocabulary.problemDescr).getString();

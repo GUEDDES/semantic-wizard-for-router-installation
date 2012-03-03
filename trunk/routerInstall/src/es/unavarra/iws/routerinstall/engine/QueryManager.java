@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -212,6 +212,8 @@ public class QueryManager implements IQueryManager {
             logger.info("video: "+qm.getVideoURL(test));
             logger.info("seeAlso: "+qm.getSeeAlso(test));
         }
+        * */
+     
 
         String step = qm.initInstallationByModelName("x7028r");
       /*  while(!qm.isLastStep()) {
@@ -223,20 +225,16 @@ public class QueryManager implements IQueryManager {
             logger.info(qm.getCurrentStepName());
             logger.info(qm.getCurrentStepTitle());
 
-        }*/
+        }
+        */
 
-        QueryResult qr = qm.initInstallationByCharacteristics("ethernet");
+        QueryResult qr = qm.initInstallationByCharacteristics("sim");
         logger.info("list: "+qr.getRouterList());
         logger.info("step: "+qr.getStepID());
-    
-           List<InstallationError> list = qm.getFrequentErrors();
-        Iterator<InstallationError> it = list.iterator();
-        while (it.hasNext()) {
-            InstallationError o = it.next();
-             logger.info("di:"+o.getErrorID());
-            logger.info("title:"+o.getTitle());
-            logger.info("descr:"+o.getProblemDescription());
-            logger.info("sol: "+o.getProblemSolution());
-        }
+        logger.info(qm.getError().getTitle());
+
+         
+        
     }
+    
 }
