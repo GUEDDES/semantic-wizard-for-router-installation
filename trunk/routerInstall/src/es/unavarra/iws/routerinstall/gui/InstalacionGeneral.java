@@ -4,7 +4,7 @@
  */
 package es.unavarra.iws.routerinstall.gui;
 
-import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -13,14 +13,23 @@ import javax.swing.ImageIcon;
 public class InstalacionGeneral extends javax.swing.JPanel {
 
     /**
-     * Creates new form CConceptos
+     * Creates new form Router1Panel2
      */
     public InstalacionGeneral(String titulo, String comments) {
         initComponents();
         jlTitulo.setText(titulo);
         jtaComments.setText(comments);
     }
-
+/*
+    public boolean isCheckBoxSelected() {
+        return jCheckBox1.isSelected();
+    }    
+    
+    public void addCheckBoxActionListener(ActionListener l) {
+        jCheckBox1.addActionListener(l);
+    }    
+     * 
+     */
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,57 +39,74 @@ public class InstalacionGeneral extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        jpTitulo = new javax.swing.JPanel();
         jlTitulo = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jlIcono = new javax.swing.JLabel();
+        jpContenido = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtaComments = new javax.swing.JTextArea();
-        jlFondo = new javax.swing.JLabel();
+        jpBotonError = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
 
-        setAlignmentX(0.0F);
-        setAlignmentY(0.0F);
-        setOpaque(false);
-        setPreferredSize(new java.awt.Dimension(463, 435));
-        setLayout(null);
+        setLayout(new java.awt.BorderLayout());
 
-        jlTitulo.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-        jlTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlTitulo.setText("Titulo");
-        jlTitulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add(jlTitulo);
-        jlTitulo.setBounds(10, 20, 440, 23);
+        jpTitulo.setForeground(java.awt.Color.gray);
+        jpTitulo.setLayout(new java.awt.BorderLayout());
 
-        jScrollPane1.setOpaque(false);
+        jlTitulo.setBackground(java.awt.Color.lightGray);
+        jlTitulo.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jlTitulo.setText("Conectar SIM al Modem");
+        jlTitulo.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        jlTitulo.setOpaque(true);
+        jpTitulo.add(jlTitulo, java.awt.BorderLayout.CENTER);
+
+        jSeparator1.setBackground(java.awt.Color.lightGray);
+        jSeparator1.setOpaque(true);
+        jpTitulo.add(jSeparator1, java.awt.BorderLayout.SOUTH);
+
+        jlIcono.setBackground(java.awt.Color.lightGray);
+        jlIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/setting32.png"))); // NOI18N
+        jlIcono.setOpaque(true);
+        jpTitulo.add(jlIcono, java.awt.BorderLayout.LINE_END);
+
+        add(jpTitulo, java.awt.BorderLayout.NORTH);
+
+        jpContenido.setLayout(new java.awt.BorderLayout());
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(480, 192));
+        jPanel1.setLayout(new java.awt.GridLayout(0, 1));
 
         jtaComments.setColumns(20);
-        jtaComments.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jtaComments.setEditable(false);
         jtaComments.setLineWrap(true);
         jtaComments.setRows(5);
-        jtaComments.setWrapStyleWord(true);
-        jtaComments.setOpaque(false);
         jScrollPane1.setViewportView(jtaComments);
 
-        add(jScrollPane1);
-        jScrollPane1.setBounds(15, 80, 430, 270);
+        jPanel1.add(jScrollPane1);
 
-        jlFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/vista_c.png"))); // NOI18N
-        add(jlFondo);
-        jlFondo.setBounds(0, 0, 463, 435);
+        jpContenido.add(jPanel1, java.awt.BorderLayout.CENTER);
+
+        add(jpContenido, java.awt.BorderLayout.CENTER);
+
+        jButton1.setLabel("Error");
+        jpBotonError.add(jButton1);
+
+        add(jpBotonError, java.awt.BorderLayout.SOUTH);
     }// </editor-fold>//GEN-END:initComponents
-
-    /** Returns an ImageIcon, or null if the path was invalid. */
-    protected ImageIcon createImageIcon(String path,
-                                           String description) {
-    java.net.URL imgURL = getClass().getResource(path);
-    if (imgURL != null) {
-        return new ImageIcon(imgURL, description);
-    } else {
-        System.err.println("Couldn't find file: " + path);
-        return null;
-    }
-}
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel jlFondo;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel jlIcono;
     private javax.swing.JLabel jlTitulo;
+    private javax.swing.JPanel jpBotonError;
+    private javax.swing.JPanel jpContenido;
+    private javax.swing.JPanel jpTitulo;
     private javax.swing.JTextArea jtaComments;
     // End of variables declaration//GEN-END:variables
 }

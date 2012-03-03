@@ -5,6 +5,7 @@
 package es.unavarra.iws.routerinstall.gui;
 
 import es.unavarra.iws.routerinstall.gui.wiz.WizardPanelDescriptor;
+import es.unavarra.iws.routerinstall.engine.*;
 
 /**
  *
@@ -12,15 +13,22 @@ import es.unavarra.iws.routerinstall.gui.wiz.WizardPanelDescriptor;
  */
 public class RHG556Panel1Descriptor extends WizardPanelDescriptor {
     
-    public static final String IDENTIFIER = "RHG556_INTRODUCTION_PANEL";
+    public static final String IDENTIFIER = "HG556_START";
+    QueryManager qm;
+    String nextStep;
     
-    public RHG556Panel1Descriptor(String primerPaso) {
+    public RHG556Panel1Descriptor(String primerPaso, QueryManager qm) {
         super(IDENTIFIER, new RHG556Panel1(primerPaso));
+        this.qm = qm;
+        this.nextStep = qm.getNextStepOK();
+        
+        System.out.println(nextStep);
+        System.out.println("############");
     }
     
     @Override
     public Object getNextPanelDescriptor() {
-        return RHG556Panel2Descriptor.IDENTIFIER;
+        return nextStep;
     }
     
     @Override
