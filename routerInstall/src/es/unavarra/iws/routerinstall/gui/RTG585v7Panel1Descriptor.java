@@ -18,7 +18,7 @@ public class RTG585v7Panel1Descriptor extends WizardPanelDescriptor {
     String nextStep;
     
     public RTG585v7Panel1Descriptor(String primerPaso, QueryManager qm) {
-        super(IDENTIFIER, new RTG585v7Panel1(primerPaso));
+        super(IDENTIFIER, new RTG585v7Panel1(qm.getCurrentStepTitle()));
         this.qm = qm;
         this.nextStep = qm.getNextStepOK();
     }
