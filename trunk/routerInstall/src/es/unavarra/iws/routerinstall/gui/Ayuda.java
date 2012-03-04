@@ -43,11 +43,7 @@ public class Ayuda extends javax.swing.JPanel {
         jlBarra = new javax.swing.JLabel();
         jtpAyuda = new javax.swing.JTabbedPane();
         jpPF = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jtaPF = new javax.swing.JTextArea();
         jpIN = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jtaRS = new javax.swing.JTextArea();
         jbActualizar = new javax.swing.JButton();
         jlBackground = new javax.swing.JLabel();
 
@@ -83,40 +79,21 @@ public class Ayuda extends javax.swing.JPanel {
         jpPF.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
         jpPF.setOpaque(false);
         jpPF.setLayout(new java.awt.BorderLayout());
-
-        jtaPF.setColumns(20);
-        jtaPF.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jtaPF.setLineWrap(true);
-        jtaPF.setRows(5);
-        jtaPF.setWrapStyleWord(true);
-        jScrollPane1.setViewportView(jtaPF);
-
-        jpPF.add(jScrollPane1, java.awt.BorderLayout.CENTER);
-
-        jtpAyuda.addTab("Problemas Frecuentes", new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/misc_03_16.png")), jpPF); // NOI18N
+        jtpAyuda.addTab("  Problemas Frecuentes  ", new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/misc_03_16.png")), jpPF); // NOI18N
 
         jpIN.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jpIN.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
         jpIN.setOpaque(false);
         jpIN.setLayout(new java.awt.BorderLayout());
-
-        jtaRS.setColumns(20);
-        jtaRS.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jtaRS.setLineWrap(true);
-        jtaRS.setRows(5);
-        jtaRS.setWrapStyleWord(true);
-        jScrollPane2.setViewportView(jtaRS);
-
-        jpIN.add(jScrollPane2, java.awt.BorderLayout.CENTER);
-
-        jtpAyuda.addTab("Routers soportados", new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/misc_53_16.png")), jpIN); // NOI18N
+        jtpAyuda.addTab("  Routers soportados  ", new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/wlan16.png")), jpIN); // NOI18N
 
         add(jtpAyuda);
-        jtpAyuda.setBounds(30, 100, 420, 440);
+        jtpAyuda.setBounds(30, 100, 420, 450);
         jtpAyuda.getAccessibleContext().setAccessibleName("routerS");
 
         jbActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/note_search32.png"))); // NOI18N
         jbActualizar.setText("Actualizar");
+        jbActualizar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jbActualizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jbActualizarMouseClicked(evt);
@@ -141,37 +118,58 @@ public class Ayuda extends javax.swing.JPanel {
     }//GEN-LAST:event_jbHomeMouseClicked
 
     private void jbActualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbActualizarMouseClicked
-        // TODO add your handling code here:
-        String sResultado = "";
+        int i=0;
+        javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
+        JOutlookBar outlookBar = new JOutlookBar();
+        
         int sel = jtpAyuda.getSelectedIndex(); 
         if(sel==1){
             List<String> list = new ArrayList<String>();
             list = qm.getAvailableRouters();
             Iterator iter = list.iterator();
             while (iter.hasNext()){
-                sResultado += (iter.next() + "\n\n");
+                String rpt = (String)iter.next();
+                String sc = "Guía:\n" + qm.getGuideURL(rpt) 
+                        + "\n\nManual:\n" + qm.getManualURL(rpt)
+                        + "\n\nVideo:\n" + qm.getVideoURL(rpt);
+                i++;
+                outlookBar.addBar(rpt, 
+                    "/es/unavarra/iws/routerinstall/resources/img/wlan16.png",
+                    JOutlookBar.getDummyPanel(sc));                
             }
-            jtaRS.setText(sResultado);
+            jpIN.removeAll();
+            if(i>0){
+                jScrollPane1.setViewportView(outlookBar);
+                //outlookBar.setVisibleBar(0); 
+                jpIN.add(jScrollPane1);
+                jpIN.revalidate();
+                jpIN.repaint();
+            }            
         }else if(sel==0){
             List<InstallationError> list = new ArrayList<InstallationError>();
-            int i=1;
+            
             list = qm.getFrequentErrors();
             Iterator iter = list.iterator();
             while (iter.hasNext()){
-                InstallationError ie = (InstallationError)iter.next();
-                sResultado += ("[ " + i + " ] " + ie.getProblemDescription()+ "\n"
-                        +"-----------------------------------------------------\n"
-                        +ie.getProblemSolution()+"\n\n");
                 i++;
+                InstallationError ie = (InstallationError)iter.next();
+                outlookBar.addBar(ie.getProblemDescription(), 
+                    "/es/unavarra/iws/routerinstall/resources/img/misc_53_16.png",
+                    JOutlookBar.getDummyPanel(ie.getProblemSolution()));
             }
-            jtaPF.setText(sResultado);
+            jpPF.removeAll();
+            if(i>0){
+                jScrollPane1.setViewportView(outlookBar);
+                //outlookBar.setVisibleBar(0); 
+                jpPF.add(jScrollPane1);
+                jpPF.revalidate();
+                jpPF.repaint();
+            }
         }
             
     }//GEN-LAST:event_jbActualizarMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton jbActualizar;
     private javax.swing.JButton jbHome;
     private javax.swing.JLabel jlBackground;
@@ -180,8 +178,6 @@ public class Ayuda extends javax.swing.JPanel {
     private javax.swing.JLabel jlTitulo;
     private javax.swing.JPanel jpIN;
     private javax.swing.JPanel jpPF;
-    private javax.swing.JTextArea jtaPF;
-    private javax.swing.JTextArea jtaRS;
     private javax.swing.JTabbedPane jtpAyuda;
     // End of variables declaration//GEN-END:variables
 }

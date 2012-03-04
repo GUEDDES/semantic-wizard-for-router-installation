@@ -35,6 +35,7 @@ public class Menu extends javax.swing.JPanel {
         jlBusqueda = new javax.swing.JLabel();
         jlIcono = new javax.swing.JLabel();
         jlTItulo = new javax.swing.JLabel();
+        jlTItulo1 = new javax.swing.JLabel();
         jbSalir = new javax.swing.JButton();
         jlBarra = new javax.swing.JLabel();
         jlAyuda = new javax.swing.JLabel();
@@ -61,9 +62,15 @@ public class Menu extends javax.swing.JPanel {
         jlTItulo.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jlTItulo.setForeground(new java.awt.Color(255, 255, 255));
         jlTItulo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jlTItulo.setText("Semantic Router");
+        jlTItulo.setText("Semantic Router Wizard");
         add(jlTItulo);
-        jlTItulo.setBounds(100, 20, 210, 50);
+        jlTItulo.setBounds(100, 20, 310, 50);
+
+        jlTItulo1.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jlTItulo1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jlTItulo1.setText("Semantic Router Wizard");
+        add(jlTItulo1);
+        jlTItulo1.setBounds(102, 22, 310, 50);
 
         jbSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/exit32.png"))); // NOI18N
         jbSalir.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -204,5 +211,6 @@ public class Menu extends javax.swing.JPanel {
     private javax.swing.JLabel jlIcono;
     private javax.swing.JLabel jlInstalacion;
     private javax.swing.JLabel jlTItulo;
+    private javax.swing.JLabel jlTItulo1;
     // End of variables declaration//GEN-END:variables
 }
