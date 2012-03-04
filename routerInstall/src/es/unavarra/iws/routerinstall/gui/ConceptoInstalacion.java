@@ -20,8 +20,9 @@ public class ConceptoInstalacion extends javax.swing.JPanel {
     String titError;
     String comError;
     
-    public ConceptoInstalacion(String comments) {
+    public ConceptoInstalacion(String title, String comments) {
         initComponents();
+        jlTitulo.setText(title);
         jtaComments.setText(comments);
     }
 /*

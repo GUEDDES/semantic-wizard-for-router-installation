@@ -21,21 +21,28 @@ public class ConceptoInstalacionDescriptor extends WizardPanelDescriptor {
     
     public ConceptoInstalacionDescriptor(QueryManager qm, String step, String prevStep) {
         this.qm = qm;
-        IDENTIFIER = qm.getCurrentStepName();
+        InstallationError err = qm.getError();
         
         if (step == "START"){
+            IDENTIFIER = qm.getCurrentStepName();
             this.prevStep = "START";
-            this.nextStep = "ERROR"+prevStep;
+            this.nextStep = err.getErrorID();
         }else if (step == "FINISH"){
+            IDENTIFIER = err.getErrorID();
             this.prevStep = prevStep;
             this.nextStep = "FINISH";
         }
         
         if (nextStep == "FINISH"){
-            panel = new ConceptoInstalacion(qm.getComment("ERROR"+prevStep));
+            panel = new ConceptoInstalacion(err.getTitle(), err.getProblemDescription()+"\n"+err.getProblemSolution());
         }else{
-            panel = new ConceptoInstalacion(qm.getCurrentStepDescription());
+            panel = new ConceptoInstalacion(qm.getCurrentStepTitle(), qm.getCurrentStepDescription());
         }
+        
+        System.out.println(prevStep);
+        System.out.println(nextStep);
+        System.out.println(err.getTitle());
+        System.out.println("############");
         
         setPanelDescriptorIdentifier(IDENTIFIER);
         setPanelComponent(panel);
@@ -47,7 +54,13 @@ public class ConceptoInstalacionDescriptor extends WizardPanelDescriptor {
     
     @Override
     public Object getNextPanelDescriptor() {
-        return nextStep;
+        if (nextStep == "FINISH"){
+            return null;
+            
+        }else{
+            return nextStep;
+        }
+        
     }
     
     @Override

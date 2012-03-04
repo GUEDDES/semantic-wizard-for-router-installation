@@ -708,21 +708,20 @@ private void jbSagemFast2604MouseClicked(java.awt.event.MouseEvent evt) {//GEN-F
         String ident;
         String ultimo = "";
         
-        primerPaso = qm.initInstallationByModelName(routerActual);
+        //primerPaso = qm.initInstallationByModelName(routerActual);
         
-        /*Wizard wizard = new Wizard();
+        Wizard wizard = new Wizard();
         
         WizardPanelDescriptor descriptor = new ConceptoInstalacionDescriptor(qm, "START", id);
         wizard.registerWizardPanel(descriptor.getPanelDescriptorIdentifier(), descriptor);
         
-        WizardPanelDescriptor descriptor1 = new ConceptoInstalacionDescriptor(qm, "FINISH", id);
+        WizardPanelDescriptor descriptor1 = new ConceptoInstalacionDescriptor(qm, "FINISH", qm.getCurrentStepName());
         wizard.registerWizardPanel(descriptor1.getPanelDescriptorIdentifier(), descriptor1);
         
         wizard.setCurrentPanel(descriptor.getPanelDescriptorIdentifier());
         
         int ret = wizard.showModalDialog();
-        * 
-        */
+        
 
     }
 }
