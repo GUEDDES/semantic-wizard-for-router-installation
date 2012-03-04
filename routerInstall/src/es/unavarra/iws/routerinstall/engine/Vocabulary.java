@@ -119,7 +119,6 @@ public class Vocabulary {
     public final Individual PASO_INSTALAR_CD;
     public final Individual ERROR_LLAMADAS;
     public final Individual ERROR_ECO;
-    public final Individual ERROR_COMUNICACION_ADSL;
     public final Individual ERROR_ENCENDER;
     public final Individual ERROR_SOFTWARE;
     public final Individual ERROR_ETHERNET;
@@ -268,7 +267,6 @@ public class Vocabulary {
         PASO_INSTALAR_CD = model.getIndividual(uri + "InstalacionSoftware_1");
        
         ERROR_LLAMADAS = model.getIndividual(uri + "RecepcioLLamadas");
-        ERROR_COMUNICACION_ADSL = model.getIndividual(uri + "ComunicacionADSL");
         ERROR_ECO = model.getIndividual(uri + "Eco");
         ERROR_ETHERNET = model.getIndividual(uri + "ProblemasEthernet_1");
         ERROR_USB = model.getIndividual(uri + "ProblemasConectarRouterUSB_1");
@@ -290,7 +288,6 @@ public class Vocabulary {
         PASO_INSTALAR_CD.addProperty(instanceOf, pasoInstalacion);
               
         ERROR_LLAMADAS.addProperty(instanceOf, problemaInstalacion);
-        ERROR_COMUNICACION_ADSL.addProperty(instanceOf, problemaInstalacion);
         ERROR_ECO.addProperty(instanceOf, problemaInstalacion);
         ERROR_ETHERNET.addProperty(instanceOf, problemaInstalacion);
         ERROR_USB.addProperty(instanceOf, problemaInstalacion);
