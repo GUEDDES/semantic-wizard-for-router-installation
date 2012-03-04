@@ -1,4 +1,4 @@
-; Sun Mar 04 12:26:22 CET 2012
+; Sun Mar 04 20:45:26 CET 2012
 ; 
 ;+ (version "3.4.7")
 ;+ (build "Build 620")
@@ -6,11 +6,11 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[RouterInstall_ProjectKB_Class303]
-		[RouterInstall_ProjectKB_Class304]
-		[RouterInstall_ProjectKB_Class305]
-		[RouterInstall_ProjectKB_Class306]
-		[RouterInstall_ProjectKB_Class307]))
+		[RouterInstall_ProjectKB_Class354]
+		[RouterInstall_ProjectKB_Class355]
+		[RouterInstall_ProjectKB_Class356]
+		[RouterInstall_ProjectKB_Class357]
+		[RouterInstall_ProjectKB_Class358]))
 
 ([CLSES_TAB] of  Widget
 
@@ -5524,8 +5524,8 @@
 		":VALUES"
 		":ASSOCIATED-SLOT"
 		"http://www.w3.org/2001/XMLSchema#language"
-		"http://www.w3.org/2002/07/owl#versionInfo"
 		"http://www.w3.org/1999/02/22-rdf-syntax-ns#first"
+		"http://www.w3.org/2002/07/owl#versionInfo"
 		"http://www.w3.org/2001/XMLSchema#base64Binary"
 		"http://www.w3.org/2001/XMLSchema#short"
 		"http://www.w3.org/2002/07/owl#maxCardinality"
@@ -5686,31 +5686,6 @@
 ([RouterInstall_ProjectKB_Class27] of  Property_List
 )
 
-([RouterInstall_ProjectKB_Class303] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([RouterInstall_ProjectKB_Class304] of  String
-
-	(name "http://www.w3.org/2002/07/owl#Class")
-	(string_value "%3ANAME"))
-
-([RouterInstall_ProjectKB_Class305] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([RouterInstall_ProjectKB_Class306] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([RouterInstall_ProjectKB_Class307] of  String
-
-	(name "http://www.w3.org/2002/07/owl#Thing")
-	(string_value "%3ANAME"))
-
 ([RouterInstall_ProjectKB_Class31] of  Widget
 
 	(height 300)
@@ -5739,6 +5714,31 @@
 	(is_hidden TRUE)
 	(property_list [RouterInstall_ProjectKB_Class36])
 	(widget_class_name "edu.stanford.smi.protege.widget.ProtegePropertiesTab"))
+
+([RouterInstall_ProjectKB_Class354] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([RouterInstall_ProjectKB_Class355] of  String
+
+	(name "http://www.w3.org/2002/07/owl#Class")
+	(string_value "%3ANAME"))
+
+([RouterInstall_ProjectKB_Class356] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([RouterInstall_ProjectKB_Class357] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([RouterInstall_ProjectKB_Class358] of  String
+
+	(name "http://www.w3.org/2002/07/owl#Thing")
+	(string_value "%3ANAME"))
 
 ([RouterInstall_ProjectKB_Class36] of  Property_List
 )
