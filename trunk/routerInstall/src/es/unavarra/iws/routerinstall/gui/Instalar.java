@@ -635,11 +635,8 @@ private void jbSagemFast2604MouseClicked(java.awt.event.MouseEvent evt) {//GEN-F
             String idPantalla = txtResultado.getStepID();                      //2do resultado que retorna: ID (String) de la ventana
             
             if (txtResultado.getStepID() != null){
-                System.out.println("##########Ha devuelto un concpto##########");
-                System.out.println(txtResultado.getStepID());
+                crearConceptoSimple(txtResultado.getStepID());
             }else if (list != null){
-                System.out.println("########## Ha devuelto una lista con "+list.size()+" elementos ##########");
-                System.out.println(list.iterator().next().toString());
                 habilitaBotones(false);
                 habilitaRouter(list);
             }else{
@@ -701,6 +698,32 @@ private void jbSagemFast2604MouseClicked(java.awt.event.MouseEvent evt) {//GEN-F
 
     private void muestraPantallaID(String idPantalla) {
        //show al panel correspondiente
+    }
+    
+    private void crearConceptoSimple(String id){
+        // TODO add your handling code here:
+        System.out.println("encontrado un solo concepto");
+        String routerActual = id;
+        String primerPaso;
+        String ident;
+        String ultimo = "";
+        
+        primerPaso = qm.initInstallationByModelName(routerActual);
+        
+        /*Wizard wizard = new Wizard();
+        
+        WizardPanelDescriptor descriptor = new ConceptoInstalacionDescriptor(qm, "START", id);
+        wizard.registerWizardPanel(descriptor.getPanelDescriptorIdentifier(), descriptor);
+        
+        WizardPanelDescriptor descriptor1 = new ConceptoInstalacionDescriptor(qm, "FINISH", id);
+        wizard.registerWizardPanel(descriptor1.getPanelDescriptorIdentifier(), descriptor1);
+        
+        wizard.setCurrentPanel(descriptor.getPanelDescriptorIdentifier());
+        
+        int ret = wizard.showModalDialog();
+        * 
+        */
+
     }
 }
 

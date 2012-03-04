@@ -37,11 +37,8 @@ public class RTG585v7Panel1 extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jlPrimerPaso = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -68,8 +65,8 @@ public class RTG585v7Panel1 extends javax.swing.JPanel {
         ContenidoTexto.add(jLabel4);
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_tg585v7_60.png"))); // NOI18N
-        jLabel8.setMaximumSize(new java.awt.Dimension(531, 100));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/TG585v7_1.png"))); // NOI18N
+        jLabel8.setMaximumSize(new java.awt.Dimension(531, 200));
         jLabel8.setMinimumSize(new java.awt.Dimension(531, 100));
         jLabel8.setPreferredSize(new java.awt.Dimension(531, 18));
         ContenidoTexto.add(jLabel8);
@@ -79,19 +76,9 @@ public class RTG585v7Panel1 extends javax.swing.JPanel {
         ContenidoTexto.add(jLabel9);
         ContenidoTexto.add(jLabel5);
 
-        jLabel6.setText("Router ADSL inalámbrico multipuerto que permite la conexión de uno o varios");
-        ContenidoTexto.add(jLabel6);
-
-        jLabel3.setText("equipos a la línea ADSL para posibilitar el acceso a los servicios finales");
-        ContenidoTexto.add(jLabel3);
-
-        jLabel1.setText("(Internet, correo electrónico, …).");
+        jLabel1.setText("En los siguientes pasos se describe el proceso de instalación.");
         ContenidoTexto.add(jLabel1);
         ContenidoTexto.add(jLabel2);
-
-        jLabel11.setMaximumSize(new java.awt.Dimension(257, 30));
-        jLabel11.setMinimumSize(new java.awt.Dimension(257, 18));
-        ContenidoTexto.add(jLabel11);
         ContenidoTexto.add(jlPrimerPaso);
 
         jLabel10.setMaximumSize(new java.awt.Dimension(257, 30));
@@ -114,12 +101,9 @@ public class RTG585v7Panel1 extends javax.swing.JPanel {
     private javax.swing.JLabel iconoLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

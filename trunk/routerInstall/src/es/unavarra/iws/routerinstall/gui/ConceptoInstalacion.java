@@ -12,7 +12,7 @@ import javax.swing.*;
  *
  * @author aqm
  */
-public class InstalacionGeneral extends javax.swing.JPanel {
+public class ConceptoInstalacion extends javax.swing.JPanel {
 
     /**
      * Creates new form Router1Panel2
@@ -20,15 +20,9 @@ public class InstalacionGeneral extends javax.swing.JPanel {
     String titError;
     String comError;
     
-    public InstalacionGeneral(String titulo, String comments, String titError, String comError, Boolean error) {
+    public ConceptoInstalacion(String comments) {
         initComponents();
-        jlTitulo.setText(titulo);
         jtaComments.setText(comments);
-        this.titError = titError;
-        this.comError = comError;
-        if (error == false){
-            jButton1.setEnabled(false);
-        }
     }
 /*
     public boolean isCheckBoxSelected() {
@@ -58,8 +52,6 @@ public class InstalacionGeneral extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtaComments = new javax.swing.JTextArea();
-        jpBotonError = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -100,32 +92,15 @@ public class InstalacionGeneral extends javax.swing.JPanel {
         jpContenido.add(jPanel1, java.awt.BorderLayout.CENTER);
 
         add(jpContenido, java.awt.BorderLayout.CENTER);
-
-        jButton1.setText("Posibles errores y soluciones");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
-            }
-        });
-        jpBotonError.add(jButton1);
-
-        add(jpBotonError, java.awt.BorderLayout.SOUTH);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        final JComponent[] panelError = new JComponent[] {new PanelError(titError, comError)};
-        JOptionPane.showMessageDialog(null, panelError, "Errores", JOptionPane.PLAIN_MESSAGE);
-    }//GEN-LAST:event_jButton1MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel jlIcono;
     private javax.swing.JLabel jlTitulo;
-    private javax.swing.JPanel jpBotonError;
     private javax.swing.JPanel jpContenido;
     private javax.swing.JPanel jpTitulo;
     private javax.swing.JTextArea jtaComments;

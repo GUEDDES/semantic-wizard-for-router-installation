@@ -21,9 +21,6 @@ public class RHG556Panel1Descriptor extends WizardPanelDescriptor {
         super(IDENTIFIER, new RHG556Panel1(primerPaso));
         this.qm = qm;
         this.nextStep = qm.getNextStepOK();
-        
-        System.out.println(nextStep);
-        System.out.println("############");
     }
     
     @Override
