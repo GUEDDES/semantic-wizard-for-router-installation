@@ -126,6 +126,8 @@ public class Vocabulary {
     public final Individual ERROR_USB;
     public final Individual ERROR_CONFIGURACION;
     public final Individual ERROR_TARJETA_INALAMBRICA;
+    public final Individual ERROR_SIM;
+    public final Individual ERROR_MODEMUSB;
     public final Individual tarjetaInalambricaI;
     public final Individual modemUSBI;
     public final Individual cdI;
@@ -274,6 +276,9 @@ public class Vocabulary {
         ERROR_SOFTWARE = model.getIndividual(uri + "ProblemaSoftware");
         ERROR_CONFIGURACION = model.getIndividual(uri + "ProblemasConfiguracionRouter_1");
         ERROR_TARJETA_INALAMBRICA = model.getIndividual(uri + "ProblemasTarjetaInalambrica");
+        ERROR_SIM = model.getIndividual(uri+"ProblemaSIM");
+        ERROR_MODEMUSB = model.getIndividual(uri+"ProblemaModemUSB");
+
         
         PASO_M_LOCALIZAR_ADSL.addProperty(instanceOf, pasoInstalacion);
         PASO_CONECTAR_ROUTER.addProperty(instanceOf, pasoInstalacion);
@@ -293,6 +298,9 @@ public class Vocabulary {
         ERROR_SOFTWARE.addProperty(instanceOf, problemaInstalacion);
         ERROR_CONFIGURACION.addProperty(instanceOf, problemaInstalacion);
         ERROR_TARJETA_INALAMBRICA.addProperty(instanceOf, problemaInstalacion);
+        ERROR_SIM.addProperty(instanceOf, problemaInstalacion);
+        ERROR_MODEMUSB.addProperty(instanceOf, problemaInstalacion);
+       
         
         //Set step priorities
         PASO_M_LOCALIZAR_ADSL.addProperty(hasStepPriority, "6");
