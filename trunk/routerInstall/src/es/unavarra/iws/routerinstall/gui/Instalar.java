@@ -701,14 +701,7 @@ private void jbSagemFast2604MouseClicked(java.awt.event.MouseEvent evt) {//GEN-F
     }
     
     private void crearConceptoSimple(String id){
-        // TODO add your handling code here:
-        System.out.println("encontrado un solo concepto");
-        String routerActual = id;
-        String primerPaso;
-        String ident;
-        String ultimo = "";
-        
-        //primerPaso = qm.initInstallationByModelName(routerActual);
+        // TODO add your handling code here:       
         
         Wizard wizard = new Wizard();
         

@@ -39,11 +39,6 @@ public class ConceptoInstalacionDescriptor extends WizardPanelDescriptor {
             panel = new ConceptoInstalacion(qm.getCurrentStepTitle(), qm.getCurrentStepDescription());
         }
         
-        System.out.println(prevStep);
-        System.out.println(nextStep);
-        System.out.println(err.getTitle());
-        System.out.println("############");
-        
         setPanelDescriptorIdentifier(IDENTIFIER);
         setPanelComponent(panel);
     }
