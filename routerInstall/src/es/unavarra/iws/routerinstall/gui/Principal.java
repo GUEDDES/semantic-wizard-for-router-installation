@@ -10,30 +10,29 @@ import es.unavarra.iws.routerinstall.engine.QueryManager;
  *
  * @author aqm
  */
-public class Principal extends javax.swing.JDialog {
+public class Principal extends javax.swing.JFrame {
     
     QueryManager qm = null;
 
     /**
      * Creates new form Principal
      */
-    public Principal(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public Principal() {
+        super();
         initComponents();
         qm = new QueryManager();
         
-        //this.setVisible(true);
         /*try {
             Thread.sleep(500);
         } catch (InterruptedException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }*/
-        //this.setVisible(false);
+
         this.remove(this.jlBackground);
         Menu menu = new Menu(qm);
         menu.setSize(this.getSize());
         this.add(menu);
-        //this.setVisible(true);
+        this.setIconImage((new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr32.png"))).getImage());
 
     }
     
@@ -52,9 +51,8 @@ public class Principal extends javax.swing.JDialog {
 
         jlBackground = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("");
-        setModalityType(java.awt.Dialog.ModalityType.DOCUMENT_MODAL);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("srw");
         setResizable(false);
 
         jlBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/swr1.png"))); // NOI18N
@@ -114,7 +112,7 @@ public class Principal extends javax.swing.JDialog {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                Principal dialog = new Principal(new javax.swing.JFrame(), true);
+                Principal dialog = new Principal();
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
 
                     @Override
@@ -137,4 +135,5 @@ public class Principal extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jlBackground;
     // End of variables declaration//GEN-END:variables
+
 }
