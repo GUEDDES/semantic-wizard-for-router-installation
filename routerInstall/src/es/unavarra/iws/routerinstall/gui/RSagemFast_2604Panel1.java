@@ -45,7 +45,7 @@ public class RSagemFast_2604Panel1 extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
-        iconoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/r_movistar.jpg"))); // NOI18N
+        iconoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/es/unavarra/iws/routerinstall/resources/img/orange.png"))); // NOI18N
         iconoLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
         add(iconoLabel, java.awt.BorderLayout.WEST);
 
