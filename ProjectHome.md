@@ -1,0 +1,1 @@
+This project is a semantic wizard that helps users on the installation of domestic routers.
